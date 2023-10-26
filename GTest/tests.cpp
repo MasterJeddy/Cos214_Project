@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include "../Clock.h"
 
 //
 // Created by maili on 2023/10/23.
