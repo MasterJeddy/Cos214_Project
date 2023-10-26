@@ -3,3 +3,10 @@
 //
 
 #include "Burger.h"
+void Burger::setPrice(double _price) {
+  price = _price;
+}
+double Burger::getPrice() const {
+  return price;
+}
+Burger::~Burger() = default;
