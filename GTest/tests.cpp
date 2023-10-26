@@ -40,6 +40,10 @@ TEST(SimonTests,ClockGetTimeAndTickTest){
 }
 
 TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
+    //Apparently needed to make this test independent of the first one
+    Clock::instance().removeTime("a");
+    Clock::instance().removeTime("b");
+    Clock::instance().removeTime("c");
     //Setup
     ASSERT_EQ(Clock::instance().getTime("a"),0) << "Tests are interfering with each other";
     Clock::instance().tick();
@@ -50,4 +54,7 @@ TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
     ASSERT_EQ(Clock::instance().getTime("a"),2) << "Setup Failed";
     ASSERT_EQ(Clock::instance().getTime("b"),1) << "Setup Failed";
     ASSERT_EQ(Clock::instance().getTime("c"),0) << "Setup Failed";
+    // If we reach this point then both hasTime and removeTime work as expected
+    // I have however broken the wisdom of the gtest documentation by indirectly
+    // using ClockGetTimeAndTickTest for this test
 }
