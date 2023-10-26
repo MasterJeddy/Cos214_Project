@@ -14,8 +14,21 @@
 #ifndef COS214_PROJECT__CLOCK_H
 #define COS214_PROJECT__CLOCK_H
 
-class Clock {
+#include <map>
 
+
+class Clock {
+private:
+  std::map<std::string,int> timers;
+public:
+  static Clock& instance();
+  int getTime(std::string me);
+  bool hasTime(std::string me);
+protected:
+  Clock();
+  Clock(const Clock& clock);
+  Clock& operator=(const Clock&);
+  ~Clock();
 };
 
 #endif //COS214_PROJECT__CLOCK_H
