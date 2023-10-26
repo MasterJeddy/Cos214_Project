@@ -8,7 +8,7 @@ TEST(ExampleTests,Test1){
     ASSERT_EQ(5,3+2);
 }
 
-TEST(SimonTests,ClockTestBasicCount){
+TEST(SimonTests,ClockGetTimeAndTickTest){
   ASSERT_EQ(Clock::instance().getTime("a"),0) << "New timer not equal 0";
   ASSERT_EQ(Clock::instance().getTime("b"),0) << "New timer not equal 0";
   ASSERT_EQ(Clock::instance().getTime("c"),0) << "New timer not equal 0";
@@ -37,4 +37,17 @@ TEST(SimonTests,ClockTestBasicCount){
   ASSERT_EQ(Clock::instance().getTime("b"),2) << "Clock did not go up to 2 after 2 ticks";
   ASSERT_EQ(Clock::instance().getTime("c"),2) << "Clock did not go up to 2 after 2 ticks";
   ASSERT_EQ(Clock::instance().getTime("d"),1) << "Clock did not go up to 1 after 1 tick";
+}
+
+TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
+    //Setup
+    ASSERT_EQ(Clock::instance().getTime("a"),0) << "Tests are interfering with each other";
+    Clock::instance().tick();
+    ASSERT_EQ(Clock::instance().getTime("b"),0) << "Tests are interfering with each other";
+    Clock::instance().tick();
+    ASSERT_EQ(Clock::instance().getTime("c"),0) << "Tests are interfering with each other";
+
+    ASSERT_EQ(Clock::instance().getTime("a"),2) << "Setup Failed";
+    ASSERT_EQ(Clock::instance().getTime("b"),1) << "Setup Failed";
+    ASSERT_EQ(Clock::instance().getTime("c"),0) << "Setup Failed";
 }
