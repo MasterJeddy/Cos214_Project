@@ -12,6 +12,7 @@
 //===----------------------------------------------------------------------===//
 
 #include <string>
+#include <stdexcept>
 #include "Clock.h"
 Clock &Clock::instance() {
   static Clock onlyInstance_;
@@ -21,11 +22,25 @@ Clock::Clock() {
   timers = std::map<std::string,int>();
 }
 
-int Clock::getTime(std::string me) {
-  return 0;
+int Clock::getTime(const std::string& me) {
+    try {
+       timers.at(me);
+       //found timer in map
+       return timers[me];
+    } catch (std::out_of_range& e)  {
+      //did not find timer
+      timers[me] = 0;
+      return timers[me];
+    }
 }
-bool Clock::hasTime(std::string me) {
+bool Clock::hasTime(const std::string& me) {
   return false;
+}
+void Clock::tick() {
+
+}
+void Clock::removeTime(const std::string &me) {
+
 }
 
 Clock::Clock(const Clock &clock)=default;

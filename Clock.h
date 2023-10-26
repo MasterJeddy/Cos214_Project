@@ -22,8 +22,10 @@ private:
   std::map<std::string,int> timers;
 public:
   static Clock& instance();
-  int getTime(std::string me);
-  bool hasTime(std::string me);
+  int getTime(const std::string& me);
+  bool hasTime(const std::string& me);
+  void removeTime(const std::string& me);
+  void tick();
 protected:
   Clock();
   Clock(const Clock& clock);
