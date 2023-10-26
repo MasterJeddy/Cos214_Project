@@ -1,5 +1,14 @@
+//===-- COS214_Project/Clock.h - Clock class implementation ------*- C++ -*-===//
 //
-// Created by maili on 2023/10/26.
+// COS 214 Project.
 //
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// This file contains the implementation of an Clock class. The Clock is a
+/// singleton that will be used through out the system the synchronise a
+/// actions between classes.
+///
+//===----------------------------------------------------------------------===//
 
 #include "Clock.h"
