@@ -33,12 +33,21 @@ int Clock::getTime(const std::string& me) {
       return timers[me];
     }
 }
+
 bool Clock::hasTime(const std::string& me) {
-  return false;
+  try {
+    timers.at(me);
+    //found timer in map
+    return true;
+  } catch (std::out_of_range& e)  {
+    return false;
+  }
 }
+
 void Clock::tick() {
 
 }
+
 void Clock::removeTime(const std::string &me) {
 
 }
