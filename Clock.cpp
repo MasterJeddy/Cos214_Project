@@ -11,4 +11,23 @@
 ///
 //===----------------------------------------------------------------------===//
 
+#include <string>
 #include "Clock.h"
+Clock &Clock::instance() {
+  static Clock onlyInstance_;
+  return onlyInstance_;
+}
+Clock::Clock() {
+  timers = std::map<std::string,int>();
+}
+
+int Clock::getTime(std::string me) {
+  return 0;
+}
+bool Clock::hasTime(std::string me) {
+  return false;
+}
+
+Clock::Clock(const Clock &clock)=default;
+Clock &Clock::operator=(const Clock &) = default;
+Clock::~Clock() =default;
