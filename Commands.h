@@ -1,4 +1,4 @@
-//===-- COS214_Project/Commands.h - Commands class definition ------*- C++ -*-===//
+//===-- COS214_Project/Commands.h - Commands class definitions ------*- C++ -*-===//
 //
 // COS 214 Project.
 //

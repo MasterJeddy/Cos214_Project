@@ -1,4 +1,4 @@
-//===-- COS214_Project/Commands.cpp - Commands class implementation ------*- C++ -*-===//
+//===-- COS214_Project/Commands.cpp - Commands class implementations ------*- C++ -*-===//
 //
 // COS 214 Project.
 //
