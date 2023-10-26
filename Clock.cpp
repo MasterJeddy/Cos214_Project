@@ -28,7 +28,7 @@ int Clock::getTime(const std::string& me) {
        //found timer in map
        return timers[me];
     } catch (std::out_of_range& e)  {
-      //did not find timer
+      //did not find timer in map
       timers[me] = 0;
       return timers[me];
     }
@@ -40,12 +40,16 @@ bool Clock::hasTime(const std::string& me) {
     //found timer in map
     return true;
   } catch (std::out_of_range& e)  {
+    //did not find timer in map
     return false;
   }
 }
 
 void Clock::tick() {
-
+  //Add one to all timers
+  for (auto& time: timers) {
+    time.second += 1;
+  }
 }
 
 void Clock::removeTime(const std::string &me) {
