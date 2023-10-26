@@ -26,7 +26,7 @@ public:
   Burger();
   virtual void add(Burger*) = 0;
   virtual double totalPrice() = 0;
-  double getPrice();
+  double getPrice() const;
   void setPrice(double);
   virtual ~Burger();
 };
