@@ -5,7 +5,22 @@
 #ifndef PROJECT_ORDER_H
 #define PROJECT_ORDER_H
 
-/// \brief Struct used to contain customer orders, created by waiters and later passed down to the chefs.
+//===-- COS214_Project/Order.h - Order struct definition ------*- C++ -*-===//
+//
+// COS 214 Project.
+//
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// This file contains the declaration of the Order struct,
+/// and is to be used across the project.
+/// \brief Provides a struct used to contain customer orders, created by
+/// waiters and later passed down to the chefs. All values are 0 by default
+/// so that only values that are stated by the customer need be modified.
+///
+//===----------------------------------------------------------------------===//
+
+
 struct Order {
 public:
   /// \brief Default constructor, all values default to 0 and assigns orderNumber (starts counting orders at 1)
