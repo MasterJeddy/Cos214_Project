@@ -21,15 +21,32 @@ class Clock {
 private:
   std::map<std::string,int> timers;
 public:
+  ///
+  /// \return
   static Clock& instance();
+  ///
+  /// \param me
+  /// \return
   int getTime(const std::string& me);
+  ///
+  /// \param me
+  /// \return
   bool hasTime(const std::string& me);
+  ///
+  /// \param me
   void removeTime(const std::string& me);
+  ///
   void tick();
 protected:
+  ///
   Clock();
+  ///
+  /// \param clock
   Clock(const Clock& clock);
+  ///
+  /// \return
   Clock& operator=(const Clock&);
+  ///
   ~Clock();
 };
 
