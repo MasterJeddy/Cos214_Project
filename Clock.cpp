@@ -53,7 +53,11 @@ void Clock::tick() {
 }
 
 void Clock::removeTime(const std::string &me) {
-
+    if (hasTime(me)){
+      std::map<std::string ,int>::iterator it;
+      it = timers.find (me);
+      timers.erase (it);
+    }
 }
 
 Clock::Clock(const Clock &clock)=default;
