@@ -14,7 +14,9 @@
 #define COS214_PROJECT__USERCOMMAND_H
 
 class UserCommand {
-
+public:
+  /// This function must be implemented by all use commands
+  virtual void execute() =0;
 };
 
 #endif //COS214_PROJECT__USERCOMMAND_H
