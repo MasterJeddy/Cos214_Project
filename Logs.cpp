@@ -11,3 +11,18 @@
 //===----------------------------------------------------------------------===//
 
 #include "Logs.h"
+void Logs::dumpToFile(std::string file) {
+
+}
+SavedLog Logs::loadFromFile(std::string file) {
+  return SavedLog();
+}
+void Logs::tempSave(SavedLog save) {
+
+}
+SavedLog Logs::loadTemp() {
+  return SavedLog();
+}
+Logs::Logs() {
+
+}

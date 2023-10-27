@@ -14,6 +14,7 @@
 #ifndef COS214_PROJECT_INPUTPOLL_H
 #define COS214_PROJECT_INPUTPOLL_H
 
+#include "CommandLog.h"
 
 class InputPoll {
 public:

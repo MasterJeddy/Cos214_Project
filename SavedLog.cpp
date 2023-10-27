@@ -12,3 +12,9 @@
 //===----------------------------------------------------------------------===//
 
 #include "SavedLog.h"
+std::vector<UserCommand> SavedLog::getCommands() {
+  return std::vector<UserCommand>();
+}
+void SavedLog::setCommands(std::vector<UserCommand> commands) {
+
+}

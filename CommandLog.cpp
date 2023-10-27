@@ -13,3 +13,21 @@
 //===----------------------------------------------------------------------===//
 
 #include "CommandLog.h"
+void CommandLog::load(SavedLog log) {
+
+}
+SavedLog CommandLog::save() {
+  return SavedLog();
+}
+void CommandLog::loadFromFile(std::string file) {
+
+}
+void CommandLog::saveToFile(std::string file) {
+
+}
+void CommandLog::addEntry(UserCommand com) {
+
+}
+CommandLog::CommandLog() {
+
+}
