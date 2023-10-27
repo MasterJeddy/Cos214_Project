@@ -12,3 +12,12 @@
 //===----------------------------------------------------------------------===//
 
 #include "InputPoll.h"
+void InputPoll::poll() {
+
+}
+void InputPoll::resetToLog(CommandLog log) {
+
+}
+InputPoll::InputPoll() {
+
+}
