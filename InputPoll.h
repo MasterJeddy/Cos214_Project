@@ -16,6 +16,12 @@
 
 
 class InputPoll {
+public:
+  void poll();
+
+  void resetToLog(CommandLog log);
+
+  InputPoll();
 
 };
 
