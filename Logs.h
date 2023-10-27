@@ -14,8 +14,19 @@
 #ifndef COS214_PROJECT__LOGS_H
 #define COS214_PROJECT__LOGS_H
 
-class Logs {
+#include "SavedLog.h"
+#include <map>
 
+class Logs {
+private:
+  std::map<std::string,SavedLog> saves;
+  SavedLog temp;
+ public:
+  void dumpToFile(std::string file);
+  SavedLog loadFromFile(std::string file);
+  void tempSave(SavedLog save);
+  SavedLog loadTemp();
+  Logs();
 };
 
 #endif //COS214_PROJECT__LOGS_H

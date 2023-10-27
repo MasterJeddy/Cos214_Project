@@ -15,8 +15,14 @@
 #ifndef COS214_PROJECT__SAVEDLOG_H
 #define COS214_PROJECT__SAVEDLOG_H
 
-class SavedLog {
+#include "CommandLog.h"
 
+class SavedLog {
+private:
+  std::vector<UserCommand> commands;
+public:
+  std::vector<UserCommand> getCommands();
+  void setCommands(std::vector<UserCommand> commands);
 };
 
 #endif //COS214_PROJECT__SAVEDLOG_H

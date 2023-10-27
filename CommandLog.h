@@ -15,8 +15,21 @@
 #ifndef COS214_PROJECT__COMMANDLOG_H
 #define COS214_PROJECT__COMMANDLOG_H
 
-class CommandLog {
+#include <vector>
+#include <string>
+#include "UserCommand.h"
+#include "SavedLog.h"
 
+class CommandLog {
+private:
+  std::vector<UserCommand> commands;
+public:
+  void load(SavedLog log);
+  SavedLog save();
+  void loadFromFile(std::string file);
+  void saveToFile(std::string file);
+  void addEntry(UserCommand com);
+  CommandLog();
 };
 
 #endif //COS214_PROJECT__COMMANDLOG_H
