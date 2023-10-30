@@ -12,16 +12,23 @@
 //===----------------------------------------------------------------------===//
 ///
 /// \file
-/// This file contains the declaration of the Kitchen class,
-/// and can be seen as the client for the chain of responsibility pattern.
+/// This file contains the declaration of the Kitchen class.
 /// \brief Class containing the systems of the kitchen and will
 /// be in charge of its operations.
 ///
 //===----------------------------------------------------------------------===//
 
+#include "HeadChef.h"
+#include "Order.h"
+#include <queue>
 class Kitchen {
 private:
+  HeadChef headChef;
+  std::queue<Order> orderQueue;
 
+public:
+  bool addOrder(Order order);
+  void produceBurgers();
 };
 
 #endif //COS214_PROJECT__KITCHEN_H

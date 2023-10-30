@@ -8,5 +8,9 @@ add_executable(Cos214_Project main.cpp
         Burger.cpp
         Burger.h
         Kitchen.cpp
-        Kitchen.h)
+        Kitchen.h
+        HeadChef.cpp
+        HeadChef.h
+        Chef.cpp
+        Chef.h)
 add_subdirectory(GTest)
