@@ -3,3 +3,12 @@
 //
 
 #include "Kitchen.h"
+bool Kitchen::addOrder(Order order) {
+  orderQueue.push(order);
+  // if this at some point becomes a point of failure, a fail condition can be added to return false
+  return true;
+}
+void Kitchen::produceBurgers() {
+  // TODO: will be uncommented when it works
+  //headChef.startOrder()
+}
