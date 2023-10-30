@@ -10,5 +10,5 @@ bool Kitchen::addOrder(Order order) {
 }
 void Kitchen::produceBurgers() {
   // TODO: will be uncommented when it works
-  //headChef.startOrder()
+  //finishedOrders.push(headChef.startOrder(orderQueue.pop()));
 }
