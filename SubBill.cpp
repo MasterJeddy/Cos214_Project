@@ -12,3 +12,27 @@
 
 #include "SubBill.h"
 
+SubBill::SubBill(std::string itemName, double itemCost){
+    this->name = itemName;
+    this->total = itemCost;
+}
+
+double SubBill::getTotal(){
+    return total;
+}
+
+std::string SubBill::getName(){
+    return name;
+}
+
+SubBill::~SubBill(){
+
+}
+
+void SubBill::add(BillComponent* component){
+
+}
+
+void SubBill::remove(BillComponent* component){
+
+}

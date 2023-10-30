@@ -13,9 +13,17 @@
 
 #ifndef COS214_PROJECT_BILLCOMPONENT_H
 #define COS214_PROJECT_BILLCOMPONENT_H
-
+#include <iostream>
+using namespace std;
 class BillComponent
 {
+   
+    public:
+    virtual void add(BillComponent* component) = 0;
+    virtual void remove(BillComponent* component) = 0;
+    virtual double getTotal() = 0;
+    virtual ~BillComponent();
+    virtual std::string getName() = 0;
 };
 
 #endif

@@ -14,9 +14,20 @@
 #ifndef COS214_PROJECT_SUBBILL_H
 #define COS214_PROJECT_SUBBILL_H
 #include "BillComponent.h"
+ 
 
 class SubBill: public BillComponent
 {
+    private:
+    std::string name;
+    double total;
+    public:
+    SubBill(std::string itemName, double itemCost);
+    virtual double getTotal();
+    virtual std::string getName();
+    virtual void add(BillComponent* component);
+    virtual void remove(BillComponent* component);
+    virtual ~SubBill();
 };
 
 #endif
