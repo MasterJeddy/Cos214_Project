@@ -25,6 +25,8 @@ class Kitchen {
 private:
   HeadChef headChef;
   std::queue<Order> orderQueue;
+  std::queue<Order> finishedOrders;
+  bool isBusy = false;
 
 public:
   bool addOrder(Order order);
