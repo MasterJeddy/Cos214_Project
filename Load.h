@@ -14,8 +14,13 @@
 #ifndef COS214_PROJECT__LOAD_H
 #define COS214_PROJECT__LOAD_H
 
-class Load {
-
+#include <string>
+#include "UserCommand.h"
+class Load : public  UserCommand{
+public:
+  void execute() override;
+  void execute(std::string file);
+  Load();
 };
 
 #endif //COS214_PROJECT__LOAD_H

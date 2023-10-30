@@ -13,3 +13,14 @@
 
 
 #include "Load.h"
+void Load::execute() {
+
+}
+void Load::execute(std::string file) {
+
+
+}
+
+Load::Load() {
+
+}

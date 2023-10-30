@@ -11,3 +11,14 @@
 ///
 //===----------------------------------------------------------------------===//
 #include "Save.h"
+void Save::execute() {
+
+}
+
+void Save::execute(std::string file) {
+
+}
+
+Save::Save() {
+
+}
