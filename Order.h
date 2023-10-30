@@ -21,13 +21,14 @@
 //===----------------------------------------------------------------------===//
 
 
+#include "Burger.h"
 struct Order {
 public:
   /// \brief Default constructor, all values default to 0 and assigns orderNumber (starts counting orders at 1)
   Order() {
     orderNumber = ++totalOrders;
   };
-  static int totalOrders = 0;
+  static int totalOrders;
   int orderNumber = 0;
   int wantsKetchup = 0;
   int wantsMustard = 0;
@@ -39,6 +40,7 @@ public:
   int wantsTomato = 0;
   int wantsPickles = 0;
   bool complete = false;
+  Burger* burgers
 };
 
 
