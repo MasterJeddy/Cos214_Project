@@ -14,9 +14,12 @@
 #ifndef COS214_PROJECT__SAVE_H
 #define COS214_PROJECT__SAVE_H
 
+#include <string>
 #include "UserCommand.h"
 class Save : public UserCommand{
-
+  void execute() override;
+  void execute(std::string file);
+  Save();
 };
 
 #endif //COS214_PROJECT__SAVE_H
