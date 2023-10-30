@@ -9,4 +9,7 @@ void Burger::setPrice(double _price) {
 double Burger::getPrice() const {
   return price;
 }
+Burger::Burger() {
+  price = 0;
+}
 Burger::~Burger() = default;
