@@ -14,9 +14,22 @@
 #define COS214_PROJECT_CUSTOMER_H
 
 #include "TableComponent.h"
+#include <string>
 
 class Customer : public TableComponent
 {
+private:
+    int id;
+    std::string name;
+    std::vector<Customer *> group;
+
+public:
+    Customer(int id, std::string name);
+    ~Customer();
+
+    virtual void attachObserver(Observer *observer);
+    virtual void detachObserver(Observer *observer);
+    virtual void request();
 };
 
 #endif

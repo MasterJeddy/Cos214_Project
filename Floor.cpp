@@ -12,3 +12,20 @@
 //===----------------------------------------------------------------------===//
 
 #include "Floor.h"
+
+Floor::Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<Table *> tables)
+{
+    this->waiters = waiters;
+    this->waitingCustomers = waitingCustomers;
+    this->maitreDs = maitreDs;
+    this->tables = tables;
+}
+
+void Floor::customerRequestsSeat()
+{
+    Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
+
+    nextCustomer->request();
+
+    this->waitingCustomers.pop(); // remove this customer from queue
+}

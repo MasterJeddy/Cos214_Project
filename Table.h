@@ -19,6 +19,17 @@
 
 class Table : public TableComponent
 {
+private:
+    std::vector<TableComponent *> children;
+
+public:
+    void addComponent(TableComponent *component);
+    void removeComponent(TableComponent *component);
+    TableComponent *getChild(int id);
+
+    virtual void attachObserver(Observer *observer);
+    virtual void detachObserver(Observer *observer);
+    virtual void request();
 };
 
 #endif

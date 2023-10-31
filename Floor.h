@@ -14,8 +14,26 @@
 #ifndef COS214_PROJECT_FLOOR_H
 #define COS214_PROJECT_FLOOR_H
 
+#include "Waiter.h"
+#include "Customer.h"
+#include "MaitreD.h"
+#include "Table.h"
+
+#include <queue>
+
 class Floor
 {
+private:
+    std::vector<Waiter *> waiters;
+    std::queue<Customer *> waitingCustomers;
+    std::vector<MaitreD *> maitreDs;
+    std::vector<Table *> tables;
+
+public:
+    Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<Table *> tables);
+    void customerRequestsSeat();
+    bool spaceAvailable();
+    void seatCustomer();
 };
 
 #endif

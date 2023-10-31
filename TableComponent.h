@@ -17,6 +17,16 @@
 
 class TableComponent
 {
+protected:
+    std::vector<Observer*> observerList;
+
+public:
+    TableComponent();
+    virtual ~TableComponent();
+
+    virtual void attachObserver(Observer *observer);
+    virtual void detachObserver(Observer *observer);
+    virtual void request() = 0;
 };
 
 #endif

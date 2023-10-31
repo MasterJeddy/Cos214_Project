@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Cos214_Project.dir/main.cpp.o -o Cos214_Project 
