@@ -29,8 +29,8 @@ public:
   explicit Save(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
   ~Save() override;
   UserCommand *clone() override;
+  COMMANDS getType() override;
 };
-
 
 
 #endif //COS214_PROJECT__SAVE_H

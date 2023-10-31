@@ -32,7 +32,14 @@ void InputPoll::poll() {
 }
 
 void InputPoll::resetToLog(CommandLog* log) {
-
+  //This needs to be updated to reset member classes
+  CommandLogIterator* it = log->createIterator();
+  for (it->first();!it->isDone();it->next()){
+    if (it->currentItem()->getType() != COMMANDS::LOAD && it->currentItem()->getType() != COMMANDS::SAVE){
+        it->currentItem();
+    }
+  }
+  delete it;
 }
 
 InputPoll::InputPoll() {

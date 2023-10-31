@@ -13,12 +13,19 @@
 #ifndef COS214_PROJECT__USERCOMMAND_H
 #define COS214_PROJECT__USERCOMMAND_H
 
+enum class COMMANDS {
+  SAVE,
+  LOAD
+};
+
 class UserCommand {
 public:
   /// This function must be implemented by all use commands
   virtual void execute() =0;
   virtual UserCommand* clone() = 0;
+  virtual COMMANDS getType() =0;
   virtual ~UserCommand();
+
 };
 
 #endif //COS214_PROJECT__USERCOMMAND_H
