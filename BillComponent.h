@@ -17,10 +17,10 @@
 // using namespace std;
 class BillComponent
 {
-   
-    public:
-    virtual void add(BillComponent* component) = 0;
-    virtual void remove(BillComponent* component) = 0;
+
+public:
+    virtual void add(BillComponent *component) = 0;
+    virtual void remove(BillComponent *component) = 0;
     virtual double getTotal() = 0;
     virtual ~BillComponent();
     virtual std::string getName() = 0;

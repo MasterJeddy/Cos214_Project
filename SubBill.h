@@ -27,7 +27,7 @@ public:
     virtual std::string getName();
     virtual void add(BillComponent *component);
     virtual void remove(BillComponent *component);
-    // virtual ~SubBill();
+    virtual ~SubBill();
 };
 
 #endif

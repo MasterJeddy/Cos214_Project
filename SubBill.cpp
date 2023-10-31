@@ -6,33 +6,36 @@
 ///
 /// \file
 /// This file contains the implementation of the SubBill.h file.
-/// 
+///
 ///
 //===----------------------------------------------------------------------===//
 
 #include "SubBill.h"
 
-SubBill::SubBill(std::string itemName, double itemCost){
+SubBill::SubBill(std::string itemName, double itemCost)
+{
     this->name = itemName;
     this->total = itemCost;
 }
 
-double SubBill::getTotal(){
+double SubBill::getTotal()
+{
     return total;
 }
 
-std::string SubBill::getName(){
+std::string SubBill::getName()
+{
     return name;
 }
 
-// SubBill::~SubBill(){
-
-// }
-
-void SubBill::add(BillComponent* component){
-
+SubBill::~SubBill()
+{
 }
 
-void SubBill::remove(BillComponent* component){
+void SubBill::add(BillComponent *component)
+{
+}
 
+void SubBill::remove(BillComponent *component)
+{
 }

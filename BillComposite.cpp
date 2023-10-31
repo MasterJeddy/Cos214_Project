@@ -6,40 +6,46 @@
 ///
 /// \file
 /// This file contains the implementation of the BillComposite.h file.
-/// 
+///
 ///
 //===----------------------------------------------------------------------===//
 
 #include "BillComposite.h"
 
-BillComposite::BillComposite(std::string compositeName){
+BillComposite::BillComposite(std::string compositeName)
+{
     this->name = compositeName;
 }
 
-void BillComposite::add(BillComponent* component){
+void BillComposite::add(BillComponent *component)
+{
     children.push_back(component);
 }
 
-std::string BillComposite::getName(){
+std::string BillComposite::getName()
+{
     return name;
 }
 
-void BillComposite::remove(BillComponent* component){
-    
-    std::vector<BillComponent*>::iterator miki = children.begin();
-    for (miki; miki<children.end();miki++)
+void BillComposite::remove(BillComponent *component)
+{
+
+    std::vector<BillComponent *>::iterator miki = children.begin();
+    for (miki; miki < children.end(); miki++)
     {
         if ((*miki)->getName() == component->getName())
         {
             children.erase(miki);
             break;
         }
-        
     }
-    
 }
 
-// BillComposite::~BillComposite(){
-    
-// }
+double BillComposite::getTotal()
+{
+    return 0.0;
+}
 
+BillComposite::~BillComposite()
+{
+}
