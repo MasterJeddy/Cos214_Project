@@ -64,12 +64,10 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
   // using ClockGetTimeAndTickTest for this test
 }
 
-
 TEST(MihailsTests, BillTest){
 
-    #include "BillComponent.h"
-    #include "SubBill.h"
-    #include "BillComposite.h"
+
+    // std::cout << "Total Cost: R" << mainBill.getTotal() << std::endl;
 
 
     SubBill item1("Item 1", 10.50);
@@ -84,11 +82,9 @@ TEST(MihailsTests, BillTest){
     BillComposite mainBill("Main Bill");
     mainBill.add(&subBill);
     mainBill.add(&item3);
-
     
-    std::cout << "Total Cost: $" << mainBill.getTotal() << std::endl;
+    ASSERT_EQ(mainBill.getTotal(), 23.50)<<"Bill system working - total calculated correctly";
 
-    
 
 
 }

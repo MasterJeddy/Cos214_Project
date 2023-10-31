@@ -322,6 +322,10 @@ build/CMakeFiles/Cos214_Project.dir/BillComponent.cpp.o.d
 build/GTest/Google_Tests_run
 build/GTest/CMakeFiles/Google_Tests_run.dir/__/BillComponent.cpp.o
 build/GTest/CMakeFiles/Google_Tests_run.dir/__/BillComponent.cpp.o.d
+GTest/tests.cpp
+build/.cmake/api/v1/reply/codemodel-v2-b2bd0821d662fea396a7.json
+build/.cmake/api/v1/reply/index-2023-10-31T19-32-57-0762.json
+build/.cmake/api/v1/reply/target-Google_Tests_run-Debug-19f55ff6a75bec5a92a0.json
 .vscode/settings.json
 build/cmake_install.cmake
 build/CMakeCache.txt

@@ -42,8 +42,15 @@ void BillComposite::remove(BillComponent *component)
 }
 
 double BillComposite::getTotal()
-{
-    return 0.0;
+{   
+    
+    //loops through all the children in the composite and then will calculate the getTotal for each of the children
+    double total = 0;
+    for (BillComponent* child: children)
+    {
+        total += child->getTotal();
+    }
+    return total; 
 }
 
 BillComposite::~BillComposite()
