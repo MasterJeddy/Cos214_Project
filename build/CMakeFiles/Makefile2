@@ -151,12 +151,12 @@ GTest/lib/googletest/clean: GTest/lib/googletest/CMakeFiles/gtest_main.dir/clean
 CMakeFiles/Cos214_Project.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cos214_Project.dir/build.make CMakeFiles/Cos214_Project.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cos214_Project.dir/build.make CMakeFiles/Cos214_Project.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=1,2 "Built target Cos214_Project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=1,2,3 "Built target Cos214_Project"
 .PHONY : CMakeFiles/Cos214_Project.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Cos214_Project.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Cos214_Project.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles 0
 .PHONY : CMakeFiles/Cos214_Project.dir/rule
@@ -178,12 +178,12 @@ GTest/CMakeFiles/Google_Tests_run.dir/all: GTest/lib/googletest/CMakeFiles/gtest
 GTest/CMakeFiles/Google_Tests_run.dir/all: GTest/lib/googletest/CMakeFiles/gtest_main.dir/all
 	$(MAKE) $(MAKESILENT) -f GTest/CMakeFiles/Google_Tests_run.dir/build.make GTest/CMakeFiles/Google_Tests_run.dir/depend
 	$(MAKE) $(MAKESILENT) -f GTest/CMakeFiles/Google_Tests_run.dir/build.make GTest/CMakeFiles/Google_Tests_run.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=3,4 "Built target Google_Tests_run"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=4,5,6 "Built target Google_Tests_run"
 .PHONY : GTest/CMakeFiles/Google_Tests_run.dir/all
 
 # Build rule for subdir invocation for target.
 GTest/CMakeFiles/Google_Tests_run.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 GTest/CMakeFiles/Google_Tests_run.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles 0
 .PHONY : GTest/CMakeFiles/Google_Tests_run.dir/rule
@@ -204,7 +204,7 @@ GTest/CMakeFiles/Google_Tests_run.dir/clean:
 GTest/lib/googlemock/CMakeFiles/gmock.dir/all: GTest/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googlemock/CMakeFiles/gmock.dir/build.make GTest/lib/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googlemock/CMakeFiles/gmock.dir/build.make GTest/lib/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=5,6 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=7,8 "Built target gmock"
 .PHONY : GTest/lib/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -227,11 +227,11 @@ GTest/lib/googlemock/CMakeFiles/gmock.dir/clean:
 # Target rules for target GTest/lib/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-GTest/lib/googlemock/CMakeFiles/gmock_main.dir/all: GTest/lib/googlemock/CMakeFiles/gmock.dir/all
 GTest/lib/googlemock/CMakeFiles/gmock_main.dir/all: GTest/lib/googletest/CMakeFiles/gtest.dir/all
+GTest/lib/googlemock/CMakeFiles/gmock_main.dir/all: GTest/lib/googlemock/CMakeFiles/gmock.dir/all
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googlemock/CMakeFiles/gmock_main.dir/build.make GTest/lib/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googlemock/CMakeFiles/gmock_main.dir/build.make GTest/lib/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=7,8 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=9,10 "Built target gmock_main"
 .PHONY : GTest/lib/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -257,7 +257,7 @@ GTest/lib/googlemock/CMakeFiles/gmock_main.dir/clean:
 GTest/lib/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googletest/CMakeFiles/gtest.dir/build.make GTest/lib/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googletest/CMakeFiles/gtest.dir/build.make GTest/lib/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=9,10 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=11,12 "Built target gtest"
 .PHONY : GTest/lib/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -283,7 +283,7 @@ GTest/lib/googletest/CMakeFiles/gtest.dir/clean:
 GTest/lib/googletest/CMakeFiles/gtest_main.dir/all: GTest/lib/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googletest/CMakeFiles/gtest_main.dir/build.make GTest/lib/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googletest/CMakeFiles/gtest_main.dir/build.make GTest/lib/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=11,12 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/CMakeFiles --progress-num=13,14 "Built target gtest_main"
 .PHONY : GTest/lib/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.

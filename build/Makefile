@@ -239,6 +239,30 @@ gtest_main/fast:
 	$(MAKE) $(MAKESILENT) -f GTest/lib/googletest/CMakeFiles/gtest_main.dir/build.make GTest/lib/googletest/CMakeFiles/gtest_main.dir/build
 .PHONY : gtest_main/fast
 
+Clock.o: Clock.cpp.o
+.PHONY : Clock.o
+
+# target to build an object file
+Clock.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cos214_Project.dir/build.make CMakeFiles/Cos214_Project.dir/Clock.cpp.o
+.PHONY : Clock.cpp.o
+
+Clock.i: Clock.cpp.i
+.PHONY : Clock.i
+
+# target to preprocess a source file
+Clock.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cos214_Project.dir/build.make CMakeFiles/Cos214_Project.dir/Clock.cpp.i
+.PHONY : Clock.cpp.i
+
+Clock.s: Clock.cpp.s
+.PHONY : Clock.s
+
+# target to generate assembly for a file
+Clock.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Cos214_Project.dir/build.make CMakeFiles/Cos214_Project.dir/Clock.cpp.s
+.PHONY : Clock.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -281,6 +305,9 @@ help:
 	@echo "... gmock_main"
 	@echo "... gtest"
 	@echo "... gtest_main"
+	@echo "... Clock.o"
+	@echo "... Clock.i"
+	@echo "... Clock.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

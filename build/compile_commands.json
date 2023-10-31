@@ -6,10 +6,22 @@
   "output": "CMakeFiles/Cos214_Project.dir/main.cpp.o"
 },
 {
+  "directory": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/build",
+  "command": "/usr/bin/g++   -g -std=gnu++14 -o CMakeFiles/Cos214_Project.dir/Clock.cpp.o -c /home/nator/Code_Nator/COS214/Project/Cos214_Project/Clock.cpp",
+  "file": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/Clock.cpp",
+  "output": "CMakeFiles/Cos214_Project.dir/Clock.cpp.o"
+},
+{
   "directory": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/GTest",
   "command": "/usr/bin/g++  -isystem /home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/lib/googletest/include -isystem /home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/lib/googletest -g -std=gnu++14 -o CMakeFiles/Google_Tests_run.dir/tests.cpp.o -c /home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/tests.cpp",
   "file": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/tests.cpp",
   "output": "GTest/CMakeFiles/Google_Tests_run.dir/tests.cpp.o"
+},
+{
+  "directory": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/GTest",
+  "command": "/usr/bin/g++  -isystem /home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/lib/googletest/include -isystem /home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/lib/googletest -g -std=gnu++14 -o CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o -c /home/nator/Code_Nator/COS214/Project/Cos214_Project/Clock.cpp",
+  "file": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/Clock.cpp",
+  "output": "GTest/CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o"
 },
 {
   "directory": "/home/nator/Code_Nator/COS214/Project/Cos214_Project/build/GTest/lib/googlemock",

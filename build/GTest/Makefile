@@ -175,6 +175,30 @@ Google_Tests_run/fast:
 	cd /home/nator/Code_Nator/COS214/Project/Cos214_Project/build && $(MAKE) $(MAKESILENT) -f GTest/CMakeFiles/Google_Tests_run.dir/build.make GTest/CMakeFiles/Google_Tests_run.dir/build
 .PHONY : Google_Tests_run/fast
 
+__/Clock.o: __/Clock.cpp.o
+.PHONY : __/Clock.o
+
+# target to build an object file
+__/Clock.cpp.o:
+	cd /home/nator/Code_Nator/COS214/Project/Cos214_Project/build && $(MAKE) $(MAKESILENT) -f GTest/CMakeFiles/Google_Tests_run.dir/build.make GTest/CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o
+.PHONY : __/Clock.cpp.o
+
+__/Clock.i: __/Clock.cpp.i
+.PHONY : __/Clock.i
+
+# target to preprocess a source file
+__/Clock.cpp.i:
+	cd /home/nator/Code_Nator/COS214/Project/Cos214_Project/build && $(MAKE) $(MAKESILENT) -f GTest/CMakeFiles/Google_Tests_run.dir/build.make GTest/CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.i
+.PHONY : __/Clock.cpp.i
+
+__/Clock.s: __/Clock.cpp.s
+.PHONY : __/Clock.s
+
+# target to generate assembly for a file
+__/Clock.cpp.s:
+	cd /home/nator/Code_Nator/COS214/Project/Cos214_Project/build && $(MAKE) $(MAKESILENT) -f GTest/CMakeFiles/Google_Tests_run.dir/build.make GTest/CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.s
+.PHONY : __/Clock.cpp.s
+
 tests.o: tests.cpp.o
 .PHONY : tests.o
 
@@ -212,6 +236,9 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... Google_Tests_run"
+	@echo "... __/Clock.o"
+	@echo "... __/Clock.i"
+	@echo "... __/Clock.s"
 	@echo "... tests.o"
 	@echo "... tests.i"
 	@echo "... tests.s"

@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/nator/Code_Nator/COS214/Project/Cos214_Project/Clock.cpp" "GTest/CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o" "gcc" "GTest/CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o.d"
   "/home/nator/Code_Nator/COS214/Project/Cos214_Project/GTest/tests.cpp" "GTest/CMakeFiles/Google_Tests_run.dir/tests.cpp.o" "gcc" "GTest/CMakeFiles/Google_Tests_run.dir/tests.cpp.o.d"
   )
 

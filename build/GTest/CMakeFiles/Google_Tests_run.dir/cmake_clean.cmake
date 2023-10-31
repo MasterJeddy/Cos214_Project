@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o"
+  "CMakeFiles/Google_Tests_run.dir/__/Clock.cpp.o.d"
   "CMakeFiles/Google_Tests_run.dir/tests.cpp.o"
   "CMakeFiles/Google_Tests_run.dir/tests.cpp.o.d"
   "Google_Tests_run"
