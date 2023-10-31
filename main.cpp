@@ -3,7 +3,7 @@
 //
 
 int randomvalue(){
-  return 3;
+  return 5;
 }
 
 int main() {
