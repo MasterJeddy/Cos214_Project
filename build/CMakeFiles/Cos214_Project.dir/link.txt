@@ -1,1 +1,0 @@
-/usr/bin/g++ -g CMakeFiles/Cos214_Project.dir/main.cpp.o CMakeFiles/Cos214_Project.dir/Clock.cpp.o -o Cos214_Project 
