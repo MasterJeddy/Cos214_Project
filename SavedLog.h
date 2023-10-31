@@ -19,10 +19,12 @@
 
 class SavedLog {
 private:
-  std::vector<UserCommand> commands;
+  std::vector<UserCommand*>* commands;
 public:
-  std::vector<UserCommand> getCommands();
-  void setCommands(std::vector<UserCommand> commands);
+  std::vector<UserCommand*>* getCommands();
+  void setCommands(std::vector<UserCommand*>* commands);
+  explicit SavedLog(std::vector<UserCommand*>* commands);
+  ~SavedLog();
 };
 
 #endif //COS214_PROJECT__SAVEDLOG_H

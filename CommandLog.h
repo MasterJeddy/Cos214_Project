@@ -21,15 +21,18 @@
 #include "SavedLog.h"
 #include "InputPoll.h"
 
+
 class CommandLog {
 private:
   InputPoll* inputPoll;
-  std::vector<UserCommand> commands;
+  std::vector<UserCommand*>* commands;
 public:
-  void load(SavedLog log);
-  SavedLog save();
+  void load(SavedLog* log);
+  SavedLog* save();
   void addEntry(UserCommand* com);
   explicit CommandLog(InputPoll* inputPoll);
+  ~CommandLog();
+   friend class CommandLogIterator;
 };
 
 #endif //COS214_PROJECT__COMMANDLOG_H

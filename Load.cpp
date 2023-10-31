@@ -33,3 +33,6 @@ Load::Load(CommandLog* commandLog,Logs* logs,std::string* file) {
   this->commandLog = commandLog;
   this->logs = logs;
 }
+UserCommand *Load::clone() {
+  return new Load(commandLog,logs,file);
+}

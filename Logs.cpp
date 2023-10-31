@@ -14,15 +14,18 @@
 void Logs::dumpToFile(std::string file) {
 
 }
-SavedLog Logs::loadFromFile(std::string file) {
-  return SavedLog();
+SavedLog * Logs::loadFromFile(std::string file) {
+  return nullptr;
 }
-void Logs::tempSave(SavedLog save) {
 
+void Logs::tempSave(SavedLog* save) {
+    temp = save;
 }
-SavedLog Logs::loadTemp() {
-  return SavedLog();
+
+SavedLog * Logs::loadTemp() {
+  return nullptr;
 }
+
 Logs::Logs() {
-
+    saves = new std::map<std::string,SavedLog>();
 }
