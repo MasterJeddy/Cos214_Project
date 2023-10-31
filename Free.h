@@ -1,0 +1,26 @@
+//===-- COS214_Project/Free.h - Free class definition ------*- C++ -*-===//
+//
+// COS 214 Project.
+//
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// This file contains the declaration of the Free class which acts here as the
+/// ConcreteState class of the state design pattern. 
+///
+//===----------------------------------------------------------------------===//
+
+#ifndef COS214_PROJECT_FREE_H
+#define COS214_PROJECT_FREE_H
+#include "TableState.h"
+
+class Free: public TableState
+{
+   
+    public:
+    virtual void proceed();
+    virtual void hold();
+    Free();
+};
+
+#endif
