@@ -13,15 +13,29 @@
 //===----------------------------------------------------------------------===//
 
 #include "CommandLog.h"
-void CommandLog::load(SavedLog log) {
+void CommandLog::load(SavedLog* log) {
+    delete this->commands;
+    this->commands = log->getCommands();
+    inputPoll->resetToLog(this);
+}
 
+SavedLog* CommandLog::save() {
+  return new SavedLog(commands);
 }
-SavedLog CommandLog::save() {
-  return SavedLog();
-}
+
 void CommandLog::addEntry(UserCommand* com) {
-
+  commands->push_back(com->clone());
 }
+
 CommandLog::CommandLog(InputPoll* inputPoll) {
   this->inputPoll = inputPoll;
+  this->commands = new std::vector<UserCommand*>();
+}
+
+CommandLog::~CommandLog() {
+  while (!commands->empty()){
+    delete commands->back();
+    commands->pop_back();
+  }
+  delete this->commands;
 }

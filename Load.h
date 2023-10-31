@@ -26,6 +26,7 @@ public:
   void execute() override;
   void execute(std::string* file);
   explicit Load(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
+  UserCommand *clone() override;
 };
 
 #endif //COS214_PROJECT__LOAD_H

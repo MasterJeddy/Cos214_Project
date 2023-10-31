@@ -12,9 +12,16 @@
 //===----------------------------------------------------------------------===//
 
 #include "SavedLog.h"
-std::vector<UserCommand> SavedLog::getCommands() {
-  return std::vector<UserCommand>();
+std::vector<UserCommand*>* SavedLog::getCommands() {
+  return commands;
 }
-void SavedLog::setCommands(std::vector<UserCommand> commands) {
-
+void SavedLog::setCommands(std::vector<UserCommand*>* commands) {
+  delete this->commands;
+  this->commands = commands;
+}
+SavedLog::SavedLog(std::vector<UserCommand*> *commands) {
+  this->commands = commands;
+}
+SavedLog::~SavedLog() {
+  delete this->commands;
 }

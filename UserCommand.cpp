@@ -11,3 +11,4 @@
 //===----------------------------------------------------------------------===//
 
 #include "UserCommand.h"
+UserCommand::~UserCommand() =default;
