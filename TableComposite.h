@@ -24,6 +24,7 @@ class TableComposite: public TableComponent
     int maxCapacity;
     TableState* tableState;
     BillComponent bill;
+    int waiterId;
 
     public: 
     void add(TableComponent component);
@@ -35,7 +36,7 @@ class TableComposite: public TableComponent
     void setTableState(TableState* tableState);
     void request();
     void requestBill();
-    TableComposite(int id);
+    TableComposite(int id, int waiterId);
     String getId();
 
 };

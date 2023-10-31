@@ -12,12 +12,13 @@
 
 #include "TableComposite.h"
 
-TableComposite::TableComposite(int id)
+TableComposite::TableComposite(int id, int waiterId)
 {
     // id was made a string such that we do not end up with a case where TableComposite and Customer do not end up with the same Id. We will append a special character
     // for each respective object in order to help avoid any sort of confusion later down the line.
     std::string tempy = to_string(id) + "TC";
     this->id = tempy;
+    this->waiterId = waiterId;
 }
 
 TableComposite::add(TableComponent component)
@@ -73,10 +74,34 @@ void TableComposite::setTableState(TableState *tableState)
 
 void TableComposite::request()
 {
+    for(Observer* observer: ObserverList){
+        //loop through the observer list
+        if (observer->getType().equals("Waiter") && observer->getId() == waiterId)
+        {
+            //notify this waiter
+            observer->update();
+            break;
+        }
+        
+    }
 }
 
 void TableComposite::requestBill()
 {
+    //notify the waiter then pass in the bill so that the waiter can create a bill
+    for(Observer* observer: ObserverList){
+        //loop through the observer list
+        if (observer->getType().equals("Waiter") && observer->getId() == waiterId)
+        {
+            //notify this waiter
+            //change the state to bill
+            tableState->proceed();
+
+            observer->update();
+            break;
+        }
+        
+    }
 }
 
 std::String TableComposite::getId()
