@@ -12,3 +12,16 @@
 //===----------------------------------------------------------------------===//
 
 #include "Update.h"
+void Update::execute() {
+
+}
+
+UserCommand *Update::clone() {
+  return new Update;
+}
+
+COMMANDS Update::getType() {
+  return COMMANDS::UPDATE;
+}
+
+Update::~Update() = default;

@@ -15,7 +15,15 @@
 
 enum class COMMANDS {
   SAVE,
-  LOAD
+  LOAD,
+  HIRE_MAITRE_D,
+  BUY_TABLE,
+  EXPAND_FLOOR,
+  HIRE_WAITER,
+  UPDATE,
+  EXPAND_KITCHEN,
+  HIRE_CHEF,
+  BUY_STOCK
 };
 
 class UserCommand {

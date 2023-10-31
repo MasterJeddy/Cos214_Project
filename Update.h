@@ -16,7 +16,11 @@
 
 #include "UserCommand.h"
 class Update : public UserCommand{
-
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~Update() override;
 };
 
 #endif //COS214_PROJECT__UPDATE_H

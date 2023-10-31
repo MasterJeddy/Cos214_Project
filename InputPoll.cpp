@@ -32,11 +32,22 @@ void InputPoll::poll() {
 }
 
 void InputPoll::resetToLog(CommandLog* log) {
-  //This needs to be updated to reset member classes
   CommandLogIterator* it = log->createIterator();
   for (it->first();!it->isDone();it->next()){
     if (it->currentItem()->getType() != COMMANDS::LOAD && it->currentItem()->getType() != COMMANDS::SAVE){
-        it->currentItem();
+        //Update paramaters as needed
+        switch (it->currentItem()->getType()) {
+        case COMMANDS::HIRE_MAITRE_D:break;
+        case COMMANDS::BUY_TABLE:break;
+        case COMMANDS::EXPAND_FLOOR:break;
+        case COMMANDS::HIRE_WAITER:break;
+        case COMMANDS::UPDATE:break;
+        case COMMANDS::EXPAND_KITCHEN:break;
+        case COMMANDS::HIRE_CHEF:break;
+        case COMMANDS::BUY_STOCK:break;
+        default:break;
+        }
+        it->currentItem()->execute();
     }
   }
   delete it;

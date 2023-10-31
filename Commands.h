@@ -19,31 +19,61 @@
 #include "UserCommand.h"
 
 class HireMaitreD : public UserCommand{
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~HireMaitreD() override;
 
 };
 
 class BuyTable : public UserCommand{
-
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~BuyTable() override;
 };
 
 class ExpandFloor : public UserCommand{
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~ExpandFloor() override;
 
 };
 
 class HireWaiter : public UserCommand{
-
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~HireWaiter() override;
 };
 
 class ExpandKitchen : public UserCommand{
-
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~ExpandKitchen() override;
 };
 
 class HireChef : public UserCommand{
-
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~HireChef() override;
 };
 
 class BuyStock : public UserCommand{
-
+public:
+  void execute() override;
+  UserCommand *clone() override;
+  COMMANDS getType() override;
+  ~BuyStock() override;
 };
 
 

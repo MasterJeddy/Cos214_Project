@@ -14,3 +14,100 @@
 //===----------------------------------------------------------------------===//
 
 #include "Commands.h"
+void HireMaitreD::execute() {
+
+}
+
+UserCommand *HireMaitreD::clone() {
+  return new HireMaitreD;
+}
+
+COMMANDS HireMaitreD::getType() {
+  return COMMANDS::HIRE_MAITRE_D;
+}
+
+HireMaitreD::~HireMaitreD() = default;
+
+void BuyTable::execute() {
+
+}
+
+UserCommand *BuyTable::clone() {
+  return new BuyTable;
+}
+
+COMMANDS BuyTable::getType() {
+  return COMMANDS::BUY_TABLE;
+}
+
+BuyTable::~BuyTable()  =default;
+
+void ExpandFloor::execute() {
+
+}
+
+UserCommand *ExpandFloor::clone() {
+  return new ExpandFloor;
+}
+
+COMMANDS ExpandFloor::getType() {
+  return COMMANDS::EXPAND_FLOOR;
+}
+
+ExpandFloor::~ExpandFloor() = default;
+
+void HireWaiter::execute() {
+
+}
+
+UserCommand *HireWaiter::clone() {
+  return new HireWaiter;
+}
+
+COMMANDS HireWaiter::getType() {
+  return COMMANDS::HIRE_WAITER;
+}
+
+HireWaiter::~HireWaiter() =default;
+
+void ExpandKitchen::execute() {
+
+}
+
+UserCommand *ExpandKitchen::clone() {
+  return nullptr;
+}
+
+COMMANDS ExpandKitchen::getType() {
+  return COMMANDS::EXPAND_KITCHEN;
+}
+
+ExpandKitchen::~ExpandKitchen() =default;
+
+void HireChef::execute() {
+
+}
+
+UserCommand *HireChef::clone() {
+  return new HireChef;
+}
+
+COMMANDS HireChef::getType() {
+  return COMMANDS::HIRE_CHEF;
+}
+
+HireChef::~HireChef() = default;
+
+void BuyStock::execute() {
+
+}
+
+UserCommand *BuyStock::clone() {
+  return new BuyStock;
+}
+
+COMMANDS BuyStock::getType() {
+  return COMMANDS::BUY_STOCK;
+}
+
+BuyStock::~BuyStock() = default;
