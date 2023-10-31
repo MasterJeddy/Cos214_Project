@@ -15,7 +15,8 @@
 #define COS214_PROJECT_INPUTPOLL_H
 
 #include "CommandLog.h"
-#include "Logs.h"
+class Logs;
+
 
 class InputPoll {
 private:
@@ -34,5 +35,6 @@ public:
 
 };
 
+#include "Logs.h"
 
 #endif //COS214_PROJECT_INPUTPOLL_H
