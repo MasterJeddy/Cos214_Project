@@ -16,11 +16,12 @@ WaitingOnFood::WaitingOnFood(){
     
 }
 
-void WaitingOnFood::proceed(){
-
+void WaitingOnFood::proceed(TableComposite* tableComp){
+    TableState* tempy = new Eating();
+    tableComp->setTableState(tempy);
 }
 
-void WaitingOnFood::hold(){
+void WaitingOnFood::hold(TableComposite* tableComp){
     
 }
 

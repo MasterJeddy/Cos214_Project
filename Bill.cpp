@@ -16,10 +16,12 @@ Bill::Bill(){
     
 }
 
-void Bill::proceed(){
-
+void Bill::proceed(TableComposite* tableComp){
+    TableState* tempy = new Occupied();
+    tableComp->setTableState(tempy);
 }
 
-void Bill::hold(){
-    
+void Bill::hold(TableComposite* tableComp){
+    TableState* tempy = new Occupied();
+    tableComp->setTableState(tempy);
 }

@@ -19,7 +19,6 @@ Occupied::Occupied(){
 void Occupied::proceed(TableComposite* tableComp){
     TableState* tempy = new WaitingOnWaiter();
     tableComp->setTableState(tempy);
-
 }
 
 void Occupied::hold(){

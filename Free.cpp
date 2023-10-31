@@ -16,12 +16,13 @@ Free::Free(){
     
 }
 
-void Free::proceed(){
-
+void Free::proceed(TableComposite* tableComp){
+    TableState* tempy = new Occupied();
+    tableComp->setTableState(tempy);
 }
 
-void Free::hold(){
-
+void Free::hold(TableComposite* tableComp){
+    
 }
 
 

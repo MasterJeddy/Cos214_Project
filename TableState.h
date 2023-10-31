@@ -12,13 +12,14 @@
 
 #ifndef COS214_PROJECT_TABLESTATE_H
 #define COS214_PROJECT_TABLESTATE_H
+#include "TableComposite.h"
 
 class TableState
 {
    
     public:
-    virtual void proceed() = 0;
-    virtual void hold() = 0;
+    virtual void proceed(TableComposite* tableComp) = 0;
+    virtual void hold(TableComposite* tableComp) = 0;
     TableState();
 };
 

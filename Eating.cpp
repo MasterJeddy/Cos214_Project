@@ -16,11 +16,12 @@ Eating::Eating(){
     
 }
 
-void Eating::proceed(){
-
+void Eating::proceed(TableComposite* tableComp){
+    TableState* tempy = new Bill();
+    tableComp->setTableState(tempy);
 }
 
-void Eating::hold(){
+void Eating::hold(TableComposite* tableComp){
     
 }
 

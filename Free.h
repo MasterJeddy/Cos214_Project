@@ -13,13 +13,15 @@
 #ifndef COS214_PROJECT_FREE_H
 #define COS214_PROJECT_FREE_H
 #include "TableState.h"
+#include "Occupied.h"
+
 
 class Free: public TableState
 {
    
     public:
-    virtual void proceed();
-    virtual void hold();
+    virtual void proceed(TableComposite* tableComp);
+    virtual void hold(TableComposite* tableComp);
     Free();
 };
 

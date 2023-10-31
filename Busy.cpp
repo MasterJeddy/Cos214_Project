@@ -16,11 +16,12 @@ Busy::Busy(){
     
 }
 
-void Busy::proceed(){
-
+void Busy::proceed(TableComposite* tableComp){
+    TableState* tempy = new WaitingOnWaiter();
+    tableComp->setTableState(tempy);
 }
 
-void Busy::hold(){
+void Busy::hold(TableComposite* tableComp){
     
 }
 

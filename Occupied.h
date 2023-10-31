@@ -13,13 +13,14 @@
 #ifndef COS214_PROJECT_OCCUPIED_H
 #define COS214_PROJECT_OCCUPIED_H
 #include "TableState.h"
+// #include "WaitingOnWaiter.h"
 
 class Occupied: public TableState
 {
    
     public:
-    virtual void proceed(TableState* tableComp);
-    virtual void hold();
+    virtual void proceed(TableComposite* tableComp);
+    virtual void hold(TableComposite* tableComp);
     Occupied();
 };
 

@@ -16,13 +16,17 @@ WaitingOnWaiter::WaitingOnWaiter(){
     
 }
 
-void WaitingOnWaiter::proceed(){
-
+void WaitingOnWaiter::proceed(TableComposite* tableComp){
+    TableState* tempy = new WaitingOnFood();
+    tableComp->setTableState(tempy);
 }
 
-void WaitingOnWaiter::hold(){
-    
+void WaitingOnWaiter::hold(TableComposite* tableComp){
+    //Table rejected the service of the waiter and therefore the state needs to transition to the "Busy state". The context will call the hold() function if the service was rejected.
+    TableState* tempy = new Busy();
+    tableComp->setTableState(tempy);
 }
+
 
 
 

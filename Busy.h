@@ -18,8 +18,8 @@ class Busy: public TableState
 {
    
     public:
-    virtual void proceed();
-    virtual void hold();
+    virtual void proceed(TableComsposite* tableComp);
+    virtual void hold(TableComposite* tableComp);
     Busy();
 };
 

@@ -18,8 +18,8 @@ class Bill: public TableState
 {
    
     public:
-    virtual void proceed();
-    virtual void hold();
+    virtual void proceed(TableComposite* tableComp);
+    virtual void hold(TableComposite* tableComp);
     Bill();
 };
 
