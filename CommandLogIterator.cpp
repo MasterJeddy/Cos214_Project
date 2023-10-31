@@ -1,6 +1,15 @@
+//===-- COS214_Project/CommandLogIterator.cpp - CommandLogIterator class implementation ------*- C++ -*-===//
 //
-// Created by maili on 2023/10/31.
+// COS 214 Project.
 //
+//===----------------------------------------------------------------------===/////
+/// \file
+/// This file contains the implementation of the CommandLogIterator class.
+/// CommandLogIterator will serve as an concreteIterator in the iterator
+/// design pattern. It will be used buy InputPoll to traverse the CommandLog
+/// when resetting itself.
+///
+//===----------------------------------------------------------------------===//
 
 #include "CommandLogIterator.h"
 void CommandLogIterator::first() {
@@ -17,5 +26,4 @@ UserCommand *CommandLogIterator::currentItem() {
 }
 CommandLogIterator::CommandLogIterator(CommandLog *commandLog) {
   this->commandLog = commandLog;
-
 }

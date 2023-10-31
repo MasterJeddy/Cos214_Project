@@ -20,7 +20,7 @@
 #include "UserCommand.h"
 #include "SavedLog.h"
 #include "InputPoll.h"
-
+#include "CommandLogIterator.h"
 
 class CommandLog {
 private:
@@ -32,6 +32,7 @@ public:
   void addEntry(UserCommand* com);
   explicit CommandLog(InputPoll* inputPoll);
   ~CommandLog();
+  CommandLogIterator* createIterator();
    friend class CommandLogIterator;
 };
 
