@@ -26,6 +26,7 @@ void InputPoll::poll() {
       } else  {
         commandLog->addEntry(command);
         command->execute();
+        delete command;
       }
     }
 
@@ -70,6 +71,24 @@ UserCommand* InputPoll::queryUser() {
     case '2': {
       return new Load(commandLog,logs);
     } break;
+    case '3': {
+      return new Update();
+    } break;
+    case '4': {
+      return new HireMaitreD ;
+    } break;
+    case '6': {
+      return new HireWaiter;
+    } break;
+    case '7': {
+      return new HireChef;
+    } break;
+    case '8': {
+      return new ExpandFloor;
+    } break;
+    case '9': {
+      return new ExpandKitchen;
+    } break;
     case 'q': {
       return nullptr;
     } break;
@@ -79,6 +98,8 @@ UserCommand* InputPoll::queryUser() {
     }
   } while (true);
 }
+
 InputPoll::~InputPoll() {
+  delete logs;
   delete commandLog;
 }

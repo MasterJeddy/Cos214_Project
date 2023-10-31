@@ -22,6 +22,4 @@ void SavedLog::setCommands(std::vector<UserCommand*>* commands) {
 SavedLog::SavedLog(std::vector<UserCommand*> *commands) {
   this->commands = commands;
 }
-SavedLog::~SavedLog() {
-  delete this->commands;
-}
+SavedLog::~SavedLog() =default;

@@ -15,6 +15,8 @@
 #define COS214_PROJECT_INPUTPOLL_H
 
 #include "CommandLog.h"
+#include "Commands.h"
+#include "Update.h"
 class Logs;
 
 

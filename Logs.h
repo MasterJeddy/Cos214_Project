@@ -27,6 +27,7 @@ private:
   void tempSave(SavedLog* save);
   SavedLog * loadTemp();
   Logs();
+  ~Logs();
 };
 
 #endif //COS214_PROJECT__LOGS_H

@@ -20,6 +20,7 @@ SavedLog * Logs::loadFromFile(std::string file) {
 }
 
 void Logs::tempSave(SavedLog* save) {
+    delete temp; //Test this nullptr thing
     temp = save;
 }
 
@@ -28,5 +29,11 @@ SavedLog * Logs::loadTemp() {
 }
 
 Logs::Logs() {
+    temp = nullptr;
     saves = new std::map<std::string,SavedLog>();
+}
+
+Logs::~Logs() {
+  delete temp; //Works cause nullptr
+  delete saves;
 }

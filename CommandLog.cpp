@@ -14,7 +14,11 @@
 
 #include "CommandLog.h"
 void CommandLog::load(SavedLog* log) {
-    commands->clear();
+    while (!commands->empty()){
+      delete commands->back();
+      commands->pop_back();
+    }
+
     for (auto com:*log->getCommands()){
       this->commands->push_back(com->clone());
     }
