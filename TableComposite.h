@@ -19,8 +19,8 @@
 class TableComposite: public TableComponent
 {
     private: 
-    TableComponent* children;
-    int id; 
+    std::vector<TableComponent*> children;
+    std::String id; 
     int maxCapacity;
     TableState* tableState;
     BillComponent bill;
@@ -30,11 +30,13 @@ class TableComposite: public TableComponent
     void remove(TableComponent component);
     TableComponent getChild(int id);
     int getCapacity();
-    void setCapacity();
+    void setCapacity(int capacity);
     TableState getTableState();
+    void setTableState(TableState* tableState);
     void request();
     void requestBill();
-    TableComposite();
+    TableComposite(int id);
+    String getId();
 
 };
 

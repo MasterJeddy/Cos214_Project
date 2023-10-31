@@ -6,9 +6,80 @@
 ///
 /// \file
 /// This file contains the implementation of the TableComposite.h file.
-/// 
+///
 ///
 //===----------------------------------------------------------------------===//
 
 #include "TableComposite.h"
 
+TableComposite::TableComposite(int id)
+{
+    // id was made a string such that we do not end up with a case where TableComposite and Customer do not end up with the same Id. We will append a special character
+    // for each respective object in order to help avoid any sort of confusion later down the line.
+    std::string tempy = to_string(id) + "TC";
+    this->id = tempy;
+}
+
+TableComposite::add(TableComponent component)
+{
+    children.push_back(component);
+}
+
+TableComposite::remove(TableComponent component)
+{
+
+    std::vector<TableComponent *>::iterator miki = children.begin();
+    for (miki; miki < children.end(); miki++)
+    {
+        if ((*miki)->getId() == component->getId())
+        {
+            children.erase(miki);
+            break;
+        }
+    }
+}
+
+TableComponent TableComposite::getChild(int id)
+{
+    for (TableComponent child : children)
+    {
+        if (child->getId() == id)
+        {
+            return child;
+        }
+        return null;
+    }
+}
+
+int TableComposite::getCapacity()
+{
+    return this->maxCapacity;
+}
+
+void TableComposite::setCapacity(int capacity)
+{
+    this->maxCapacity = capacity;
+}
+
+TableState TableComposite::getTableState()
+{
+    return this->tableState;
+}
+
+void TableComposite::setTableState(TableState *tableState)
+{
+    this->tableState = tableState;
+}
+
+void TableComposite::request()
+{
+}
+
+void TableComposite::requestBill()
+{
+}
+
+std::String TableComposite::getId()
+{
+    return this->id;
+}
