@@ -14,6 +14,7 @@
 void Logs::dumpToFile(std::string file) {
 
 }
+
 SavedLog * Logs::loadFromFile(std::string file) {
   return nullptr;
 }
@@ -23,7 +24,7 @@ void Logs::tempSave(SavedLog* save) {
 }
 
 SavedLog * Logs::loadTemp() {
-  return nullptr;
+    return temp;
 }
 
 Logs::Logs() {

@@ -40,3 +40,7 @@ Save::~Save() {
 UserCommand *Save::clone() {
   return new Save(commandLog,logs,file);
 }
+
+COMMANDS Save::getType() {
+  return COMMANDS::SAVE;
+}

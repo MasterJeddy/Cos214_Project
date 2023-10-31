@@ -36,3 +36,9 @@ Load::Load(CommandLog* commandLog,Logs* logs,std::string* file) {
 UserCommand *Load::clone() {
   return new Load(commandLog,logs,file);
 }
+COMMANDS Load::getType() {
+  return COMMANDS::LOAD;
+}
+Load::~Load() {
+
+}
