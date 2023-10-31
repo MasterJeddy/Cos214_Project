@@ -14,8 +14,10 @@
 
 #include "CommandLog.h"
 void CommandLog::load(SavedLog* log) {
-    delete this->commands;
-    this->commands = log->getCommands();
+    commands->clear();
+    for (auto com:*log->getCommands()){
+      this->commands->push_back(com->clone());
+    }
     inputPoll->resetToLog(this);
 }
 
