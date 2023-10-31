@@ -39,3 +39,6 @@ CommandLog::~CommandLog() {
   }
   delete this->commands;
 }
+CommandLogIterator *CommandLog::createIterator() {
+  return new CommandLogIterator(this);
+}
