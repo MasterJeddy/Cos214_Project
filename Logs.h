@@ -22,8 +22,8 @@ private:
   std::map<std::string,SavedLog>* saves;
   SavedLog* temp;
  public:
-  void dumpToFile(std::string file);
-  SavedLog * loadFromFile(std::string file);
+  void dumpToFile(std::string& file);
+  SavedLog * loadFromFile(std::string& file);
   void tempSave(SavedLog* save);
   SavedLog * loadTemp();
   Logs();

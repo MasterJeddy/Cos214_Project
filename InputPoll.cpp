@@ -89,6 +89,16 @@ UserCommand* InputPoll::queryUser() {
     case '9': {
       return new ExpandKitchen;
     } break;
+    case 's': {
+      std::string file;
+      std::cin >> file;
+      return new Save(commandLog,logs,&file);
+    } break;
+    case 'l': {
+      std::string file;
+      std::cin >> file;
+      return new Load(commandLog,logs,&file);
+    } break;
     case 'q': {
       return nullptr;
     } break;

@@ -75,7 +75,7 @@ void ExpandKitchen::execute() {
 }
 
 UserCommand *ExpandKitchen::clone() {
-  return nullptr;
+  return new ExpandKitchen;
 }
 
 COMMANDS ExpandKitchen::getType() {

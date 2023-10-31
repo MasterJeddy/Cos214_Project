@@ -26,7 +26,7 @@ void CommandLog::load(SavedLog* log) {
 }
 
 SavedLog* CommandLog::save() {
-  return new SavedLog(commands);
+  return new SavedLog(commands);//This is wrong
 }
 
 void CommandLog::addEntry(UserCommand* com) {

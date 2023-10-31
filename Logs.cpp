@@ -11,12 +11,72 @@
 //===----------------------------------------------------------------------===//
 
 #include "Logs.h"
-void Logs::dumpToFile(std::string file) {
+#include "Save.h"
+#include "Load.h"
+#include <fstream>
 
+void Logs::dumpToFile(std::string& file) {
+  std::ofstream MyFile(file+".dat",std::ios::out);
+  if (temp == nullptr)
+    return;
+  auto* commands = temp->getCommands();
+  for (auto com:*commands){
+    MyFile << (int)com->getType() << std::endl;
+  }
+  MyFile.close();
 }
 
-SavedLog * Logs::loadFromFile(std::string file) {
-  return nullptr;
+SavedLog * Logs::loadFromFile(std::string& file) {
+
+  if (temp == nullptr) {
+
+  }
+
+  auto* commands = temp->getCommands();
+  while (!commands->empty()){
+    delete commands->back();
+    commands->pop_back();
+  }
+
+  std::ifstream MyReadFile(file+".dat");
+  std::string temps;
+  while (getline(MyReadFile, temps)) {
+    switch ((COMMANDS)std::stoi(temps)) {
+    case COMMANDS::SAVE:
+      commands->push_back(new Save(nullptr, nullptr));
+      break;
+    case COMMANDS::LOAD:
+      commands->push_back(new Load(nullptr, nullptr));
+      break;
+    case COMMANDS::HIRE_MAITRE_D:
+      commands->push_back(new HireMaitreD);
+      break;
+    case COMMANDS::BUY_TABLE:
+      commands->push_back(new BuyTable);
+      break;
+    case COMMANDS::EXPAND_FLOOR:
+      commands->push_back(new ExpandFloor);
+      break;
+    case COMMANDS::HIRE_WAITER:
+      commands->push_back(new HireWaiter());
+      break;
+    case COMMANDS::UPDATE:
+      commands->push_back(new Update);
+      break;
+    case COMMANDS::EXPAND_KITCHEN:
+      commands->push_back(new ExpandKitchen);
+      break;
+    case COMMANDS::HIRE_CHEF:
+      commands->push_back(new HireChef);
+      break;
+    case COMMANDS::BUY_STOCK:
+      commands->push_back(new BuyStock);
+      break;
+    }
+  }
+  MyReadFile.close();
+
+  return temp;
 }
 
 void Logs::tempSave(SavedLog* save) {
