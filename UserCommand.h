@@ -18,7 +18,7 @@ public:
   /// This function must be implemented by all use commands
   virtual void execute() =0;
   virtual UserCommand* clone() = 0;
-  virtual ~UserCommand()
+  virtual ~UserCommand();
 };
 
 #endif //COS214_PROJECT__USERCOMMAND_H

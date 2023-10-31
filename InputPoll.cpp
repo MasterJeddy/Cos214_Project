@@ -36,7 +36,7 @@ void InputPoll::resetToLog(CommandLog* log) {
 }
 
 InputPoll::InputPoll() {
-  commandLog = new CommandLog;
+  commandLog = new CommandLog(this);
   logs = new Logs;
 }
 

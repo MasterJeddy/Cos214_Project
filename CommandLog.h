@@ -18,9 +18,10 @@
 #include <vector>
 #include <string>
 #include "UserCommand.h"
-#include "SavedLog.h"
-#include "InputPoll.h"
 #include "CommandLogIterator.h"
+
+class InputPoll;
+class SavedLog;
 
 class CommandLog {
 private:
@@ -33,7 +34,10 @@ public:
   explicit CommandLog(InputPoll* inputPoll);
   ~CommandLog();
   CommandLogIterator* createIterator();
-   friend class CommandLogIterator;
+  friend class CommandLogIterator;
 };
+
+#include "InputPoll.h"
+#include "SavedLog.h"
 
 #endif //COS214_PROJECT__COMMANDLOG_H

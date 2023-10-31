@@ -14,8 +14,9 @@
 #ifndef COS214_PROJECT__COMMANDLOGITERATOR_H
 #define COS214_PROJECT__COMMANDLOGITERATOR_H
 
+#include <vector>
 #include "UserCommand.h"
-#include "CommandLog.h"
+class CommandLog;
 
 class CommandLogIterator {
 private:
@@ -28,5 +29,7 @@ public:
   UserCommand* currentItem();
   explicit CommandLogIterator(CommandLog* commandLog);
 };
+#include "CommandLog.h"
+
 
 #endif //COS214_PROJECT__COMMANDLOGITERATOR_H

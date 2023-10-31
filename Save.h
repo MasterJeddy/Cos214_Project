@@ -27,7 +27,10 @@ public:
   void execute() override;
   void execute(std::string* file);
   explicit Save(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
-  ~Save();
+  ~Save() override;
+  UserCommand *clone() override;
 };
+
+
 
 #endif //COS214_PROJECT__SAVE_H

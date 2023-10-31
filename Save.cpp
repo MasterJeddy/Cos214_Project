@@ -36,3 +36,7 @@ Save::Save(CommandLog* commandLog,Logs* logs,std::string* file) {
 Save::~Save() {
     delete file;
 }
+
+UserCommand *Save::clone() {
+  return new Save(commandLog,logs,file);
+}
