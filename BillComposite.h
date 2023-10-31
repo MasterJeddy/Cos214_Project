@@ -29,7 +29,7 @@ class BillComposite: public BillComponent
     virtual double getTotal();
     BillComposite(std::string compositeName);
     virtual std::string getName();
-    virtual ~BillComposite();
+    // virtual ~BillComposite();
 };
 
 #endif

@@ -39,7 +39,7 @@ void BillComposite::remove(BillComponent* component){
     
 }
 
-BillComposite::~BillComposite(){
+// BillComposite::~BillComposite(){
     
-}
+// }
 

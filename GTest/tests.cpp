@@ -1,6 +1,9 @@
 #include <gtest/gtest.h>
 #include "../Clock.h"
 
+#include "../SubBill.h"
+// #include "../BillComposite.h"
+
 //
 // Created by maili on 2023/10/23.
 //

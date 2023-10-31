@@ -24,13 +24,13 @@ void BillComponent::remove(BillComponent* component){
 
 }
 
-double BillComponent::getTotal(){
-    //pure virtual 
-}
+// double BillComponent::getTotal(){
+//     //pure virtual 
+// }
 
-std::string BillComponent::getName(){
-    //pure virtual 
-}
+// std::string BillComponent::getName(){
+//     //pure virtual 
+// }
 
 
 

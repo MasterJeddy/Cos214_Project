@@ -14,7 +14,7 @@
 #ifndef COS214_PROJECT_BILLCOMPONENT_H
 #define COS214_PROJECT_BILLCOMPONENT_H
 #include <iostream>
-using namespace std;
+// using namespace std;
 class BillComponent
 {
    

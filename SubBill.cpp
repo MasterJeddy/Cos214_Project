@@ -25,9 +25,9 @@ std::string SubBill::getName(){
     return name;
 }
 
-SubBill::~SubBill(){
+// SubBill::~SubBill(){
 
-}
+// }
 
 void SubBill::add(BillComponent* component){
 
