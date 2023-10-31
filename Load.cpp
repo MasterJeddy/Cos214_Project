@@ -14,13 +14,22 @@
 
 #include "Load.h"
 void Load::execute() {
-
+  if (file!= nullptr){
+    execute(file);
+    return;
+  }
+  commandLog->load(logs->loadTemp());
 }
-void Load::execute(std::string file) {
-
-
+void Load::execute(std::string* file) {
+  commandLog->load(logs->loadFromFile(*file));
 }
 
-Load::Load() {
-
+Load::Load(CommandLog* commandLog,Logs* logs,std::string* file) {
+  if (file == nullptr) {
+    this->file = nullptr;
+  } else {
+    this->file = new std::string(*file);
+  }
+  this->commandLog = commandLog;
+  this->logs = logs;
 }

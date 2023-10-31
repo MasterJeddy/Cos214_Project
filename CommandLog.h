@@ -19,17 +19,17 @@
 #include <string>
 #include "UserCommand.h"
 #include "SavedLog.h"
+#include "InputPoll.h"
 
 class CommandLog {
 private:
+  InputPoll* inputPoll;
   std::vector<UserCommand> commands;
 public:
   void load(SavedLog log);
   SavedLog save();
-  void loadFromFile(std::string file);
-  void saveToFile(std::string file);
-  void addEntry(UserCommand com);
-  CommandLog();
+  void addEntry(UserCommand* com);
+  explicit CommandLog(InputPoll* inputPoll);
 };
 
 #endif //COS214_PROJECT__COMMANDLOG_H

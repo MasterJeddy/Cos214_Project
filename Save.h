@@ -16,10 +16,18 @@
 
 #include <string>
 #include "UserCommand.h"
+#include "CommandLog.h"
+#include "Logs.h"
 class Save : public UserCommand{
+private:
+  std::string* file;
+  CommandLog* commandLog;
+  Logs* logs;
+public:
   void execute() override;
-  void execute(std::string file);
-  Save();
+  void execute(std::string* file);
+  explicit Save(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
+  ~Save();
 };
 
 #endif //COS214_PROJECT__SAVE_H

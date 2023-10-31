@@ -15,14 +15,22 @@
 #define COS214_PROJECT_INPUTPOLL_H
 
 #include "CommandLog.h"
+#include "Logs.h"
 
 class InputPoll {
+private:
+  CommandLog* commandLog;
+  Logs* logs;
 public:
+  UserCommand* queryUser();
+
   void poll();
 
-  void resetToLog(CommandLog log);
+  void resetToLog(CommandLog* log);
 
   InputPoll();
+
+  ~InputPoll();
 
 };
 

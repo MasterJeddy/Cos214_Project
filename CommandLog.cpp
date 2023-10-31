@@ -19,15 +19,9 @@ void CommandLog::load(SavedLog log) {
 SavedLog CommandLog::save() {
   return SavedLog();
 }
-void CommandLog::loadFromFile(std::string file) {
+void CommandLog::addEntry(UserCommand* com) {
 
 }
-void CommandLog::saveToFile(std::string file) {
-
-}
-void CommandLog::addEntry(UserCommand com) {
-
-}
-CommandLog::CommandLog() {
-
+CommandLog::CommandLog(InputPoll* inputPoll) {
+  this->inputPoll = inputPoll;
 }

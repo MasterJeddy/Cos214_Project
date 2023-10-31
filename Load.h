@@ -16,11 +16,16 @@
 
 #include <string>
 #include "UserCommand.h"
+#include "Logs.h"
 class Load : public  UserCommand{
+private:
+  std::string* file;
+  CommandLog* commandLog;
+  Logs* logs;
 public:
   void execute() override;
-  void execute(std::string file);
-  Load();
+  void execute(std::string* file);
+  explicit Load(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
 };
 
 #endif //COS214_PROJECT__LOAD_H
