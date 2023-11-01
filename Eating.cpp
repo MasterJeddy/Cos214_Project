@@ -13,7 +13,7 @@
 #include "Eating.h"
 
 Eating::Eating(){
-    
+    this->name = "Eating";
 }
 
 void Eating::proceed(TableComposite* tableComp){

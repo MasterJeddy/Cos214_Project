@@ -18,3 +18,6 @@ TableState::TableState(){
 
 
 
+std::string TableState::getName(){
+    return this->name;
+}

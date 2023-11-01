@@ -12,9 +12,7 @@
 
 #include "Free.h"
 
-Free::Free(){
-    
-}
+
 
 void Free::proceed(TableComposite* tableComp){
     TableState* tempy = new Occupied();
@@ -23,6 +21,10 @@ void Free::proceed(TableComposite* tableComp){
 
 void Free::hold(TableComposite* tableComp){
     
+}
+
+Free::Free(){
+    this->name = "Free";
 }
 
 

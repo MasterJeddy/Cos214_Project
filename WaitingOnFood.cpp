@@ -13,7 +13,7 @@
 #include "WaitingOnFood.h"
 
 WaitingOnFood::WaitingOnFood(){
-    
+    this->name = "WaitingOnFood";
 }
 
 void WaitingOnFood::proceed(TableComposite* tableComp){

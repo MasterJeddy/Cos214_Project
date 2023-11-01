@@ -13,7 +13,7 @@
 #include "Busy.h"
 
 Busy::Busy(){
-    
+    this->name = "Busy";
 }
 
 void Busy::proceed(TableComposite* tableComp){

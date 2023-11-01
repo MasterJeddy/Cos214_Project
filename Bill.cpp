@@ -13,7 +13,7 @@
 #include "Bill.h"
 
 Bill::Bill(){
-    
+    this->name = "Bill";
 }
 
 void Bill::proceed(TableComposite* tableComp){
