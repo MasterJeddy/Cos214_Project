@@ -16,15 +16,20 @@
 #include "Observer.h"
 #include "Floor.h"
 
+#include "Constants.cpp"
+#include <sstream>
+
 class MaitreD : public Observer
 {
 private:
+    std::string state; // can either be FREE or BUSY
     Customer *customer;
     Floor *floor;
 
 public:
-    MaitreD();
+    MaitreD(int id);
     virtual void update();
+    std::string getState();
 };
 
 #endif

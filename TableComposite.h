@@ -31,7 +31,7 @@ class TableComposite: public TableComponent
     public: 
     void addComponent(TableComponent component);
     void removeComponent(TableComponent component);
-    TableComponent getChild(int id);
+    TableComponent* getChild(int id);
     int getCapacity();
     void setCapacity(int capacity);
     TableState getTableState();

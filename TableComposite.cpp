@@ -18,7 +18,7 @@ TableComposite::TableComposite(int id, int waiterId)
 {
     // id was made a string such that we do not end up with a case where TableComposite and Customer do not end up with the same Id. We will append a special character
     // for each respective object in order to help avoid any sort of confusion later down the line.
-    std::string tempy = to_string(id) + "TC";
+    std::string tempy = TYPE_TABLECOMPOSITE + to_string(id);
     this->id = tempy;
     this->waiterId = waiterId;
 }
@@ -42,7 +42,7 @@ TableComposite::removeComponent(TableComponent component)
     }
 }
 
-TableComponent TableComposite::getChild(int id)
+TableComponent *TableComposite::getChild(int id)
 {
     for (TableComponent child : children)
     {
@@ -76,33 +76,33 @@ void TableComposite::setTableState(TableState *tableState)
 
 void TableComposite::request()
 {
-    for(Observer* observer: ObserverList){
-        //loop through the observer list
-        if (observer->getType().equals("Waiter") && observer->getId() == waiterId)
+    for (Observer *observer : ObserverList)
+    {
+        // loop through the observer list
+        if (observer->getType().equals(TYPE_WAITER) && observer->getId() == waiterId)
         {
-            //notify this waiter
+            // notify this waiter
             observer->update();
             break;
         }
-        
     }
 }
 
 void TableComposite::requestBill()
 {
-    //notify the waiter then pass in the bill so that the waiter can create a bill
-    for(Observer* observer: ObserverList){
-        //loop through the observer list
-        if (observer->getType().equals("Waiter") && observer->getId() == waiterId)
+    // notify the waiter then pass in the bill so that the waiter can create a bill
+    for (Observer *observer : ObserverList)
+    {
+        // loop through the observer list
+        if (observer->getType().equals(TYPE_WAITER) && observer->getId() == waiterId)
         {
-            //notify this waiter
-            //change the state to bill
+            // notify this waiter
+            // change the state to bill
             tableState->proceed();
 
             observer->update();
             break;
         }
-        
     }
 }
 
@@ -111,13 +111,14 @@ std::String TableComposite::getId()
     return this->id;
 }
 
-
-void TableComposite::attachObserver(Observer* observer){
+void TableComposite::attachObserver(Observer *observer)
+{
     observerList->push_back(observer);
 }
 
-void TableComposite::detachObserver(Observer* observer){
-     std::vector<Observer *>::iterator miki = observerList.begin();
+void TableComposite::detachObserver(Observer *observer)
+{
+    std::vector<Observer *>::iterator miki = observerList.begin();
     for (miki; miki < ObserverList.end(); miki++)
     {
         if ((*miki)->getId() == component->getId())

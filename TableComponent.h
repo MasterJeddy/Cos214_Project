@@ -18,6 +18,8 @@
 #include "Observer.h"
 #include <vector>
 
+#include "Constants.cpp"
+
 class TableComponent
 {
 protected:

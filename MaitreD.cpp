@@ -11,14 +11,24 @@
 /// A maitreD will be notified when a customer request for a seat a table.
 ///
 //===----------------------------------------------------------------------===//
-MaitreD::MaitreD()
+MaitreD::MaitreD(int id)
 {
+    this->type = TYPE_MAITRED;
+
+    std::stringstream ss;
+    ss << TYPE_MAITRED << id;
+    this->id = ss.str();
 }
 
 void MaitreD::update()
 {
-    // this is called when a customer has requested to a seat at a table
+    // this is called when a customer has requested a seat at a table
 
     // maitreD needs to check if there is space on the floor(in the restaurant)
     // if there is space, sit the customer and remove customer from waiting queue, otherwise tell customer to wait
+}
+
+std::string MaitreD::getState()
+{
+    return this->state;
 }

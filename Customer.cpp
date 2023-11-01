@@ -15,6 +15,7 @@
 
 Customer::Customer(int id, std::string name)
 {
+    // this->ty
     this->id = id;
     this->name = name;
 }
@@ -48,4 +49,5 @@ void Customer::detachObserver(Observer *observer)
 
 void Customer::request()
 {
+    // thi
 }

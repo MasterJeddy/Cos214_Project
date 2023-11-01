@@ -16,15 +16,16 @@
 
 class Observer
 {
-private:
+protected:
+    std::string id;
     std::string type;
-    int id;
 
 public:
+    Observer();
     virtual void update() = 0;
     virtual ~Observer();
 
-    //getters
+    // getters
     std::string getId();
     std::string getType();
 };
