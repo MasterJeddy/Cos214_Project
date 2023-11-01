@@ -13,7 +13,7 @@
 #include "Occupied.h"
 
 Occupied::Occupied(){
-    
+    this->name = "Occupied";
 }
 
 void Occupied::proceed(TableComposite* tableComp){

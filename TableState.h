@@ -13,14 +13,16 @@
 #ifndef COS214_PROJECT_TABLESTATE_H
 #define COS214_PROJECT_TABLESTATE_H
 #include "TableComposite.h"
-
+#include <string>
 class TableState
 {
-   
+    protected: 
+    std::string name;
     public:
     virtual void proceed(TableComposite* tableComp) = 0;
     virtual void hold(TableComposite* tableComp) = 0;
     TableState();
+    std::string getName();
 };
 
 #endif

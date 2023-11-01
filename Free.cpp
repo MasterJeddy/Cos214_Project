@@ -13,7 +13,7 @@
 #include "Free.h"
 
 Free::Free(){
-    
+    this->name = "Free";
 }
 
 void Free::proceed(TableComposite* tableComp){

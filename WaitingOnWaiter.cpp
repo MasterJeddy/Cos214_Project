@@ -13,7 +13,7 @@
 #include "WaitingOnWaiter.h"
 
 WaitingOnWaiter::WaitingOnWaiter(){
-    
+    this->name = "WaitingOnWaiter";
 }
 
 void WaitingOnWaiter::proceed(TableComposite* tableComp){
