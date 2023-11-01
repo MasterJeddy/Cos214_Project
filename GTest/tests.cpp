@@ -53,7 +53,7 @@ TEST(SimonTests,InputPollMixedSaveMixedLoad){
   ASSERT_NE(status, -1);
 
   // Create payload
-  const char buf[] = "3\n4\n5\n6\n7\n8\n9\n1\n3\n4\n5\n6\n7\n8\n9\n2\nq\n";
+  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n5\n5\n5\n5\n5\n5\n2\n6\n6\nq\n";
   const int bsize  = strlen(buf);
 
   // Send payload through pipe
@@ -81,7 +81,7 @@ TEST(SimonTests,SaveToFile) {
   ASSERT_NE(status, -1);
 
   // Create payload
-  const char buf[] = "3\n4\n5\n6\n7\n8\n9\n1\ns\ntoets\nq\n";
+  const char buf[] = "5\n7\n5\n5\n7\n5\n9\n1\n3\ntoets\nq\n";
   const int bsize  = strlen(buf);
 
   // Send payload through pipe
@@ -109,7 +109,7 @@ TEST(SimonTests,LoadFromFile) {
   ASSERT_NE(status, -1);
 
   // Create payload
-  const char buf[] = "1\nl\ntoets\nq\n";
+  const char buf[] = "1\n4\ntoets\nq\n";
   const int bsize  = strlen(buf);
 
   // Send payload through pipe

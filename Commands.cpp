@@ -111,3 +111,54 @@ COMMANDS BuyStock::getType() {
 }
 
 BuyStock::~BuyStock() = default;
+
+
+void ToggleHelp::execute() {
+  if (inputPoll->checkFlag(DONT_DRAW_HELP)){
+    inputPoll->removeFlag(DONT_DRAW_HELP);
+  } else {
+    inputPoll->addFlag(DONT_DRAW_HELP);
+  }
+}
+
+UserCommand *ToggleHelp::clone() {
+  return new ToggleHelp(inputPoll);
+}
+
+COMMANDS ToggleHelp::getType() {
+  return COMMANDS::TOGGLE_HELP;
+}
+
+ToggleHelp::ToggleHelp(InputPoll *inputPoll) {
+  this->inputPoll = inputPoll;
+}
+void ToggleHelp::setInputPoll(InputPoll *ip) {
+   inputPoll = ip;
+}
+
+ToggleHelp::~ToggleHelp() = default;
+
+void ToggleLog::execute() {
+  if (inputPoll->checkFlag(DRAW_LOG)){
+    inputPoll->removeFlag(DRAW_LOG);
+  } else {
+    inputPoll->addFlag(DRAW_LOG);
+  }
+}
+
+UserCommand *ToggleLog::clone() {
+  return new ToggleLog(inputPoll);
+}
+
+COMMANDS ToggleLog::getType() {
+  return COMMANDS::TOGGLE_LOG;
+}
+
+ToggleLog::ToggleLog(InputPoll *inputPoll) {
+  this->inputPoll = inputPoll;
+}
+void ToggleLog::setInputPoll(InputPoll *ip) {
+  inputPoll = ip;
+}
+
+ToggleLog::~ToggleLog()=default;
