@@ -3,6 +3,7 @@
 
 #include "../SubBill.h"
 #include "../BillComposite.h"
+#include "../TableState.h"
 
 //
 // Created by maili on 2023/10/23.
@@ -83,7 +84,20 @@ TEST(MihailsTests, BillTest){
     mainBill.add(&subBill);
     mainBill.add(&item3);
     
-    ASSERT_EQ(mainBill.getTotal(), 23.50)<<"Bill system working - total calculated correctly";
+    ASSERT_EQ(mainBill.getTotal(), 23.50)<<"Bill system not working - total calculated incorrectly";
+
+
+
+}
+
+
+TEST(MihailsTests, StateTest){
+
+  
+
+  TableState* tableState = new Free();
+  
+  ASSERT_EQ(tableState->getName(), "Free")<<"State naming not working as expected.";  
 
 
 
