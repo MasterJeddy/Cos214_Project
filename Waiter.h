@@ -13,13 +13,16 @@
 #ifndef COS214_PROJECT_WAITER_H
 #define COS214_PROJECT_WAITER_H
 
+#include "Observer.h"
+
 class Waiter : public Observer
 {
 private:
     // std::queue<>
+    Floor *floor;
 
 public:
-    Waiter();
+    Waiter(int id);
     virtual void notify();
 };
 

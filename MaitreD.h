@@ -14,20 +14,15 @@
 #define COS214_PROJECT_MAITRED_H
 
 #include "Observer.h"
-#include "Floor.h"
-
-#include "Constants.cpp"
-#include <sstream>
 
 class MaitreD : public Observer
 {
 private:
-    Customer *customer;
     Floor *floor;
 
 public:
     MaitreD(int id);
-    virtual void notify(Customer *customer);
+    virtual void notify(TableComponent* component);
 };
 
 #endif

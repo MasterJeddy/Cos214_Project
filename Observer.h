@@ -14,7 +14,10 @@
 #ifndef COS214_PROJECT_OBSERVER_H
 #define COS214_PROJECT_OBSERVER_H
 
+#include "Floor.h"
 #include <string>
+#include <sstream>
+#include "Constants.cpp"
 
 class Observer
 {
@@ -26,7 +29,7 @@ protected:
 public:
     Observer();
     virtual ~Observer();
-    virtual void notify(Customer *customer) = 0;
+    virtual void notify(TableComponent* component) = 0;
 
     // getters
     virtual std::string getId();

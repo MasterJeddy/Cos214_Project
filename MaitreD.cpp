@@ -18,16 +18,16 @@ MaitreD::MaitreD(int id)
 
     // set the id of this maitreD
     std::stringstream ss;
-    ss << TYPE_MAITRED << id;
+    ss << this->type << id;
     this->id = ss.str();
 
     // set the default state for maitreD
     this->state = "FREE";
 }
 
-void MaitreD::notify(Customer *customer)
+void MaitreD::notify(TableComponent* component)
 {
-    //change stat of this maitreD to BUSY
+    // change stat of this maitreD to BUSY
     this->state = "BUSY";
 
     // this is called when a customer has requested a seat at a table
@@ -35,7 +35,7 @@ void MaitreD::notify(Customer *customer)
     // maitreD needs to check if there is space on the floor(in the restaurant)
     // if there is space, sit the customer and remove customer from waiting queue, otherwise tell customer to wait
 
-    bool success = this->floor->seatCustomer();
+    bool success = this->floor->seatCustomer(component);
 
     if (success)
     {
@@ -47,7 +47,6 @@ void MaitreD::notify(Customer *customer)
         // there was no space in restaurant, keep customer in queue
     }
 
-
-    //change state of maitreD back to FREE
-    this->state="FREE";
+    // change state of maitreD back to FREE
+    this->state = "FREE";
 }

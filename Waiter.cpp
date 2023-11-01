@@ -12,3 +12,30 @@
 //===----------------------------------------------------------------------===//
 
 #include "Waiter.h"
+
+Waiter::Waiter(int id)
+{
+    // set the type of this ConcreteObserver
+    this->type = TYPE_WAITER;
+
+    // set the id of this maitreD
+    std::stringstream ss;
+    ss << this->type << id;
+    this->id = ss.str();
+
+    // set the default state for maitreD
+    this->state = "FREE";
+}
+
+void Waiter::notify()
+{
+    this->state = "BUSY";
+
+
+
+
+
+
+
+    this->state = "FREE";
+}
