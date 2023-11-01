@@ -51,11 +51,9 @@ void IOInterface::resetToLog(CommandLog* log) {
         case COMMANDS::EXPAND_KITCHEN:break;
         case COMMANDS::HIRE_CHEF:break;
         case COMMANDS::BUY_STOCK:break;
-        case COMMANDS::TOGGLE_HELP:
-          ((ToggleHelp*)it->currentItem())->setInputPoll(this);
+        case COMMANDS::TOGGLE_HELP:((ToggleHelp *) it->currentItem())->setIOInterface(this);
           break;
-        case COMMANDS::TOGGLE_LOG:
-          ((ToggleLog*)it->currentItem())->setInputPoll(this);
+        case COMMANDS::TOGGLE_LOG:((ToggleLog *) it->currentItem())->setIOInterface(this);
           break;
         default: break;
         }

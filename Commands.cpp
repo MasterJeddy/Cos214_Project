@@ -137,51 +137,51 @@ BuyStock::~BuyStock() = default;
 
 
 void ToggleHelp::execute() {
-  if (inputPoll->checkFlag(DONT_DRAW_HELP)){
-    inputPoll->removeFlag(DONT_DRAW_HELP);
+  if (ioInterface->checkFlag(DONT_DRAW_HELP)){
+    ioInterface->removeFlag(DONT_DRAW_HELP);
   } else {
-    inputPoll->addFlag(DONT_DRAW_HELP);
+    ioInterface->addFlag(DONT_DRAW_HELP);
   }
 }
 
 UserCommand *ToggleHelp::clone() {
-  return new ToggleHelp(inputPoll);
+  return new ToggleHelp(ioInterface);
 }
 
 COMMANDS ToggleHelp::getType() {
   return COMMANDS::TOGGLE_HELP;
 }
 
-ToggleHelp::ToggleHelp(IOInterface *inputPoll) {
-  this->inputPoll = inputPoll;
+ToggleHelp::ToggleHelp(IOInterface *IoInterface) {
+  this->ioInterface = IoInterface;
 }
-void ToggleHelp::setInputPoll(IOInterface *ip) {
-   inputPoll = ip;
+void ToggleHelp::setIOInterface(IOInterface *ip) {
+  ioInterface = ip;
 }
 
 ToggleHelp::~ToggleHelp() = default;
 
 void ToggleLog::execute() {
-  if (inputPoll->checkFlag(DRAW_LOG)){
-    inputPoll->removeFlag(DRAW_LOG);
+  if (ioInterface->checkFlag(DRAW_LOG)){
+    ioInterface->removeFlag(DRAW_LOG);
   } else {
-    inputPoll->addFlag(DRAW_LOG);
+    ioInterface->addFlag(DRAW_LOG);
   }
 }
 
 UserCommand *ToggleLog::clone() {
-  return new ToggleLog(inputPoll);
+  return new ToggleLog(ioInterface);
 }
 
 COMMANDS ToggleLog::getType() {
   return COMMANDS::TOGGLE_LOG;
 }
 
-ToggleLog::ToggleLog(IOInterface *inputPoll) {
-  this->inputPoll = inputPoll;
+ToggleLog::ToggleLog(IOInterface *IoInterface) {
+  this->ioInterface = IoInterface;
 }
-void ToggleLog::setInputPoll(IOInterface *ip) {
-  inputPoll = ip;
+void ToggleLog::setIOInterface(IOInterface *ip) {
+  ioInterface = ip;
 }
 
 ToggleLog::~ToggleLog()=default;

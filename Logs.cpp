@@ -49,28 +49,28 @@ SavedLog * Logs::loadFromFile(std::string& file) {
       commands->push_back(new Load(nullptr, nullptr));
       break;
     case COMMANDS::HIRE_MAITRE_D:
-      commands->push_back(new HireMaitreD);
+      commands->push_back(new HireMaitreD(nullptr));
       break;
     case COMMANDS::BUY_TABLE:
-      commands->push_back(new BuyTable);
+      commands->push_back(new BuyTable(nullptr));
       break;
     case COMMANDS::EXPAND_FLOOR:
-      commands->push_back(new ExpandFloor);
+      commands->push_back(new ExpandFloor(nullptr));
       break;
     case COMMANDS::HIRE_WAITER:
-      commands->push_back(new HireWaiter());
+      commands->push_back(new HireWaiter(nullptr));
       break;
     case COMMANDS::UPDATE:
       commands->push_back(new Update);
       break;
     case COMMANDS::EXPAND_KITCHEN:
-      commands->push_back(new ExpandKitchen);
+      commands->push_back(new ExpandKitchen(nullptr));
       break;
     case COMMANDS::HIRE_CHEF:
-      commands->push_back(new HireChef);
+      commands->push_back(new HireChef(nullptr));
       break;
     case COMMANDS::BUY_STOCK:
-      commands->push_back(new BuyStock);
+      commands->push_back(new BuyStock(nullptr));
       break;
     }
   }
