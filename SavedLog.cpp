@@ -30,5 +30,9 @@ SavedLog::SavedLog(std::vector<UserCommand*> *commands) {
 
 }
 SavedLog::~SavedLog() {
+  while (!commands->empty()){
+    delete commands->back();
+    commands->pop_back();
+  }
   delete commands;
 }

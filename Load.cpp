@@ -40,5 +40,5 @@ COMMANDS Load::getType() {
   return COMMANDS::LOAD;
 }
 Load::~Load() {
-
+  delete file;
 }
