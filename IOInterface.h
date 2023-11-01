@@ -7,7 +7,8 @@
 /// This file contains the declaration of the IOInterface class. IOInterface will
 /// serve as an invoker in the command and the main class through which user
 /// can interact with the system. The entire system will be driven forward
-/// by the commands emitted by this class.
+/// by the commands emitted by this class. It will also serve the roll of renderer
+/// for the entire system.
 ///
 //===----------------------------------------------------------------------===//
 
