@@ -18,29 +18,30 @@
 #include "UserCommand.h"
 #include "CommandLog.h"
 #include "Logs.h"
+
 class Save : public UserCommand{
 private:
   std::string* file;
   CommandLog* commandLog;
   Logs* logs;
 public:
-  /// \brief
+  /// \brief If file member is set save to disk else save to memory.
   void execute() override;
-  /// \brief
+  /// \brief Save to disk
   /// \param file
   void execute(std::string* file);
-  /// \brief
-  /// \param commandLog
-  /// \param logs
-  /// \param file
+  /// \brief Constructor of Save class.
+  /// \param commandLog CommandLog to save
+  /// \param logs Logs to save to
+  /// \param file File to save to. If nullptr save to memory
   explicit Save(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
-  /// \brief
+  /// \brief Destructor for save Class
   ~Save() override;
-  /// \brief
-  /// \return
+  /// \brief Makes a copy of Save
+  /// \return Pointer to the copy of Save
   UserCommand *clone() override;
-  /// \brief
-  /// \return
+  /// \brief Returns the type of the command
+  /// \return SAVE ENUM returned
   COMMANDS getType() override;
 };
 
