@@ -22,22 +22,22 @@ private:
   std::map<std::string,SavedLog>* saves;
   SavedLog* temp;
  public:
-  /// \brief
-  /// \param file
+  /// \brief Serialize SavedLog to disk
+  /// \param file Name of file to serialise to Note: .dat will be add from
   void dumpToFile(std::string& file);
-  /// \brief
-  /// \param file
-  /// \return
+  /// \brief Deserialize SavedLog from disk
+  /// \param file Name of file to deserialized to Note: .dat will be add from
+  /// \return This is the deserialized SavedLog
   SavedLog * loadFromFile(std::string& file);
-  /// \brief
-  /// \param save
+  /// \brief Save SavedLog to memory
+  /// \param save SavedLog to save
   void tempSave(SavedLog* save);
-  /// \brief
-  /// \return
+  /// \brief Load SavedLog from memory
+  /// \return Last log to be saved to memory
   SavedLog * loadTemp();
-  /// \brief
+  /// \brief Constructor of the Logs class
   Logs();
-  /// \brief
+  /// \brief Destructor of the Logs class
   ~Logs();
 };
 
