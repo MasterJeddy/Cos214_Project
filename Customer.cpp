@@ -18,3 +18,26 @@ Customer::Customer(int id, std::string name)
     this->id = id;
     this->name = name;
 }
+
+Customer::Customer(int id, std::string name, std::vector<Customer *> friends)
+{
+    this->id = id;
+    this->name = name;
+
+    std::vector<Customer *> group = friends;
+    group.push_back(this); // add this customer to the group
+}
+
+void Customer::attachObserver(Observer *observer)
+{
+    // add the passed in observer to ythe list of observers
+    this->observerList.push_back(observer);
+}
+
+void Customer::detachObserver(Observer *observer)
+{
+}
+
+void Customer::request()
+{
+}

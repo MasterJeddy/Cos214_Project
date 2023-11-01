@@ -34,6 +34,8 @@ public:
     void customerRequestsSeat();
     bool spaceAvailable();
     void seatCustomer();
+
+    
 };
 
 #endif

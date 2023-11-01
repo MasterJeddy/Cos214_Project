@@ -6,7 +6,7 @@
 ///
 /// \file
 /// This file contains the declaration of the Customer class which acts here as the Leaf participant in
-/// the Composite design pattern. This class implements the interface provided by the TableComponent class.
+/// the Composite design pattern. This class implements the interface provided by the ConsumerParty class.
 ///
 //===----------------------------------------------------------------------===//
 
@@ -19,17 +19,22 @@
 class Customer : public TableComponent
 {
 private:
-    int id;
+    std::string id; // will hold id of the form '1CU'
     std::string name;
-    std::vector<Customer *> group;
+    const std::string type = "customer";
+    std::vector<Customer *> group; // also includes this customer
 
 public:
     Customer(int id, std::string name);
+    Customer(int id, std::string name, std::vector<Customer *> friends);
     ~Customer();
 
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);
     virtual void request();
+
+    // getters
+    int group
 };
 
 #endif

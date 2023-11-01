@@ -15,6 +15,9 @@
 #ifndef COS214_PROJECT_TABLECOMPONENT_H
 #define COS214_PROJECT_TABLECOMPONENT_H
 
+#include "Observer.h"
+#include <vector>
+
 class TableComponent
 {
 protected:

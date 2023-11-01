@@ -6,22 +6,22 @@
 ///
 /// \file
 /// This file contains the declaration of the MaitreD class which acts as a ConcreteObserver in the Observer
-///design pattern. A maitreD will be notified when a customer requests for a seat.
+/// design pattern. A maitreD will be notified when a customer requests for a seat.
 ///
 //===----------------------------------------------------------------------===//
 
 #ifndef COS214_PROJECT_MAITRED_H
 #define COS214_PROJECT_MAITRED_H
 
-class MaitreD
+class MaitreD : public Observer
 {
-    private:
+private:
     Customer *customer;
-    Floor* floor;
+    Floor *floor;
 
-
-    public:
-
+public:
+    MaitreD();
+    virtual void update();
 };
 
 #endif
