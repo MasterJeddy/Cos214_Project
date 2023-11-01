@@ -5,7 +5,9 @@
 //===----------------------------------------------------------------------===//
 ///
 /// \file
-/// This file contains the implementation of the TableComposite.h file.
+/// This file contains the implementation of the Table class specific functions as well as the functions
+/// declared by its parent class TableComponent, for example the add() function where a component can
+/// be added to a table.
 ///
 ///
 //===----------------------------------------------------------------------===//

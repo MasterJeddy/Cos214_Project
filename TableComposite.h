@@ -7,7 +7,9 @@
 /// \file
 /// This file contains the declaration of the TableComposite class which acts here as the
 /// the Composite participant in the Composite design pattern. For example when taking an order, the waiter will interact with an object 
-/// from this class.
+/// from this class. This class implements the interface provided by the TableComponent interface. It contains either children that are
+/// either composites(Table objects) or leaves (Customer objects). This allows for us to add tables to each other (to make space for larger groups),
+/// and Customer objects may be added to tables. 
 //===----------------------------------------------------------------------===//
 
 #ifndef COS214_PROJECT_TABLECOMPOSITE_H
