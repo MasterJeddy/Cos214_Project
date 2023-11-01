@@ -24,4 +24,9 @@ COMMANDS Update::getType() {
   return COMMANDS::UPDATE;
 }
 
+Update::Update(FloorController *floorController, KitchenController *kitchenController) {
+  this->floorController = floorController;
+  this->kitchenController = kitchenController;
+}
+
 Update::~Update() = default;

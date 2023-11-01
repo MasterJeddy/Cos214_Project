@@ -19,8 +19,6 @@
 #include "UserCommand.h"
 #include "IOInterface.h"
 
-class FloorController;
-class KitchenController;
 
 class HireMaitreD : public UserCommand{
 private:

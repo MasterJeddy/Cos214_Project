@@ -13,6 +13,9 @@
 #ifndef COS214_PROJECT__USERCOMMAND_H
 #define COS214_PROJECT__USERCOMMAND_H
 
+class FloorController;
+class KitchenController;
+
 enum class COMMANDS {
   SAVE,
   LOAD,

@@ -16,17 +16,24 @@
 
 #include "UserCommand.h"
 class Update : public UserCommand{
+private:
+  FloorController* floorController;
+  KitchenController* kitchenController;
 public:
-  /// \brief
+  /// \brief Lets clock tick and calls update on floorController and kitchenController members.
   void execute() override;
-  /// \brief
-  /// \return
+  /// \brief Makes a copy of Update
+  /// \return Pointer to the copy of Update
   UserCommand *clone() override;
-  /// \brief
-  /// \return
+  /// \brief Returns the type of the command
+  /// \return SAVE ENUM returned
   COMMANDS getType() override;
-  /// \brief
+  /// \brief Destructor of Update
   ~Update() override;
+  /// \brief Constructor for Update Class
+  /// \param floorController FloorController to call methods on
+  /// \param kitchenController KitchenController to call methods on
+  explicit Update(FloorController* floorController,KitchenController* kitchenController);
 };
 
 #endif //COS214_PROJECT__UPDATE_H
