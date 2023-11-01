@@ -89,7 +89,7 @@ bool Floor::seatCustomer(Customer *customer)
 
         for (TableComposite *table : tables)
         {
-            if (table->getTableState()->getName().equals("Free"))
+            if (table->getTableState()->getName()=="Free")
             {
                 numFreeTables++;
             }
@@ -108,7 +108,7 @@ bool Floor::seatCustomer(Customer *customer)
 
             for (TableComposite *table : tables)
             {
-                if (table->getTableState()->getName().equals("Free"))
+                if (table->getTableState()->getName()=="Free")
                 {
                     mainTable = table;
                     break;
@@ -117,7 +117,7 @@ bool Floor::seatCustomer(Customer *customer)
 
             for (TableComposite *table : tables)
             {
-                if (table->getTableState()->getName().equals("Free") && table != mainTable && numTables != 0)
+                if (table->getTableState()->getName()=="Free" && table != mainTable && numTables != 0)
                 {
                     mainTable->addComponent(table); // combine all the tables together
                     numTables--;
@@ -139,7 +139,7 @@ bool Floor::seatCustomer(Customer *customer)
         // seat the single customer at the table and then return true
         for (TableComposite *table : tables)
         {
-            if (table->getTableState()->getName().equals("Free")) // loop through all the tables and stop when you find a free one
+            if (table->getTableState()->getName()=="Free") // loop through all the tables and stop when you find a free one
             {
                 table->addComponent(customer); // add this customer to the table
                 return true;
