@@ -1,13 +1,16 @@
 #include <gtest/gtest.h>
 #include "../Clock.h"
 
+#include "../SubBill.h"
+#include "../BillComposite.h"
+
 //
 // Created by maili on 2023/10/23.
 //
-TEST(ExampleTests, Test1)
-{
-  ASSERT_EQ(5, 3 + 2);
+TEST(ExampleTests,Test1){
+    ASSERT_EQ(5,3+2);
 }
+
 
 TEST(SimonTests, ClockGetTimeAndTickTest)
 {
@@ -59,4 +62,29 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
   // If we reach this point then both hasTime and removeTime work as expected
   // I have however broken the wisdom of the gtest documentation by indirectly
   // using ClockGetTimeAndTickTest for this test
+}
+
+TEST(MihailsTests, BillTest){
+
+
+    // std::cout << "Total Cost: R" << mainBill.getTotal() << std::endl;
+
+
+    SubBill item1("Item 1", 10.50);
+    SubBill item2("Item 2", 7.25);
+
+    BillComposite subBill("Sub-Bill 1");
+    subBill.add(&item1);
+    subBill.add(&item2);
+
+    SubBill item3("Item 3", 5.75);
+
+    BillComposite mainBill("Main Bill");
+    mainBill.add(&subBill);
+    mainBill.add(&item3);
+    
+    ASSERT_EQ(mainBill.getTotal(), 23.50)<<"Bill system working - total calculated correctly";
+
+
+
 }
