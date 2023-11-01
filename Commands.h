@@ -19,7 +19,12 @@
 #include "UserCommand.h"
 #include "IOInterface.h"
 
+class FloorController;
+class KitchenController;
+
 class HireMaitreD : public UserCommand{
+private:
+  FloorController* floorController;
 public:
   /// \brief
   void execute() override;
@@ -31,10 +36,14 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~HireMaitreD() override;
-
+  /// \brief
+  /// \param floorController
+  explicit HireMaitreD(FloorController* floorController);
 };
 
 class BuyTable : public UserCommand{
+private:
+  FloorController* floorController;
 public:
   /// \brief
   void execute() override;
@@ -46,9 +55,14 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~BuyTable() override;
+  /// \brief
+  /// \param floorController
+  explicit BuyTable(FloorController* floorController);
 };
 
 class ExpandFloor : public UserCommand{
+private:
+  FloorController* floorController;
 public:
   /// \brief
   void execute() override;
@@ -60,10 +74,14 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~ExpandFloor() override;
-
+  /// \brief
+  /// \param floorController
+  explicit  ExpandFloor(FloorController* floorController);
 };
 
 class HireWaiter : public UserCommand{
+private:
+  FloorController* floorController;
 public:
   /// \brief
   void execute() override;
@@ -75,9 +93,14 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~HireWaiter() override;
+  /// \brief
+  /// \param floorController
+  explicit HireWaiter(FloorController* floorController);
 };
 
 class ExpandKitchen : public UserCommand{
+private:
+  KitchenController* kitchenController;
 public:
   /// \brief
   void execute() override;
@@ -89,9 +112,14 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~ExpandKitchen() override;
+  /// \brief
+  /// \param kitchenController
+  explicit ExpandKitchen(KitchenController* kitchenController);
 };
 
 class HireChef : public UserCommand{
+private:
+  KitchenController* kitchenController;
 public:
   /// \brief
   void execute() override;
@@ -103,9 +131,14 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~HireChef() override;
+  /// \brief
+  /// \param kitchenController
+  explicit HireChef(KitchenController* kitchenController);
 };
 
 class BuyStock : public UserCommand{
+private:
+  KitchenController* kitchenController;
 public:
   /// \brief
   void execute() override;
@@ -117,6 +150,9 @@ public:
   COMMANDS getType() override;
   /// \brief
   ~BuyStock() override;
+  /// \brief
+  /// \param kitchenController
+  explicit  BuyStock(KitchenController* kitchenController);
 };
 
 class ToggleHelp : public UserCommand{

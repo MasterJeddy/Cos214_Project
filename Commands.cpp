@@ -19,11 +19,15 @@ void HireMaitreD::execute() {
 }
 
 UserCommand *HireMaitreD::clone() {
-  return new HireMaitreD;
+  return new HireMaitreD(floorController);
 }
 
 COMMANDS HireMaitreD::getType() {
   return COMMANDS::HIRE_MAITRE_D;
+}
+
+HireMaitreD::HireMaitreD(FloorController *floorController) {
+  this->floorController = floorController;
 }
 
 HireMaitreD::~HireMaitreD() = default;
@@ -33,11 +37,14 @@ void BuyTable::execute() {
 }
 
 UserCommand *BuyTable::clone() {
-  return new BuyTable;
+  return new BuyTable(floorController);
 }
 
 COMMANDS BuyTable::getType() {
   return COMMANDS::BUY_TABLE;
+}
+BuyTable::BuyTable(FloorController *floorController) {
+  this->floorController = floorController;
 }
 
 BuyTable::~BuyTable()  =default;
@@ -47,11 +54,14 @@ void ExpandFloor::execute() {
 }
 
 UserCommand *ExpandFloor::clone() {
-  return new ExpandFloor;
+  return new ExpandFloor(floorController);
 }
 
 COMMANDS ExpandFloor::getType() {
   return COMMANDS::EXPAND_FLOOR;
+}
+ExpandFloor::ExpandFloor(FloorController *floorController) {
+  this->floorController = floorController;
 }
 
 ExpandFloor::~ExpandFloor() = default;
@@ -61,11 +71,14 @@ void HireWaiter::execute() {
 }
 
 UserCommand *HireWaiter::clone() {
-  return new HireWaiter;
+  return new HireWaiter(floorController);
 }
 
 COMMANDS HireWaiter::getType() {
   return COMMANDS::HIRE_WAITER;
+}
+HireWaiter::HireWaiter(FloorController *floorController) {
+  this->floorController = floorController;
 }
 
 HireWaiter::~HireWaiter() =default;
@@ -75,11 +88,14 @@ void ExpandKitchen::execute() {
 }
 
 UserCommand *ExpandKitchen::clone() {
-  return new ExpandKitchen;
+  return new ExpandKitchen(kitchenController);
 }
 
 COMMANDS ExpandKitchen::getType() {
   return COMMANDS::EXPAND_KITCHEN;
+}
+ExpandKitchen::ExpandKitchen(KitchenController *kitchenController) {
+  this->kitchenController = kitchenController;
 }
 
 ExpandKitchen::~ExpandKitchen() =default;
@@ -89,11 +105,14 @@ void HireChef::execute() {
 }
 
 UserCommand *HireChef::clone() {
-  return new HireChef;
+  return new HireChef(kitchenController);
 }
 
 COMMANDS HireChef::getType() {
   return COMMANDS::HIRE_CHEF;
+}
+HireChef::HireChef(KitchenController *kitchenController) {
+  this->kitchenController = kitchenController;
 }
 
 HireChef::~HireChef() = default;
@@ -103,11 +122,15 @@ void BuyStock::execute() {
 }
 
 UserCommand *BuyStock::clone() {
-  return new BuyStock;
+  return new BuyStock(kitchenController);
 }
 
 COMMANDS BuyStock::getType() {
   return COMMANDS::BUY_STOCK;
+}
+
+BuyStock::BuyStock(KitchenController *kitchenController) {
+  this->kitchenController = kitchenController;
 }
 
 BuyStock::~BuyStock() = default;
