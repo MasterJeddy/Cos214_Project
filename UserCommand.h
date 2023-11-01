@@ -30,10 +30,15 @@ enum class COMMANDS {
 
 class UserCommand {
 public:
-  /// This function must be implemented by all use commands
+  /// \brief This function must be implemented by all use commands
   virtual void execute() =0;
+  /// \brief
+  /// \return
   virtual UserCommand* clone() = 0;
+  /// \brief
+  /// \return
   virtual COMMANDS getType() =0;
+  /// \brief
   virtual ~UserCommand();
 
 };

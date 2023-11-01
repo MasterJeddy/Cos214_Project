@@ -22,11 +22,22 @@ private:
   std::map<std::string,SavedLog>* saves;
   SavedLog* temp;
  public:
+  /// \brief
+  /// \param file
   void dumpToFile(std::string& file);
+  /// \brief
+  /// \param file
+  /// \return
   SavedLog * loadFromFile(std::string& file);
+  /// \brief
+  /// \param save
   void tempSave(SavedLog* save);
+  /// \brief
+  /// \return
   SavedLog * loadTemp();
+  /// \brief
   Logs();
+  /// \brief
   ~Logs();
 };
 

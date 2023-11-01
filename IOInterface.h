@@ -31,21 +31,30 @@ private:
   CommandLog* commandLog;
   Logs* logs;
   int drawState = DONT_DRAW_HELP;
-
+  /// \brief
   void render();
+  /// \brief
+  /// \return
   UserCommand* queryUser();
 public:
+  /// \brief
+  /// \param flag
   void addFlag(DRAW_FLAGS flag);
+  /// \brief
+  /// \param flag
   void removeFlag(DRAW_FLAGS flag);
+  /// \brief
+  /// \param flag
+  /// \return
   bool checkFlag(DRAW_FLAGS flag) const;
-
+  /// \brief
   void poll();
-
-
+  /// \brief
+  /// \param log
   void resetToLog(CommandLog* log);
-
+  /// \brief
   IOInterface();
-
+  /// \brief
   ~IOInterface();
 };
 

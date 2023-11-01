@@ -23,11 +23,23 @@ private:
   CommandLog* commandLog;
   Logs* logs;
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \param file
   void execute(std::string* file);
+  /// \brief
+  /// \param commandLog
+  /// \param logs
+  /// \param file
   explicit Load(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~Load() override;
 };
 

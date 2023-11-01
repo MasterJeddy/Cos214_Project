@@ -17,9 +17,15 @@
 #include "UserCommand.h"
 class Update : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~Update() override;
 };
 

@@ -21,59 +21,101 @@
 
 class HireMaitreD : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~HireMaitreD() override;
 
 };
 
 class BuyTable : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~BuyTable() override;
 };
 
 class ExpandFloor : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~ExpandFloor() override;
 
 };
 
 class HireWaiter : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~HireWaiter() override;
 };
 
 class ExpandKitchen : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~ExpandKitchen() override;
 };
 
 class HireChef : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~HireChef() override;
 };
 
 class BuyStock : public UserCommand{
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~BuyStock() override;
 };
 
@@ -81,11 +123,21 @@ class ToggleHelp : public UserCommand{
 private:
   IOInterface* inputPoll;
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~ToggleHelp() override;
+  /// \brief
+  /// \param inputPoll
   explicit ToggleHelp(IOInterface* inputPoll);
+  /// \brief
+  /// \param ip
   void setInputPoll(IOInterface* ip);
 };
 
@@ -93,11 +145,21 @@ class ToggleLog : public UserCommand{
 private:
   IOInterface* inputPoll;
 public:
+  /// \brief
   void execute() override;
+  /// \brief
+  /// \return
   UserCommand *clone() override;
+  /// \brief
+  /// \return
   COMMANDS getType() override;
+  /// \brief
   ~ToggleLog() override;
+  /// \brief
+  /// \param inputPoll
   explicit ToggleLog(IOInterface* inputPoll);
+  /// \brief
+  /// \param ip
   void setInputPoll(IOInterface* ip);
 };
 

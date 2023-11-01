@@ -28,11 +28,22 @@ private:
   IOInterface* inputPoll;
   std::vector<UserCommand*>* commands;
 public:
+  /// \brief
+  /// \param log
   void load(SavedLog* log);
+  /// \brief
+  /// \return
   SavedLog* save();
+  /// \brief
+  /// \param com
   void addEntry(UserCommand* com);
+  /// \brief
+  /// \param inputPoll
   explicit CommandLog(IOInterface* inputPoll);
+  /// \brief
   ~CommandLog();
+  /// \brief
+  /// \return
   CommandLogIterator* createIterator();
   friend class CommandLogIterator;
 };

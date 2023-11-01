@@ -23,10 +23,18 @@ private:
   CommandLog* commandLog;
   std::vector<UserCommand*>::iterator it;
 public:
+  /// \brief
   void first();
+  /// \brief
   void next();
+  /// \brief
+  /// \return
   bool isDone();
+  /// \brief
+  /// \return
   UserCommand* currentItem();
+  /// \brief
+  /// \param commandLog
   explicit CommandLogIterator(CommandLog* commandLog);
 };
 #include "CommandLog.h"
