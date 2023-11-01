@@ -19,7 +19,6 @@
 class Customer : public TableComponent
 {
 private:
-    std::string id; // will hold id of the form '1CU'
     std::string name;
     std::vector<Customer *> group; // also includes this customer
 

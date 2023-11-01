@@ -23,7 +23,8 @@
 class TableComponent
 {
 protected:
-    std::vector<Observer*> observerList;
+    std::string id;
+    std::vector<Observer *> observerList;
 
 public:
     TableComponent();
