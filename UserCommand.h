@@ -35,13 +35,13 @@ class UserCommand {
 public:
   /// \brief This function must be implemented by all use commands
   virtual void execute() =0;
-  /// \brief
-  /// \return
+  /// \brief Clone functions for children to implement
+  /// \return Pointer to cloned child
   virtual UserCommand* clone() = 0;
-  /// \brief
-  /// \return
+  /// \brief Child must return ENUM corresponding to child type
+  /// \return The correct COMMANDS ENUM member
   virtual COMMANDS getType() =0;
-  /// \brief
+  /// \brief Destructor for UserCommand
   virtual ~UserCommand();
 
 };
