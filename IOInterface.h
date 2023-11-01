@@ -31,30 +31,32 @@ private:
   CommandLog* commandLog;
   Logs* logs;
   int drawState = DONT_DRAW_HELP;
-  /// \brief
+  /// \brief Renders other objects in text format
   void render();
-  /// \brief
-  /// \return
+  /// \brief Ask UserInput and returns command to be executed
+  /// \return Command to be executed
   UserCommand* queryUser();
 public:
-  /// \brief
-  /// \param flag
+  /// \brief Sets flag
+  /// \param flag Flag to be set
   void addFlag(DRAW_FLAGS flag);
-  /// \brief
-  /// \param flag
+  /// \brief Unsets flag
+  /// \param flag Flag to be unset
   void removeFlag(DRAW_FLAGS flag);
-  /// \brief
-  /// \param flag
-  /// \return
+  /// \brief Checks if flag is set
+  /// \param flag Flag to check
+  /// \return True if flag to check is set false otherwise
   bool checkFlag(DRAW_FLAGS flag) const;
-  /// \brief
+  /// \brief  Works as an onUpdate. Checks input from user execute commands and renders the
+  /// renders system state.
   void poll();
-  /// \brief
-  /// \param log
+  /// \brief Resets system and execute all commands in log. Excluding Save and Load Commands.
+  /// thus not render anything.
+  /// \param log Log's commands to be rerun.
   void resetToLog(CommandLog* log);
-  /// \brief
+  /// \brief Constructor for IOInterface
   IOInterface();
-  /// \brief
+  /// \brief Destructor for IOInterface
   ~IOInterface();
 };
 
