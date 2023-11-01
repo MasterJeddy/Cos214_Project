@@ -36,6 +36,14 @@ void Customer::attachObserver(Observer *observer)
 
 void Customer::detachObserver(Observer *observer)
 {
+    for (std::vector<Observer *>::iterator i = this->observerList.begin(); i < this->observerList.end(); i++)
+    {
+        if ((*i)->getId() == observer->getId())
+        {
+            this->observerList.erase(i);
+            break;
+        }
+    }
 }
 
 void Customer::request()
