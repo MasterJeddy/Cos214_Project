@@ -23,23 +23,23 @@ private:
   CommandLog* commandLog;
   Logs* logs;
 public:
-  /// \brief
+  /// \brief If file member is set load from disk else load from memory.
   void execute() override;
-  /// \brief
+  /// \brief Loads from disk
   /// \param file
   void execute(std::string* file);
-  /// \brief
-  /// \param commandLog
-  /// \param logs
-  /// \param file
+  /// \brief Constructor for Load class.
+  /// \param commandLog CommandLog to load to
+  /// \param logs Logs to load From
+  /// \param file File to Load From. If nullptr will load from save on disk
   explicit Load(CommandLog* commandLog,Logs* logs,std::string* file = nullptr);
-  /// \brief
-  /// \return
+  /// \brief Makes a copy of Load
+  /// \return Pointer to the copy of Load
   UserCommand *clone() override;
-  /// \brief
-  /// \return
+  /// \brief Returns the type of the command
+  /// \return LOAD ENUM returned
   COMMANDS getType() override;
-  /// \brief
+  /// \brief Destructor of Load
   ~Load() override;
 };
 
