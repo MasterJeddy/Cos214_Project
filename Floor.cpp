@@ -36,51 +36,34 @@ void Floor::dequeueCustomer()
 
 void Floor::addWaiters(std::vector<Waiter *> waiters)
 {
-     for (int i = 0; i < waiters.size(); i++)
-    {
-        this->waiters.push_back(waiters[i]);
-    }
+    this->waiters = waiters;
 }
 
 void Floor::addWaitingCustomers(std::queue<Customer *> waitingCustomers)
 {
-     for (int i = 0; i < waitingCustomers.size(); i++)
-    {
-        this->waitingCustomers.push_back(waitingCustomers[i]);
-    }
+    this->waitingCustomers = waitingCustomers;
 }
 
 void Floor::addMaitreDs(std::vector<MaitreD *> maitreDs)
 {
-     for (int i = 0; i < maitreDs.size(); i++)
-    {
-        this->maitreDs.push_back(maitreDs[i]);
-    }
+    this->maitreDs = maitreDs;
 }
 
 void Floor::addTables(std::vector<TableComposite *> tables)
 {
-    for (int i = 0; i < tables.size(); i++)
-    {
-        this->tables.push_back(tables[i]);
-    }
-}
-
-void Floor::addTable(TableComposite *table)
-{
-    this->tables.push_back(table);
+    this->tables = tables;
 }
 
 bool Floor::seatCustomer(Customer *customer)
 {
 
     // if you manage to seat a customer group at a table then you return true
-    if (customer->getGroup() != null)
+    int size = customer->getGroupSize();
+    if (size != 0)
     {
         // loop through the group and seat each person down - once done you may return true
         // check the number of tables needed for this group
 
-        int size = customer->getGroupSize();
         int idealSize;
         if (size % 2 == 0)
         {
@@ -121,11 +104,13 @@ bool Floor::seatCustomer(Customer *customer)
         if (numFreeTables >= numTables)
         {
             // we are able to seat this group of customers
+            TableComposite *mainTable;
+
             for (TableComposite *table : tables)
             {
                 if (table->getTableState()->getName().equals("Free"))
                 {
-                    TableComposite *mainTable = table;
+                    mainTable = table;
                     break;
                 }
             }
@@ -149,7 +134,7 @@ bool Floor::seatCustomer(Customer *customer)
             // original position of having separate tables that are not combined together
         }
     }
-    else if (customer->getGroup() == null)
+    else if (size == 0)
     {
         // seat the single customer at the table and then return true
         for (TableComposite *table : tables)

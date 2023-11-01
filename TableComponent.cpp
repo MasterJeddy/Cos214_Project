@@ -11,3 +11,8 @@
 //===----------------------------------------------------------------------===//
 
 #include "TableComponent.h"
+
+std::string TableComponent::getId()
+{
+    return this->id;
+}
