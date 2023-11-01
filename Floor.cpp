@@ -34,9 +34,21 @@ void Floor::dequeueCustomer()
     this->waitingCustomers.pop();
 }
 
-bool Floor::spaceAvailable(Customer *customer)
-{
-    // customers are in a group and we need to check if there is space available for them within the restaurant
-    //  we do this by checking the various 'free' tables and counting the number of spots available
-    //  and checking to see whether this value is larger than or equal to the group size
+bool Floor::seatCustomer(Customer* customer){
+    
+    //if you manage to seat a customer group at a table then you return true
+    if (customer->getGroupSize()>1)
+    {
+        //loop through the group and seat each person down - once done you may return true
+        Customer* customers = customer->getGroup();     //get the group of customers
+        for(Customer* customer: customers){             //loop through all of the customers
+            customer
+        }
+    }
+    else if(customer->getGroupSize()==1){
+        //seat the single customer at the table and then return true
+
+    }
+    
 }
+
