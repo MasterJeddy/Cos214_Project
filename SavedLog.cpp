@@ -20,6 +20,15 @@ void SavedLog::setCommands(std::vector<UserCommand*>* commands) {
   this->commands = commands;
 }
 SavedLog::SavedLog(std::vector<UserCommand*> *commands) {
-  this->commands = commands;
+
+  this->commands = new std::vector<UserCommand*>;
+
+  for (auto com:*commands){
+    this->commands->push_back(com->clone());
+  }
+
+
 }
-SavedLog::~SavedLog() =default;
+SavedLog::~SavedLog() {
+  delete commands;
+}
