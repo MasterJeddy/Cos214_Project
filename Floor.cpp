@@ -29,3 +29,12 @@ void Floor::customerRequestsSeat()
 
     this->waitingCustomers.pop(); // remove this customer from queue
 }
+
+bool Floor::spaceAvailable(){
+    //customers are in a group and we need to check if there is space available for them within the restaurant
+    // we do this by checking the various 'free' tables and counting the number of spots available 
+    // and checking to see whether this value is larger than or equal to the group size
+
+    
+}
+

@@ -21,6 +21,9 @@ TableComposite::TableComposite(int id, int waiterId)
     std::string tempy = TYPE_TABLECOMPOSITE + to_string(id);
     this->id = tempy;
     this->waiterId = waiterId;
+
+    //set the max capacity of the table to 4 - one table can host 4 people
+    this->maxCapacity = 4;
 }
 
 TableComposite::addComponent(TableComponent component)
