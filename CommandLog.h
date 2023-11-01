@@ -28,22 +28,22 @@ private:
   IOInterface* inputPoll;
   std::vector<UserCommand*>* commands;
 public:
-  /// \brief
-  /// \param log
+  /// \brief Loads SavedLog and rolls IOInterface to it.
+  /// \param log The SavedLog to be loaded to.
   void load(SavedLog* log);
-  /// \brief
-  /// \return
+  /// \brief Create a SavedLog from the currentLog
+  /// \return The SavedLog created Note: must deleted by caller
   SavedLog* save();
-  /// \brief
-  /// \param com
+  /// \brief Appends a new command to the log
+  /// \param com The command to be appended
   void addEntry(UserCommand* com);
-  /// \brief
-  /// \param inputPoll
+  /// \brief The constructor of the CommandLog class
+  /// \param inputPoll The InputPoll to which the CommandLog is bound
   explicit CommandLog(IOInterface* inputPoll);
-  /// \brief
+  /// \brief The destructor of the CommandLog
   ~CommandLog();
-  /// \brief
-  /// \return
+  /// \brief Creates and iterator so other classes can traverse the commands in commandLog
+  /// \return The iterator created Note: must be deleted by caller
   CommandLogIterator* createIterator();
   friend class CommandLogIterator;
 };
