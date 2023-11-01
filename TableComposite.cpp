@@ -116,7 +116,7 @@ void TableComposite::attachObserver(Observer* observer){
     observerList->push_back(observer);
 }
 
-void TableComposite::removeObserver(Observer* observer){
+void TableComposite::detachObserver(Observer* observer){
      std::vector<Observer *>::iterator miki = observerList.begin();
     for (miki; miki < ObserverList.end(); miki++)
     {
