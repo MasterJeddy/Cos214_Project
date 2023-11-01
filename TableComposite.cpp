@@ -21,12 +21,12 @@ TableComposite::TableComposite(int id, int waiterId)
     this->waiterId = waiterId;
 }
 
-TableComposite::add(TableComponent component)
+TableComposite::addComponent(TableComponent component)
 {
     children.push_back(component);
 }
 
-TableComposite::remove(TableComponent component)
+TableComposite::removeComponent(TableComponent component)
 {
 
     std::vector<TableComponent *>::iterator miki = children.begin();
@@ -107,4 +107,21 @@ void TableComposite::requestBill()
 std::String TableComposite::getId()
 {
     return this->id;
+}
+
+
+void TableComposite::attachObserver(Observer* observer){
+    observerList->push_back(observer);
+}
+
+void TableComposite::removeObserver(Observer* observer){
+     std::vector<Observer *>::iterator miki = observerList.begin();
+    for (miki; miki < ObserverList.end(); miki++)
+    {
+        if ((*miki)->getId() == component->getId())
+        {
+            children.erase(miki);
+            break;
+        }
+    }
 }

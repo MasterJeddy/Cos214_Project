@@ -27,8 +27,8 @@ class TableComposite: public TableComponent
     int waiterId;
 
     public: 
-    void add(TableComponent component);
-    void remove(TableComponent component);
+    void addComponent(TableComponent component);
+    void removeComponent(TableComponent component);
     TableComponent getChild(int id);
     int getCapacity();
     void setCapacity(int capacity);
@@ -38,6 +38,8 @@ class TableComposite: public TableComponent
     void requestBill();
     TableComposite(int id, int waiterId);
     String getId();
+    void attachObserver(Observer* observer);
+    void detachObserver(Observer* observer);
 
 };
 
