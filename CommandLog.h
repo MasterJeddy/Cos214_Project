@@ -20,24 +20,24 @@
 #include "UserCommand.h"
 #include "CommandLogIterator.h"
 
-class InputPoll;
+class IOInterface;
 class SavedLog;
 
 class CommandLog {
 private:
-  InputPoll* inputPoll;
+  IOInterface* inputPoll;
   std::vector<UserCommand*>* commands;
 public:
   void load(SavedLog* log);
   SavedLog* save();
   void addEntry(UserCommand* com);
-  explicit CommandLog(InputPoll* inputPoll);
+  explicit CommandLog(IOInterface* inputPoll);
   ~CommandLog();
   CommandLogIterator* createIterator();
   friend class CommandLogIterator;
 };
 
-#include "InputPoll.h"
+#include "IOInterface.h"
 #include "SavedLog.h"
 
 #endif //COS214_PROJECT__COMMANDLOG_H

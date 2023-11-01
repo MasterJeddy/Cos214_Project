@@ -33,7 +33,7 @@ void CommandLog::addEntry(UserCommand* com) {
   commands->push_back(com->clone());
 }
 
-CommandLog::CommandLog(InputPoll* inputPoll) {
+CommandLog::CommandLog(IOInterface* inputPoll) {
   this->inputPoll = inputPoll;
   this->commands = new std::vector<UserCommand*>();
 }

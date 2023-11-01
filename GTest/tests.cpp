@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../InputPoll.h"
+#include "../IOInterface.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -8,7 +8,7 @@ TEST(ExampleTests,Test1){
 }
 
 TEST(SimonTests,CreateAndDeleteInputPoll){
-    auto* inputPoll = new InputPoll();
+    auto* inputPoll = new IOInterface();
     ASSERT_NE(inputPoll, nullptr);
     delete inputPoll;
 }
@@ -33,7 +33,7 @@ TEST(SimonTests,InputPollSaveLoad){
   ASSERT_EQ(nbytes, bsize);
 
   //Actual Test
-  auto* inputPoll = new InputPoll();
+  auto* inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
@@ -62,7 +62,7 @@ TEST(SimonTests,InputPollMixedSaveMixedLoad){
   ASSERT_EQ(nbytes, bsize);
 
   //Actual Test
-  auto* inputPoll = new InputPoll();
+  auto* inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
@@ -90,7 +90,7 @@ TEST(SimonTests,SaveToFile) {
   ASSERT_EQ(nbytes, bsize);
 
   //Actual Test
-  auto* inputPoll = new InputPoll();
+  auto* inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
@@ -118,7 +118,7 @@ TEST(SimonTests,LoadFromFile) {
   ASSERT_EQ(nbytes, bsize);
 
   //Actual Test
-  auto* inputPoll = new InputPoll();
+  auto* inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 

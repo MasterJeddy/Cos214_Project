@@ -1,10 +1,10 @@
-//===-- COS214_Project/InputPoll.cpp - InputPoll class implementation ------*- C++ -*-===//
+//===-- COS214_Project/IOInterface.cpp - IOInterface class implementation ------*- C++ -*-===//
 //
 // COS 214 Project.
 //
 //===----------------------------------------------------------------------===/////
 /// \file
-/// This file contains the implementation of the InputPoll class. InputPoll will
+/// This file contains the implementation of the IOInterface class. IOInterface will
 /// serve as an invoker in the command and the main class through which user
 /// can interact with the system. The entire system will be driven forward
 /// by the commands emitted by this class.
@@ -12,11 +12,11 @@
 //===----------------------------------------------------------------------===//
 
 #include <iostream>
-#include "InputPoll.h"
+#include "IOInterface.h"
 #include "Save.h"
 #include "Load.h"
 
-void InputPoll::poll() {
+void IOInterface::poll() {
     //std::cout << "What do you want to do" << std::endl;
     render();
     bool run= true;
@@ -36,7 +36,7 @@ void InputPoll::poll() {
 
 
 
-void InputPoll::resetToLog(CommandLog* log) {
+void IOInterface::resetToLog(CommandLog* log) {
   CommandLogIterator* it = log->createIterator();
   for (it->first();!it->isDone();it->next()){
     if (it->currentItem()->getType() != COMMANDS::LOAD && it->currentItem()->getType() != COMMANDS::SAVE){
@@ -65,12 +65,12 @@ void InputPoll::resetToLog(CommandLog* log) {
 
 }
 
-InputPoll::InputPoll() {
+IOInterface::IOInterface() {
   commandLog = new CommandLog(this);
   logs = new Logs;
 }
 
-UserCommand* InputPoll::queryUser() {
+UserCommand* IOInterface::queryUser() {
   char c;
   do {
     std::cin >> c;
@@ -109,12 +109,12 @@ UserCommand* InputPoll::queryUser() {
   } while (true);
 }
 
-InputPoll::~InputPoll() {
+IOInterface::~IOInterface() {
   delete logs;
   delete commandLog;
 }
 
-void InputPoll::render() {
+void IOInterface::render() {
       if (!checkFlag(DONT_DRAW_HELP)){
           std::cout << "What do you want to do?" << std::endl;
           std::cout << "1. Save to memory" << std::endl;
@@ -171,14 +171,14 @@ void InputPoll::render() {
         delete it;
       }
 }
-void InputPoll::addFlag(DRAW_FLAGS flag) {
+void IOInterface::addFlag(DRAW_FLAGS flag) {
   drawState = drawState|flag;
 }
 
-void InputPoll::removeFlag(DRAW_FLAGS flag) {
+void IOInterface::removeFlag(DRAW_FLAGS flag) {
   drawState = drawState^flag;
 }
 
-bool InputPoll::checkFlag(DRAW_FLAGS flag) const {
+bool IOInterface::checkFlag(DRAW_FLAGS flag) const {
   return drawState&flag;
 }

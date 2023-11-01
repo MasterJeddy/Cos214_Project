@@ -129,10 +129,10 @@ COMMANDS ToggleHelp::getType() {
   return COMMANDS::TOGGLE_HELP;
 }
 
-ToggleHelp::ToggleHelp(InputPoll *inputPoll) {
+ToggleHelp::ToggleHelp(IOInterface *inputPoll) {
   this->inputPoll = inputPoll;
 }
-void ToggleHelp::setInputPoll(InputPoll *ip) {
+void ToggleHelp::setInputPoll(IOInterface *ip) {
    inputPoll = ip;
 }
 
@@ -154,10 +154,10 @@ COMMANDS ToggleLog::getType() {
   return COMMANDS::TOGGLE_LOG;
 }
 
-ToggleLog::ToggleLog(InputPoll *inputPoll) {
+ToggleLog::ToggleLog(IOInterface *inputPoll) {
   this->inputPoll = inputPoll;
 }
-void ToggleLog::setInputPoll(InputPoll *ip) {
+void ToggleLog::setInputPoll(IOInterface *ip) {
   inputPoll = ip;
 }
 

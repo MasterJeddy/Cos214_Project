@@ -17,7 +17,7 @@
 #define COS214_PROJECT__COMMANDS_H
 
 #include "UserCommand.h"
-#include "InputPoll.h"
+#include "IOInterface.h"
 
 class HireMaitreD : public UserCommand{
 public:
@@ -79,26 +79,26 @@ public:
 
 class ToggleHelp : public UserCommand{
 private:
-  InputPoll* inputPoll;
+  IOInterface* inputPoll;
 public:
   void execute() override;
   UserCommand *clone() override;
   COMMANDS getType() override;
   ~ToggleHelp() override;
-  explicit ToggleHelp(InputPoll* inputPoll);
-  void setInputPoll(InputPoll* ip);
+  explicit ToggleHelp(IOInterface* inputPoll);
+  void setInputPoll(IOInterface* ip);
 };
 
 class ToggleLog : public UserCommand{
 private:
-  InputPoll* inputPoll;
+  IOInterface* inputPoll;
 public:
   void execute() override;
   UserCommand *clone() override;
   COMMANDS getType() override;
   ~ToggleLog() override;
-  explicit ToggleLog(InputPoll* inputPoll);
-  void setInputPoll(InputPoll* ip);
+  explicit ToggleLog(IOInterface* inputPoll);
+  void setInputPoll(IOInterface* ip);
 };
 
 
