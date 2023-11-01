@@ -29,10 +29,11 @@ public:
 
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);
-    virtual void request();
+    virtual void request(); // requests for a seat
 
     // getters
-    int group
+    int getGroupSize();
+    std::vector<Customer *> getGroup();
 };
 
 #endif

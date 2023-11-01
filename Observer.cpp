@@ -12,7 +12,25 @@
 
 #include "Observer.h"
 
+Observer::Observer()
+{
+}
+
 Observer::~Observer()
 {
-    
+}
+
+std::string Observer::getId()
+{
+    return this->id;
+}
+
+std::string Observer::getType()
+{
+    return this->type;
+}
+
+std::string Observer::getState()
+{
+    return this->state;
 }

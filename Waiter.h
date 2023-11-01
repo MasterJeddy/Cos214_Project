@@ -20,7 +20,7 @@ private:
 
 public:
     Waiter();
-    virtual void update();
+    virtual void notify();
 };
 
 #endif

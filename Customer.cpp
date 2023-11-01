@@ -15,7 +15,6 @@
 
 Customer::Customer(int id, std::string name)
 {
-    // this->ty
     this->id = id;
     this->name = name;
 }
@@ -42,12 +41,32 @@ void Customer::detachObserver(Observer *observer)
         if ((*i)->getId() == observer->getId())
         {
             this->observerList.erase(i);
-            break;
+            return;
         }
     }
 }
 
 void Customer::request()
 {
-    // thi
+    for (std::vector<Observer *>::iterator iter = this->observerList.begin(); iter < this->observerList.end(); iter++)
+    {
+        // find a ConcreteObserver that is a maitreD and that is currently free and notify them of request
+        if ((*iter)->getType() == TYPE_MAITRED && (*iter)->getState() == "FREE")
+        {
+            (*iter)->notify(this);
+            return;
+        }
+    }
+
+    // if this point is reached, it means all the maitreDs are curently busy at the moment
+}
+
+int Customer::getGroupSize()
+{
+    return this->group.size();
+}
+
+std::vector<Customer *> Customer::getGroup()
+{
+    return this->group;
 }

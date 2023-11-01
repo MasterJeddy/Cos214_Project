@@ -14,20 +14,24 @@
 #ifndef COS214_PROJECT_OBSERVER_H
 #define COS214_PROJECT_OBSERVER_H
 
+#include <string>
+
 class Observer
 {
 protected:
     std::string id;
     std::string type;
+    std::string state; // can either be FREE or BUSY
 
 public:
     Observer();
-    virtual void update() = 0;
     virtual ~Observer();
+    virtual void notify(Customer *customer) = 0;
 
     // getters
-    std::string getId();
-    std::string getType();
+    virtual std::string getId();
+    virtual std::string getType();
+    virtual std::string getState();
 };
 
 #endif

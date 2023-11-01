@@ -22,14 +22,12 @@
 class MaitreD : public Observer
 {
 private:
-    std::string state; // can either be FREE or BUSY
     Customer *customer;
     Floor *floor;
 
 public:
     MaitreD(int id);
-    virtual void update();
-    std::string getState();
+    virtual void notify(Customer *customer);
 };
 
 #endif

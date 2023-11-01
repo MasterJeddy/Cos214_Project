@@ -22,7 +22,7 @@ TableComposite::TableComposite(int id, int waiterId)
     this->id = tempy;
     this->waiterId = waiterId;
 
-    //set the max capacity of the table to 4 - one table can host 4 people
+    // set the default max capacity of the table to 4 - one table can host 4 people
     this->maxCapacity = 4;
 }
 

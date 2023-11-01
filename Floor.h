@@ -30,12 +30,12 @@ private:
     std::vector<TableComposite *> tables;
 
 public:
-    Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<Table *> tables);
+    Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables);
     void customerRequestsSeat();
     bool spaceAvailable();
-    void seatCustomer();
+    bool seatCustomer(Customer *customer);
 
-    
+    void dequeueCustomer();
 };
 
 #endif

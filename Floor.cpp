@@ -13,7 +13,7 @@
 
 #include "Floor.h"
 
-Floor::Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<Table *> tables)
+Floor::Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables)
 {
     this->waiters = waiters;
     this->waitingCustomers = waitingCustomers;
@@ -26,15 +26,17 @@ void Floor::customerRequestsSeat()
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
 
     nextCustomer->request();
-
-    this->waitingCustomers.pop(); // remove this customer from queue
 }
 
-bool Floor::spaceAvailable(){
-    //customers are in a group and we need to check if there is space available for them within the restaurant
-    // we do this by checking the various 'free' tables and counting the number of spots available 
-    // and checking to see whether this value is larger than or equal to the group size
-
-    
+void Floor::dequeueCustomer()
+{
+    // customer has been successfully sat down, remove them from front of queue
+    this->waitingCustomers.pop();
 }
 
+bool Floor::spaceAvailable(Customer *customer)
+{
+    // customers are in a group and we need to check if there is space available for them within the restaurant
+    //  we do this by checking the various 'free' tables and counting the number of spots available
+    //  and checking to see whether this value is larger than or equal to the group size
+}
