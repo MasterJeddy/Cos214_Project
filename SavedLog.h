@@ -21,16 +21,16 @@ class SavedLog {
 private:
   std::vector<UserCommand*>* commands;
 public:
-  /// \brief
-  /// \return
+  /// \brief Getter for commands vector
+  /// \return Commands vector
   std::vector<UserCommand*>* getCommands();
-  /// \brief
-  /// \param commands
+  /// \brief Setter for commands vector
+  /// \param commands New value for commands vector
   void setCommands(std::vector<UserCommand*>* commands);
-  /// \brief
-  /// \param commands
+  /// \brief Constructor for SavedLog
+  /// \param commands Commands vector to store
   explicit SavedLog(std::vector<UserCommand*>* commands);
-  /// \brief
+  /// \brief Destructor for SavedLog
   ~SavedLog();
 };
 
