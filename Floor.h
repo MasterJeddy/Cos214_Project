@@ -32,8 +32,7 @@ private:
 public:
     Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<Table *> tables);
     void customerRequestsSeat();
-    bool spaceAvailable();
-    void seatCustomer();
+    bool seatCustomer(Customer* customer);
 
     
 };

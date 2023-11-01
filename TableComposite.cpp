@@ -28,7 +28,21 @@ TableComposite::TableComposite(int id, int waiterId)
 
 TableComposite::addComponent(TableComponent component)
 {
+    int counter = 1;    //this will count the number of tables we have combined - starts off at 1 because the parent table doesn't count as a child
+    // and is therefore not part of the children vector
     children.push_back(component);
+    std::vector<TableComponent *>::iterator miki = children.begin();
+    for (miki; miki < children.end(); miki++)
+    {
+        if ((*miki)->type.equals(TYPE_TABLECOMPOSITE))
+        {
+           counter++;
+        }
+    }
+        //maxCapacity is equal to 4 + 2*(number of tables - 1)
+        this->maxCapacity = 4 + 2*(counter -1);
+    
+    
 }
 
 TableComposite::removeComponent(TableComponent component)

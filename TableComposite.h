@@ -40,7 +40,7 @@ public:
     TableState getTableState();
 
     // setters
-    void setCapacity(int capacity);
+    void setMaxCapacity(int capacity);
     void setTableState(TableState *tableState);
 
     // observer dp related functions
