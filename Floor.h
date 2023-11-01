@@ -17,7 +17,7 @@
 #include "Waiter.h"
 #include "Customer.h"
 #include "MaitreD.h"
-#include "Table.h"
+#include "TableComposite.h"
 
 #include <queue>
 
@@ -27,7 +27,7 @@ private:
     std::vector<Waiter *> waiters;
     std::queue<Customer *> waitingCustomers;
     std::vector<MaitreD *> maitreDs;
-    std::vector<Table *> tables;
+    std::vector<TableComposite *> tables;
 
 public:
     Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<Table *> tables);

@@ -13,6 +13,9 @@
 #ifndef COS214_PROJECT_MAITRED_H
 #define COS214_PROJECT_MAITRED_H
 
+#include "Observer.h"
+#include "Floor.h"
+
 class MaitreD : public Observer
 {
 private:
