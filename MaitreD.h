@@ -22,7 +22,8 @@ private:
 
 public:
     MaitreD(int id);
-    virtual void notify(TableComponent* component);
+    virtual void notify(Customer *customer);
+    virtual void notify(TableComposite *table);
 };
 
 #endif

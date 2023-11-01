@@ -26,7 +26,7 @@ TableComposite::TableComposite(int id, int waiterId)
     this->maxCapacity = 4;
 }
 
-TableComposite::addComponent(TableComponent component)
+void TableComposite::addComponent(TableComponent* component)
 {
     int counter = 1;    //this will count the number of tables we have combined - starts off at 1 because the parent table doesn't count as a child
     // and is therefore not part of the children vector
@@ -45,7 +45,7 @@ TableComposite::addComponent(TableComponent component)
     
 }
 
-TableComposite::removeComponent(TableComponent component)
+void TableComposite::removeComponent(TableComponent* component)
 {
 
     std::vector<TableComponent *>::iterator miki = children.begin();
@@ -81,7 +81,7 @@ void TableComposite::setCapacity(int capacity)
     this->maxCapacity = capacity;
 }
 
-TableState TableComposite::getTableState()
+TableState* TableComposite::getTableState()
 {
     return this->tableState;
 }
@@ -121,11 +121,6 @@ void TableComposite::requestBill()
             break;
         }
     }
-}
-
-std::String TableComposite::getId()
-{
-    return this->id;
 }
 
 void TableComposite::attachObserver(Observer *observer)

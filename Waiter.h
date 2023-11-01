@@ -23,7 +23,8 @@ private:
 
 public:
     Waiter(int id);
-    virtual void notify();
+    virtual void notify(Customer *customer);
+    virtual void notify(TableComposite *table);
 };
 
 #endif

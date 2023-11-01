@@ -25,9 +25,11 @@ MaitreD::MaitreD(int id)
     this->state = "FREE";
 }
 
-void MaitreD::notify(TableComponent* component)
+void MaitreD::notify(Customer *customer)
 {
-    // change stat of this maitreD to BUSY
+    // called when a customer requests a seat
+
+    // change state of this maitreD to BUSY
     this->state = "BUSY";
 
     // this is called when a customer has requested a seat at a table
@@ -35,7 +37,7 @@ void MaitreD::notify(TableComponent* component)
     // maitreD needs to check if there is space on the floor(in the restaurant)
     // if there is space, sit the customer and remove customer from waiting queue, otherwise tell customer to wait
 
-    bool success = this->floor->seatCustomer(component);
+    bool success = this->floor->seatCustomer(customer);
 
     if (success)
     {
@@ -49,4 +51,8 @@ void MaitreD::notify(TableComponent* component)
 
     // change state of maitreD back to FREE
     this->state = "FREE";
+}
+
+void MaitreD::notify(TableComposite *table)
+{
 }

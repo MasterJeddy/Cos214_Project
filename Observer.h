@@ -29,7 +29,8 @@ protected:
 public:
     Observer();
     virtual ~Observer();
-    virtual void notify(TableComponent* component) = 0;
+    virtual void notify(Customer *customer) = 0;
+    virtual void notify(TableComposite *table) = 0;
 
     // getters
     virtual std::string getId();

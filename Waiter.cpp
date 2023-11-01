@@ -18,24 +18,23 @@ Waiter::Waiter(int id)
     // set the type of this ConcreteObserver
     this->type = TYPE_WAITER;
 
-    // set the id of this maitreD
+    // set the id of this waiter
     std::stringstream ss;
     ss << this->type << id;
     this->id = ss.str();
 
-    // set the default state for maitreD
+    // set the default state for waiter
     this->state = "FREE";
 }
 
-void Waiter::notify()
+void Waiter::notify(Customer *customer)
 {
+}
+
+void Waiter::notify(TableComposite *table)
+{
+    // called when a table requires the waiter's assistance
     this->state = "BUSY";
-
-
-
-
-
-
 
     this->state = "FREE";
 }

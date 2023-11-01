@@ -30,6 +30,8 @@ public:
     TableComponent();
     virtual ~TableComponent();
 
+    std::string getId();
+
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);
     virtual void request() = 0;
