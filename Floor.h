@@ -48,6 +48,7 @@ public:
     void addWaitingCustomer();
     void addMaitreD();
     void addTable();
+    void assignTablesToWaiters();
 
     // getters
     int getTableCount();
@@ -60,6 +61,7 @@ public:
     int getAndIncrementWaitingCustomerId();
     int getAndIncrementMaitreDId();
     int getAndIncrementTableId();
+    
 };
 
 #endif
