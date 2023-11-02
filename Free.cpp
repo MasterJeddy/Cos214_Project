@@ -6,24 +6,28 @@
 ///
 /// \file
 /// This file contains the implementation of the Free.h file.
-/// 
+///
 ///
 //===----------------------------------------------------------------------===//
 
 #include "Free.h"
 
-Free::Free(){
+Free::Free()
+{
     this->name = "Free";
 }
 
-void Free::proceed(TableComposite* tableComp){
-    TableState* tempy = new Occupied();
+std::string Free::getName()
+{
+    return this->name;
+}
+
+void Free::proceed(TableComposite *tableComp)
+{
+    TableState *tempy = new Occupied();
     tableComp->setTableState(tempy);
 }
 
-void Free::hold(TableComposite* tableComp){
-    
+void Free::hold(TableComposite *tableComp)
+{
 }
-
-
-

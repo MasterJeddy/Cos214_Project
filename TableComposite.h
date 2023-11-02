@@ -15,9 +15,15 @@
 #ifndef COS214_PROJECT_TABLECOMPOSITE_H
 #define COS214_PROJECT_TABLECOMPOSITE_H
 #include "TableComponent.h"
-#include "TableState.h"
+// #include "TableState.h"
 #include "BillComponent.h"
 #include "Order.h"  
+
+#include "Constants.cpp"
+
+#include <sstream>
+
+class TableState;
 
 class TableComposite : public TableComponent
 {

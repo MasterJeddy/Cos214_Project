@@ -4,6 +4,7 @@
 #include "../SubBill.h"
 #include "../BillComposite.h"
 #include "../TableState.h"
+#include "../Occupied.h"
 #include "../Free.h"
 
 //
@@ -67,9 +68,6 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
 }
 
 TEST(MihailsTests, BillTest){
-
-
-    // std::cout << "Total Cost: R" << mainBill.getTotal() << std::endl;
 
 
     SubBill item1("Item 1", 10.50);

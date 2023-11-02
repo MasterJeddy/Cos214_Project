@@ -14,11 +14,12 @@
 #define COS214_PROJECT_MAITRED_H
 
 #include "Observer.h"
+#include "TableComposite.h"
 
 class MaitreD : public Observer
 {
 private:
-    Floor *floor;
+    // Floor *floor;
 
 public:
     MaitreD(int id);

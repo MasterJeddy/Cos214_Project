@@ -13,6 +13,7 @@
 #ifndef COS214_PROJECT_WAITINGONFOOD_H
 #define COS214_PROJECT_WAITINGONFOOD_H
 #include "TableState.h"
+#include "Eating.h"
 
 class WaitingOnFood: public TableState
 {

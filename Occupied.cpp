@@ -21,7 +21,7 @@ void Occupied::proceed(TableComposite* tableComp){
     tableComp->setTableState(tempy);
 }
 
-void Occupied::hold(){
+void Occupied::hold(TableComposite* tableComp){
     
 }
 
