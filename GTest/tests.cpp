@@ -138,8 +138,13 @@ TEST(MihailsTests, TableCompositeTest){
   tableComp->removeComponent(secondTableComp);
   
   //ASSERT_EQ(tableComp->getChild("TC_2"), "")<<"getChild() behaved unexpectedly...";
-  ASSERT_EQ(tableComp->getChild("TC_2"), secondTableComp)<<"This is supposed to be NULL";
+  ASSERT_EQ(tableComp->getChild("TC_2"), nullptr);
  
+  ASSERT_EQ(tableComp->getCapacity(), 4);
+
+  tableComp->addComponent(secondTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 6);
+  
 
 
 }

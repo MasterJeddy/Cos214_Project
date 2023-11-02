@@ -63,6 +63,17 @@ void TableComposite::removeComponent(TableComponent *component)
             break;
         }
     }
+    //this will recalculate the table capacity once a table has been removed
+    int counter = 1;
+    for (miki; miki < children.end(); miki++)
+    {
+        if ((*miki)->getType() == TYPE_TABLECOMPOSITE)
+        {
+            counter++;
+        }
+    }
+
+    this->maxCapacity = 4 + 2 * (counter - 1);
 }
 
 TableComponent *TableComposite::getChild(std::string id)
