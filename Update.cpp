@@ -17,7 +17,7 @@ void Update::execute() {
 }
 
 UserCommand *Update::clone() {
-  return new Update;
+  return new Update(floorController,kitchenController);
 }
 
 COMMANDS Update::getType() {

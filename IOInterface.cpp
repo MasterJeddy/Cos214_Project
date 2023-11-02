@@ -91,7 +91,7 @@ UserCommand* IOInterface::queryUser() {
       return new Load(commandLog,logs,&file);
     } break;
     case '5': {
-      return new Update();
+      return new Update(nullptr, nullptr);
     } break;
     case '6': {
       return new ToggleLog(this);

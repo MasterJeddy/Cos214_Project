@@ -61,7 +61,7 @@ SavedLog * Logs::loadFromFile(std::string& file) {
       commands->push_back(new HireWaiter(nullptr));
       break;
     case COMMANDS::UPDATE:
-      commands->push_back(new Update);
+      commands->push_back(new Update(nullptr, nullptr));
       break;
     case COMMANDS::EXPAND_KITCHEN:
       commands->push_back(new ExpandKitchen(nullptr));
