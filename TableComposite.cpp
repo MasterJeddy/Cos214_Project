@@ -124,7 +124,15 @@ TableState *TableComposite::getTableState()
 
 double TableComposite::getPayment()
 {
-    return 0.0;
+    BillComponent* mainBill = new BillComposite("Main-Bill");
+    
+    for(Order* order: orders){
+        int num = order->orderNumber;
+        BillComponent* temp = new SubBill("Order"+num, order->getPrice());
+        mainBill->add(temp);
+    }
+    //return the total amount of the entire bill 
+    return mainBill->getTotal();
 }
 
 void TableComposite::setTableState(TableState *tableState)
