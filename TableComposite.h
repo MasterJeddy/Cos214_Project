@@ -28,7 +28,7 @@ private:
     BillComponent *bill;
 
 public:
-    TableComposite(int id, int waiterId);
+    TableComposite(int id);
     void addComponent(TableComponent *component);
     void removeComponent(TableComponent *component);
     void requestBill();
@@ -41,6 +41,7 @@ public:
     // setters
     void setMaxCapacity(int capacity);
     void setTableState(TableState *tableState);
+    void assignWaiter(std::string waiterId);
 
     // observer dp related functions
     virtual void attachObserver(Observer *observer);

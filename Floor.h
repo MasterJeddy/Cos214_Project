@@ -29,23 +29,37 @@ private:
     std::vector<MaitreD *> maitreDs;
     std::vector<TableComposite *> tables;
 
+    // to keep track of the latest generated ids of the floor objects
+    int waiterId;
+    int waitingCustomerId;
+    int maitreDId;
+    int tableId;
+
 public:
+    Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables);
+    Floor();
     Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables);
     void customerRequestsSeat();
     bool seatCustomer(Customer *customer);
 
     void dequeueCustomer();
 
-    void addWaiters(std::vector<Waiter *> waiters);
-    void addWaitingCustomers(std::queue<Customer *> waitingCustomers);
-    void addMaitreDs(std::vector<MaitreD *> maitreDs);
-    void addTables(std::vector<TableComposite *> tables);
+    void addWaiter();
+    void addWaitingCustomer();
+    void addMaitreD();
+    void addTable();
 
-    void addWaiter(Waiter *waiter);
-    void addWaitingCustomer(Customer *waitingCustomer);
-    void addMaitreD(MaitreD *maitreDs);
-    void addTable(TableComposite *tables); 
-    void assignTablesToWaiters();
+    // getters
+    int getTableCount();
+    int getMaitreDCount();
+    int getWaiterCount();
+    int getWaitingCustomerCount();
+
+    // functions for generating ids
+    int getAndIncrementWaiterId();
+    int getAndIncrementWaitingCustomerId();
+    int getAndIncrementMaitreDId();
+    int getAndIncrementTableId();
 };
 
 #endif
