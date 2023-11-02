@@ -12,5 +12,7 @@ add_executable(Cos214_Project main.cpp
         HeadChef.cpp
         HeadChef.h
         Chef.cpp
-        Chef.h)
+        Chef.h
+        Clock.cpp
+        Clock.h)
 add_subdirectory(GTest)

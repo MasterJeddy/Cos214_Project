@@ -24,7 +24,7 @@
 #include "Burger.h"
 struct Order {
 public:
-  static int totalOrders;
+  static inline int totalOrders = 0;
   int tableNum = 0;
   int orderNumber = 0;
   int wantsKetchup = 0;

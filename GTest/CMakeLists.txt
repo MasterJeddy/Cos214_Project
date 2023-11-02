@@ -11,5 +11,12 @@ add_executable(Google_Tests_run tests.cpp
         ../Kitchen.cpp
         ../Kitchen.h
         ../HeadChef.cpp
-        ../HeadChef.h)
+        ../HeadChef.h
+        ../Chef.cpp
+        ../Chef.h
+        ../Burger.h
+        ../Burger.cpp
+        ../Order.h
+        ../Clock.cpp
+        ../Clock.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)
