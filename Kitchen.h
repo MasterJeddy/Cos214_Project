@@ -12,7 +12,8 @@
 //===----------------------------------------------------------------------===//
 ///
 /// \file
-/// This file contains the declaration of the Kitchen class.
+/// This file contains the declaration of the Kitchen class,
+/// functioning as a singleton.
 /// \brief Class containing the systems of the kitchen and will
 /// be in charge of its operations.
 ///
@@ -22,14 +23,23 @@
 #include "Order.h"
 class Kitchen {
 private:
+  static inline Kitchen* instance = nullptr;
+
   HeadChef headChef;
-  std::queue<Order> orderQueue;
-  std::queue<Order> finishedOrders;
+  std::queue<Order*> orderQueue;
+  std::queue<Order*> finishedOrders;
   bool isBusy = false;
 
-public:
-  bool addOrder(Order order);
   void produceBurgers();
+
+  Kitchen();
+  ~Kitchen();
+  Kitchen(Kitchen&);
+  Kitchen& operator=(Kitchen&);
+
+public:
+  Kitchen* getInstance();
+  bool addOrder(Order* order);
 };
 
 #endif //COS214_PROJECT__KITCHEN_H
