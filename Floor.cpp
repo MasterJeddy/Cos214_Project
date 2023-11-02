@@ -177,3 +177,97 @@ void Floor::addMaitreD(MaitreD *maitreDs)
 void Floor::addTable(TableComposite *tables)
 {
 }
+
+void Floor::assignTablesToWaiters(){
+    
+    //this function will assign tables to the various waiters
+    //the tables will be split as evenly as possible between 
+    //the various waiters
+    //count the number of tables and waiters 
+    int numTables = getTableCount();
+    int numWaiters = getWaiterCount();
+
+    //clear all of the old assigned tables (if any) for all 
+    // of the waiters 
+    for(Waiter* waiter: waiters){
+        waiter->clearAssignedTables();
+    }
+
+
+
+    if (numTables>numWaiters)
+    {
+        //this calculation will only run when the number of Tables is greater than the number of Waiters
+        int numTablesPerWaiter = numTables/numWaiters;      //this answer is rounded down (java)
+        //loop through each waiter and assign numTablesPerWaiter Tables to each waiter and the last waiter gets all the leftover tables
+        
+
+        
+            //this will assign the tables as evenly as possible to 
+            //each waiter 
+
+            //the first n-1 waiters will get numTablesPerWaiter 
+            //all of those waiters will get the same number of Tables
+            //assigned to them however the last one will take the 
+            //leftover tables which will either be the same or slightly more
+
+            for(int i = 0; i<waiters.size(); i++){
+
+             
+
+            //this is the first n-1 waiters
+                if(i!=waiters.size()-1){
+                    for(int j = i*numTablesPerWaiter; j<numTablesPerWaiter*(i+1); j++){
+                    waiters[i]->assignTable(tables[j]);
+                }
+                }
+                //the last waiter 
+                else if(i == waiters.size()-1){
+                    //assign the last waiter all of the leftover tables
+                    //the number of leftover tables is just numTables - (waiters-1)*numTablesPerWaiter
+                    int leftoverTables = numTables - (waiters.size()-1)*(numTablesPerWaiter);
+                    for(int x = i*numTablesPerWaiter; x<(i*numTablesPerWaiter)+leftoverTables; x++){
+                    waiters[i]->assignTable(tables[x]);
+                    }
+                }
+
+            }
+
+
+        
+        
+        
+    }
+
+    else if(numTables == numWaiters) {
+        //the case where number of tables and waiters are the same
+
+            //this case is easy as each waiter will get 
+            //one table assigned to them 
+            for (int i = 0; i<waiters.size(); i++)
+            {
+                waiters[i]->assignTable(tables[i]);
+            }
+            
+
+
+    }
+
+    else{
+        //This is the case where the 
+        //number of waiters is greater than the number 
+        // of tables and therefore not all of the waiters
+        // will receive a table. Some will have to be
+        // on 'stand-by' and therefore will not be responsible
+        // for any tables, at least until no new tables are added
+        // by the player.
+
+        for(int i = 0; i<tables.size(); i++){       //only one waiter per table 
+            waiters[i]->assignTable(tables[i]);
+        }
+
+        //the rest of the waiters will be on standy 
+        //for the given moment
+    }
+    
+}

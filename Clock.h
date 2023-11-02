@@ -28,7 +28,7 @@ public:
   ///
   /// \return A reference to the singular clock instance
   static Clock& instance();
-  /// \breif Get the time associated with identification string.
+  /// \brief Get the time associated with identification string.
   ///
   /// This returns the amount of tics that have passed on a timer linked to an identification string
   /// since the first time this function was called (this function creates and associates a timer

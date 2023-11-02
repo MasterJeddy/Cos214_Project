@@ -44,7 +44,8 @@ public:
     void addWaiter(Waiter *waiter);
     void addWaitingCustomer(Customer *waitingCustomer);
     void addMaitreD(MaitreD *maitreDs);
-    void addTable(TableComposite *tables);
+    void addTable(TableComposite *tables); 
+    void assignTablesToWaiters();
 };
 
 #endif
