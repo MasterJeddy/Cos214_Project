@@ -21,6 +21,40 @@ Floor::Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustom
     this->tables = tables;
 }
 
+Floor::Floor()
+{
+    this->waiterId = 0;
+    this->waitingCustomerId = 0;
+    this->maitreDId = 0;
+    this->tableId = 0;
+
+    // int thisCustomerId = getAndIncrementWaitingCustomerId();
+
+    // create the initial default number of waiters in the game
+    for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
+    {
+        addWaiter();
+    }
+
+    // create initial default number of customers in the game
+    for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
+    {
+        addWaitingCustomer();
+    }
+
+    // create initial default number of maitreDs in the game
+    for (int i = 0; i < DEFAULT_NO_MAITREDS; i++)
+    {
+        addMaitreD();
+    }
+
+    // create initial default number of tables in the game
+    for (int i = 0; i < DEFAULT_NO_TABLES; i++)
+    {
+        addTable();
+    }
+}
+
 void Floor::customerRequestsSeat()
 {
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
@@ -128,52 +162,78 @@ void Floor::dequeueCustomer()
     this->waitingCustomers.pop();
 }
 
-void Floor::addWaiters(std::vector<Waiter *> waiters)
+void Floor::addWaiter()
 {
-    for (int i = 0; i < waiters.size(); i++)
-    {
-        this->waiters.push_back(waiters[i]);
-    }
+    int thisWaiterId = getAndIncrementWaiterId();
+    Waiter *waiter = new Waiter(thisWaiterId);
+    this->waiters.push_back(waiter);
 }
 
-void Floor::addWaitingCustomers(std::queue<Customer *> waitingCustomers)
+void Floor::addWaitingCustomer()
 {
-    while (!waitingCustomers.empty())
-    {
-        this->waitingCustomers.push(waitingCustomers.front());
-        waitingCustomers.pop();
-    }
+    // int thisCustomerId = getAndIncrementWaitingCustomerId();
+    // Customer* customer = new Customer();
+    // this->waitingCustomers.push(waitingCustomer);
 }
 
-void Floor::addMaitreDs(std::vector<MaitreD *> maitreDs)
+void Floor::addMaitreD()
 {
-    for (int i = 0; i < maitreDs.size(); i++)
-    {
-        this->maitreDs.push_back(maitreDs[i]);
-    }
+    int thisMaitreDId = getAndIncrementMaitreDId();
+    MaitreD *maitreD = new MaitreD(thisMaitreDId);
+    this->maitreDs.push_back(maitreD);
 }
 
-void Floor::addTables(std::vector<TableComposite *> tables)
+void Floor::addTable()
 {
-    for (int i = 0; i < tables.size(); i++)
-    {
-        this->tables.push_back(tables[i]);
-    }
+    int thisTableId = getAndIncrementTableId();              // generate a table id for the new table
+    TableComposite *table = new TableComposite(thisTableId); // create the table
+    this->tables.push_back(table);                           // add table to floor
 }
 
-void Floor::addWaiter(Waiter *waiter)
+int Floor::getTableCount()
 {
-    // this->
+    return this->tables.size();
 }
 
-void Floor::addWaitingCustomer(Customer *waitingCustomer)
+int Floor::getMaitreDCount()
 {
+    return this->maitreDs.size();
 }
 
-void Floor::addMaitreD(MaitreD *maitreDs)
+int Floor::getWaiterCount()
 {
+    return this->waiters.size();
 }
 
-void Floor::addTable(TableComposite *tables)
+int Floor::getWaitingCustomerCount()
 {
+    return this->waitingCustomers.size();
+}
+
+int Floor::getAndIncrementWaiterId()
+{
+    int waiterId = this->waiterId;
+    this->waiterId = this->waiterId + 1;
+    return waiterId;
+}
+
+int Floor::getAndIncrementWaitingCustomerId()
+{
+    int waitingCustomerId = this->waitingCustomerId;
+    this->waitingCustomerId = this->waitingCustomerId + 1;
+    return waitingCustomerId;
+}
+
+int Floor::getAndIncrementMaitreDId()
+{
+    int maitreDId = this->maitreDId;
+    this->maitreDId = this->maitreDId + 1;
+    return maitreDId;
+}
+
+int Floor::getAndIncrementTableId()
+{
+    int tableId = this->tableId;
+    this->tableId = this->tableId + 1;
+    return tableId;
 }

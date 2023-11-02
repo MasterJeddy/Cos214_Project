@@ -14,22 +14,19 @@
 
 #include "TableComposite.h"
 
-TableComposite::TableComposite(int id, int waiterId)
+TableComposite::TableComposite(int id)
 {
     // id was made a string such that we do not end up with a case where TableComposite and Customer do not end
     // up with the same Id. We will append a special character for each respective object in order to help avoid
     // any sort of confusion later down the line.
     this->type = TYPE_TABLECOMPOSITE;
 
+    this->waiterId = ""; // this table has not yet been assigned to a waiter
+
     std::stringstream idStream;
     idStream << this->type << id;
     std::string tempy = idStream.str();
     this->id = tempy;
-
-    std::stringstream waiterIdStream;
-    waiterIdStream << TYPE_WAITER << waiterId;
-    std::string tempy2 = waiterIdStream.str();
-    this->waiterId = tempy2;
 
     // set the default max capacity of the table to 4 - one table can host 4 people
     this->maxCapacity = 4;
@@ -97,6 +94,14 @@ TableState *TableComposite::getTableState()
 void TableComposite::setTableState(TableState *tableState)
 {
     this->tableState = tableState;
+}
+
+void TableComposite::assignWaiter(std::string waiterId)
+{
+    std::stringstream waiterIdStream;
+    waiterIdStream << TYPE_WAITER << waiterId;
+    std::string tempy2 = waiterIdStream.str();
+    this->waiterId = tempy2;
 }
 
 void TableComposite::request()

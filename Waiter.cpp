@@ -36,7 +36,19 @@ void Waiter::notify(TableComposite *table)
     // called when a table requires the waiter's assistance
     this->state = "BUSY";
 
-
-
     this->state = "FREE";
+}
+
+
+void Waiter::assignTable(TableComposite *assignedTable)
+{
+    this->assignedTableIds.push_back(assignedTable->getId());
+
+    // also assign this waiter to the passed in table
+    assignedTable->assignWaiter(this->id);
+}
+
+void Waiter::clearAssignedTables()
+{
+    this->assignedTableIds.clear();
 }

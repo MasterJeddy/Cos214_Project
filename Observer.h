@@ -36,6 +36,7 @@ public:
     virtual std::string getId();
     virtual std::string getType();
     virtual std::string getState();
+    virtual std::string getTableId();
 };
 
 #endif
