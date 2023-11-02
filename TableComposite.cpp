@@ -122,6 +122,11 @@ TableState *TableComposite::getTableState()
     return this->tableState;
 }
 
+double TableComposite::getPayment()
+{
+    return 0.0;
+}
+
 void TableComposite::setTableState(TableState *tableState)
 {
     this->tableState = tableState;

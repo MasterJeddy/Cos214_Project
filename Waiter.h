@@ -15,6 +15,7 @@
 
 #include "Observer.h"
 #include "TableComposite.h"
+#include "Floor.h"
 
 class Waiter : public Observer
 {

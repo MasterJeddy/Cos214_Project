@@ -45,7 +45,8 @@ void Waiter::notify(TableComposite *table)
     bool tableReady = table->acceptOrReject();
 
     if(tableReady){
-        
+        double totalBill = table->getPayment();
+        Floo
     }
     else{
 

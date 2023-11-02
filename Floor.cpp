@@ -26,6 +26,8 @@ Floor *Floor::instance()
 
 Floor::Floor()
 {
+    this->salesRevenue = 0.0;
+
     this->waiterId = 0;
     this->waitingCustomerId = 0;
     this->maitreDId = 0;
@@ -202,6 +204,11 @@ void Floor::dequeueCustomer()
 {
     // customer has been successfully sat down, remove them from front of queue
     this->waitingCustomers.pop();
+}
+
+void Floor::addSalesRevenue(double totalBill)
+{
+    this->salesRevenue += totalBill;
 }
 
 void Floor::addWaiter()
