@@ -73,8 +73,8 @@ TableComponent *TableComposite::getChild(std::string id)
         {
             return child;
         }
-        return NULL;
     }
+        return NULL;
 }
 
 int TableComposite::getCapacity()
