@@ -38,7 +38,6 @@ private:
 public:
     Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables);
     Floor();
-    Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables);
     void customerRequestsSeat();
     bool seatCustomer(Customer *customer);
 

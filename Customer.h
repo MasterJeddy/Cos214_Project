@@ -14,7 +14,9 @@
 #define COS214_PROJECT_CUSTOMER_H
 
 #include "TableComponent.h"
+#include "Observer.h"
 #include <string>
+#include <vector>
 
 class Customer : public TableComponent
 {

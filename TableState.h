@@ -6,23 +6,27 @@
 ///
 /// \file
 /// This file contains the declaration of the TableState class which acts here as the
-/// state class of the state design pattern. 
+/// state class of the state design pattern.
 ///
 //===----------------------------------------------------------------------===//
 
 #ifndef COS214_PROJECT_TABLESTATE_H
 #define COS214_PROJECT_TABLESTATE_H
-#include "TableComposite.h"
+// #include "TableComposite.h"
 #include <string>
+
+class TableComposite;
 class TableState
 {
-    protected: 
+protected:
     std::string name;
-    public:
-    virtual void proceed(TableComposite* tableComp) = 0;
-    virtual void hold(TableComposite* tableComp) = 0;
+
+public:
+    virtual void proceed(TableComposite *tableComp) = 0;
+    virtual void hold(TableComposite *tableComp) = 0;
     TableState();
-    std::string getName();
+    virtual ~TableState() = 0;
+    virtual std::string getName();
 };
 
 #endif

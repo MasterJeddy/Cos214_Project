@@ -14,10 +14,17 @@
 #ifndef COS214_PROJECT_OBSERVER_H
 #define COS214_PROJECT_OBSERVER_H
 
-#include "Floor.h"
+// #include "Floor.h"
 #include <string>
 #include <sstream>
-#include "Constants.cpp"
+
+// #include "Constants.cpp"
+
+// #include "Customer.h"
+// #include "TableComposite.h"
+
+class TableComposite;
+class Customer;
 
 class Observer
 {

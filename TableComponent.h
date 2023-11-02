@@ -17,8 +17,13 @@
 
 #include "Observer.h"
 #include <vector>
+#include <string>
 
-#include "Constants.cpp"
+#include "TableState.h"
+
+// #include "Constants.cpp"
+
+// class Observer;
 
 class TableComponent
 {
@@ -34,8 +39,8 @@ public:
     std::string getId();
     std::string getType();
 
-    virtual void attachObserver(Observer *observer);
-    virtual void detachObserver(Observer *observer);
+    virtual void attachObserver(Observer *observer) = 0;
+    virtual void detachObserver(Observer *observer) = 0;
     virtual void request() = 0;
 };
 

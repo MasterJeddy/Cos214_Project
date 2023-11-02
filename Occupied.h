@@ -6,7 +6,7 @@
 ///
 /// \file
 /// This file contains the declaration of the Occupied class which acts here as the
-/// ConcreteState class of the state design pattern. 
+/// ConcreteState class of the state design pattern.
 ///
 //===----------------------------------------------------------------------===//
 
@@ -15,12 +15,12 @@
 #include "TableState.h"
 #include "WaitingOnWaiter.h"
 
-class Occupied: public TableState
+class Occupied : public TableState
 {
-   
-    public:
-    virtual void proceed(TableComposite* tableComp);
-    virtual void hold(TableComposite* tableComp);
+
+public:
+    virtual void proceed(TableComposite *tableComp);
+    virtual void hold(TableComposite *tableComp);
     Occupied();
 };
 

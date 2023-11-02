@@ -12,6 +12,10 @@
 
 #include "TableComponent.h"
 
+TableComponent::TableComponent()
+{
+}
+
 TableComponent::~TableComponent()
 {
 }

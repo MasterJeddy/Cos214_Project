@@ -14,11 +14,12 @@
 #define COS214_PROJECT_WAITER_H
 
 #include "Observer.h"
+#include 
 
 class Waiter : public Observer
 {
 private:
-    Floor *floor;
+    // Floor *floor;
     std::vector<std::string> assignedTableIds;
 
 public:
