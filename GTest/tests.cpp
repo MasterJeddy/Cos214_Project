@@ -91,13 +91,56 @@ TEST(MihailsTests, BillTest){
 
 
 TEST(MihailsTests, StateTest){
-
+  //test to check whether the transitions are working correctly 
   
-
+  TableComposite* tableComp = new TableComposite(1);
   TableState* tableState = new Free();
+  
   
   ASSERT_EQ(tableState->getName(), "Free")<<"State naming not working as expected.";  
 
+  tableState->proceed(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Occupied")<<"State naming not working as expected.";  
+  tableComp->getTableState()->proceed(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnWaiter")<<"State naming not working as expected.";  
 
+  tableComp->getTableState()->hold(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Busy")<<"State naming not working as expected.";  
+
+  tableComp->getTableState()->proceed(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnWaiter")<<"State naming not working as expected.";  
+
+  tableComp->getTableState()->proceed(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnFood")<<"State naming not working as expected.";  
+
+  tableComp->getTableState()->proceed(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Eating")<<"State naming not working as expected.";  
+
+  tableComp->getTableState()->proceed(tableComp);
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Bill")<<"State naming not working as expected.";  
+
+  
+  
 
 } 
+
+
+TEST(MihailsTests, TableCompositeTest){
+
+  TableComposite* tableComp = new TableComposite(1);
+  ASSERT_EQ(tableComp->getId(), "TC_1")<<"ID not working";
+
+  TableComposite* secondTableComp = new TableComposite(2);
+  tableComp->addComponent(secondTableComp);
+  ASSERT_EQ(tableComp->getChild("TC_2"), secondTableComp);
+
+  //testing whether the remove function works
+  tableComp->removeComponent(secondTableComp);
+  
+  //ASSERT_EQ(tableComp->getChild("TC_2"), "")<<"getChild() behaved unexpectedly...";
+  ASSERT_EQ(tableComp->getChild("TC_2"), secondTableComp)<<"This is supposed to be NULL";
+ 
+
+
+}
+
