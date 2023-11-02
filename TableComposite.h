@@ -32,6 +32,7 @@ private:
     int maxCapacity;
     TableState *tableState;
     BillComponent *bill;
+    std::vector<Order *> orders;
 
 public:
     TableComposite(int id);
@@ -45,6 +46,8 @@ public:
     int getCapacity();
     TableComponent *getChild(std::string id);
     TableState *getTableState();
+
+    double getPayment();
 
     // setters
     void setMaxCapacity(int capacity);

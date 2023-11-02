@@ -26,6 +26,8 @@ class Floor
 private:
     static Floor *onlyInstance_;
 
+    double salesRevenue;
+
     std::vector<Waiter *> waiters;
     std::queue<Customer *> waitingCustomers;
     std::vector<MaitreD *> maitreDs;
@@ -56,6 +58,8 @@ public:
     bool seatCustomer(Customer *customer);
 
     void dequeueCustomer();
+
+    void addSalesRevenue(double totalBill);
 
     void addWaiter();
     void addWaitingCustomer();
