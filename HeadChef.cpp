@@ -3,7 +3,12 @@
 //
 
 #include "HeadChef.h"
-bool HeadChef::finishOrder() {
+HeadChef::HeadChef() {
+  // TODO: BakerChef needs to be instantiated last since it needs its successor
+//  firstChef = new BakerChef()
+}
+
+bool HeadChef::finishOrder(Order order) {
   // TODO: check for each topping in order whether
   //  we have the specified amounts in the burger decorator
   return true;

@@ -21,11 +21,12 @@
 //===----------------------------------------------------------------------===//
 
 
+#include <string>
 #include "Burger.h"
 struct Order {
 public:
   static inline int totalOrders = 0;
-  int tableNum = 0;
+  std::string tableID; // Convenient for the guys doing the floor subsystem
   int orderNumber = 0;
   int wantsKetchup = 0;
   int wantsMustard = 0;
@@ -39,7 +40,8 @@ public:
   bool complete = false;
   Burger* burger;
   /// \brief Default constructor, all values default to 0 and assigns a unique orderNumber (starts counting orders at 1)
-  Order() {
+  Order(std::string _tableID) {
+    tableID = _tableID;
     orderNumber = ++totalOrders;
     burger = nullptr;
   };

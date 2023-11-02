@@ -20,18 +20,23 @@
 //===----------------------------------------------------------------------===//
 
 
-#include "Chef.h"
+#include <queue>
+#include "BakerChef.h"
 class HeadChef {
 private:
-//   BakerChef firstChef; // TODO: will be uncommented when implemented
+  int maxOrders = 3;
+  std::queue<Order> currentOrders;
+  BakerChef firstChef;
 
   /// \brief Performs the final checks to verify whether an order is completed;
   /// will be run by startOrder(), and will determine whether the order should
   /// go back through the chef chain during the next tick
   /// \return True if the order matches its corresponding burger objects
-  bool finishOrder();
+  bool finishOrder(Order order);
 
 public:
+  HeadChef();
+
   /// \brief Starts the chain of responsibility of chefs
   /// \param currentOrder : new order from the Kitchen's order queue
   /// \return a completed order with corresponding burger object
