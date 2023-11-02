@@ -40,6 +40,11 @@ public:
     void addWaitingCustomers(std::queue<Customer *> waitingCustomers);
     void addMaitreDs(std::vector<MaitreD *> maitreDs);
     void addTables(std::vector<TableComposite *> tables);
+
+    void addWaiter(Waiter *waiter);
+    void addWaitingCustomer(Customer *waitingCustomer);
+    void addMaitreD(MaitreD *maitreDs);
+    void addTable(TableComposite *tables);
 };
 
 #endif

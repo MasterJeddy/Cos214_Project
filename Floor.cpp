@@ -28,32 +28,6 @@ void Floor::customerRequestsSeat()
     nextCustomer->request();
 }
 
-void Floor::dequeueCustomer()
-{
-    // customer has been successfully sat down, remove them from front of queue
-    this->waitingCustomers.pop();
-}
-
-void Floor::addWaiters(std::vector<Waiter *> waiters)
-{
-    this->waiters = waiters;
-}
-
-void Floor::addWaitingCustomers(std::queue<Customer *> waitingCustomers)
-{
-    this->waitingCustomers = waitingCustomers;
-}
-
-void Floor::addMaitreDs(std::vector<MaitreD *> maitreDs)
-{
-    this->maitreDs = maitreDs;
-}
-
-void Floor::addTables(std::vector<TableComposite *> tables)
-{
-    this->tables = tables;
-}
-
 bool Floor::seatCustomer(Customer *customer)
 {
 
@@ -89,12 +63,11 @@ bool Floor::seatCustomer(Customer *customer)
 
         for (TableComposite *table : tables)
         {
-            if (table->getTableState()->getName()=="Free")
+            if (table->getTableState()->getName() == "Free")
             {
                 numFreeTables++;
             }
         }
-       
 
         // if the number of free tables is greater than the numTables value then we will be able to seat this group of customers
         //  we will need to combine these tables together and then once we have combined them we will then be able to add
@@ -109,7 +82,7 @@ bool Floor::seatCustomer(Customer *customer)
 
             for (TableComposite *table : tables)
             {
-                if (table->getTableState()->getName()=="Free")
+                if (table->getTableState()->getName() == "Free")
                 {
                     mainTable = table;
                     break;
@@ -118,7 +91,7 @@ bool Floor::seatCustomer(Customer *customer)
 
             for (TableComposite *table : tables)
             {
-                if (table->getTableState()->getName()=="Free" && table != mainTable && numTables != 0)
+                if (table->getTableState()->getName() == "Free" && table != mainTable && numTables != 0)
                 {
                     mainTable->addComponent(table); // combine all the tables together
                     numTables--;
@@ -140,11 +113,67 @@ bool Floor::seatCustomer(Customer *customer)
         // seat the single customer at the table and then return true
         for (TableComposite *table : tables)
         {
-            if (table->getTableState()->getName()=="Free") // loop through all the tables and stop when you find a free one
+            if (table->getTableState()->getName() == "Free") // loop through all the tables and stop when you find a free one
             {
                 table->addComponent(customer); // add this customer to the table
                 return true;
             }
         }
     }
+}
+
+void Floor::dequeueCustomer()
+{
+    // customer has been successfully sat down, remove them from front of queue
+    this->waitingCustomers.pop();
+}
+
+void Floor::addWaiters(std::vector<Waiter *> waiters)
+{
+    for (int i = 0; i < waiters.size(); i++)
+    {
+        this->waiters.push_back(waiters[i]);
+    }
+}
+
+void Floor::addWaitingCustomers(std::queue<Customer *> waitingCustomers)
+{
+    while (!waitingCustomers.empty())
+    {
+        this->waitingCustomers.push(waitingCustomers.front());
+        waitingCustomers.pop();
+    }
+}
+
+void Floor::addMaitreDs(std::vector<MaitreD *> maitreDs)
+{
+    for (int i = 0; i < maitreDs.size(); i++)
+    {
+        this->maitreDs.push_back(maitreDs[i]);
+    }
+}
+
+void Floor::addTables(std::vector<TableComposite *> tables)
+{
+    for (int i = 0; i < tables.size(); i++)
+    {
+        this->tables.push_back(tables[i]);
+    }
+}
+
+void Floor::addWaiter(Waiter *waiter)
+{
+    // this->
+}
+
+void Floor::addWaitingCustomer(Customer *waitingCustomer)
+{
+}
+
+void Floor::addMaitreD(MaitreD *maitreDs)
+{
+}
+
+void Floor::addTable(TableComposite *tables)
+{
 }
