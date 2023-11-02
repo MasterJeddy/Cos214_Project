@@ -24,11 +24,8 @@
 #include "Burger.h"
 struct Order {
 public:
-  /// \brief Default constructor, all values default to 0 and assigns orderNumber (starts counting orders at 1)
-  Order() {
-    orderNumber = ++totalOrders;
-  };
   static int totalOrders;
+  int tableNum = 0;
   int orderNumber = 0;
   int wantsKetchup = 0;
   int wantsMustard = 0;
@@ -40,7 +37,21 @@ public:
   int wantsTomato = 0;
   int wantsPickles = 0;
   bool complete = false;
-  Burger* burgers
+  Burger* burger;
+  /// \brief Default constructor, all values default to 0 and assigns a unique orderNumber (starts counting orders at 1)
+  Order() {
+    orderNumber = ++totalOrders;
+    burger = nullptr;
+  };
+  /// \brief Calculates the total price for the order's burger object
+  /// \return 0 if no burger has been created yet, otherwise finds and gives the total price of the burger and its ingredients.
+  double getPrice() const {
+    if (burger == nullptr) {
+      return 0;
+    } else {
+      return burger->totalPrice();
+    }
+  };
 };
 
 
