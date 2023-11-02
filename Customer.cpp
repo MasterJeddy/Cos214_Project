@@ -39,7 +39,7 @@ Customer::~Customer()
 
 void Customer::attachObserver(Observer *observer)
 {
-    // add the passed in observer to ythe list of observers
+    // add the passed in observer to the list of observers
     this->observerList.push_back(observer);
 }
 

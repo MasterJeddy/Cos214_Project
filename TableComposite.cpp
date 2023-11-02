@@ -128,7 +128,7 @@ void TableComposite::requestBill()
         {
             // notify this waiter
             // change the state to bill
-            tableState->proceed();
+            tableState->proceed(this);
 
             observer->notify(this);
             break;
