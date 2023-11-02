@@ -40,6 +40,7 @@ private:
 public:
   Kitchen* getInstance();
   bool addOrder(Order* order);
+  Order* getFinishedOrder();
 };
 
 #endif //COS214_PROJECT__KITCHEN_H

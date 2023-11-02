@@ -22,3 +22,13 @@ Kitchen *Kitchen::getInstance() {
 
   return instance;
 }
+/// \brief Get the next finished order in the finished order queue
+/// \return nullptr if no orders are ready to be collected, otherwise returns order*
+Order *Kitchen::getFinishedOrder() {
+  if (finishedOrders.empty())
+    return nullptr;
+
+  Order* out = finishedOrders.front();
+  finishedOrders.pop();
+  return out;
+}
