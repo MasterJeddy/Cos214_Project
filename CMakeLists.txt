@@ -14,5 +14,7 @@ add_executable(Cos214_Project main.cpp
         Chef.cpp
         Chef.h
         Clock.cpp
-        Clock.h)
+        Clock.h
+        BakerChef.cpp
+        BakerChef.h)
 add_subdirectory(GTest)

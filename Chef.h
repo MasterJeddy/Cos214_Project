@@ -22,9 +22,10 @@
 class Chef {
 private:
   Chef* successor;
-public:
+protected:
   Chef(Chef* _successor);
-  virtual bool handleOrder(Order* order) = 0;
+public:
+  virtual Order* handleOrder(Order* order) = 0;
   virtual ~Chef();
 };
 
