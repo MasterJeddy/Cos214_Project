@@ -7,6 +7,9 @@
 Chef::Chef(Chef *_successor) {
   successor = _successor;
 }
+Chef::Chef() {
+  successor = nullptr;
+}
 Chef::~Chef() {
   delete successor;
 }

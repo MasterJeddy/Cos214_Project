@@ -21,9 +21,10 @@
 #include "Order.h"
 class Chef {
 private:
-  Chef* successor;
 protected:
+  Chef* successor;
   Chef(Chef* _successor);
+  Chef();
 public:
   virtual Order* handleOrder(Order* order) = 0;
   virtual ~Chef();

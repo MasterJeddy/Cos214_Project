@@ -10,4 +10,6 @@ Order* BakerChef::handleOrder(Order *order) {
 }
 
 // no need to call base class destructor
-BakerChef::~BakerChef()= default;
+BakerChef::~BakerChef() {
+  delete successor;
+}

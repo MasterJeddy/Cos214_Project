@@ -14,8 +14,8 @@
 /// \file
 /// This file contains the declaration of the BakerChef class,
 /// and can be seen as the first handler in the chain of responsibility pattern.
-/// \brief Class containing a pointer to the first chef, and is responsible
-/// for adding bread to the burger decorator if any is needed in the order.
+/// \brief This class is responsible for adding bread to the burger decorator
+/// if any is needed in the order.
 ///
 //===----------------------------------------------------------------------===//
 
