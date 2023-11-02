@@ -23,11 +23,11 @@ private:
 
 public:
     SubBill(std::string itemName, double itemCost);
+    virtual ~SubBill();
     virtual double getTotal();
     virtual std::string getName();
     virtual void add(BillComponent *component);
     virtual void remove(BillComponent *component);
-    virtual ~SubBill();
 };
 
 #endif

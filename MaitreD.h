@@ -14,15 +14,14 @@
 #define COS214_PROJECT_MAITRED_H
 
 #include "Observer.h"
-#include "TableComposite.h"
+#include "Floor.h"
 
 class MaitreD : public Observer
 {
 private:
-    // Floor *floor;
-
 public:
     MaitreD(int id);
+    virtual ~MaitreD();
     virtual void notify(Customer *customer);
     virtual void notify(TableComposite *table);
 };

@@ -27,6 +27,12 @@ Waiter::Waiter(int id)
     this->state = "FREE";
 }
 
+Waiter::~Waiter()
+{
+    // clear vector of tables ids assigned to this waiter
+    this->assignedTableIds.clear();
+}
+
 void Waiter::notify(Customer *customer)
 {
 }
@@ -38,7 +44,6 @@ void Waiter::notify(TableComposite *table)
 
     this->state = "FREE";
 }
-
 
 void Waiter::assignTable(TableComposite *assignedTable)
 {

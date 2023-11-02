@@ -29,30 +29,32 @@ void MaitreD::notify(Customer *customer)
 {
     // called when a customer requests a seat
 
-    // change state of this maitreD to BUSY
-    this->state = "BUSY";
+    this->state = "BUSY"; // change state of this maitreD to BUSY
 
     // this is called when a customer has requested a seat at a table
 
     // maitreD needs to check if there is space on the floor(in the restaurant)
     // if there is space, sit the customer and remove customer from waiting queue, otherwise tell customer to wait
 
-    bool success = this->floor->seatCustomer(customer);
+    bool success = Floor::instance()->seatCustomer(customer);
 
     if (success)
     {
         // customer was successfully sat down at table, remove them from queue
-        this->floor->dequeueCustomer(); // remove this customer from queue
+        Floor::instance()->dequeueCustomer();
     }
     else
     {
         // there was no space in restaurant, keep customer in queue
     }
 
-    // change state of maitreD back to FREE
-    this->state = "FREE";
+    this->state = "FREE"; // change state of maitreD back to FREE
 }
 
 void MaitreD::notify(TableComposite *table)
+{
+}
+
+MaitreD::~MaitreD()
 {
 }

@@ -23,12 +23,12 @@ private:
     std::string name;
 
 public:
+    BillComposite(std::string compositeName);
+    virtual ~BillComposite();
     virtual void add(BillComponent *component);
     virtual void remove(BillComponent *component);
     virtual double getTotal();
     virtual std::string getName();
-    BillComposite(std::string compositeName);
-    virtual ~BillComposite();
 };
 
 #endif
