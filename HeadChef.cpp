@@ -14,26 +14,43 @@ HeadChef::HeadChef() {
 }
 
 bool HeadChef::finishOrder(Order* order) {
-  // TODO: check for each topping in order whether
+  // using the order properties, checks for each topping in order whether
   //  we have the specified amounts in the burger decorator
 
   int sum = order->beefPatty + order->chickenPatty + order->veganPatty
       + order->wantsKetchup + order->wantsMustard + order->wantsMayo;
   sum += order->wantsLettuce + order->wantsPickles + order->wantsTomato;
 
-  if (sum == 0)
+  // organise orders, if unfinished, add to currentOrders to be sent back
+  if (sum == 0){
     order->complete = true;
 
+    finishedOrders.push(order);
+  }
+  else {
+    currentOrders.push(order);
+  }
 
-  // if the order is not finished maybe it should be added to the
-  // current order queue or finished order queue depending on order->complete
   return order->complete;
 }
-Order* HeadChef::startOrders() {
+
+class Kitchen;
+void HeadChef::startOrders() {
   // placeholder temporary implementation
-  // firstChef.handleOrder
-// add the finished orders
-  return new Order("");
+  // firstChef.handleOrder for current max orders
+  // add the finished orders to finishedOrders
+
+  for (int i = 0; i < maxOrders; i++) {
+    Order* order;
+    if (currentOrders.empty()) {
+      order = orderQueue.front();
+      orderQueue.pop();
+    } else {
+      order = currentOrders.front();
+      currentOrders.pop();
+    }
+    finishOrder(firstChef->handleOrder(order));
+  }
 }
 Order *HeadChef::getFinishedOrder() {
   if (finishedOrders.empty())
@@ -42,4 +59,7 @@ Order *HeadChef::getFinishedOrder() {
   Order* out = finishedOrders.front();
   finishedOrders.pop();
   return out;
+}
+void HeadChef::addOrder(Order* order) {
+  currentOrders.push(order);
 }

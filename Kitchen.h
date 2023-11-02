@@ -26,7 +26,6 @@ private:
   static inline Kitchen* instance = nullptr;
 
   HeadChef headChef;
-  std::queue<Order*> orderQueue;
   bool isBusy = false;
 
   void produceBurgers();

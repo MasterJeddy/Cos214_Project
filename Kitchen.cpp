@@ -7,15 +7,13 @@ Kitchen::Kitchen() {
 }
 
 bool Kitchen::addOrder(Order* order) {
-  orderQueue.push(order);
+  headChef.addOrder(order);
   // if this at some point becomes a point of failure, a fail condition can be added to return false
   return true;
 }
 
 void Kitchen::produceBurgers() {
-  // TODO: will be uncommented when it works
-  Order* order = orderQueue.front();
-  orderQueue.pop();
+  // TODO: this is where the clock will be used to start producing
   //finishedOrders.push(headChef.startOrder(order));
 }
 Kitchen *Kitchen::getInstance() {

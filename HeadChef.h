@@ -26,6 +26,7 @@
 class HeadChef {
 private:
   int maxOrders = 3;
+  std::queue<Order*> orderQueue;
   std::queue<Order*> currentOrders;
   std::queue<Order*> finishedOrders;
   Chef* firstChef;
@@ -42,7 +43,8 @@ public:
   /// \brief Starts the chain of responsibility of chefs
   /// \param currentOrder : new order from the Kitchen's order queue
   /// \return a completed order with corresponding burger object
-  Order* startOrders();
+  void startOrders();
+  void addOrder(Order* order);
   Order* getFinishedOrder();
 };
 
