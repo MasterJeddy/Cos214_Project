@@ -168,10 +168,13 @@ TEST(MihailsTests, TableCompositeTest){
   tableComp->removeComponent(fourthTableComp);
   ASSERT_EQ(tableComp->getCapacity(), 8);
 
-
+  
 
   
 
 
 }
+
+
+
 
