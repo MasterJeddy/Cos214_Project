@@ -131,6 +131,7 @@ TEST(MihailsTests, TableCompositeTest){
   ASSERT_EQ(tableComp->getId(), "TC_1")<<"ID not working";
 
   TableComposite* secondTableComp = new TableComposite(2);
+  TableComposite* thirdTableComp = new TableComposite(3);
   tableComp->addComponent(secondTableComp);
   ASSERT_EQ(tableComp->getChild("TC_2"), secondTableComp);
 
@@ -144,6 +145,31 @@ TEST(MihailsTests, TableCompositeTest){
 
   tableComp->addComponent(secondTableComp);
   ASSERT_EQ(tableComp->getCapacity(), 6);
+
+  tableComp->addComponent(thirdTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 8);
+
+  tableComp->removeComponent(thirdTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 6);
+
+  TableComposite* fourthTableComp = new TableComposite(4);
+  TableComposite* fifthTableComp = new TableComposite(5);
+
+  tableComp->addComponent(fourthTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 8);
+
+  tableComp->addComponent(fifthTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 10);
+
+  tableComp->removeComponent(fourthTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 8);
+
+  tableComp->addComponent(fourthTableComp);
+  tableComp->removeComponent(fourthTableComp);
+  ASSERT_EQ(tableComp->getCapacity(), 8);
+
+
+
   
 
 

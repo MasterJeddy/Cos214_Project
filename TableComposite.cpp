@@ -65,9 +65,10 @@ void TableComposite::removeComponent(TableComponent *component)
     }
     //this will recalculate the table capacity once a table has been removed
     int counter = 1;
-    for (miki; miki < children.end(); miki++)
+    std::vector<TableComponent*>::iterator mihail = children.begin();
+    for (mihail; mihail < children.end(); mihail++)
     {
-        if ((*miki)->getType() == TYPE_TABLECOMPOSITE)
+        if ((*mihail)->getType() == TYPE_TABLECOMPOSITE)
         {
             counter++;
         }
