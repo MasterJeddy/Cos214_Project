@@ -22,10 +22,12 @@
 
 #include <queue>
 #include "BakerChef.h"
+
 class HeadChef {
 private:
   int maxOrders = 3;
-  std::queue<Order> currentOrders;
+  std::queue<Order*> currentOrders;
+  std::queue<Order*> finishedOrders;
   Chef* firstChef;
 
   /// \brief Performs the final checks to verify whether an order is completed;
@@ -40,7 +42,8 @@ public:
   /// \brief Starts the chain of responsibility of chefs
   /// \param currentOrder : new order from the Kitchen's order queue
   /// \return a completed order with corresponding burger object
-  Order startOrders();
+  Order* startOrders();
+  Order* getFinishedOrder();
 };
 
 #endif //COS214_PROJECT__HEADCHEF_H

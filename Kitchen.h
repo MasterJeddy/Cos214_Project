@@ -27,7 +27,6 @@ private:
 
   HeadChef headChef;
   std::queue<Order*> orderQueue;
-  std::queue<Order*> finishedOrders;
   bool isBusy = false;
 
   void produceBurgers();
