@@ -13,28 +13,57 @@
 
 #include "Customer.h"
 
-Customer::Customer(int id, std::string name)
+Customer::Customer(int id)
 {
     this->type = TYPE_CUSTOMER;
 
     std::stringstream idStream;
     idStream << this->type << id;
     this->id = idStream.str();
-
-    this->name = name;
 }
 
-Customer::Customer(int id, std::string name, std::vector<Customer *> friends)
+// Customer::Customer(int id, std::string name)
+// {
+//     this->type = TYPE_CUSTOMER;
+
+//     std::stringstream idStream;
+//     idStream << this->type << id;
+//     this->id = idStream.str();
+
+//     this->name = name;
+// }
+
+Customer::Customer(int id, std::vector<Customer *> friends)
 {
     this->id = id;
-    this->name = name;
 
-    std::vector<Customer *> group = friends;
-    group.push_back(this); // add this customer to the group
+    std::vector<Customer *> wholeGroup = friends;
+    wholeGroup.push_back(this); // add this customer to their group of friends
+
+    this->group = wholeGroup;
 }
+
+// Customer::Customer(int id, std::string name, std::vector<Customer *> friends)
+// {
+//     this->id = id;
+//     this->name = name;
+
+//     std::vector<Customer *> group = friends;
+//     group.push_back(this); // add this customer to the group
+// }
 
 Customer::~Customer()
 {
+    // delete all customer pointers in the group vector that are not equal to this customer object
+    for (Customer *customer : this->group)
+    {
+        if (customer != this)
+        {
+            delete customer;
+            customer = NULL;
+        }
+    }
+    this->group.clear(); // finally clear the vector of customers
 }
 
 void Customer::attachObserver(Observer *observer)

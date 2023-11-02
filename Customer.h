@@ -18,16 +18,20 @@
 #include <string>
 #include <vector>
 
+#include "Constants.cpp"
+
 class Customer : public TableComponent
 {
 private:
-    std::string name;
+    // std::string name;
     std::vector<Customer *> group; // also includes this customer
 
 public:
-    Customer(int id, std::string name);
-    Customer(int id, std::string name, std::vector<Customer *> friends);
-    ~Customer();
+    Customer(int id);
+    virtual ~Customer();
+    // Customer(int id, std::string name);
+    Customer(int id, std::vector<Customer *> friends);
+    // Customer(int id, std::string name, std::vector<Customer *> friends);
 
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);

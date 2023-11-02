@@ -14,16 +14,16 @@
 #define COS214_PROJECT_WAITER_H
 
 #include "Observer.h"
-#include 
+#include "TableComposite.h"
 
 class Waiter : public Observer
 {
 private:
-    // Floor *floor;
     std::vector<std::string> assignedTableIds;
 
 public:
     Waiter(int id);
+    virtual ~Waiter();
     virtual void notify(Customer *customer);
     virtual void notify(TableComposite *table);
     void assignTable(TableComposite *assignedTable);

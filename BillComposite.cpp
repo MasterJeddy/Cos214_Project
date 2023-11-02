@@ -42,17 +42,24 @@ void BillComposite::remove(BillComponent *component)
 }
 
 double BillComposite::getTotal()
-{   
-    
-    //loops through all the children in the composite and then will calculate the getTotal for each of the children
+{
+
+    // loops through all the children in the composite and then will calculate the getTotal for each of the children
     double total = 0;
-    for (BillComponent* child: children)
+    for (BillComponent *child : children)
     {
         total += child->getTotal();
     }
-    return total; 
+    return total;
 }
 
 BillComposite::~BillComposite()
 {
+    // delete all billComponent pointers in the vector children
+    for (BillComponent *billComponent : this->children)
+    {
+        delete billComponent;
+        billComponent = NULL;
+    }
+    this->children.clear(); // finally clear the vector of billComponent pointers
 }

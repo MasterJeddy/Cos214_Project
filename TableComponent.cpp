@@ -18,6 +18,12 @@ TableComponent::TableComponent()
 
 TableComponent::~TableComponent()
 {
+    for (Observer *observer : this->observerList)
+    {
+        delete observer;
+        observer = NULL;
+    }
+    this->observerList.clear();
 }
 
 std::string TableComponent::getId()

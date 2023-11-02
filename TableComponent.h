@@ -21,9 +21,6 @@
 
 #include "TableState.h"
 
-// #include "Constants.cpp"
-
-// class Observer;
 
 class TableComponent
 {

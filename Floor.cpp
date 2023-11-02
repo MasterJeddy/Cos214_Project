@@ -58,7 +58,43 @@ Floor::Floor()
 
 Floor::~Floor()
 {
-    
+    // do memory cleanup when floor object is destroyed
+    // delete the waiter pointers
+    for (Waiter *waiter : this->waiters)
+    {
+        delete waiter;
+        waiter = NULL;
+    }
+    this->waiters.clear(); // now clear the waiters vector
+
+    // delete the waitingCustomers pointers
+    while (!this->waitingCustomers.empty())
+    {
+        Customer *customer = this->waitingCustomers.front(); // get customer at front of queue
+        this->waitingCustomers.pop();                        // remove from queue
+        delete customer;                                     // delete this customer pointer
+        customer = NULL;
+    }
+
+    // delete the maitreD pointers
+    for (MaitreD *maitreD : this->maitreDs)
+    {
+        delete maitreD;
+        maitreD = NULL;
+    }
+    this->maitreDs.clear(); // now clear the maitreDs vector
+
+    // delete the table pointers
+    for (TableComposite *table : this->tables)
+    {
+        delete table;
+        table = NULL;
+    }
+    this->tables.clear(); // now clear the tables vector
+
+    // now finally delete the only instance of the floor class
+    delete onlyInstance_;
+    onlyInstance_ = NULL;
 }
 
 void Floor::customerRequestsSeat()
@@ -177,9 +213,9 @@ void Floor::addWaiter()
 
 void Floor::addWaitingCustomer()
 {
-    // int thisCustomerId = getAndIncrementWaitingCustomerId();
-    // Customer* customer = new Customer();
-    // this->waitingCustomers.push(waitingCustomer);
+    int thisCustomerId = getAndIncrementWaitingCustomerId();
+    Customer *waitingCustomer = new Customer(thisCustomerId);
+    this->waitingCustomers.push(waitingCustomer);
 }
 
 void Floor::addMaitreD()

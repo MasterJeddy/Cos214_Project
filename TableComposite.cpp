@@ -33,6 +33,25 @@ TableComposite::TableComposite(int id)
     this->maxCapacity = 4;
 }
 
+TableComposite::~TableComposite()
+{
+    // delete table state pointer and set to null
+    delete this->tableState;
+    this->tableState = NULL;
+
+    // delete bill pointer and set to null
+    delete this->bill;
+    this->bill = NULL;
+
+    // delete all the TableComponent children pointers
+    for (TableComponent *component : this->children)
+    {
+        delete component;
+        component = NULL;
+    }
+    this->children.clear(); // finally clear the vector of tableComponent pointers
+}
+
 void TableComposite::addComponent(TableComponent *component)
 {
     int counter = 1; // this will count the number of tables we have combined - starts off at 1 because the parent
@@ -53,7 +72,6 @@ void TableComposite::addComponent(TableComponent *component)
 
 void TableComposite::removeComponent(TableComponent *component)
 {
-
     std::vector<TableComponent *>::iterator miki = children.begin();
     for (miki; miki < children.end(); miki++)
     {
@@ -86,7 +104,7 @@ TableComponent *TableComposite::getChild(std::string id)
             return child;
         }
     }
-        return NULL;
+    return NULL;
 }
 
 int TableComposite::getCapacity()
@@ -167,21 +185,22 @@ void TableComposite::detachObserver(Observer *observer)
     }
 }
 
-bool TableComposite::acceptOrReject(){
+bool TableComposite::acceptOrReject()
+{
 
-    //this function will generate a random boolean 
+    // this function will generate a random boolean
     std::mt19937 rng(std::random_device{}());
     bool randomBoolean = std::uniform_int_distribution<>{0, 1}(rng);
     return randomBoolean;
-
 }
 
-Order* TableComposite::order(){
+Order *TableComposite::order()
+{
 
-    //change state by calling the proceed function
+    // change state by calling the proceed function
     tableState->proceed(this);
-    //create an order and return it
-    Order* order = new Order(this->getId());
+    // create an order and return it
+    Order *order = new Order(this->getId());
 
     std::mt19937 rng(std::random_device{}());
 
@@ -196,16 +215,15 @@ Order* TableComposite::order(){
     order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
 
     return order;
-
-
 }
 
-Order* TableComposite::complexOrder(){
+Order *TableComposite::complexOrder()
+{
 
-    //change state by calling the proceed function
+    // change state by calling the proceed function
     tableState->proceed(this);
-    //create an order and return it
-    Order* order = new Order(this->getId());
+    // create an order and return it
+    Order *order = new Order(this->getId());
 
     std::mt19937 rng(std::random_device{}());
 
@@ -220,16 +238,15 @@ Order* TableComposite::complexOrder(){
     order->wantsPickles = std::uniform_int_distribution<>{0, 10}(rng);
 
     return order;
-
-
 }
 
-Order* TableComposite::ultraComplexOrder(){
+Order *TableComposite::ultraComplexOrder()
+{
 
-    //change state by calling the proceed function
+    // change state by calling the proceed function
     tableState->proceed(this);
-    //create an order and return it
-    Order* order = new Order(this->getId());
+    // create an order and return it
+    Order *order = new Order(this->getId());
 
     std::mt19937 rng(std::random_device{}());
 
@@ -244,13 +261,11 @@ Order* TableComposite::ultraComplexOrder(){
     order->wantsPickles = std::uniform_int_distribution<>{0, 20}(rng);
 
     return order;
-
-
 }
 
-void TableComposite::rejectedService(){
+void TableComposite::rejectedService()
+{
 
-    //change state to Busy by calling the hold function 
+    // change state to Busy by calling the hold function
     tableState->hold(this);
-
 }
