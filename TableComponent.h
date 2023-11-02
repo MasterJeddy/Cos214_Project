@@ -42,6 +42,9 @@ public:
     virtual void attachObserver(Observer *observer) = 0;
     virtual void detachObserver(Observer *observer) = 0;
     virtual void request() = 0;
+
+    
+
 };
 
 #endif
