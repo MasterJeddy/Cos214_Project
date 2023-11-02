@@ -56,6 +56,11 @@ Floor::Floor()
     }
 }
 
+Floor::~Floor()
+{
+    
+}
+
 void Floor::customerRequestsSeat()
 {
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue

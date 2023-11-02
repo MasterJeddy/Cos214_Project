@@ -167,7 +167,7 @@ bool TableComposite::acceptOrReject(){
 Order* TableComposite::order(){
 
     //change state by calling the proceed function
-    tableState->proceed();
+    tableState->proceed(this);
     //create an order and return it
     Order* order = new Order(this->getId());
 
@@ -191,7 +191,7 @@ Order* TableComposite::order(){
 Order* TableComposite::complexOrder(){
 
     //change state by calling the proceed function
-    tableState->proceed();
+    tableState->proceed(this);
     //create an order and return it
     Order* order = new Order(this->getId());
 
@@ -215,7 +215,7 @@ Order* TableComposite::complexOrder(){
 Order* TableComposite::ultraComplexOrder(){
 
     //change state by calling the proceed function
-    tableState->proceed();
+    tableState->proceed(this);
     //create an order and return it
     Order* order = new Order(this->getId());
 
@@ -239,6 +239,6 @@ Order* TableComposite::ultraComplexOrder(){
 void TableComposite::rejectedService(){
 
     //change state to Busy by calling the hold function 
-    tableState->hold();
+    tableState->hold(this);
 
 }
