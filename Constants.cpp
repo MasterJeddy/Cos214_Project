@@ -10,10 +10,10 @@
 ///
 //===----------------------------------------------------------------------===//
 
-const std::string TYPE_MAITRED = "MD-";
-const std::string TYPE_WAITER = "W-";
-const std::string TYPE_CUSTOMER = "CU-";
-const std::string TYPE_TABLECOMPOSITE = "TC-";
+const std::string TYPE_MAITRED = "MD_";
+const std::string TYPE_WAITER = "W_";
+const std::string TYPE_CUSTOMER = "CU_";
+const std::string TYPE_TABLECOMPOSITE = "TC_";
 
 const int DEFAULT_NO_TABLES = 10;
 const int DEFAULT_NO_WAITERS = 10;

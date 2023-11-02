@@ -24,6 +24,8 @@
 class Floor
 {
 private:
+    static Floor *onlyInstance_;
+
     std::vector<Waiter *> waiters;
     std::queue<Customer *> waitingCustomers;
     std::vector<MaitreD *> maitreDs;
@@ -35,9 +37,21 @@ private:
     int maitreDId;
     int tableId;
 
-public:
-    Floor(std::vector<Waiter *> waiters, std::queue<Customer *> waitingCustomers, std::vector<MaitreD *> maitreDs, std::vector<TableComposite *> tables);
+    // functions for generating ids
+    int getAndIncrementWaiterId();
+    int getAndIncrementWaitingCustomerId();
+    int getAndIncrementMaitreDId();
+    int getAndIncrementTableId();
+
+protected:
     Floor();
+    // Floor(const Floor &);
+    // Floor &operator=(const Floor &);
+    ~Floor();
+
+public:
+    static Floor *instance();
+
     void customerRequestsSeat();
     bool seatCustomer(Customer *customer);
 
@@ -49,18 +63,21 @@ public:
     void addTable();
     void assignTablesToWaiters();
 
+    void removeWaiter(std::string id);
+    void removeWaitingCustomer(std::string id);
+    void removeMaitreD(std::string id);
+    void removeTable(std::string id);
+
     // getters
     int getTableCount();
     int getMaitreDCount();
     int getWaiterCount();
     int getWaitingCustomerCount();
 
-    // functions for generating ids
-    int getAndIncrementWaiterId();
-    int getAndIncrementWaitingCustomerId();
-    int getAndIncrementMaitreDId();
-    int getAndIncrementTableId();
-    
+    std::vector<Waiter *> getWaiters();
+    std::queue<Customer *> getWaitingCustomers();
+    std::vector<MaitreD *> getMaitreDs();
+    std::vector<TableComposite *> getTables();
 };
 
 #endif
