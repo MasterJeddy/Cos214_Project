@@ -13,7 +13,7 @@
 #ifndef COS214_PROJECT_OCCUPIED_H
 #define COS214_PROJECT_OCCUPIED_H
 #include "TableState.h"
-// #include "WaitingOnWaiter.h"
+#include "WaitingOnWaiter.h"
 
 class Occupied: public TableState
 {

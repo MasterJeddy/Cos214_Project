@@ -13,6 +13,7 @@
 #ifndef COS214_PROJECT_EATING_H
 #define COS214_PROJECT_EATING_H
 #include "TableState.h"
+#include "Bill.h"
 
 class Eating: public TableState
 {

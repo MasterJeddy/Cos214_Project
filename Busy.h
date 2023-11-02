@@ -13,12 +13,13 @@
 #ifndef COS214_PROJECT_BUSY_H
 #define COS214_PROJECT_BUSY_H
 #include "TableState.h"
+#include "WaitingOnWaiter.h"
 
 class Busy: public TableState
 {
    
     public:
-    virtual void proceed(TableComsposite* tableComp);
+    virtual void proceed(TableComposite* tableComp);
     virtual void hold(TableComposite* tableComp);
     Busy();
 };
