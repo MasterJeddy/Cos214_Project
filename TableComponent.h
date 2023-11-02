@@ -24,6 +24,7 @@ class TableComponent
 {
 protected:
     std::string id;
+    std::string type;
     std::vector<Observer *> observerList;
 
 public:
@@ -31,6 +32,7 @@ public:
     virtual ~TableComponent();
 
     std::string getId();
+    std::string getType();
 
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);

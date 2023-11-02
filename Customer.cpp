@@ -15,7 +15,12 @@
 
 Customer::Customer(int id, std::string name)
 {
-    this->id = id;
+    this->type = TYPE_CUSTOMER;
+
+    std::stringstream idStream;
+    idStream << this->type << id;
+    this->id = idStream.str();
+
     this->name = name;
 }
 
@@ -26,6 +31,10 @@ Customer::Customer(int id, std::string name, std::vector<Customer *> friends)
 
     std::vector<Customer *> group = friends;
     group.push_back(this); // add this customer to the group
+}
+
+Customer::~Customer()
+{
 }
 
 void Customer::attachObserver(Observer *observer)

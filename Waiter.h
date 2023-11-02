@@ -18,7 +18,6 @@
 class Waiter : public Observer
 {
 private:
-    // std::queue<>
     Floor *floor;
 
 public:

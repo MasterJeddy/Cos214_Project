@@ -16,36 +16,44 @@
 
 TableComposite::TableComposite(int id, int waiterId)
 {
-    // id was made a string such that we do not end up with a case where TableComposite and Customer do not end up with the same Id. We will append a special character
-    // for each respective object in order to help avoid any sort of confusion later down the line.
-    std::string tempy = TYPE_TABLECOMPOSITE + to_string(id);
+    // id was made a string such that we do not end up with a case where TableComposite and Customer do not end
+    // up with the same Id. We will append a special character for each respective object in order to help avoid
+    // any sort of confusion later down the line.
+    this->type = TYPE_TABLECOMPOSITE;
+
+    std::stringstream idStream;
+    idStream << this->type << id;
+    std::string tempy = idStream.str();
     this->id = tempy;
-    this->waiterId = waiterId;
+
+    std::stringstream waiterIdStream;
+    waiterIdStream << TYPE_WAITER << waiterId;
+    std::string tempy2 = waiterIdStream.str();
+    this->waiterId = tempy2;
 
     // set the default max capacity of the table to 4 - one table can host 4 people
     this->maxCapacity = 4;
 }
 
-void TableComposite::addComponent(TableComponent* component)
+void TableComposite::addComponent(TableComponent *component)
 {
-    int counter = 1;    //this will count the number of tables we have combined - starts off at 1 because the parent table doesn't count as a child
-    // and is therefore not part of the children vector
+    int counter = 1; // this will count the number of tables we have combined - starts off at 1 because the parent
+                     // table doesn't count as a child
+    //  and is therefore not part of the children vector
     children.push_back(component);
     std::vector<TableComponent *>::iterator miki = children.begin();
     for (miki; miki < children.end(); miki++)
     {
-        if ((*miki)->type.equals(TYPE_TABLECOMPOSITE))
+        if ((*miki)->getType() == TYPE_TABLECOMPOSITE)
         {
-           counter++;
+            counter++;
         }
     }
-        //maxCapacity is equal to 4 + 2*(number of tables - 1)
-        this->maxCapacity = 4 + 2*(counter -1);
-    
-    
+    // maxCapacity is equal to 4 + 2*(number of tables - 1)
+    this->maxCapacity = 4 + 2 * (counter - 1);
 }
 
-void TableComposite::removeComponent(TableComponent* component)
+void TableComposite::removeComponent(TableComponent *component)
 {
 
     std::vector<TableComponent *>::iterator miki = children.begin();
@@ -59,15 +67,15 @@ void TableComposite::removeComponent(TableComponent* component)
     }
 }
 
-TableComponent *TableComposite::getChild(int id)
+TableComponent *TableComposite::getChild(std::string id)
 {
-    for (TableComponent child : children)
+    for (TableComponent *child : children)
     {
         if (child->getId() == id)
         {
             return child;
         }
-        return null;
+        return NULL;
     }
 }
 
@@ -76,12 +84,12 @@ int TableComposite::getCapacity()
     return this->maxCapacity;
 }
 
-void TableComposite::setCapacity(int capacity)
+void TableComposite::setMaxCapacity(int capacity)
 {
     this->maxCapacity = capacity;
 }
 
-TableState* TableComposite::getTableState()
+TableState *TableComposite::getTableState()
 {
     return this->tableState;
 }
@@ -93,13 +101,13 @@ void TableComposite::setTableState(TableState *tableState)
 
 void TableComposite::request()
 {
-    for (Observer *observer : ObserverList)
+    for (Observer *observer : observerList)
     {
         // loop through the observer list
-        if (observer->getType().equals(TYPE_WAITER) && observer->getId() == waiterId)
+        if (observer->getType() == TYPE_WAITER && observer->getId() == waiterId)
         {
             // notify this waiter
-            observer->update();
+            observer->notify(this);
             break;
         }
     }
@@ -108,16 +116,16 @@ void TableComposite::request()
 void TableComposite::requestBill()
 {
     // notify the waiter then pass in the bill so that the waiter can create a bill
-    for (Observer *observer : ObserverList)
+    for (Observer *observer : observerList)
     {
         // loop through the observer list
-        if (observer->getType().equals(TYPE_WAITER) && observer->getId() == waiterId)
+        if (observer->getType() == TYPE_WAITER && observer->getId() == waiterId)
         {
             // notify this waiter
             // change the state to bill
             tableState->proceed();
 
-            observer->update();
+            observer->notify(this);
             break;
         }
     }
@@ -125,17 +133,17 @@ void TableComposite::requestBill()
 
 void TableComposite::attachObserver(Observer *observer)
 {
-    observerList->push_back(observer);
+    observerList.push_back(observer);
 }
 
 void TableComposite::detachObserver(Observer *observer)
 {
     std::vector<Observer *>::iterator miki = observerList.begin();
-    for (miki; miki < ObserverList.end(); miki++)
+    for (miki; miki < observerList.end(); miki++)
     {
-        if ((*miki)->getId() == component->getId())
+        if ((*miki)->getId() == observer->getId())
         {
-            children.erase(miki);
+            observerList.erase(miki);
             break;
         }
     }

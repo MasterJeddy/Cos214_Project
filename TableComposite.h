@@ -22,21 +22,21 @@ class TableComposite : public TableComponent
 {
 private:
     std::vector<TableComponent *> children;
-    int waiterId;
+    std::string waiterId;
     int maxCapacity;
     TableState *tableState;
     BillComponent *bill;
 
 public:
     TableComposite(int id, int waiterId);
-    void addComponent(TableComponent* component);
-    void removeComponent(TableComponent* component);
+    void addComponent(TableComponent *component);
+    void removeComponent(TableComponent *component);
     void requestBill();
 
     // getters
     int getCapacity();
-    TableComponent *getChild(int id);
-    TableState* getTableState();
+    TableComponent *getChild(std::string id);
+    TableState *getTableState();
 
     // setters
     void setMaxCapacity(int capacity);

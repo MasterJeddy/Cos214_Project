@@ -12,7 +12,16 @@
 
 #include "TableComponent.h"
 
+TableComponent::~TableComponent()
+{
+}
+
 std::string TableComponent::getId()
 {
     return this->id;
+}
+
+std::string TableComponent::getType()
+{
+    return this->type;
 }
