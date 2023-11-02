@@ -17,6 +17,7 @@
 #include "TableComponent.h"
 #include "TableState.h"
 #include "BillComponent.h"
+#include "Order.h"  
 
 class TableComposite : public TableComponent
 {
@@ -47,6 +48,19 @@ public:
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);
     virtual void request();
+
+    //accept or reject the service of a waiter 
+    bool acceptOrReject();
+    //returns an order
+    //calls the proceed() function
+    Order* order();     //may also add a complexOrder function 
+    //return a slightly more complex order
+    Order* complexOrder();
+    //returns a complex order with quantities up to 20 
+    Order* ultraComplexOrder();
+    //rejected service of the waiter
+    //calls the hold() function
+    void rejectedService();
 };
 
 #endif

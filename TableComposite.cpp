@@ -13,6 +13,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "TableComposite.h"
+#include <random>
 
 TableComposite::TableComposite(int id)
 {
@@ -152,4 +153,92 @@ void TableComposite::detachObserver(Observer *observer)
             break;
         }
     }
+}
+
+bool TableComposite::acceptOrReject(){
+
+    //this function will generate a random boolean 
+    std::mt19937 rng(std::random_device{}());
+    bool randomBoolean = std::uniform_int_distribution<>{0, 1}(rng);
+    return randomBoolean;
+
+}
+
+Order* TableComposite::order(){
+
+    //change state by calling the proceed function
+    tableState->proceed();
+    //create an order and return it
+    Order* order = new Order(this->getId());
+
+    std::mt19937 rng(std::random_device{}());
+
+    order->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
+    order->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    order->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    order->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
+
+    return order;
+
+
+}
+
+Order* TableComposite::complexOrder(){
+
+    //change state by calling the proceed function
+    tableState->proceed();
+    //create an order and return it
+    Order* order = new Order(this->getId());
+
+    std::mt19937 rng(std::random_device{}());
+
+    order->wantsKetchup = std::uniform_int_distribution<>{0, 10}(rng);
+    order->wantsMustard = std::uniform_int_distribution<>{0, 10}(rng);
+    order->wantsMayo = std::uniform_int_distribution<>{0, 10}(rng);
+    order->beefPatty = std::uniform_int_distribution<>{0, 10}(rng);
+    order->chickenPatty = std::uniform_int_distribution<>{0, 10}(rng);
+    order->veganPatty = std::uniform_int_distribution<>{0, 10}(rng);
+    order->wantsLettuce = std::uniform_int_distribution<>{0, 10}(rng);
+    order->wantsTomato = std::uniform_int_distribution<>{0, 10}(rng);
+    order->wantsPickles = std::uniform_int_distribution<>{0, 10}(rng);
+
+    return order;
+
+
+}
+
+Order* TableComposite::ultraComplexOrder(){
+
+    //change state by calling the proceed function
+    tableState->proceed();
+    //create an order and return it
+    Order* order = new Order(this->getId());
+
+    std::mt19937 rng(std::random_device{}());
+
+    order->wantsKetchup = std::uniform_int_distribution<>{0, 20}(rng);
+    order->wantsMustard = std::uniform_int_distribution<>{0, 20}(rng);
+    order->wantsMayo = std::uniform_int_distribution<>{0, 20}(rng);
+    order->beefPatty = std::uniform_int_distribution<>{0, 20}(rng);
+    order->chickenPatty = std::uniform_int_distribution<>{0, 20}(rng);
+    order->veganPatty = std::uniform_int_distribution<>{0, 20}(rng);
+    order->wantsLettuce = std::uniform_int_distribution<>{0, 20}(rng);
+    order->wantsTomato = std::uniform_int_distribution<>{0, 20}(rng);
+    order->wantsPickles = std::uniform_int_distribution<>{0, 20}(rng);
+
+    return order;
+
+
+}
+
+void TableComposite::rejectedService(){
+
+    //change state to Busy by calling the hold function 
+    tableState->hold();
+
 }
