@@ -94,6 +94,7 @@ bool Floor::seatCustomer(Customer *customer)
                 numFreeTables++;
             }
         }
+       
 
         // if the number of free tables is greater than the numTables value then we will be able to seat this group of customers
         //  we will need to combine these tables together and then once we have combined them we will then be able to add

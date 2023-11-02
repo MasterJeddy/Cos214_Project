@@ -4,6 +4,7 @@
 #include "../SubBill.h"
 #include "../BillComposite.h"
 #include "../TableState.h"
+#include "../Free.h"
 
 //
 // Created by maili on 2023/10/23.
