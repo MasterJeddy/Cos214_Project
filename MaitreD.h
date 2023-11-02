@@ -16,6 +16,8 @@
 #include "Observer.h"
 #include "Floor.h"
 
+#include <iostream>
+
 class MaitreD : public Observer
 {
 private:

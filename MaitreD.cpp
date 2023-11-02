@@ -46,6 +46,7 @@ void MaitreD::notify(Customer *customer)
     else
     {
         // there was no space in restaurant, keep customer in queue
+        std::cout << "There are no free tables, wait" << std::endl;
     }
 
     this->state = "FREE"; // change state of maitreD back to FREE

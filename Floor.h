@@ -52,7 +52,7 @@ protected:
 public:
     static Floor *instance();
 
-    void customerRequestsSeat();
+    void requestSeat();
     bool seatCustomer(Customer *customer);
 
     void dequeueCustomer();

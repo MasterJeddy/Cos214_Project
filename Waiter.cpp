@@ -42,6 +42,15 @@ void Waiter::notify(TableComposite *table)
     // called when a table requires the waiter's assistance
     this->state = "BUSY";
 
+    bool tableReady = table->acceptOrReject();
+
+    if(tableReady){
+        
+    }
+    else{
+
+    }
+
     this->state = "FREE";
 }
 

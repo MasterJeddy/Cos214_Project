@@ -97,7 +97,7 @@ Floor::~Floor()
     onlyInstance_ = NULL;
 }
 
-void Floor::customerRequestsSeat()
+void Floor::requestSeat()
 {
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
 
