@@ -26,13 +26,13 @@ class HeadChef {
 private:
   int maxOrders = 3;
   std::queue<Order> currentOrders;
-  BakerChef firstChef;
+  Chef* firstChef;
 
   /// \brief Performs the final checks to verify whether an order is completed;
   /// will be run by startOrder(), and will determine whether the order should
   /// go back through the chef chain during the next tick
   /// \return True if the order matches its corresponding burger objects
-  bool finishOrder(Order order);
+  bool finishOrder(Order* order);
 
 public:
   HeadChef();
@@ -40,7 +40,7 @@ public:
   /// \brief Starts the chain of responsibility of chefs
   /// \param currentOrder : new order from the Kitchen's order queue
   /// \return a completed order with corresponding burger object
-  Order startOrder(Order currentOrder);
+  Order startOrders();
 };
 
 #endif //COS214_PROJECT__HEADCHEF_H

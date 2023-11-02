@@ -3,7 +3,7 @@
 //
 
 #include "SauceChef.h"
-SauceChef::SauceChef(Chef *_successor) : Chef(_successor) {}
+SauceChef::SauceChef() {}
 
 Order *SauceChef::handleOrder(Order *order) {
   return order;

@@ -22,7 +22,7 @@
 #include "Chef.h"
 class SauceChef : public Chef {
 public:
-  SauceChef(Chef* _successor);
+  SauceChef();
   Order* handleOrder(Order* order) override;
   ~SauceChef();
 };

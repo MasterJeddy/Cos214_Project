@@ -3,8 +3,13 @@
 //
 
 #include "GarnishChef.h"
-GarnishChef::GarnishChef() = default;
+
+GarnishChef::GarnishChef(Chef *_successor) : Chef(_successor) {
+
+}
 Order *GarnishChef::handleOrder(Order *order) {
   return order;
 }
-GarnishChef::~GarnishChef() = default;
+GarnishChef::~GarnishChef() {
+  delete successor;
+}

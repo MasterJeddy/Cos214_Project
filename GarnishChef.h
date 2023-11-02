@@ -22,7 +22,7 @@
 #include "Chef.h"
 class GarnishChef: public Chef {
 public:
-  GarnishChef();
+  GarnishChef(Chef* _successor);
   Order* handleOrder(Order* order) override;
   ~GarnishChef();
 };
