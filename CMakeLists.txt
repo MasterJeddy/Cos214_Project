@@ -22,7 +22,7 @@ add_executable(Cos214_Project main.cpp
         ButcherChef.cpp
         ButcherChef.h
         SauceChef.cpp
-        SauceChef.h)
+        SauceChef.h
         BakerChef.h
         BurgerBuns.cpp
         BurgerBuns.h

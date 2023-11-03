@@ -1,6 +1,7 @@
 #include <gtest/gtest.h>
 #include "../Clock.h"
-
+#include "../Burger.h"
+#include "../BurgerBuns.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -59,3 +60,7 @@ TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
     // using ClockGetTimeAndTickTest for this test
 }
 
+TEST(GeordanTest,test1){
+    BurgerBuns* bun = new BurgerBuns();
+    std::cout << bun->totalPrice();
+}
