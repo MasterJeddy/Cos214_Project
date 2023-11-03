@@ -7,6 +7,8 @@
 Kitchen::Kitchen() {
 }
 
+Kitchen* Kitchen::instance = nullptr;
+
 bool Kitchen::addOrder(Order* order) {
   headChef.addOrder(order);
   // if this at some point becomes a point of failure, a fail condition can be added to return false

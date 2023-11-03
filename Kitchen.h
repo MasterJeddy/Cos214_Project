@@ -23,12 +23,10 @@
 #include "Order.h"
 class Kitchen {
 private:
-  static inline Kitchen* instance = nullptr;
+  static Kitchen* instance;
 
   HeadChef headChef;
   bool isBusy = false;
-
-  void produceBurgers();
 
   Kitchen();
   ~Kitchen();
@@ -36,9 +34,10 @@ private:
   Kitchen& operator=(Kitchen&);
 
 public:
-  Kitchen* getInstance();
+  static Kitchen* getInstance();
   bool addOrder(Order* order);
   Order* getFinishedOrder();
+  void produceBurgers();
 };
 
 #endif //COS214_PROJECT__KITCHEN_H
