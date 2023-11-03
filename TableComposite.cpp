@@ -131,6 +131,21 @@ double TableComposite::getPayment()
         BillComponent* temp = new SubBill("Order"+num, order->getPrice());
         mainBill->add(temp);
     }
+
+    //set all of the tables to free state once the bill has been paid 
+    //this will transition the state from the bill state to the free state 
+    this->getTableState()->proceed(this);
+    //this will set the state to the free state 
+    this->setTableState(this->getTableState());
+    //loop through all of the children and set 
+    //their state to the free state 
+    for(TableComponent* child: children){
+        if (child->getType()==TYPE_TABLECOMPOSITE)
+        {
+            child->setTableState(this->getTableState()); 
+        }
+        
+    }
     //return the total amount of the entire bill 
     return mainBill->getTotal();
 }
@@ -138,6 +153,11 @@ double TableComposite::getPayment()
 void TableComposite::setTableState(TableState *tableState)
 {
     this->tableState = tableState;
+    //loop through all of the children 
+    // and then set all of their states 
+    for(TableComponent* child: children ){
+        child->setTableState(tableState);
+    }
 }
 
 void TableComposite::assignWaiter(std::string waiterId)
