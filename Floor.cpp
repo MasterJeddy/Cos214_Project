@@ -13,11 +13,11 @@
 
 #include "Floor.h"
 
-Floor *Floor::onlyInstance_ = 0;
+Floor *Floor::onlyInstance_ = NULL;
 
 Floor *Floor::instance()
 {
-    if (onlyInstance_ == 0)
+    if (onlyInstance_ == NULL)
     {
         onlyInstance_ = new Floor();
     }

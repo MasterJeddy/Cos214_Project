@@ -42,16 +42,28 @@ void Waiter::notify(TableComposite *table)
     // called when a table requires the waiter's assistance
     this->state = "BUSY";
 
-    bool tableReady = table->acceptOrReject();
+    // if state of table is WaitingOnWaiter then check if table is ready to order or not
+    if (table->getTableState()->getName() == "WaitingOnWaiter")
+    {
+        bool tableReady = table->acceptOrReject();
 
-    if(tableReady){
+        if (tableReady)
+        {
+            Order *tableOrder = table->order(); // get orer of table
+
+            // bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+        }
+        else
+        {
+            // go back since table is not yet ready to order
+        }
+    }
+    // else if state of table is bill, then bill the customers
+    else if (table->getTableState()->getName() == "Bill")
+    {
         double totalBill = table->getPayment();
-        Floo
+        Floor::instance()->addSalesRevenue(totalBill);
     }
-    else{
-
-    }
-
     this->state = "FREE";
 }
 
