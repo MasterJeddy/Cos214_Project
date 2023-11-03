@@ -40,5 +40,7 @@ add_executable(Google_Tests_run tests.cpp
         ../Mayo.cpp
         ../Mayo.h
         ../Lettuce.cpp
-        ../Lettuce.h)
+        ../Lettuce.h
+        ../Pickles.cpp
+        ../Pickles.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)

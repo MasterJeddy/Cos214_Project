@@ -8,6 +8,7 @@
 #include "../Tomato.h"
 #include "../Mayo.h"
 #include "../Lettuce.h"
+#include "../Pickles.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -81,6 +82,9 @@ TEST(GeordanTest,test1){
     Lettuce* ing4 = new Lettuce();
     ing4->add(ing3);
     std::cout << ing4->totalPrice() << "\n";
+    Pickles* rick = new Pickles();
+    rick->add(ing4);
+    std::cout << rick->totalPrice() << "\n";
 }
 
 int orderStatus(Order* order) {
