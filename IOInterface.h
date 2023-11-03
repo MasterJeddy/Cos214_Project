@@ -34,6 +34,7 @@ private:
   Logs* logs;
   int drawState = 0;
   FloorController* floorController;
+  KitchenController* kitchenController;
 
   /// \brief Renders other objects in text format
   void render();

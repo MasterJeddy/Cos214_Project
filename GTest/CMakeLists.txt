@@ -58,5 +58,5 @@ add_executable(Google_Tests_run tests.cpp ../Clock.h ../Clock.cpp ../WaitingOnWa
         ../ChickenPatty.h
         ../VeganPatty.cpp
         ../VeganPatty.h
-)
+        ../KitchenController.cpp ../KitchenController.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)

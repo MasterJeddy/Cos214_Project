@@ -75,9 +75,9 @@ void IOInterface::resetToLog(CommandLog *log)
       default:
         break;
       }
-
       it->currentItem()->execute();
     }
+
   }
   delete it;
 }
@@ -87,6 +87,7 @@ IOInterface::IOInterface()
   commandLog = new CommandLog(this);
   floorController = new FloorController();
   logs = new Logs;
+  kitchenController = new KitchenController();
 }
 
 UserCommand *IOInterface::queryUser()
@@ -155,6 +156,18 @@ UserCommand *IOInterface::queryUser()
     {
       return new BuyTable(floorController);
     }
+    case 'C':
+    {
+      return new HireChef(kitchenController);
+    }
+    case 'D':
+    {
+      return new ExpandKitchen(kitchenController);
+    }
+    case 'E':
+    {
+      return new BuyStock(kitchenController);
+    }
     break;
     case 'q':
     {
@@ -174,6 +187,7 @@ IOInterface::~IOInterface()
   delete logs;
   delete floorController;
   delete commandLog;
+  delete kitchenController;
 }
 
 void IOInterface::render()
@@ -191,7 +205,9 @@ void IOInterface::render()
     std::cout << "8. Hire Maitre D" << std::endl;
     std::cout << "9. Hire Waiter" << std::endl;
     std::cout << "A. Expand Floor" << std::endl;
-    std::cout << "B. Buy Table" << std::endl;
+    std::cout << "C. Hire Chef" << std::endl;
+    std::cout << "D. Expand Kitchen" << std::endl;
+    std::cout << "E. Buy Stock" << std::endl;
   }
 
   if (checkFlag(DRAW_LOG))

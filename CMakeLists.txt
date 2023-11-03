@@ -56,5 +56,5 @@ CommandLogIterator.cpp CommandLogIterator.h FloorController.cpp Floor.h Floor.cp
         ChickenPatty.h
         VeganPatty.cpp
         VeganPatty.h
-)
+        KitchenController.cpp KitchenController.h)
 add_subdirectory(GTest)
