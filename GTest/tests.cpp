@@ -73,17 +73,18 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
 TEST(MihailsTests, BillTest)
 {
 
-  
-    BillComponent* billComp = new SubBill("CheeseBurger", 12);
-    BillComponent* billComp2 = new SubBill("Fries", 8);
-    BillComponent* billComp3 = new BillComposite("MainBill");
-    billComp3->add(billComp2);
-    billComp3->add(billComp);
-    ASSERT_EQ(billComp3->getTotal(), 20);
+  BillComponent *billComp = new SubBill("CheeseBurger", 12);
+  BillComponent *billComp2 = new SubBill("Fries", 8);
+  BillComponent *billComp3 = new BillComposite("MainBill");
+  billComp3->add(billComp2);
+  billComp3->add(billComp);
+  ASSERT_EQ(billComp3->getTotal(), 20);
 
-
+  // memory cleanup
+  delete billComp;
+  delete billComp2;
+  delete billComp3;
 }
-
 
 TEST(MihailsTests, StateTest)
 {
@@ -113,6 +114,10 @@ TEST(MihailsTests, StateTest)
 
   tableComp->getTableState()->proceed(tableComp);
   ASSERT_EQ(tableComp->getTableState()->getName(), "Bill") << "State naming not working as expected.";
+
+  // memory cleanup
+  delete tableComp;
+  delete tableState;
 }
 
 TEST(MihailsTests, TableCompositeTest)
@@ -158,22 +163,30 @@ TEST(MihailsTests, TableCompositeTest)
   tableComp->addComponent(fourthTableComp);
   tableComp->removeComponent(fourthTableComp);
   ASSERT_EQ(tableComp->getCapacity(), 8);
+
+  // do memory cleanup
+  delete tableComp;
+  delete secondTableComp;
+  delete thirdTableComp;
+  delete fourthTableComp;
+  delete fifthTableComp;
 }
 
 TEST(TinoTests, FloorIsASingleton)
 {
-  Floor *floor = Floor::instance();
-  //Floor *floor = Floor::instance();
+  // Floor *floor = Floor::instance();
+  // Floor *floor = Floor::instance();
 }
 
-
-TEST(SimonTests,CreateAndDeleteInputPoll){
-    auto* inputPoll = new IOInterface();
-    ASSERT_NE(inputPoll, nullptr);
-    delete inputPoll;
+TEST(SimonTests, CreateAndDeleteInputPoll)
+{
+  auto *inputPoll = new IOInterface();
+  ASSERT_NE(inputPoll, nullptr);
+  delete inputPoll;
 }
 
-TEST(SimonTests,InputPollSaveLoad){
+TEST(SimonTests, InputPollSaveLoad)
+{
   // Create pipe to mock stdin
   int fildes[2];
   int status = pipe(fildes);
@@ -185,24 +198,24 @@ TEST(SimonTests,InputPollSaveLoad){
 
   // Create payload
   const char buf[] = "1\n1\n1\n1\n1\n1\n1\n1\n2\nq\n";
-  const int bsize  = strlen(buf);
+  const int bsize = strlen(buf);
 
   // Send payload through pipe
   ssize_t nbytes = write(fildes[1], buf, bsize);
   close(fildes[1]);
   ASSERT_EQ(nbytes, bsize);
 
-  //Actual Test
-  auto* inputPoll = new IOInterface();
+  // Actual Test
+  auto *inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
-  //Close pipe
+  // Close pipe
   close(fildes[0]);
 }
 
-
-TEST(SimonTests,InputPollMixedSaveMixedLoad){
+TEST(SimonTests, InputPollMixedSaveMixedLoad)
+{
   // Create pipe to mock stdin
   int fildes[2];
   int status = pipe(fildes);
@@ -214,23 +227,24 @@ TEST(SimonTests,InputPollMixedSaveMixedLoad){
 
   // Create payload
   const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n5\n5\n5\n5\n5\n5\n2\n6\n6\nq\n";
-  const int bsize  = strlen(buf);
+  const int bsize = strlen(buf);
 
   // Send payload through pipe
   ssize_t nbytes = write(fildes[1], buf, bsize);
   close(fildes[1]);
   ASSERT_EQ(nbytes, bsize);
 
-  //Actual Test
-  auto* inputPoll = new IOInterface();
+  // Actual Test
+  auto *inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
-  //Close pipe
+  // Close pipe
   close(fildes[0]);
 }
 
-TEST(SimonTests,SaveToFile) {
+TEST(SimonTests, SaveToFile)
+{
   // Create pipe to mock stdin
   int fildes[2];
   int status = pipe(fildes);
@@ -242,23 +256,24 @@ TEST(SimonTests,SaveToFile) {
 
   // Create payload
   const char buf[] = "5\n7\n5\n5\n7\n5\n9\n1\n3\ntoets\nq\n";
-  const int bsize  = strlen(buf);
+  const int bsize = strlen(buf);
 
   // Send payload through pipe
   ssize_t nbytes = write(fildes[1], buf, bsize);
   close(fildes[1]);
   ASSERT_EQ(nbytes, bsize);
 
-  //Actual Test
-  auto* inputPoll = new IOInterface();
+  // Actual Test
+  auto *inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
-  //Close pipe
+  // Close pipe
   close(fildes[0]);
 }
 
-TEST(SimonTests,LoadFromFile) {
+TEST(SimonTests, LoadFromFile)
+{
   // Create pipe to mock stdin
   int fildes[2];
   int status = pipe(fildes);
@@ -270,18 +285,18 @@ TEST(SimonTests,LoadFromFile) {
 
   // Create payload
   const char buf[] = "1\n4\ntoets\nq\n";
-  const int bsize  = strlen(buf);
+  const int bsize = strlen(buf);
 
   // Send payload through pipe
   ssize_t nbytes = write(fildes[1], buf, bsize);
   close(fildes[1]);
   ASSERT_EQ(nbytes, bsize);
 
-  //Actual Test
-  auto* inputPoll = new IOInterface();
+  // Actual Test
+  auto *inputPoll = new IOInterface();
   inputPoll->poll();
   delete inputPoll;
 
-  //Close pipe
+  // Close pipe
   close(fildes[0]);
 }
