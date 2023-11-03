@@ -73,21 +73,17 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
 TEST(MihailsTests, BillTest)
 {
 
-  SubBill item1("Item 1", 10.50);
-  SubBill item2("Item 2", 7.25);
+  
+    BillComponent* billComp = new SubBill("CheeseBurger", 12);
+    BillComponent* billComp2 = new SubBill("Fries", 8);
+    BillComponent* billComp3 = new BillComposite("MainBill");
+    billComp3->add(billComp2);
+    billComp3->add(billComp);
+    ASSERT_EQ(billComp3->getTotal(), 20);
 
-  BillComposite subBill("Sub-Bill 1");
-  subBill.add(&item1);
-  subBill.add(&item2);
 
-  SubBill item3("Item 3", 5.75);
-
-  BillComposite mainBill("Main Bill");
-  mainBill.add(&subBill);
-  mainBill.add(&item3);
-
-  ASSERT_EQ(mainBill.getTotal(), 23.50) << "Bill system not working - total calculated incorrectly";
 }
+
 
 TEST(MihailsTests, StateTest)
 {

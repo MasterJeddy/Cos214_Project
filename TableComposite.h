@@ -17,6 +17,8 @@
 #include "TableComponent.h"
 #include "BillComponent.h"
 #include "Order.h"
+#include "BillComposite.h"
+#include "SubBill.h"
 
 #include "Constants.cpp"
 
