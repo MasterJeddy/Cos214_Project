@@ -34,22 +34,25 @@ bool HeadChef::finishOrder(Order* order) {
   return order->complete;
 }
 
-class Kitchen;
 void HeadChef::startOrders() {
   // placeholder temporary implementation
   // firstChef.handleOrder for current max orders
   // add the finished orders to finishedOrders
 
   for (int i = 0; i < maxOrders; i++) {
-    Order* order;
+    Order* order = nullptr;
     if (currentOrders.empty()) {
-      order = orderQueue.front();
-      orderQueue.pop();
+      if (!orderQueue.empty()) {
+        order = orderQueue.front();
+        orderQueue.pop();
+      }
     } else {
       order = currentOrders.front();
       currentOrders.pop();
     }
-    finishOrder(firstChef->handleOrder(order));
+
+    if (order != nullptr)
+      finishOrder(firstChef->handleOrder(order));
   }
 }
 Order *HeadChef::getFinishedOrder() {

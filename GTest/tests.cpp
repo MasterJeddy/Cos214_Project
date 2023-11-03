@@ -58,3 +58,4 @@ TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
     // I have however broken the wisdom of the gtest documentation by indirectly
     // using ClockGetTimeAndTickTest for this test
 }
+

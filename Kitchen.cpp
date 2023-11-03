@@ -3,6 +3,7 @@
 //
 
 #include "Kitchen.h"
+#include "Clock.h"
 Kitchen::Kitchen() {
 }
 
@@ -14,6 +15,14 @@ bool Kitchen::addOrder(Order* order) {
 
 void Kitchen::produceBurgers() {
   // TODO: this is where the clock will be used to start producing
+  if (Clock::instance().getTime("produceBurger") == 0) {
+    headChef.startOrders();
+  }
+
+  if (Clock::instance().getTime("produceBurger")  > 3) {
+    Clock::instance().removeTime("produceBurger");
+  }
+
   //finishedOrders.push(headChef.startOrder(order));
 }
 Kitchen *Kitchen::getInstance() {

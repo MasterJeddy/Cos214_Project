@@ -27,6 +27,7 @@ class HeadChef {
 private:
   int maxOrders = 3;
   std::queue<Order*> orderQueue;
+  // currently circulating orders:
   std::queue<Order*> currentOrders;
   std::queue<Order*> finishedOrders;
   Chef* firstChef;
