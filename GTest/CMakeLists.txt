@@ -46,5 +46,8 @@ add_executable(Google_Tests_run tests.cpp
         ../Patty.cpp
         ../Patty.h
         ../BeefPatty.cpp
-        ../BeefPatty.h)
+        ../BeefPatty.h
+        ../ChickenPatty.cpp
+        ../ChickenPatty.h
+)
 target_link_libraries(Google_Tests_run gtest gtest_main)

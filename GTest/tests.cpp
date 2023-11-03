@@ -10,6 +10,7 @@
 #include "../Lettuce.h"
 #include "../Pickles.h"
 #include "../BeefPatty.h"
+#include "../ChickenPatty.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -89,6 +90,9 @@ TEST(GeordanTest,test1){
     BeefPatty* beef = new BeefPatty();
     beef->add(rick);
     std::cout << beef->totalPrice() << "\n";
+    ChickenPatty* chick = new ChickenPatty();
+    chick->add(beef);
+    std::cout << chick->totalPrice() << "\n";
 }
 
 int orderStatus(Order* order) {
