@@ -15,6 +15,12 @@
 
 #include "../Ketchup.h"
 #include "../Tomato.h"
+#include "../Mayo.h"
+#include "../Lettuce.h"
+#include "../Pickles.h"
+#include "../BeefPatty.h"
+#include "../ChickenPatty.h"
+#include "../VeganPatty.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -84,6 +90,24 @@ TEST(GeordanTest,test1){
     Tomato* ing2 = new Tomato();
     ing2->add(ing1);
     std::cout << ing2->totalPrice() << "\n";
+    Mayo* ing3 = new Mayo();
+    ing3->add(ing2);
+    std::cout<<ing3->totalPrice() << "\n";
+    Lettuce* ing4 = new Lettuce();
+    ing4->add(ing3);
+    std::cout << ing4->totalPrice() << "\n";
+    Pickles* rick = new Pickles();
+    rick->add(ing4);
+    std::cout << rick->totalPrice() << "\n";
+    BeefPatty* beef = new BeefPatty();
+    beef->add(rick);
+    std::cout << beef->totalPrice() << "\n";
+    ChickenPatty* chick = new ChickenPatty();
+    chick->add(beef);
+    std::cout << chick->totalPrice() << "\n";
+    VeganPatty* vegan = new VeganPatty();
+    vegan->add(chick);
+    std::cout << vegan->totalPrice() << "\n";
 }
 
 int orderStatus(Order* order) {
