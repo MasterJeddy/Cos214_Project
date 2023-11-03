@@ -23,4 +23,11 @@ add_executable(Cos214_Project main.cpp
         ButcherChef.h
         SauceChef.cpp
         SauceChef.h)
+        BakerChef.h
+        BurgerBuns.cpp
+        BurgerBuns.h
+        BurgerBuns.h
+        BurgerIngredient.cpp
+        BurgerIngredient.h
+        BurgerIngredient.h)
 add_subdirectory(GTest)
