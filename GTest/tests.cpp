@@ -81,8 +81,6 @@ TEST(MihailsTests, BillTest)
   ASSERT_EQ(billComp3->getTotal(), 20);
 
   // memory cleanup
-  delete billComp;
-  delete billComp2;
   delete billComp3;
 }
 
@@ -92,6 +90,7 @@ TEST(MihailsTests, StateTest)
 
   TableComposite *tableComp = new TableComposite(1);
   TableState *tableState = new Free();
+  tableComp->setTableState(tableState);
 
   ASSERT_EQ(tableState->getName(), "Free") << "State naming not working as expected.";
 
@@ -117,7 +116,6 @@ TEST(MihailsTests, StateTest)
 
   // memory cleanup
   delete tableComp;
-  delete tableState;
 }
 
 TEST(MihailsTests, TableCompositeTest)
@@ -166,10 +164,6 @@ TEST(MihailsTests, TableCompositeTest)
 
   // do memory cleanup
   delete tableComp;
-  delete secondTableComp;
-  delete thirdTableComp;
-  delete fourthTableComp;
-  delete fifthTableComp;
 }
 
 TEST(TinoTests, FloorIsASingleton)

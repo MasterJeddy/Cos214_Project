@@ -13,6 +13,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "TableComposite.h"
+#include "Free.h"
 #include <random>
 
 TableComposite::TableComposite(int id)
@@ -20,6 +21,9 @@ TableComposite::TableComposite(int id)
     // id was made a string such that we do not end up with a case where TableComposite and Customer do not end
     // up with the same Id. We will append a special character for each respective object in order to help avoid
     // any sort of confusion later down the line.
+    this->tableState = new Free();
+    this->bill = nullptr;
+
     this->type = TYPE_TABLECOMPOSITE;
 
     this->waiterId = ""; // this table has not yet been assigned to a waiter
@@ -81,9 +85,9 @@ void TableComposite::removeComponent(TableComponent *component)
             break;
         }
     }
-    //this will recalculate the table capacity once a table has been removed
+    // this will recalculate the table capacity once a table has been removed
     int counter = 1;
-    std::vector<TableComponent*>::iterator mihail = children.begin();
+    std::vector<TableComponent *>::iterator mihail = children.begin();
     for (mihail; mihail < children.end(); mihail++)
     {
         if ((*mihail)->getType() == TYPE_TABLECOMPOSITE)
@@ -124,38 +128,40 @@ TableState *TableComposite::getTableState()
 
 double TableComposite::getPayment()
 {
-    BillComponent* mainBill = new BillComposite("Main-Bill");
-    
-    for(Order* order: orders){
+    BillComponent *mainBill = new BillComposite("Main-Bill");
+
+    for (Order *order : orders)
+    {
         int num = order->orderNumber;
-        BillComponent* temp = new SubBill("Order"+num, order->getPrice());
+        BillComponent *temp = new SubBill("Order" + num, order->getPrice());
         mainBill->add(temp);
     }
 
-    //set all of the tables to free state once the bill has been paid 
-    //this will transition the state from the bill state to the free state 
+    // set all of the tables to free state once the bill has been paid
+    // this will transition the state from the bill state to the free state
     this->getTableState()->proceed(this);
-    //this will set the state to the free state 
+    // this will set the state to the free state
     this->setTableState(this->getTableState());
-    //loop through all of the children and set 
-    //their state to the free state 
-    for(TableComponent* child: children){
-        if (child->getType()==TYPE_TABLECOMPOSITE)
+    // loop through all of the children and set
+    // their state to the free state
+    for (TableComponent *child : children)
+    {
+        if (child->getType() == TYPE_TABLECOMPOSITE)
         {
-            child->setTableState(this->getTableState()); 
+            child->setTableState(this->getTableState());
         }
-        
     }
-    //return the total amount of the entire bill 
+    // return the total amount of the entire bill
     return mainBill->getTotal();
 }
 
 void TableComposite::setTableState(TableState *tableState)
 {
     this->tableState = tableState;
-    //loop through all of the children 
-    // and then set all of their states 
-    for(TableComponent* child: children ){
+    // loop through all of the children
+    //  and then set all of their states
+    for (TableComponent *child : children)
+    {
         child->setTableState(tableState);
     }
 }
