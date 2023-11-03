@@ -1,6 +1,15 @@
+//===-- COS214_Project/BurgerBuns.h - BurgerBuns class definition ------*- C++ -*-===//
 //
-// Created by Kymberley Strydom on 02/11/2023.
+// COS 214 Project.
 //
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// This file contains the declaration of an BurgerBuns class. The BurgerBuns is a
+/// Concrete component in the decorator pattern that will be used to be the unit of
+/// the burger that ingredients are added to.
+///
+//===----------------------------------------------------------------------===//
 
 #ifndef COS214_PROJECT_BURGERBUNS_H
 #define COS214_PROJECT_BURGERBUNS_H

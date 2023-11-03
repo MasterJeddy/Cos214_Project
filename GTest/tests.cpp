@@ -2,6 +2,7 @@
 #include "../Clock.h"
 #include "../Burger.h"
 #include "../BurgerBuns.h"
+#include "../Ketchup.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -63,4 +64,7 @@ TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
 TEST(GeordanTest,test1){
     BurgerBuns* bun = new BurgerBuns();
     std::cout << bun->totalPrice();
+    Ketchup* ing1 = new Ketchup();
+    ing1->add(bun);
+    std::cout << ing1->totalPrice();
 }

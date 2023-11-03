@@ -1,5 +1,5 @@
 //
-// Created by Kymberley Strydom on 03/11/2023.
+// Created by Geordan Strydom on 03/11/2023.
 //
 
 #include "BurgerIngredient.h"

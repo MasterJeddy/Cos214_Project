@@ -29,5 +29,7 @@ add_executable(Cos214_Project main.cpp
         BurgerBuns.h
         BurgerIngredient.cpp
         BurgerIngredient.h
-        BurgerIngredient.h)
+        BurgerIngredient.h
+        Ketchup.cpp
+        Ketchup.h)
 add_subdirectory(GTest)

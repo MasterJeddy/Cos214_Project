@@ -28,5 +28,9 @@ add_executable(Google_Tests_run tests.cpp
         ../SauceChef.cpp
         ../SauceChef.h
         ../GarnishChef.cpp
-        ../GarnishChef.h)
+        ../GarnishChef.h
+        ../Ketchup.cpp
+        ../Ketchup.h
+        ../BurgerIngredient.cpp
+        ../BurgerIngredient.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)

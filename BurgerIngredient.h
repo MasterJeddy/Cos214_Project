@@ -1,6 +1,16 @@
+//===-- COS214_Project/BurgerIngredient.h - BurgerIngredient class definition ------*- C++ -*-===//
 //
-// Created by Kymberley Strydom on 03/11/2023.
+// COS 214 Project.
 //
+//===----------------------------------------------------------------------===//
+///
+/// \file
+/// This file contains the declaration of an BurgerIngredient class. The BurgerIngredient is the
+/// Decorator in the decorator pattern that will be used to be blueprint for all the ingredients
+/// classes that will be wrapped on the burgerbuns object.
+///
+//===----------------------------------------------------------------------===//
+
 
 #ifndef COS214_PROJECT_BURGERINGREDIENT_H
 #define COS214_PROJECT_BURGERINGREDIENT_H
