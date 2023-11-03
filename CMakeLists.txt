@@ -37,5 +37,7 @@ add_executable(Cos214_Project main.cpp
         Mustard.cpp
         Mustard.h
         Mayo.cpp
-        Mayo.h)
+        Mayo.h
+        Lettuce.cpp
+        Lettuce.h)
 add_subdirectory(GTest)

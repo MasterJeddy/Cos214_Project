@@ -38,5 +38,7 @@ add_executable(Google_Tests_run tests.cpp
         ../Mustard.cpp
         ../Mustard.h
         ../Mayo.cpp
-        ../Mayo.h)
+        ../Mayo.h
+        ../Lettuce.cpp
+        ../Lettuce.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)

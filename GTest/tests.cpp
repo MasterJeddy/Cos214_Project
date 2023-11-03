@@ -7,6 +7,7 @@
 #include "../Ketchup.h"
 #include "../Tomato.h"
 #include "../Mayo.h"
+#include "../Lettuce.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -77,6 +78,9 @@ TEST(GeordanTest,test1){
     Mayo* ing3 = new Mayo();
     ing3->add(ing2);
     std::cout<<ing3->totalPrice() << "\n";
+    Lettuce* ing4 = new Lettuce();
+    ing4->add(ing3);
+    std::cout << ing4->totalPrice() << "\n";
 }
 
 int orderStatus(Order* order) {
