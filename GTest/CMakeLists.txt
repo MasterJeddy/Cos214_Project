@@ -34,5 +34,7 @@ add_executable(Google_Tests_run tests.cpp
         ../BurgerIngredient.cpp
         ../BurgerIngredient.h
         ../Tomato.cpp
-        ../Tomato.h)
+        ../Tomato.h
+        ../Mustard.cpp
+        ../Mustard.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)

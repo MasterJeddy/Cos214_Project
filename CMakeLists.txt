@@ -33,5 +33,7 @@ add_executable(Cos214_Project main.cpp
         Ketchup.cpp
         Ketchup.h
         Tomato.cpp
-        Tomato.h)
+        Tomato.h
+        Mustard.cpp
+        Mustard.h)
 add_subdirectory(GTest)
