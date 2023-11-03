@@ -226,8 +226,8 @@ TEST(SimonTests, InputPollMixedSaveMixedLoad)
   ASSERT_NE(status, -1);
 
   // Create payload
-  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n5\n5\n5\n5\n5\n5\n2\n6\n6\nq\n";
-  const int bsize = strlen(buf);
+  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n6\n7\n8\n9\nA\nB\n5\n5\n5\n2\n6\n6\nq\n";
+  const int bsize  = strlen(buf);
 
   // Send payload through pipe
   ssize_t nbytes = write(fildes[1], buf, bsize);
@@ -300,3 +300,34 @@ TEST(SimonTests, LoadFromFile)
   // Close pipe
   close(fildes[0]);
 }
+
+
+
+  
+
+
+
+
+
+TEST(MihailsTests, TableStateChildrenTest){
+    //this will test whether the children of the table will 
+    // be set to the relevant state when combining tables 
+    // as well as separating tables from each other 
+
+    TableComposite* mainTable = new TableComposite(1);
+    TableComposite* childTable1 = new TableComposite(2);
+    mainTable->addComponent(childTable1);
+    // //create a state
+    TableState* ts = new Bill();
+    mainTable->setTableState(ts);
+    ASSERT_EQ(mainTable->getChild("TC_2")->getTableState()->getName(), "Bill");
+    // mainTable->removeComponent(childTable1);
+    // ASSERT_EQ(childTable1->getTableState()->getName(), "Free");
+    
+    // mainTable
+    // mainTable->getPayment();
+}
+
+
+
+

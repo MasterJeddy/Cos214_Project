@@ -171,6 +171,7 @@ UserCommand *IOInterface::queryUser()
 IOInterface::~IOInterface()
 {
   delete logs;
+  delete floorController;
   delete commandLog;
 }
 

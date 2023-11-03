@@ -35,3 +35,12 @@ std::string TableComponent::getType()
 {
     return this->type;
 }
+
+void TableComponent::setTableState(TableState *tableState)
+{
+    this->tableState = tableState;
+}
+
+TableState* TableComponent::getTableState(){
+    return this->tableState;
+}
