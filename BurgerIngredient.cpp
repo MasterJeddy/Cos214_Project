@@ -12,7 +12,7 @@ double BurgerIngredient::totalPrice() {
     double price = getPrice();
     if(ingrediant != nullptr)
     {
-        price += ingrediant->getPrice();
+        price += ingrediant->totalPrice();
     }
     return price;
 }

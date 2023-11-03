@@ -5,6 +5,7 @@
 #include "../Kitchen.h"
 
 #include "../Ketchup.h"
+#include "../Tomato.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -65,10 +66,13 @@ TEST(SimonTests,ClockRemoveTimeAndHasTimeTest) {
 
 TEST(GeordanTest,test1){
     BurgerBuns* bun = new BurgerBuns();
-    std::cout << bun->totalPrice();
+    std::cout << bun->totalPrice() << "\n";
     Ketchup* ing1 = new Ketchup();
     ing1->add(bun);
-    std::cout << ing1->totalPrice();
+    std::cout << ing1->totalPrice() << "\n";
+    Tomato* ing2 = new Tomato();
+    ing2->add(ing1);
+    std::cout << ing2->totalPrice() << "\n";
 }
 
 int orderStatus(Order* order) {
