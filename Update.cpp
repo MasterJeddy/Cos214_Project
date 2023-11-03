@@ -13,7 +13,7 @@
 
 #include "Update.h"
 void Update::execute() {
-
+  floorController->update();
 }
 
 UserCommand *Update::clone() {

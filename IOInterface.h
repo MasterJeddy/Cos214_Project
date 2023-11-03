@@ -18,6 +18,8 @@
 #include "CommandLog.h"
 #include "Commands.h"
 #include "Update.h"
+#include "FloorController.h"
+
 class Logs;
 
 enum DRAW_FLAGS {
@@ -31,6 +33,8 @@ private:
   CommandLog* commandLog;
   Logs* logs;
   int drawState = DONT_DRAW_HELP;
+  FloorController* floorController;
+
   /// \brief Renders other objects in text format
   void render();
   /// \brief Ask UserInput and returns command to be executed

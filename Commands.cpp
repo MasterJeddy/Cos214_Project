@@ -15,7 +15,7 @@
 
 #include "Commands.h"
 void HireMaitreD::execute() {
-
+  floorController->hireMaitreD();
 }
 
 UserCommand *HireMaitreD::clone() {
@@ -33,7 +33,7 @@ HireMaitreD::HireMaitreD(FloorController *floorController) {
 HireMaitreD::~HireMaitreD() = default;
 
 void BuyTable::execute() {
-
+  floorController->buyTable();
 }
 
 UserCommand *BuyTable::clone() {
@@ -50,7 +50,7 @@ BuyTable::BuyTable(FloorController *floorController) {
 BuyTable::~BuyTable()  =default;
 
 void ExpandFloor::execute() {
-
+  floorController->expandFloor();
 }
 
 UserCommand *ExpandFloor::clone() {
@@ -67,7 +67,7 @@ ExpandFloor::ExpandFloor(FloorController *floorController) {
 ExpandFloor::~ExpandFloor() = default;
 
 void HireWaiter::execute() {
-
+  floorController->hireWaiter();
 }
 
 UserCommand *HireWaiter::clone() {
