@@ -14,7 +14,7 @@
 #define COS214_PROJECT_BILL_H
 #include "TableState.h"
 #include "TableComposite.h"
-#include "Occupied.h"
+#include "Free.h"
 
 class Bill : public TableState
 {

@@ -47,13 +47,13 @@ public:
     // getters
     int getCapacity();
     TableComponent *getChild(std::string id);
-    TableState *getTableState();
+    virtual TableState *getTableState();
 
-    double getPayment();
+    virtual double getPayment();
 
     // setters
     void setMaxCapacity(int capacity);
-    void setTableState(TableState *tableState);
+    virtual void setTableState(TableState *tableState);
     void assignWaiter(std::string waiterId);
 
     // observer dp related functions

@@ -168,5 +168,25 @@ TEST(MihailsTests, TableCompositeTest){
 }
 
 
+TEST(MihailsTests, TableStateChildrenTest){
+    //this will test whether the children of the table will 
+    // be set to the relevant state when combining tables 
+    // as well as separating tables from each other 
+
+    TableComposite* mainTable = new TableComposite(1);
+    TableComposite* childTable1 = new TableComposite(2);
+    mainTable->addComponent(childTable1);
+    // //create a state
+    TableState* ts = new Bill();
+    mainTable->setTableState(ts);
+    ASSERT_EQ(mainTable->getChild("TC_2")->getTableState()->getName(), "Bill");
+    // mainTable->removeComponent(childTable1);
+    // ASSERT_EQ(childTable1->getTableState()->getName(), "Free");
+    
+    // mainTable
+    // mainTable->getPayment();
+}
+
+
 
 
