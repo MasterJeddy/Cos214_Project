@@ -7,13 +7,16 @@
 #include "../Occupied.h"
 #include "../Free.h"
 
+// Tino
+#include "../Floor.h"
+
 //
 // Created by maili on 2023/10/23.
 //
-TEST(ExampleTests,Test1){
-    ASSERT_EQ(5,3+2);
+TEST(ExampleTests, Test1)
+{
+  ASSERT_EQ(5, 3 + 2);
 }
-
 
 TEST(SimonTests, ClockGetTimeAndTickTest)
 {
@@ -67,80 +70,72 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
   // using ClockGetTimeAndTickTest for this test
 }
 
-TEST(MihailsTests, BillTest){
+TEST(MihailsTests, BillTest)
+{
 
+  SubBill item1("Item 1", 10.50);
+  SubBill item2("Item 2", 7.25);
 
-    SubBill item1("Item 1", 10.50);
-    SubBill item2("Item 2", 7.25);
+  BillComposite subBill("Sub-Bill 1");
+  subBill.add(&item1);
+  subBill.add(&item2);
 
-    BillComposite subBill("Sub-Bill 1");
-    subBill.add(&item1);
-    subBill.add(&item2);
+  SubBill item3("Item 3", 5.75);
 
-    SubBill item3("Item 3", 5.75);
+  BillComposite mainBill("Main Bill");
+  mainBill.add(&subBill);
+  mainBill.add(&item3);
 
-    BillComposite mainBill("Main Bill");
-    mainBill.add(&subBill);
-    mainBill.add(&item3);
-    
-    ASSERT_EQ(mainBill.getTotal(), 23.50)<<"Bill system not working - total calculated incorrectly";
-
-
-
+  ASSERT_EQ(mainBill.getTotal(), 23.50) << "Bill system not working - total calculated incorrectly";
 }
 
+TEST(MihailsTests, StateTest)
+{
+  // test to check whether the transitions are working correctly
 
-TEST(MihailsTests, StateTest){
-  //test to check whether the transitions are working correctly 
-  
-  TableComposite* tableComp = new TableComposite(1);
-  TableState* tableState = new Free();
-  
-  
-  ASSERT_EQ(tableState->getName(), "Free")<<"State naming not working as expected.";  
+  TableComposite *tableComp = new TableComposite(1);
+  TableState *tableState = new Free();
+
+  ASSERT_EQ(tableState->getName(), "Free") << "State naming not working as expected.";
 
   tableState->proceed(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "Occupied")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Occupied") << "State naming not working as expected.";
   tableComp->getTableState()->proceed(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnWaiter")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnWaiter") << "State naming not working as expected.";
 
   tableComp->getTableState()->hold(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "Busy")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Busy") << "State naming not working as expected.";
 
   tableComp->getTableState()->proceed(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnWaiter")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnWaiter") << "State naming not working as expected.";
 
   tableComp->getTableState()->proceed(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnFood")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "WaitingOnFood") << "State naming not working as expected.";
 
   tableComp->getTableState()->proceed(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "Eating")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Eating") << "State naming not working as expected.";
 
   tableComp->getTableState()->proceed(tableComp);
-  ASSERT_EQ(tableComp->getTableState()->getName(), "Bill")<<"State naming not working as expected.";  
+  ASSERT_EQ(tableComp->getTableState()->getName(), "Bill") << "State naming not working as expected.";
+}
 
-  
-  
+TEST(MihailsTests, TableCompositeTest)
+{
 
-} 
+  TableComposite *tableComp = new TableComposite(1);
+  ASSERT_EQ(tableComp->getId(), "TC_1") << "ID not working";
 
-
-TEST(MihailsTests, TableCompositeTest){
-
-  TableComposite* tableComp = new TableComposite(1);
-  ASSERT_EQ(tableComp->getId(), "TC_1")<<"ID not working";
-
-  TableComposite* secondTableComp = new TableComposite(2);
-  TableComposite* thirdTableComp = new TableComposite(3);
+  TableComposite *secondTableComp = new TableComposite(2);
+  TableComposite *thirdTableComp = new TableComposite(3);
   tableComp->addComponent(secondTableComp);
   ASSERT_EQ(tableComp->getChild("TC_2"), secondTableComp);
 
-  //testing whether the remove function works
+  // testing whether the remove function works
   tableComp->removeComponent(secondTableComp);
-  
-  //ASSERT_EQ(tableComp->getChild("TC_2"), "")<<"getChild() behaved unexpectedly...";
+
+  // ASSERT_EQ(tableComp->getChild("TC_2"), "")<<"getChild() behaved unexpectedly...";
   ASSERT_EQ(tableComp->getChild("TC_2"), nullptr);
- 
+
   ASSERT_EQ(tableComp->getCapacity(), 4);
 
   tableComp->addComponent(secondTableComp);
@@ -152,8 +147,8 @@ TEST(MihailsTests, TableCompositeTest){
   tableComp->removeComponent(thirdTableComp);
   ASSERT_EQ(tableComp->getCapacity(), 6);
 
-  TableComposite* fourthTableComp = new TableComposite(4);
-  TableComposite* fifthTableComp = new TableComposite(5);
+  TableComposite *fourthTableComp = new TableComposite(4);
+  TableComposite *fifthTableComp = new TableComposite(5);
 
   tableComp->addComponent(fourthTableComp);
   ASSERT_EQ(tableComp->getCapacity(), 8);
@@ -167,11 +162,10 @@ TEST(MihailsTests, TableCompositeTest){
   tableComp->addComponent(fourthTableComp);
   tableComp->removeComponent(fourthTableComp);
   ASSERT_EQ(tableComp->getCapacity(), 8);
-
-
-
-  
-
-
 }
 
+TEST(TinoTests, FloorIsASingleton)
+{
+  Floor *floor = Floor::instance();
+  Floor *floor = Floor::instance();
+}
