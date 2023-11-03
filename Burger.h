@@ -19,18 +19,16 @@
 ///
 //===----------------------------------------------------------------------===//
 
-class Burger
-{
+class Burger {
 private:
-    double price;
-
+  double price;
 public:
-    Burger();
-    virtual void add(Burger *) = 0;
-    virtual double totalPrice() = 0;
-    double getPrice() const;
-    void setPrice(double);
-    virtual ~Burger();
+  Burger();
+  virtual void add(Burger*) = 0;
+  virtual double totalPrice() = 0;
+  double getPrice() const;
+  void setPrice(double);
+  virtual ~Burger();
 };
 
-#endif // PROJECT__BURGER_H
+#endif //PROJECT__BURGER_H

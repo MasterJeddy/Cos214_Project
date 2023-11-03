@@ -3,16 +3,13 @@
 //
 
 #include "Burger.h"
-void Burger::setPrice(double _price)
-{
-    price = _price;
+void Burger::setPrice(double _price) {
+  price = _price;
 }
-double Burger::getPrice() const
-{
-    return price;
+double Burger::getPrice() const {
+  return price;
 }
-Burger::Burger()
-{
-    price = 0;
+Burger::Burger() {
+  price = 0;
 }
 Burger::~Burger() = default;
