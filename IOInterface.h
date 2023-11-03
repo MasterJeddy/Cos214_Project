@@ -32,7 +32,7 @@ class IOInterface {
 private:
   CommandLog* commandLog;
   Logs* logs;
-  int drawState = DONT_DRAW_HELP;
+  int drawState = 0;
   FloorController* floorController;
 
   /// \brief Renders other objects in text format

@@ -75,6 +75,7 @@ void IOInterface::resetToLog(CommandLog *log)
       default:
         break;
       }
+
       it->currentItem()->execute();
     }
   }
