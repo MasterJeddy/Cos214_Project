@@ -1,4 +1,4 @@
-//===-- COS214_Project/BurgerBuns.h - BurgerBuns class definition ------*- C++ -*-===//
+//===-- COS214_Project/Mayo.h - Mayo class definition ------*- C++ -*-===//
 //
 // COS 214 Project.
 //

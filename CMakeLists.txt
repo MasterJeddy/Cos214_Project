@@ -41,5 +41,9 @@ add_executable(Cos214_Project main.cpp
         Lettuce.cpp
         Lettuce.h
         Pickles.cpp
-        Pickles.h)
+        Pickles.h
+        Patty.cpp
+        Patty.h
+        BeefPatty.cpp
+        BeefPatty.h)
 add_subdirectory(GTest)

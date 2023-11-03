@@ -1,4 +1,4 @@
-//===-- COS214_Project/BurgerBuns.h - BurgerBuns class definition ------*- C++ -*-===//
+//===-- COS214_Project/Mustard.h - Mustard class definition ------*- C++ -*-===//
 //
 // COS 214 Project.
 //
