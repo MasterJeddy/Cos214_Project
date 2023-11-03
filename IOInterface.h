@@ -29,18 +29,12 @@ enum DRAW_FLAGS {
 };
 
 class IOInterface {
-private:
+protected:
   CommandLog* commandLog;
   Logs* logs;
   int drawState = 0;
   FloorController* floorController;
   KitchenController* kitchenController;
-
-  /// \brief Renders other objects in text format
-  void render();
-  /// \brief Ask UserInput and returns command to be executed
-  /// \return Command to be executed
-  UserCommand* queryUser();
 public:
   /// \brief Sets flag
   /// \param flag Flag to be set
@@ -54,7 +48,7 @@ public:
   bool checkFlag(DRAW_FLAGS flag) const;
   /// \brief  Works as an onUpdate. Checks input from user execute commands and renders the
   /// renders system state.
-  void poll();
+  virtual void poll() = 0;
   /// \brief Resets system and execute all commands in log. Excluding Save and Load Commands.
   /// thus not render anything.
   /// \param log Log's commands to be rerun.

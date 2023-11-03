@@ -11,7 +11,6 @@
 #include "../Free.h"
 
 #include "../Floor.h"
-#include "../IOInterface.h"
 
 #include "../Ketchup.h"
 #include "../Tomato.h"
@@ -21,6 +20,7 @@
 #include "../BeefPatty.h"
 #include "../ChickenPatty.h"
 #include "../VeganPatty.h"
+#include "../IOInterfaceTUI.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -313,7 +313,7 @@ TEST(TinoTests, FloorIsASingleton)
 
 TEST(SimonTests, CreateAndDeleteInputPoll)
 {
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   ASSERT_NE(inputPoll, nullptr);
   delete inputPoll;
 }
@@ -339,7 +339,7 @@ TEST(SimonTests, InputPollSaveLoad)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
@@ -368,7 +368,7 @@ TEST(SimonTests, InputPollMixedSaveMixedLoad)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
@@ -397,7 +397,7 @@ TEST(SimonTests, SaveToFile)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
@@ -426,7 +426,7 @@ TEST(SimonTests, LoadFromFile)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
