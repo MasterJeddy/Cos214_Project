@@ -14,5 +14,5 @@ add_executable(Google_Tests_run tests.cpp ../Clock.h ../Clock.cpp ../WaitingOnWa
 ../BillComponent.h ../BillComponent.cpp ../BillComposite.h ../BillComposite.cpp ../IOInterface.cpp
 ../IOInterface.h ../UserCommand.cpp ../UserCommand.h ../UserCommand.h ../Commands.cpp ../Commands.h
 ../Update.cpp ../Update.h ../Save.cpp ../Save.h ../Load.cpp ../Load.h ../CommandLog.cpp ../CommandLog.h
-../SavedLog.cpp ../SavedLog.h ../Logs.cpp ../Logs.h ../CommandLogIterator.cpp ../CommandLogIterator.h)
+../SavedLog.cpp ../SavedLog.h ../Logs.cpp ../Logs.h ../CommandLogIterator.cpp ../CommandLogIterator.h ../FloorController.cpp ../Floor.h ../Floor.cpp ../Waiter.h ../Waiter.cpp ../Customer.h ../Customer.cpp ../Observer.h ../Observer.cpp ../MaitreD.cpp ../MaitreD.h)
 target_link_libraries(Google_Tests_run gtest gtest_main)

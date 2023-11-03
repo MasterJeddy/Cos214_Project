@@ -14,12 +14,14 @@
 #ifndef COS214_PROJECT_FLOOR_H
 #define COS214_PROJECT_FLOOR_H
 
-#include "Waiter.h"
-#include "Customer.h"
-#include "MaitreD.h"
-#include "TableComposite.h"
 
+#include "Customer.h"
+
+#include "TableComposite.h"
 #include <queue>
+
+class Waiter;
+class MaitreD;
 
 class Floor
 {
@@ -83,5 +85,7 @@ public:
     std::vector<MaitreD *> getMaitreDs();
     std::vector<TableComposite *> getTables();
 };
+#include "Waiter.h"
+#include "MaitreD.h"
 
 #endif

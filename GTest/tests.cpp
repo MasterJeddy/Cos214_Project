@@ -163,7 +163,7 @@ TEST(MihailsTests, TableCompositeTest)
 TEST(TinoTests, FloorIsASingleton)
 {
   Floor *floor = Floor::instance();
-  Floor *floor = Floor::instance();
+  //Floor *floor = Floor::instance();
 }
 
 
