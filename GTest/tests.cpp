@@ -213,7 +213,7 @@ TEST(SimonTests,InputPollMixedSaveMixedLoad){
   ASSERT_NE(status, -1);
 
   // Create payload
-  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n5\n5\n5\n5\n5\n5\n2\n6\n6\nq\n";
+  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n6\n7\n8\n9\nA\nB\n5\n5\n5\n2\n6\n6\nq\n";
   const int bsize  = strlen(buf);
 
   // Send payload through pipe
