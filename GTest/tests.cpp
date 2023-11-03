@@ -163,6 +163,8 @@ TEST(MihailsTests, TableCompositeTest)
   ASSERT_EQ(tableComp->getCapacity(), 8);
 
   // do memory cleanup
+  delete thirdTableComp;
+  delete fourthTableComp;
   delete tableComp;
 }
 
@@ -320,6 +322,9 @@ TEST(MihailsTests, TableStateChildrenTest){
     
     // mainTable
     // mainTable->getPayment();
+
+    //Clear memory
+
 }
 
 

@@ -157,6 +157,7 @@ double TableComposite::getPayment()
 
 void TableComposite::setTableState(TableState *tableState)
 {
+    delete this->tableState;
     this->tableState = tableState;
     // loop through all of the children
     //  and then set all of their states
