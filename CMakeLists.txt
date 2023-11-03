@@ -48,5 +48,7 @@ add_executable(Cos214_Project main.cpp
         BeefPatty.h
         ChickenPatty.cpp
         ChickenPatty.h
+        VeganPatty.cpp
+        VeganPatty.h
 )
 add_subdirectory(GTest)

@@ -11,6 +11,7 @@
 #include "../Pickles.h"
 #include "../BeefPatty.h"
 #include "../ChickenPatty.h"
+#include "../VeganPatty.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -93,6 +94,9 @@ TEST(GeordanTest,test1){
     ChickenPatty* chick = new ChickenPatty();
     chick->add(beef);
     std::cout << chick->totalPrice() << "\n";
+    VeganPatty* vegan = new VeganPatty();
+    vegan->add(chick);
+    std::cout << vegan->totalPrice() << "\n";
 }
 
 int orderStatus(Order* order) {
