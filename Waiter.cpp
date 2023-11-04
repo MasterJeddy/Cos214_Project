@@ -60,6 +60,7 @@ void Waiter::notify(TableComposite *table)
             while (finishedOrder != nullptr)
             {
                 // wait for order to finish
+                finishedOrder = Kitchen::getInstance()->getFinishedOrder();
             }
 
             // at this point order has been finished
@@ -68,7 +69,7 @@ void Waiter::notify(TableComposite *table)
         else
         {
             // go back since table is not yet ready to order
-            //change the state of the table back to busy 
+            // change the state of the table back to busy
             table->getTableState()->hold(table);
         }
     }
