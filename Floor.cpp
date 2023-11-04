@@ -236,6 +236,7 @@ MaitreD *Floor::getRandomMaitreD()
             return maitreD;
         }
     }
+    return nullptr;
 }
 
 void Floor::addMaitreD()
