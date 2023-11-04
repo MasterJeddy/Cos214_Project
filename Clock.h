@@ -68,6 +68,7 @@ protected:
   Clock& operator=(const Clock&);
   /// Destructor operator blocked from being accessed by rest of system.
   ~Clock();
+  friend class IOInterfaceGUI;
 };
 
 #endif //COS214_PROJECT__CLOCK_H

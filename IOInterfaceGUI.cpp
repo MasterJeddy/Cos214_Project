@@ -7,6 +7,7 @@
 #include "Floor.h"
 #include "Save.h"
 #include "Load.h"
+#include "Clock.h"
 
 void IOInterfaceGUI::poll() {
   if (this->Construct(1280,720,1,1))
@@ -68,7 +69,9 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     command->execute();
     delete command;
   }
-
+  if (GetKey(olc::Q).bPressed){
+    return false;
+  }
 
 
   //Render kitchen debug tab
@@ -150,47 +153,54 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     switch (it->currentItem()->getType())
     {
     case COMMANDS::SAVE:
-      DrawString({720,15+10*offset},"Save");
+      DrawString({720,5+10*offset},"Save");
       break;
     case COMMANDS::LOAD:
-      DrawString({720,15+10*offset},"Load");
+      DrawString({720,5+10*offset},"Load");
       break;
     case COMMANDS::TOGGLE_HELP:
-      DrawString({720,15+10*offset},"Toggle Help");
+      DrawString({720,5+10*offset},"Toggle Help");
       break;
     case COMMANDS::TOGGLE_LOG:
-      DrawString({720,15+10*offset},"Toggle Log");
+      DrawString({720,5+10*offset},"Toggle Log");
       break;
     case COMMANDS::HIRE_MAITRE_D:
-      DrawString({720,15+10*offset},"Hire Maitre D");
+      DrawString({720,5+10*offset},"Hire Maitre D");
       break;
     case COMMANDS::BUY_TABLE:
-      DrawString({720,15+10*offset},"Buy Table");
+      DrawString({720,5+10*offset},"Buy Table");
       break;
     case COMMANDS::EXPAND_FLOOR:
-      DrawString({720,15+10*offset},"Expand Floor");
+      DrawString({720,5+10*offset},"Expand Floor");
       break;
     case COMMANDS::HIRE_WAITER:
-      DrawString({720,15+10*offset},"Hire Waiter");
+      DrawString({720,5+10*offset},"Hire Waiter");
       break;
     case COMMANDS::UPDATE:
-      DrawString({720,15+10*offset},"Update");
+      DrawString({720,5+10*offset},"Update");
       break;
     case COMMANDS::EXPAND_KITCHEN:
-      DrawString({720,15+10*offset},"Expand Kitchen");
+      DrawString({720,5+10*offset},"Expand Kitchen");
       break;
     case COMMANDS::HIRE_CHEF:
-      DrawString({720,15+10*offset},"Hire Chef");
+      DrawString({720,5+10*offset},"Hire Chef");
       break;
     case COMMANDS::BUY_STOCK:
-      DrawString({720,15+10*offset},"Buy Stock");
+      DrawString({720,5+10*offset},"Buy Stock");
       break;
     }
   }
+
   //DrawClock
+  offset = 0;
+  DrawString({950,5+10*offset},"Clock");
+  for (auto& time: Clock::instance().timers) {
+    offset++;
+    DrawString({930,5+10*offset},time.first+" "+std::to_string(time.second));
+  }
 
   //Draw Controls
-  DrawString({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load");
+  DrawString({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load Q-Quit");
 
 
 
