@@ -12,6 +12,8 @@
 //===----------------------------------------------------------------------===//
 
 #include "Waiter.h"
+#include "Kitchen.h"
+#include "Clock.h"
 
 Waiter::Waiter(int id)
 {
@@ -49,10 +51,19 @@ void Waiter::notify(TableComposite *table)
 
         if (tableReady)
         {
-            Order *tableOrder = table->order(); // get orer of table
-            //proceed the state to the "WaitingOnFood" 
-            table->getTableState()->proceed(table);
-            // bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+            Order *tableOrder = table->order(); // get order of table
+
+            bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+
+            Order *finishedOrder = Kitchen::getInstance()->getFinishedOrder();
+
+            while (finishedOrder != nullptr)
+            {
+                // wait for order to finish
+            }
+
+            // at this point order has been finished
+            Floor::instance()->takeOrderToTable(finishedOrder);
         }
         else
         {
