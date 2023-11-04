@@ -39,6 +39,9 @@ Order *Kitchen::getFinishedOrder() {
 
   return headChef.getFinishedOrder();
 }
+void Kitchen::purchaseChef() {
+  headChef.increaseMaxOrders();
+}
 Kitchen::~Kitchen() = default;
 Kitchen::Kitchen(Kitchen &) = default;
 Kitchen &Kitchen::operator=(Kitchen &) = default;
