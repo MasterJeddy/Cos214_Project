@@ -93,3 +93,17 @@ void Waiter::clearAssignedTables()
 {
     this->assignedTableIds.clear();
 }
+
+bool Waiter::isResponsibleForThisTable(std::string tableId){
+    //this function will loop through all of the 
+    //assigned TableIds and return whether this 
+    //waiter is responsible for the tableId that 
+    //was passed in as a parameter
+    for(std::string tempId: this->assignedTableIds){
+        if (tempId==tableId)
+        {
+            return true;
+        }
+    }
+    return false;
+}

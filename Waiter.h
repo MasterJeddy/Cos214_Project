@@ -29,6 +29,7 @@ public:
     void assignTable(TableComposite *assignedTable);
     void clearAssignedTables();
     friend class IOInterfaceGUI;
+    bool isResponsibleForThisTable(std::string tableId);
 };
 
 #endif
