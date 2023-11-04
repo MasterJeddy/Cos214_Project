@@ -31,6 +31,7 @@ public:
     void clearAssignedTables();
     void takeOrderToFloor(Order* finishedOrder);
     friend class IOInterfaceGUI;
+    bool isResponsibleForThisTable(std::string tableId);
 };
 
 #endif
