@@ -19,11 +19,13 @@
 #include "Order.h"
 #include "BillComposite.h"
 #include "SubBill.h"
-#include "Waiter.h"
+
 
 #include "Constants.h"
 
 #include <sstream>
+
+class Waiter;
 
 class TableState;
 
@@ -77,5 +79,5 @@ public:
   void eat(Order* order);
     friend class IOInterfaceGUI;
 };
-
+#include "Waiter.h"
 #endif

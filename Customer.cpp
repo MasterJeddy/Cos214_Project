@@ -88,6 +88,8 @@ void Customer::request()
 {
     for (std::vector<Observer *>::iterator iter = this->observerList.begin(); iter < this->observerList.end(); iter++)
     {
+
+
         // find a ConcreteObserver that is a maitreD and that is currently free and notify them of request
         if ((*iter)->getType() == TYPE_MAITRED && (*iter)->getState() == "FREE")
         {
