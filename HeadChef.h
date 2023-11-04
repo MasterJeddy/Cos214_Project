@@ -45,8 +45,16 @@ public:
   /// \param currentOrder : new order from the Kitchen's order queue
   /// \return a completed order with corresponding burger object
   void startOrders();
+
+  /// \brief Add an order to the order queue
+  /// \param order A pointer to a new Order struct object
   void addOrder(Order* order);
+
+  /// \brief Increases the maximum amount of orders that the chefs can handle at once
   void increaseMaxOrders();
+
+  /// \brief All Orders returned have their ingredient ints set to 0
+  /// \return a finished order
   Order* getFinishedOrder();
   friend class IOInterfaceGUI;
 };
