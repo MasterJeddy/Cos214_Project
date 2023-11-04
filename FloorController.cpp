@@ -15,11 +15,12 @@
 void FloorController::hireWaiter()
 {
     Floor::instance()->addWaiter();
+    //Floor::instance()->assignTablesToWaiters();
 }
 
 void FloorController::update()
 {
-    if (Clock::instance().getTime("AddCustomer")>3){
+    if (Clock::instance().getTime("AddCustomer")>1){
       Floor::instance()->addWaitingCustomer();
       Clock::instance().removeTime("AddCustomer");
     }
