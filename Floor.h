@@ -73,7 +73,6 @@ public:
     void removeMaitreD(std::string id);
     void removeTable(std::string id);
 
-    void updateObserved();
 
     // getters
     int getTableCount();

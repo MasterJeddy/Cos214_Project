@@ -20,6 +20,7 @@ void FloorController::hireWaiter()
 void FloorController::update()
 {
     Floor::instance()->requestSeat();
+    Floor::instance()->assignTablesToWaiters();
 }
 
 void FloorController::hireMaitreD()

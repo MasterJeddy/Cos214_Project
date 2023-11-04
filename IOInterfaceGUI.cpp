@@ -75,7 +75,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     int xoffset = 0;
     for (const auto& table:waiter->assignedTableIds){
       xoffset++;
-      DrawString({225+10*xoffset,15+10*offset},table);
+      DrawString({225+25*xoffset,15+10*offset},table);
     }
   }
   // Draw Customers
@@ -108,7 +108,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   return true;
 }
 void IOInterfaceGUI::drawTableDebug(TableComposite *table,int offset,int xoffset) {
-    DrawString({400+10*xoffset,15+10*offset},table->getId());
+    DrawString({400+35*xoffset,15+10*offset},table->getId());
     for (auto t:table->children){
       xoffset++;
       drawTableDebug((TableComposite*)t,offset,xoffset);
