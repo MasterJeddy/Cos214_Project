@@ -33,10 +33,10 @@ Floor::Floor()
     this->maitreDId = 0;
     this->tableId = 0;
 
-    // create the initial default number of waiters in the game
-    for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
+    // create initial default number of tables in the game
+    for (int i = 0; i < DEFAULT_NO_TABLES; i++)
     {
-        addWaiter();
+        addTable();
     }
 
     // create initial default number of customers in the game
@@ -45,17 +45,19 @@ Floor::Floor()
         addWaitingCustomer();
     }
 
+    // create the initial default number of waiters in the game
+    for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
+    {
+        addWaiter();
+    }
+
     // create initial default number of maitreDs in the game
     for (int i = 0; i < DEFAULT_NO_MAITREDS; i++)
     {
         addMaitreD();
     }
 
-    // create initial default number of tables in the game
-    for (int i = 0; i < DEFAULT_NO_TABLES; i++)
-    {
-        addTable();
-    }
+  updateObserved();
 }
 
 Floor::~Floor()
@@ -102,8 +104,12 @@ Floor::~Floor()
 void Floor::requestSeat()
 {
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
-
     nextCustomer->request();
+
+    for (auto* table:tables){
+        table->request();
+    }
+
 }
 
 bool Floor::seatCustomer(Customer *customer)
@@ -449,4 +455,26 @@ void Floor::removeTable(std::string id)
             break;
         }
     }
+}
+
+void Floor::updateObserved() {
+    auto customers = getWaitingCustomers();
+    while (!customers.empty()){
+        for (auto maitreD:maitreDs) {
+            customers.front()->attachObserver(maitreD);
+        }
+        for (auto waiter:waiters) {
+            customers.front()->attachObserver(waiter);
+        }
+        customers.pop();
+    }
+    for (auto table:tables){
+      for (auto maitreD:maitreDs) {
+        table->attachObserver(maitreD);
+      }
+      for (auto waiter:waiters) {
+        table->attachObserver(waiter);
+      }
+    }
+    assignTablesToWaiters();
 }

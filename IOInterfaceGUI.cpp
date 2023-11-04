@@ -22,7 +22,15 @@ bool IOInterfaceGUI::OnUserCreate() {
 }
 
 bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
+  UserCommand* command;
 
+  //input
+  if (GetKey(olc::U).bPressed){
+    command = new Update(floorController,kitchenController);
+    commandLog->addEntry(command);
+    command->execute();
+    delete command;
+  }
 
 
 
