@@ -39,7 +39,7 @@ void Waiter::notify(Customer *customer)
 {
 }
 
-void Waiter::takeOrderToFloor(Order* finishedOrder)
+void Waiter::takeOrderToFloor(Order *finishedOrder)
 {
     // if order has really been finished
     if (finishedOrder != nullptr)
@@ -64,6 +64,9 @@ void Waiter::notify(TableComposite *table)
             Order *tableOrder = table->order(); // get order of table
 
             bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+
+            // now attach this waiter as an observer to the kitchen
+            Kitchen::getInstance()->attach(this);
         }
         else
         {
@@ -94,13 +97,15 @@ void Waiter::clearAssignedTables()
     this->assignedTableIds.clear();
 }
 
-bool Waiter::isResponsibleForThisTable(std::string tableId){
-    //this function will loop through all of the 
-    //assigned TableIds and return whether this 
-    //waiter is responsible for the tableId that 
-    //was passed in as a parameter
-    for(std::string tempId: this->assignedTableIds){
-        if (tempId==tableId)
+bool Waiter::isResponsibleForThisTable(std::string tableId)
+{
+    // this function will loop through all of the
+    // assigned TableIds and return whether this
+    // waiter is responsible for the tableId that
+    // was passed in as a parameter
+    for (std::string tempId : this->assignedTableIds)
+    {
+        if (tempId == tableId)
         {
             return true;
         }

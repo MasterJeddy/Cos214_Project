@@ -60,6 +60,9 @@ void Kitchen::notifyWaiter()
     {
       // notify waiter to take finished order to table
       waiter->takeOrderToFloor(finishedOrder);
+
+      // detach this waiter from being an observer of kitchen since they have taken their order to floor
+      this->detach(waiter);
       break;
     }
   }
