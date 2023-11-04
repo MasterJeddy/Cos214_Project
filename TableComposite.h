@@ -19,6 +19,7 @@
 #include "Order.h"
 #include "BillComposite.h"
 #include "SubBill.h"
+#include "Waiter.h"
 
 #include "Constants.h"
 
@@ -54,7 +55,7 @@ public:
     // setters
     void setMaxCapacity(int capacity);
     virtual void setTableState(TableState *tableState);
-    void assignWaiter(std::string waiterId);
+    void assignWaiter(Waiter* waiter);
 
     // observer dp related functions
     virtual void attachObserver(Observer *observer);

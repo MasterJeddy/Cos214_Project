@@ -79,6 +79,8 @@ public:
     int getWaiterCount();
     int getWaitingCustomerCount();
 
+    MaitreD *getRandomMaitreD();
+
     std::vector<Waiter *> getWaiters();
     std::queue<Customer *> getWaitingCustomers();
     std::vector<MaitreD *> getMaitreDs();

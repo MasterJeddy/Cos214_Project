@@ -73,14 +73,12 @@ void TableComposite::addComponent(TableComponent *component)
     // maxCapacity is equal to 4 + 2*(number of tables - 1)
     this->maxCapacity = 4 + 2 * (counter - 1);
 
-    //change the state of the table to occupied if a customer has sat down
+    // change the state of the table to occupied if a customer has sat down
     if (component->getType() == TYPE_CUSTOMER)
     {
-        TableState* tempy = new Occupied();
+        TableState *tempy = new Occupied();
         this->setTableState(tempy);
     }
-    
-
 }
 
 void TableComposite::removeComponent(TableComponent *component)
@@ -176,9 +174,10 @@ void TableComposite::setTableState(TableState *tableState)
     }
 }
 
-void TableComposite::assignWaiter(std::string waiterId)
+void TableComposite::assignWaiter(Waiter *waiter)
 {
-    this->waiterId = waiterId;
+    this->waiterId = waiter->getId();
+    this->attachObserver(waiter);
 }
 
 void TableComposite::request()
@@ -189,7 +188,7 @@ void TableComposite::request()
         if (observer->getType() == TYPE_WAITER && observer->getId() == waiterId)
         {
             // notify this waiter
-            //proceed the state of the table 
+            // proceed the state of the table
             this->getTableState()->proceed(this);
             observer->notify(this);
             break;
@@ -262,7 +261,7 @@ Order *TableComposite::order()
     order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
     order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
 
-    //change the state to WaitingOnFood
+    // change the state to WaitingOnFood
     this->tableState->proceed(this);
 
     return order;
@@ -321,18 +320,17 @@ void TableComposite::rejectedService()
     tableState->hold(this);
 }
 
-void TableComposite::eat(Order* order){
-    this->orders.push_back(order);  //add this to the order 
+void TableComposite::eat(Order *order)
+{
+    this->orders.push_back(order); // add this to the order
     tableState->proceed(this);
-    for (Observer* observer: observerList)
+    for (Observer *observer : observerList)
     {
-        if (observer->getId()==waiterId)
+        if (observer->getId() == waiterId)
         {
-            //notfity this waiter 
+            // notfity this waiter
             observer->notify(this);
             break;
         }
-        
     }
-    
 }

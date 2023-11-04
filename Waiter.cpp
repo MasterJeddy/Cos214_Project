@@ -86,7 +86,7 @@ void Waiter::assignTable(TableComposite *assignedTable)
     this->assignedTableIds.push_back(assignedTable->getId());
 
     // also assign this waiter to the passed in table
-    assignedTable->assignWaiter(this->id);
+    assignedTable->assignWaiter(this);
 }
 
 void Waiter::clearAssignedTables()

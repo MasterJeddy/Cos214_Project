@@ -39,12 +39,6 @@ Floor::Floor()
         addWaiter();
     }
 
-    // create initial default number of customers in the game
-    for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
-    {
-        addWaitingCustomer();
-    }
-
     // create initial default number of maitreDs in the game
     for (int i = 0; i < DEFAULT_NO_MAITREDS; i++)
     {
@@ -55,6 +49,13 @@ Floor::Floor()
     for (int i = 0; i < DEFAULT_NO_TABLES; i++)
     {
         addTable();
+    }
+
+    // needs to be done last so that maitreD observers can be attached to customer objects
+    //  create initial default number of customers in the game
+    for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
+    {
+        addWaitingCustomer();
     }
 }
 
@@ -223,6 +224,18 @@ void Floor::addWaitingCustomer()
     int thisCustomerId = getAndIncrementWaitingCustomerId();
     Customer *waitingCustomer = new Customer(thisCustomerId);
     this->waitingCustomers.push(waitingCustomer);
+    waitingCustomer->attachObserver(this->getRandomMaitreD());
+}
+
+MaitreD *Floor::getRandomMaitreD()
+{
+    for (MaitreD *maitreD : this->maitreDs)
+    {
+        if (maitreD->getState() == "Free")
+        {
+            return maitreD;
+        }
+    }
 }
 
 void Floor::addMaitreD()
