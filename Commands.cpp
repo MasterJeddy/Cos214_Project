@@ -84,7 +84,7 @@ HireWaiter::HireWaiter(FloorController *floorController) {
 HireWaiter::~HireWaiter() =default;
 
 void ExpandKitchen::execute() {
-
+  kitchenController->expandKitchen();
 }
 
 UserCommand *ExpandKitchen::clone() {
@@ -101,7 +101,7 @@ ExpandKitchen::ExpandKitchen(KitchenController *kitchenController) {
 ExpandKitchen::~ExpandKitchen() =default;
 
 void HireChef::execute() {
-
+  kitchenController->hireChef();
 }
 
 UserCommand *HireChef::clone() {
@@ -118,7 +118,7 @@ HireChef::HireChef(KitchenController *kitchenController) {
 HireChef::~HireChef() = default;
 
 void BuyStock::execute() {
-
+  kitchenController->buyStock();
 }
 
 UserCommand *BuyStock::clone() {

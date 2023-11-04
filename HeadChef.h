@@ -48,6 +48,8 @@ public:
   void addOrder(Order* order);
   void increaseMaxOrders();
   Order* getFinishedOrder();
+
+  friend class IOInterfaceGUI;
 };
 
 #endif //COS214_PROJECT__HEADCHEF_H

@@ -1,14 +1,17 @@
 //
 // Created by maili on 2023/10/23.
 //
-#include "IOInterface.h"
+#define OLC_PGE_APPLICATION
+
+#include "IOInterfaceTUI.h"
+#include "IOInterfaceGUI.h"
 
 int randomvalue(){
   return 3;
 }
 
 int main() {
-  auto* io = new IOInterface();
+  auto* io = new IOInterfaceGUI();
   io->poll();
   delete io;
   return 0;

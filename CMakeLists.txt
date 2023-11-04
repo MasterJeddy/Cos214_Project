@@ -56,5 +56,6 @@ CommandLogIterator.cpp CommandLogIterator.h FloorController.cpp Floor.h Floor.cp
         ChickenPatty.h
         VeganPatty.cpp
         VeganPatty.h
-)
+        KitchenController.cpp KitchenController.h IOInterfaceTUI.cpp IOInterfaceTUI.h IOInterfaceGUI.cpp IOInterfaceGUI.h olcPixelGameEngine/olcPixelGameEngine.h)
 add_subdirectory(GTest)
+target_link_libraries(Cos214_Project PRIVATE -lX11 -lGL -lpthread -lpng -lstdc++fs)

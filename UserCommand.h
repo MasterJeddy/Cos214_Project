@@ -14,6 +14,8 @@
 #define COS214_PROJECT__USERCOMMAND_H
 
 #include "FloorController.h"
+#include "KitchenController.h"
+
 class KitchenController;
 
 enum class COMMANDS {

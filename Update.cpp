@@ -12,8 +12,11 @@
 //===----------------------------------------------------------------------===//
 
 #include "Update.h"
+#include "Clock.h"
 void Update::execute() {
+  Clock::instance().tick();
   floorController->update();
+  kitchenController->update();
 }
 
 UserCommand *Update::clone() {

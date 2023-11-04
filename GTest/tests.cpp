@@ -11,7 +11,6 @@
 #include "../Free.h"
 
 #include "../Floor.h"
-#include "../IOInterface.h"
 
 #include "../Ketchup.h"
 #include "../Tomato.h"
@@ -21,6 +20,7 @@
 #include "../BeefPatty.h"
 #include "../ChickenPatty.h"
 #include "../VeganPatty.h"
+#include "../IOInterfaceTUI.h"
 //
 // Created by maili on 2023/10/23.
 //
@@ -117,6 +117,8 @@ int orderStatus(Order* order) {
   return sum;
 }
 TEST(NielTests, ChefChainTest) {
+  Clock::instance().removeTime("produceBurger");
+
 
   // first test; should be done in 3 ticks:
   Order* testOrder1 = new Order("table-1");
@@ -311,7 +313,7 @@ TEST(TinoTests, FloorIsASingleton)
 
 TEST(SimonTests, CreateAndDeleteInputPoll)
 {
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   ASSERT_NE(inputPoll, nullptr);
   delete inputPoll;
 }
@@ -337,7 +339,7 @@ TEST(SimonTests, InputPollSaveLoad)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
@@ -357,7 +359,7 @@ TEST(SimonTests, InputPollMixedSaveMixedLoad)
   ASSERT_NE(status, -1);
 
   // Create payload
-  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n6\n7\n8\n9\nA\nB\n5\n5\n5\n2\n6\n6\nq\n";
+  const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n6\n7\n8\n9\nA\nB\nC\nD\nE\n5\n5\n2\n6\n6\nq\n";
   const int bsize  = strlen(buf);
 
   // Send payload through pipe
@@ -366,7 +368,7 @@ TEST(SimonTests, InputPollMixedSaveMixedLoad)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
@@ -395,7 +397,7 @@ TEST(SimonTests, SaveToFile)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
@@ -424,7 +426,7 @@ TEST(SimonTests, LoadFromFile)
   ASSERT_EQ(nbytes, bsize);
 
   // Actual Test
-  auto *inputPoll = new IOInterface();
+  auto *inputPoll = new IOInterfaceTUI();
   inputPoll->poll();
   delete inputPoll;
 
