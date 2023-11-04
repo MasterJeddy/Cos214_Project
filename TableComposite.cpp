@@ -265,6 +265,9 @@ Order *TableComposite::order()
     order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
     order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
 
+    //change the state to WaitingOnFood
+    this->tableState->proceed(this);
+
     return order;
 }
 
@@ -319,4 +322,20 @@ void TableComposite::rejectedService()
 
     // change state to Busy by calling the hold function
     tableState->hold(this);
+}
+
+void TableComposite::eat(Order* order){
+    this->orders.push_back(order);  //add this to the order 
+    tableState->proceed(this);
+    for (Observer* observer: observerList)
+    {
+        if (observer->getId()==waiterId)
+        {
+            //notfity this waiter 
+            observer->notify(this);
+            break;
+        }
+        
+    }
+    
 }

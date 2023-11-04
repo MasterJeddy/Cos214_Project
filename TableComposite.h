@@ -73,6 +73,7 @@ public:
     // rejected service of the waiter
     // calls the hold() function
     void rejectedService();
+    void eat(Order* order);
 };
 
 #endif
