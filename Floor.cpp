@@ -182,6 +182,7 @@ bool Floor::seatCustomer(Customer *customer)
             {
                 mainTable->addComponent(customer);
             }
+            mainTable->request();
 
             // once the bill is settles the TableComposite will call a function to clear the children and 'revert' back to the
             // original position of having separate tables that are not combined together
@@ -217,6 +218,8 @@ void Floor::addWaiter()
     int thisWaiterId = getAndIncrementWaiterId();
     Waiter *waiter = new Waiter(thisWaiterId);
     this->waiters.push_back(waiter);
+
+    this->assignTablesToWaiters();
 }
 
 void Floor::addWaitingCustomer()
@@ -236,6 +239,7 @@ MaitreD *Floor::getRandomMaitreD()
             return maitreD;
         }
     }
+    return nullptr;
 }
 
 void Floor::addMaitreD()
@@ -250,6 +254,8 @@ void Floor::addTable()
     int thisTableId = getAndIncrementTableId();              // generate a table id for the new table
     TableComposite *table = new TableComposite(thisTableId); // create the table
     this->tables.push_back(table);                           // add table to floor
+
+    this->assignTablesToWaiters();
 }
 
 int Floor::getTableCount()
