@@ -231,7 +231,7 @@ MaitreD *Floor::getRandomMaitreD()
 {
     for (MaitreD *maitreD : this->maitreDs)
     {
-        if (maitreD->getState() == "Free")
+        if (maitreD->getState() == "FREE")
         {
             return maitreD;
         }
