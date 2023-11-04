@@ -196,6 +196,7 @@ bool Floor::seatCustomer(Customer *customer)
             if (table->getTableState()->getName() == "Free") // loop through all the tables and stop when you find a free one
             {
                 table->addComponent(customer); // add this customer to the table
+                table->request();
                 return true;
             }
         }
