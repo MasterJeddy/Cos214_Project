@@ -48,7 +48,6 @@ public:
   void addOrder(Order* order);
   void increaseMaxOrders();
   Order* getFinishedOrder();
-
   friend class IOInterfaceGUI;
 };
 

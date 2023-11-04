@@ -39,7 +39,6 @@ public:
   Order* getFinishedOrder();
   void produceBurgers();
   void purchaseChef();
-
   friend class IOInterfaceGUI;
 };
 

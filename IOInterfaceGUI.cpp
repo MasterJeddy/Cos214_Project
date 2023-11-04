@@ -28,19 +28,31 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   //Render kitchen info tab
   Clear(olc::BLACK);
   DrawString({50,5},"Kitchen info",olc::WHITE,1);
+  DrawString({30,15},"Chefs: "+std::to_string(Kitchen::getInstance()->headChef.maxOrders));
 
-  //Render current order queue
-  int orderQueueSize = Kitchen::getInstance()->headChef.currentOrders.size();
-  DrawString({30,15},"Current Orders:");
+  int orderQueueSize = 0;
   Order* order;
+  int FinishedOrdersOffset = 0;
+  //Render current order queue
+  orderQueueSize = Kitchen::getInstance()->headChef.currentOrders.size();
+  DrawString({30,25},"Current Orders:");
+  ;
   for (int i=0;i<orderQueueSize;i++){
     order = Kitchen::getInstance()->headChef.currentOrders.front();
     Kitchen::getInstance()->headChef.currentOrders.pop();
-    DrawString({30,25+10*i},std::to_string(order->orderNumber));
+    DrawString({30,25+10+10*i},std::to_string(order->orderNumber));
     Kitchen::getInstance()->headChef.currentOrders.push(order);
   }
-  //Render finishe orders
-
+  //Render finished orders
+  FinishedOrdersOffset = orderQueueSize+1;
+  orderQueueSize = Kitchen::getInstance()->headChef.finishedOrders.size();
+  DrawString({30,25+10*FinishedOrdersOffset},"Finished Orders:");
+  for (int i=0;i<orderQueueSize;i++){
+    order = Kitchen::getInstance()->headChef.finishedOrders.front();
+    Kitchen::getInstance()->headChef.finishedOrders.pop();
+    DrawString({30,25+10+10*FinishedOrdersOffset+10*i},std::to_string(order->orderNumber));
+    Kitchen::getInstance()->headChef.finishedOrders.push(order);
+  }
 
   //
 
