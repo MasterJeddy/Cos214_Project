@@ -39,6 +39,8 @@ public:
   Order* getFinishedOrder();
   void produceBurgers();
   void purchaseChef();
+
+  friend class IOInterfaceGUI;
 };
 
 #endif //COS214_PROJECT__KITCHEN_H
