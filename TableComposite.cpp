@@ -169,10 +169,7 @@ void TableComposite::setTableState(TableState *tableState)
 
 void TableComposite::assignWaiter(std::string waiterId)
 {
-    std::stringstream waiterIdStream;
-    waiterIdStream << TYPE_WAITER << waiterId;
-    std::string tempy2 = waiterIdStream.str();
-    this->waiterId = tempy2;
+    this->waiterId = waiterId;
 }
 
 void TableComposite::request()

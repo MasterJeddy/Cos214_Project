@@ -14,7 +14,6 @@
 #ifndef COS214_PROJECT_FLOOR_H
 #define COS214_PROJECT_FLOOR_H
 
-
 #include "Customer.h"
 
 #include "TableComposite.h"
@@ -84,6 +83,8 @@ public:
     std::queue<Customer *> getWaitingCustomers();
     std::vector<MaitreD *> getMaitreDs();
     std::vector<TableComposite *> getTables();
+
+    void takeOrderToTable(Order *order);
 };
 #include "Waiter.h"
 #include "MaitreD.h"

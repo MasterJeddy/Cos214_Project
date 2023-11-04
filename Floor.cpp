@@ -279,6 +279,18 @@ std::vector<TableComposite *> Floor::getTables()
     return this->tables;
 }
 
+void Floor::takeOrderToTable(Order *order)
+{
+    for (TableComposite *table : this->tables)
+    {
+        if (table->getId() == order->tableID)
+        {
+            table->eat(order); // serve food to table
+            break;
+        }
+    }
+}
+
 int Floor::getAndIncrementWaiterId()
 {
     int waiterId = this->waiterId;
