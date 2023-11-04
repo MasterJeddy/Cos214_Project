@@ -38,6 +38,7 @@ public:
   bool addOrder(Order* order);
   Order* getFinishedOrder();
   void produceBurgers();
+  friend class IOInterfaceGUI;
 };
 
 #endif //COS214_PROJECT__KITCHEN_H

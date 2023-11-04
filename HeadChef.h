@@ -47,6 +47,8 @@ public:
   void startOrders();
   void addOrder(Order* order);
   Order* getFinishedOrder();
+
+  friend class IOInterfaceGUI;
 };
 
 #endif //COS214_PROJECT__HEADCHEF_H
