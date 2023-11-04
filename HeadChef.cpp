@@ -66,3 +66,6 @@ Order *HeadChef::getFinishedOrder() {
 void HeadChef::addOrder(Order* order) {
   currentOrders.push(order);
 }
+void HeadChef::increaseMaxOrders() {
+   maxOrders = maxOrders + 3;
+}

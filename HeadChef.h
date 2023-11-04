@@ -46,6 +46,7 @@ public:
   /// \return a completed order with corresponding burger object
   void startOrders();
   void addOrder(Order* order);
+  void increaseMaxOrders();
   Order* getFinishedOrder();
 };
 
