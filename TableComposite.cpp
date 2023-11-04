@@ -41,17 +41,17 @@ TableComposite::~TableComposite()
 {
     // delete table state pointer and set to null
     delete this->tableState;
-    this->tableState = NULL;
+    this->tableState = nullptr;
 
     // delete bill pointer and set to null
     delete this->bill;
-    this->bill = NULL;
+    this->bill = nullptr;
 
     // delete all the TableComponent children pointers
     for (TableComponent *component : this->children)
     {
         delete component;
-        component = NULL;
+        component = nullptr;
     }
     this->children.clear(); // finally clear the vector of tableComponent pointers
 }
@@ -148,16 +148,27 @@ double TableComposite::getPayment()
     // this will transition the state from the bill state to the free state
     this->getTableState()->proceed(this);
     // this will set the state to the free state
-    this->setTableState(this->getTableState());
+    //this->setTableState(this->getTableState());
     // loop through all of the children and set
     // their state to the free state
+
+    std::queue<TableComponent*> toRemove;
+
     for (TableComponent *child : children)
     {
         if (child->getType() == TYPE_TABLECOMPOSITE)
         {
-            child->setTableState(this->getTableState());
+            child->getTableState()->proceed(this);
+        } else {
+          toRemove.push(child);
         }
     }
+
+      while (!toRemove.empty()){
+        removeComponent(toRemove.front());
+        toRemove.pop();
+      }
+
     // return the total amount of the entire bill
     return mainBill->getTotal();
 }
@@ -189,7 +200,9 @@ void TableComposite::request()
         {
             // notify this waiter
             // proceed the state of the table
-            this->getTableState()->proceed(this);
+            if (this->getTableState()->getName()!="Bill"){
+              this->getTableState()->proceed(this);
+            }
             observer->notify(this);
             break;
         }
@@ -207,7 +220,6 @@ void TableComposite::requestBill()
             // notify this waiter
             // change the state to bill
             tableState->proceed(this);
-
             observer->notify(this);
             break;
         }
@@ -245,7 +257,7 @@ Order *TableComposite::order()
 {
 
     // change state by calling the proceed function
-    tableState->proceed(this);
+    //tableState->proceed(this);
     // create an order and return it
     Order *order = new Order(this->getId());
 

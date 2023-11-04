@@ -62,9 +62,7 @@ void Waiter::notify(TableComposite *table)
         if (tableReady)
         {
             Order *tableOrder = table->order(); // get order of table
-
             bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
-
             // now attach this waiter as an observer to the kitchen
             Kitchen::getInstance()->attach(this);
         }
@@ -78,8 +76,13 @@ void Waiter::notify(TableComposite *table)
     // else if state of table is bill, then bill the customers
     else if (table->getTableState()->getName() == "Bill")
     {
-        double totalBill = table->getPayment();
-        Floor::instance()->addSalesRevenue(totalBill);
+        if (Clock::instance().getTime(table->getId()) >2){
+          double totalBill = table->getPayment();
+          Floor::instance()->addSalesRevenue(totalBill);
+          Clock::instance().removeTime(table->getId());
+        }
+
+
     }
     this->state = "FREE";
 }

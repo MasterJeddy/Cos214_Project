@@ -75,7 +75,7 @@ public:
     // rejected service of the waiter
     // calls the hold() function
     void rejectedService();
-  void eat(Order* order);
+    void eat(Order* order);
     friend class IOInterfaceGUI;
 };
 #include "Waiter.h"

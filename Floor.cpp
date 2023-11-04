@@ -12,6 +12,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "Floor.h"
+#include "Clock.h"
 
 Floor *Floor::onlyInstance_ = NULL;
 
@@ -105,6 +106,20 @@ void Floor::requestSeat()
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
 
     nextCustomer->request();
+
+    for (auto table:tables){
+        if (table->getTableState()->getName() == "Eating") {
+            if (Clock::instance().getTime(table->getId()) >3){
+                Clock::instance().removeTime(table->getId());
+                table->requestBill();
+            }
+        }
+        if (table->getTableState()->getName() == "Bill" || table->getTableState()->getName() == "Busy"){
+            if (Clock::instance().getTime(table->getId())>2){
+                table->request();
+            }
+        }
+    }
 }
 
 bool Floor::seatCustomer(Customer *customer)

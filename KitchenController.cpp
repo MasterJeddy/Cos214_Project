@@ -6,7 +6,7 @@
 #include "Kitchen.h"
 
 void KitchenController::hireChef() {
-
+  Kitchen::getInstance()->purchaseChef();
 }
 void KitchenController::update() {
     Kitchen::getInstance()->produceBurgers();

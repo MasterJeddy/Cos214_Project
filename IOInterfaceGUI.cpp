@@ -8,15 +8,15 @@
 
 
 void IOInterfaceGUI::poll() {
-  if (this->Construct(640,360,1,1))
+  if (this->Construct(1280,720,1,1))
       this->Start();
 }
 
 bool IOInterfaceGUI::OnUserCreate() {
-  Kitchen::getInstance()->addOrder(new Order("table-1"));
-  Kitchen::getInstance()->addOrder(new Order("table-1"));
-  Kitchen::getInstance()->addOrder(new Order("table-1"));
-  Kitchen::getInstance()->addOrder(new Order("table-1"));
+//  Kitchen::getInstance()->addOrder(new Order("table-1"));
+//  Kitchen::getInstance()->addOrder(new Order("table-1"));
+//  Kitchen::getInstance()->addOrder(new Order("table-1"));
+//  Kitchen::getInstance()->addOrder(new Order("table-1"));
 
   return true;
 }
@@ -62,7 +62,15 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     DrawString({30,25+10+10*FinishedOrdersOffset+10*i},std::to_string(order->orderNumber));
     Kitchen::getInstance()->headChef.finishedOrders.push(order);
   }
-
+  FinishedOrdersOffset += orderQueueSize+1;
+  DrawString({30,25+10*FinishedOrdersOffset},"Orders:");
+  orderQueueSize = Kitchen::getInstance()->headChef.orderQueue.size();
+  for (int i=0;i<orderQueueSize;i++){
+    order = Kitchen::getInstance()->headChef.orderQueue.front();
+    Kitchen::getInstance()->headChef.orderQueue.pop();
+    DrawString({30,25+10+10*FinishedOrdersOffset+10*i},std::to_string(order->orderNumber));
+    Kitchen::getInstance()->headChef.orderQueue.push(order);
+  }
   //Render Floor debug tab
   DrawString({300,5},"Floor info",olc::WHITE,1);
   //Render Waiters
@@ -84,7 +92,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   auto customers =Floor::instance()->getWaitingCustomers();
   while (!customers.empty()){
     offset++;
-    DrawString({225,15+10*offset},customers.back()->getId());
+    DrawString({225,15+10*offset},customers.front()->getId());
     customers.pop();
   }
   //Draw MaitreD
@@ -108,7 +116,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   return true;
 }
 void IOInterfaceGUI::drawTableDebug(TableComposite *table,int offset,int xoffset) {
-    DrawString({400+35*xoffset,15+10*offset},table->getId());
+    DrawString({400+200*xoffset,15+10*offset},table->getId()+" "+table->getTableState()->getName());
     for (auto t:table->children){
       xoffset++;
       drawTableDebug((TableComposite*)t,offset,xoffset);

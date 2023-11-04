@@ -10,7 +10,7 @@
 //===----------------------------------------------------------------------===//
 
 #include "FloorController.h"
-
+#include "Clock.h"
 
 void FloorController::hireWaiter()
 {
@@ -19,8 +19,11 @@ void FloorController::hireWaiter()
 
 void FloorController::update()
 {
+    if (Clock::instance().getTime("AddCustomer")>3){
+      Floor::instance()->addWaitingCustomer();
+      Clock::instance().removeTime("AddCustomer");
+    }
     Floor::instance()->requestSeat();
-    Floor::instance()->assignTablesToWaiters();
 }
 
 void FloorController::hireMaitreD()

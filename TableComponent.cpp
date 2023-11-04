@@ -21,7 +21,7 @@ TableComponent::~TableComponent()
     for (Observer *observer : this->observerList)
     {
         delete observer;
-        observer = NULL;
+        observer = nullptr;
     }
     this->observerList.clear();
 }
