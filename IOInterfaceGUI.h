@@ -15,6 +15,7 @@ public:
 private:
   bool OnUserCreate() override;
   bool OnUserUpdate(float fElapsedTime) override;
+  void drawTableDebug(TableComposite* table,int offset,int yoffset);
 };
 
 #endif //COS214_PROJECT__IOINTERFACEGUI_H

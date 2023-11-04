@@ -4,6 +4,7 @@
 
 #include "IOInterfaceGUI.h"
 #include "Kitchen.h"
+#include "Floor.h"
 
 
 void IOInterfaceGUI::poll() {
@@ -25,7 +26,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
 
 
 
-  //Render kitchen info tab
+  //Render kitchen debug tab
   Clear(olc::BLACK);
   DrawString({50,5},"Kitchen info",olc::WHITE,1);
   DrawString({30,15},"Chefs: "+std::to_string(Kitchen::getInstance()->headChef.maxOrders));
@@ -54,10 +55,54 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     Kitchen::getInstance()->headChef.finishedOrders.push(order);
   }
 
-  //
-
-
-
+  //Render Floor debug tab
+  DrawString({300,5},"Floor info",olc::WHITE,1);
+  //Render Waiters
+  DrawString({225,15},"Waiters:",olc::WHITE,1);
+  auto waiters = Floor::instance()->getWaiters();
+  int offset =0;
+  for (auto* waiter:waiters ){
+    offset++;
+    DrawString({225,15+10*offset},waiter->id);
+    int xoffset = 0;
+    for (const auto& table:waiter->assignedTableIds){
+      xoffset++;
+      DrawString({225+10*xoffset,15+10*offset},table);
+    }
+  }
+  // Draw Customers
+  offset++;
+  DrawString({225,15+10*offset},"Customers:",olc::WHITE,1);
+  auto customers =Floor::instance()->getWaitingCustomers();
+  while (!customers.empty()){
+    offset++;
+    DrawString({225,15+10*offset},customers.back()->getId());
+    customers.pop();
+  }
+  //Draw MaitreD
+  offset =0;
+  DrawString({400,15},"MaitreD:",olc::WHITE,1);
+  auto maitreDs = Floor::instance()->getMaitreDs();
+  for (auto* maitreD:maitreDs){
+    offset++;
+    DrawString({400,15+10*offset},maitreD->id);
+  }
+  //Draw Tables
+  offset++;
+  DrawString({400,15+10*offset},"Tables:",olc::WHITE,1);
+  auto tables = Floor::instance()->getTables();
+  for (auto* table:tables){
+    offset++;
+    drawTableDebug(table,offset,0);
+    //DrawString({400,15+10*offset},table->getId());
+  }
 
   return true;
+}
+void IOInterfaceGUI::drawTableDebug(TableComposite *table,int offset,int xoffset) {
+    DrawString({400+10*xoffset,15+10*offset},table->getId());
+    for (auto t:table->children){
+      xoffset++;
+      drawTableDebug((TableComposite*)t,offset,xoffset);
+    }
 }

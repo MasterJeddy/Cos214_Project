@@ -26,6 +26,7 @@ public:
     virtual ~MaitreD();
     virtual void notify(Customer *customer);
     virtual void notify(TableComposite *table);
+    friend class IOInterfaceGUI;
 };
 
 #endif
