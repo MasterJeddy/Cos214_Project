@@ -33,18 +33,6 @@ Floor::Floor()
     this->maitreDId = 0;
     this->tableId = 0;
 
-    // create initial default number of tables in the game
-    for (int i = 0; i < DEFAULT_NO_TABLES; i++)
-    {
-        addTable();
-    }
-
-    // create initial default number of customers in the game
-    for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
-    {
-        addWaitingCustomer();
-    }
-
     // create the initial default number of waiters in the game
     for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
     {
@@ -57,7 +45,18 @@ Floor::Floor()
         addMaitreD();
     }
 
-  updateObserved();
+    // create initial default number of tables in the game
+    for (int i = 0; i < DEFAULT_NO_TABLES; i++)
+    {
+        addTable();
+    }
+
+    // needs to be done last so that maitreD observers can be attached to customer objects
+    //  create initial default number of customers in the game
+    for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
+    {
+        addWaitingCustomer();
+    }
 }
 
 Floor::~Floor()
@@ -104,12 +103,8 @@ Floor::~Floor()
 void Floor::requestSeat()
 {
     Customer *nextCustomer = this->waitingCustomers.front(); // take next customer from queue
+
     nextCustomer->request();
-
-    for (auto* table:tables){
-        table->request();
-    }
-
 }
 
 bool Floor::seatCustomer(Customer *customer)
@@ -229,6 +224,18 @@ void Floor::addWaitingCustomer()
     int thisCustomerId = getAndIncrementWaitingCustomerId();
     Customer *waitingCustomer = new Customer(thisCustomerId);
     this->waitingCustomers.push(waitingCustomer);
+    waitingCustomer->attachObserver(this->getRandomMaitreD());
+}
+
+MaitreD *Floor::getRandomMaitreD()
+{
+    for (MaitreD *maitreD : this->maitreDs)
+    {
+        if (maitreD->getState() == "Free")
+        {
+            return maitreD;
+        }
+    }
 }
 
 void Floor::addMaitreD()
@@ -283,6 +290,18 @@ std::vector<MaitreD *> Floor::getMaitreDs()
 std::vector<TableComposite *> Floor::getTables()
 {
     return this->tables;
+}
+
+void Floor::takeOrderToTable(Order *order)
+{
+    for (TableComposite *table : this->tables)
+    {
+        if (table->getId() == order->tableID)
+        {
+            table->eat(order); // serve food to table
+            break;
+        }
+    }
 }
 
 int Floor::getAndIncrementWaiterId()
@@ -455,26 +474,4 @@ void Floor::removeTable(std::string id)
             break;
         }
     }
-}
-
-void Floor::updateObserved() {
-    auto customers = getWaitingCustomers();
-    while (!customers.empty()){
-        for (auto maitreD:maitreDs) {
-            customers.front()->attachObserver(maitreD);
-        }
-        for (auto waiter:waiters) {
-            customers.front()->attachObserver(waiter);
-        }
-        customers.pop();
-    }
-    for (auto table:tables){
-      for (auto maitreD:maitreDs) {
-        table->attachObserver(maitreD);
-      }
-      for (auto waiter:waiters) {
-        table->attachObserver(waiter);
-      }
-    }
-    assignTablesToWaiters();
 }

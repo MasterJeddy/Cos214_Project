@@ -12,6 +12,8 @@
 //===----------------------------------------------------------------------===//
 
 #include "Waiter.h"
+#include "Kitchen.h"
+#include "Clock.h"
 
 Waiter::Waiter(int id)
 {
@@ -49,13 +51,25 @@ void Waiter::notify(TableComposite *table)
 
         if (tableReady)
         {
-            Order *tableOrder = table->order(); // get orer of table
+            Order *tableOrder = table->order(); // get order of table
 
-            // bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+            bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+
+            Order *finishedOrder = Kitchen::getInstance()->getFinishedOrder();
+
+            while (finishedOrder != nullptr)
+            {
+                // wait for order to finish
+            }
+
+            // at this point order has been finished
+            Floor::instance()->takeOrderToTable(finishedOrder);
         }
         else
         {
             // go back since table is not yet ready to order
+            //change the state of the table back to busy 
+            table->getTableState()->hold(table);
         }
     }
     // else if state of table is bill, then bill the customers
@@ -72,7 +86,7 @@ void Waiter::assignTable(TableComposite *assignedTable)
     this->assignedTableIds.push_back(assignedTable->getId());
 
     // also assign this waiter to the passed in table
-    assignedTable->assignWaiter(this->id);
+    assignedTable->assignWaiter(this);
 }
 
 void Waiter::clearAssignedTables()
