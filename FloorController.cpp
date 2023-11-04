@@ -22,6 +22,11 @@ void FloorController::update()
 {
     if (Clock::instance().getTime("AddCustomer")>1){
       Floor::instance()->addWaitingCustomer();
+      Floor::instance()->addWaitingCustomer();
+      Floor::instance()->addWaitingCustomer();
+      Floor::instance()->addWaitingCustomer();
+      Floor::instance()->addWaitingCustomer();
+      Floor::instance()->addWaitingCustomer();
       Clock::instance().removeTime("AddCustomer");
     }
     Floor::instance()->requestSeat();
@@ -39,4 +44,7 @@ void FloorController::buyTable()
 
 void FloorController::expandFloor()
 {
+}
+void FloorController::reset() {
+    Floor::instance()->reset();
 }

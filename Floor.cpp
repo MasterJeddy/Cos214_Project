@@ -497,3 +497,71 @@ void Floor::removeTable(std::string id)
         }
     }
 }
+
+void Floor::reset() {
+  //clear data
+  for (Waiter *waiter : this->waiters)
+  {
+    delete waiter;
+    waiter = NULL;
+  }
+  this->waiters.clear(); // now clear the waiters vector
+
+  // delete the waitingCustomers pointers
+  while (!this->waitingCustomers.empty())
+  {
+    Customer *customer = this->waitingCustomers.front(); // get customer at front of queue
+    this->waitingCustomers.pop();                        // remove from queue
+    delete customer;                                     // delete this customer pointer
+    customer = NULL;
+  }
+
+  // delete the maitreD pointers
+  for (MaitreD *maitreD : this->maitreDs)
+  {
+    delete maitreD;
+    maitreD = NULL;
+  }
+  this->maitreDs.clear(); // now clear the maitreDs vector
+
+  // delete the table pointers
+  for (TableComposite *table : this->tables)
+  {
+    delete table;
+    table = NULL;
+  }
+  this->tables.clear(); // now clear the tables vector
+
+  //Create new data
+  this->salesRevenue = 0.0;
+
+  this->waiterId = 0;
+  this->waitingCustomerId = 0;
+  this->maitreDId = 0;
+  this->tableId = 0;
+
+  // create the initial default number of waiters in the game
+  for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
+  {
+    addWaiter();
+  }
+
+  // create initial default number of maitreDs in the game
+  for (int i = 0; i < DEFAULT_NO_MAITREDS; i++)
+  {
+    addMaitreD();
+  }
+
+  // create initial default number of tables in the game
+  for (int i = 0; i < DEFAULT_NO_TABLES; i++)
+  {
+    addTable();
+  }
+
+  // needs to be done last so that maitreD observers can be attached to customer objects
+  //  create initial default number of customers in the game
+  for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
+  {
+    addWaitingCustomer();
+  }
+}

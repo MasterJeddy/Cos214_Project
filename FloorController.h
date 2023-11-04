@@ -22,6 +22,7 @@ public:
     void hireMaitreD();
     void buyTable();
     void expandFloor();
+    void reset();
 };
 
 #endif

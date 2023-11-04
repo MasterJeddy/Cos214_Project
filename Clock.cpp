@@ -59,6 +59,9 @@ void Clock::removeTime(const std::string &me) {
       timers.erase (it);
     }
 }
+void Clock::reset() {
+  timers.clear();
+}
 
 Clock::Clock(const Clock &clock)=default;
 Clock &Clock::operator=(const Clock &) = default;

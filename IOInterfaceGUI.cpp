@@ -5,7 +5,8 @@
 #include "IOInterfaceGUI.h"
 #include "Kitchen.h"
 #include "Floor.h"
-
+#include "Save.h"
+#include "Load.h"
 
 void IOInterfaceGUI::poll() {
   if (this->Construct(1280,720,1,1))
@@ -51,6 +52,18 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   }
   if (GetKey(olc::B).bPressed){
     command = new BuyTable(floorController);
+    commandLog->addEntry(command);
+    command->execute();
+    delete command;
+  }
+  if (GetKey(olc::S).bPressed){
+    command = new Save(commandLog,logs);
+    commandLog->addEntry(command);
+    command->execute();
+    delete command;
+  }
+  if (GetKey(olc::L).bPressed){
+    command = new Load(commandLog,logs);
     commandLog->addEntry(command);
     command->execute();
     delete command;
@@ -174,8 +187,11 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
       break;
     }
   }
+  //DrawClock
+
   //Draw Controls
-  DrawString({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table");
+  DrawString({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load");
+
 
 
   return true;

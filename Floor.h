@@ -68,6 +68,7 @@ public:
     void addTable();
     void assignTablesToWaiters();
 
+
     void removeWaiter(std::string id);
     void removeWaitingCustomer(std::string id);
     void removeMaitreD(std::string id);
@@ -88,6 +89,7 @@ public:
     std::vector<TableComposite *> getTables();
 
     void takeOrderToTable(Order *order);
+    void reset();
 };
 #include "Waiter.h"
 #include "MaitreD.h"

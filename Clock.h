@@ -55,6 +55,8 @@ public:
   ///
   /// Make the clock tick by incrementing the value of each timer in the singleton but one.
   void tick();
+
+  void reset();
 protected:
   /// Constructor blocked from being accessed by rest of system.
   Clock();
