@@ -20,33 +20,35 @@
 //===----------------------------------------------------------------------===//
 
 #include "HeadChef.h"
+#include "KitchenSubject.h"
 struct Order;
 
-class Kitchen {
+class Kitchen : public KitchenSubject
+{
 private:
-  static Kitchen* instance;
+  static Kitchen *instance;
 
   HeadChef headChef;
   bool isBusy = false;
 
   Kitchen();
   ~Kitchen();
-  Kitchen(Kitchen&);
-  Kitchen& operator=(Kitchen&);
+  Kitchen(Kitchen &);
+  Kitchen &operator=(Kitchen &);
 
 public:
   /// \brief Gives you the Kitchen singleton object instance
   /// \return Kitchen instance, creates one if there isn't one already
-  static Kitchen* getInstance();
+  static Kitchen *getInstance();
 
   /// \brief Adds a new order to the queue of orders which will be handled by the chefs
   /// \param order A pointer to a new order struct,
   /// \return true if added successfully, can be run like a void method
-  bool addOrder(Order* order);
+  bool addOrder(Order *order);
 
   /// \brief All orders returned have their counters for ingredients set to 0 (hopefully)
   /// \return the oldest finished order produced by the chefs
-  Order* getFinishedOrder();
+  Order *getFinishedOrder();
 
   /// \brief Starts burger production for one cycle through all the chefs
   void produceBurgers();
@@ -54,6 +56,11 @@ public:
   /// \brief Increases the maximum amount of orders the team of chefs can work on at once
   void purchaseChef();
   friend class IOInterfaceGUI;
+
+  // functions for the applied observer pattern
+  virtual void notifyWaiter();
+  virtual void attach(Waiter *waiter);
+  virtual void detach(Waiter *waiter);
 };
 
-#endif //COS214_PROJECT__KITCHEN_H
+#endif // COS214_PROJECT__KITCHEN_H

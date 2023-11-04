@@ -21,6 +21,7 @@ class Waiter : public Observer
 {
 private:
     std::vector<std::string> assignedTableIds;
+
 public:
     Waiter(int id);
     virtual ~Waiter();
@@ -28,6 +29,7 @@ public:
     virtual void notify(TableComposite *table);
     void assignTable(TableComposite *assignedTable);
     void clearAssignedTables();
+    void takeOrderToFloor(Order* finishedOrder);
     friend class IOInterfaceGUI;
 };
 

@@ -20,7 +20,6 @@
 #include "BillComposite.h"
 #include "SubBill.h"
 
-
 #include "Constants.h"
 
 #include <sstream>

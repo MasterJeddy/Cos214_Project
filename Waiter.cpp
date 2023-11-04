@@ -39,6 +39,16 @@ void Waiter::notify(Customer *customer)
 {
 }
 
+void Waiter::takeOrderToFloor(Order* finishedOrder)
+{
+    // if order has really been finished
+    if (finishedOrder != nullptr)
+    {
+        // at this point order has been finished
+        Floor::instance()->takeOrderToTable(finishedOrder);
+    }
+}
+
 void Waiter::notify(TableComposite *table)
 {
     // called when a table requires the waiter's assistance
@@ -54,17 +64,6 @@ void Waiter::notify(TableComposite *table)
             Order *tableOrder = table->order(); // get order of table
 
             bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
-
-            Order *finishedOrder = Kitchen::getInstance()->getFinishedOrder();
-
-            while (finishedOrder != nullptr)
-            {
-                // wait for order to finish
-                finishedOrder = Kitchen::getInstance()->getFinishedOrder();
-            }
-
-            // at this point order has been finished
-            Floor::instance()->takeOrderToTable(finishedOrder);
         }
         else
         {
