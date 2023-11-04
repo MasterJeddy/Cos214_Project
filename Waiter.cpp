@@ -51,7 +51,7 @@ void Waiter::notify(TableComposite *table)
 
         if (tableReady)
         {
-            Order *tableOrder = table->order(); // get orer of table
+            Order *tableOrder = table->order(); // get order of table
 
             bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
 
@@ -68,6 +68,8 @@ void Waiter::notify(TableComposite *table)
         else
         {
             // go back since table is not yet ready to order
+            //change the state of the table back to busy 
+            table->getTableState()->hold(table);
         }
     }
     // else if state of table is bill, then bill the customers

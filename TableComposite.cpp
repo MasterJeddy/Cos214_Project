@@ -72,6 +72,15 @@ void TableComposite::addComponent(TableComponent *component)
     }
     // maxCapacity is equal to 4 + 2*(number of tables - 1)
     this->maxCapacity = 4 + 2 * (counter - 1);
+
+    //change the state of the table to occupied if a customer has sat down
+    if (component->getType() == TYPE_CUSTOMER)
+    {
+        TableState* tempy = new Occupied();
+        this->setTableState(tempy);
+    }
+    
+
 }
 
 void TableComposite::removeComponent(TableComponent *component)
@@ -180,6 +189,8 @@ void TableComposite::request()
         if (observer->getType() == TYPE_WAITER && observer->getId() == waiterId)
         {
             // notify this waiter
+            //proceed the state of the table 
+            this->getTableState()->proceed(this);
             observer->notify(this);
             break;
         }
