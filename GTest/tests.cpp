@@ -81,57 +81,58 @@ TEST(SimonTests, ClockRemoveTimeAndHasTimeTest)
   // using ClockGetTimeAndTickTest for this test
 }
 
-TEST(GeordanTest,test1){
-    BurgerBuns* bun = new BurgerBuns();
-    std::cout << bun->totalPrice() << "\n";
-    Ketchup* ing1 = new Ketchup();
-    ing1->add(bun);
-    std::cout << ing1->totalPrice() << "\n";
-    Tomato* ing2 = new Tomato();
-    ing2->add(ing1);
-    std::cout << ing2->totalPrice() << "\n";
-    Mayo* ing3 = new Mayo();
-    ing3->add(ing2);
-    std::cout<<ing3->totalPrice() << "\n";
-    Lettuce* ing4 = new Lettuce();
-    ing4->add(ing3);
-    std::cout << ing4->totalPrice() << "\n";
-    Pickles* rick = new Pickles();
-    rick->add(ing4);
-    std::cout << rick->totalPrice() << "\n";
-    BeefPatty* beef = new BeefPatty();
-    beef->add(rick);
-    std::cout << beef->totalPrice() << "\n";
-    ChickenPatty* chick = new ChickenPatty();
-    chick->add(beef);
-    std::cout << chick->totalPrice() << "\n";
-    VeganPatty* vegan = new VeganPatty();
-    vegan->add(chick);
-    std::cout << vegan->totalPrice() << "\n";
+TEST(GeordanTest, test1)
+{
+  BurgerBuns *bun = new BurgerBuns();
+  std::cout << bun->totalPrice() << "\n";
+  Ketchup *ing1 = new Ketchup();
+  ing1->add(bun);
+  std::cout << ing1->totalPrice() << "\n";
+  Tomato *ing2 = new Tomato();
+  ing2->add(ing1);
+  std::cout << ing2->totalPrice() << "\n";
+  Mayo *ing3 = new Mayo();
+  ing3->add(ing2);
+  std::cout << ing3->totalPrice() << "\n";
+  Lettuce *ing4 = new Lettuce();
+  ing4->add(ing3);
+  std::cout << ing4->totalPrice() << "\n";
+  Pickles *rick = new Pickles();
+  rick->add(ing4);
+  std::cout << rick->totalPrice() << "\n";
+  BeefPatty *beef = new BeefPatty();
+  beef->add(rick);
+  std::cout << beef->totalPrice() << "\n";
+  ChickenPatty *chick = new ChickenPatty();
+  chick->add(beef);
+  std::cout << chick->totalPrice() << "\n";
+  VeganPatty *vegan = new VeganPatty();
+  vegan->add(chick);
+  std::cout << vegan->totalPrice() << "\n";
 }
 
-int orderStatus(Order* order) {
-  int sum = order->beefPatty + order->chickenPatty + order->veganPatty
-      + order->wantsKetchup + order->wantsMustard + order->wantsMayo;
+int orderStatus(Order *order)
+{
+  int sum = order->beefPatty + order->chickenPatty + order->veganPatty + order->wantsKetchup + order->wantsMustard + order->wantsMayo;
   sum += order->wantsLettuce + order->wantsPickles + order->wantsTomato;
   return sum;
 }
-TEST(NielTests, ChefChainTest) {
+TEST(NielTests, ChefChainTest)
+{
   Clock::instance().removeTime("produceBurger");
 
-
   // first test; should be done in 3 ticks:
-  Order* testOrder1 = new Order("table-1");
+  Order *testOrder1 = new Order("table-1");
   testOrder1->beefPatty = 1;
 
   // second test; should be done in 3 ticks
-  Order* testOrder2 = new Order("table-2");
+  Order *testOrder2 = new Order("table-2");
   testOrder2->chickenPatty = 1;
   testOrder2->wantsTomato = 1;
   testOrder2->wantsLettuce = 1;
 
   // third test; should be done in 3 ticks (tests all chefs)
-  Order* testOrder3 = new Order("table-3");
+  Order *testOrder3 = new Order("table-3");
   testOrder3->beefPatty = 1;
   testOrder3->chickenPatty = 1;
   testOrder3->veganPatty = 1;
@@ -145,16 +146,16 @@ TEST(NielTests, ChefChainTest) {
   testOrder3->wantsPickles = 1;
 
   // fourth test; should be done in 6 ticks
-  Order* testOrder4 = new Order("table-4");
+  Order *testOrder4 = new Order("table-4");
   testOrder4->wantsPickles = 2;
   testOrder4->wantsKetchup = 2;
 
-  Order* testOrder5 = new Order("table-5");
+  Order *testOrder5 = new Order("table-5");
   testOrder4->wantsMustard = 2;
   testOrder4->beefPatty = 2;
 
   // sixth test; should be done in 9 ticks (tests all chefs)
-  Order* testOrder6 = new Order("table-6");
+  Order *testOrder6 = new Order("table-6");
   testOrder3->beefPatty = 3;
   testOrder3->chickenPatty = 3;
   testOrder3->veganPatty = 3;
@@ -167,7 +168,6 @@ TEST(NielTests, ChefChainTest) {
   testOrder3->wantsTomato = 3;
   testOrder3->wantsPickles = 3;
 
-
   Kitchen::getInstance()->addOrder(testOrder1);
   Kitchen::getInstance()->addOrder(testOrder2);
   Kitchen::getInstance()->addOrder(testOrder3);
@@ -176,35 +176,35 @@ TEST(NielTests, ChefChainTest) {
   Kitchen::getInstance()->addOrder(testOrder6);
 
   // game continues for 3 ticks
-  for (int i = 0; i < 12; i++) {
+  for (int i = 0; i < 12; i++)
+  {
     Kitchen::getInstance()->produceBurgers();
     Clock::instance().tick();
   }
 
   // tests for order 1
-  Order* order1Result = Kitchen::getInstance()->getFinishedOrder();
+  Order *order1Result = Kitchen::getInstance()->getFinishedOrder();
   ASSERT_EQ(orderStatus(order1Result), 0);
 
   // tests for order 2
-  Order* order2Result = Kitchen::getInstance()->getFinishedOrder();
+  Order *order2Result = Kitchen::getInstance()->getFinishedOrder();
   ASSERT_EQ(orderStatus(order2Result), 0);
 
   // tests for order 3
-  Order* order3Result = Kitchen::getInstance()->getFinishedOrder();
+  Order *order3Result = Kitchen::getInstance()->getFinishedOrder();
   ASSERT_EQ(orderStatus(order3Result), 0);
 
   // tests for order 4
-  Order* order4Result = Kitchen::getInstance()->getFinishedOrder();
+  Order *order4Result = Kitchen::getInstance()->getFinishedOrder();
   ASSERT_EQ(orderStatus(order4Result), 0);
 
   // tests for order 5
-  Order* order5Result = Kitchen::getInstance()->getFinishedOrder();
+  Order *order5Result = Kitchen::getInstance()->getFinishedOrder();
   ASSERT_EQ(orderStatus(order5Result), 0);
 
   // tests for order 6
-  Order* order6Result = Kitchen::getInstance()->getFinishedOrder();
+  Order *order6Result = Kitchen::getInstance()->getFinishedOrder();
   ASSERT_EQ(orderStatus(order6Result), 0);
-
 }
 
 TEST(MihailsTests, BillTest)
@@ -307,8 +307,37 @@ TEST(MihailsTests, TableCompositeTest)
 
 TEST(TinoTests, FloorIsASingleton)
 {
-  // Floor *floor = Floor::instance();
-  // Floor *floor = Floor::instance();
+  Floor *floor1 = Floor::instance();
+  Floor *floor2 = Floor::instance();
+
+  ASSERT_EQ(floor1, floor2) << "Floor class is not a singleton";
+}
+
+TEST(TinoTests, FloorInitialObjectsCount)
+{
+  Floor *floor = Floor::instance();
+
+  ASSERT_EQ(floor->getTableCount(), DEFAULT_NO_TABLES) << "Initial number of tables is incorrect";
+  ASSERT_EQ(floor->getWaiterCount(), DEFAULT_NO_WAITERS) << "Initial number of waiters is incorrect";
+  ASSERT_EQ(floor->getMaitreDCount(), DEFAULT_NO_MAITREDS) << "Initial number of maitreDs is incorrect";
+  ASSERT_EQ(floor->getWaitingCustomerCount(), DEFAULT_NO_WAITING_CUSTOMERS) << "Initial number of customers is incorrect";
+}
+
+TEST(TinoTests, AddObjectsToFloor)
+{
+  Floor *floor = Floor::instance();
+
+  floor->addTable(); // add a table to the floor
+  ASSERT_EQ(DEFAULT_NO_TABLES + 1, floor->getTableCount()) << "addTable() function not working correctly";
+
+  floor->addMaitreD(); // add a maitreD to the floor
+  ASSERT_EQ(DEFAULT_NO_MAITREDS + 1, floor->getMaitreDCount()) << "addMaitreD() function not working correctly";
+
+  floor->addWaitingCustomer(); // add a customer to the waitingCustomers queue
+  ASSERT_EQ(DEFAULT_NO_WAITING_CUSTOMERS + 1, floor->getWaitingCustomerCount()) << "addWaitingCustomer() function not working correctly";
+
+  floor->addWaiter(); // add a waiter to the floor
+  ASSERT_EQ(DEFAULT_NO_WAITERS + 1, floor->getWaiterCount()) << "addWaiter() function not working correctly";
 }
 
 TEST(SimonTests, CreateAndDeleteInputPoll)
@@ -360,7 +389,7 @@ TEST(SimonTests, InputPollMixedSaveMixedLoad)
 
   // Create payload
   const char buf[] = "7\n5\n7\n5\n5\n6\n6\n1\n5\n6\n7\n8\n9\nA\nB\nC\nD\nE\n5\n5\n2\n6\n6\nq\n";
-  const int bsize  = strlen(buf);
+  const int bsize = strlen(buf);
 
   // Send payload through pipe
   ssize_t nbytes = write(fildes[1], buf, bsize);
@@ -434,36 +463,24 @@ TEST(SimonTests, LoadFromFile)
   close(fildes[0]);
 }
 
+TEST(MihailsTests, TableStateChildrenTest)
+{
+  // this will test whether the children of the table will
+  //  be set to the relevant state when combining tables
+  //  as well as separating tables from each other
 
+  TableComposite *mainTable = new TableComposite(1);
+  TableComposite *childTable1 = new TableComposite(2);
+  mainTable->addComponent(childTable1);
+  // //create a state
+  TableState *ts = new Bill();
+  mainTable->setTableState(ts);
+  ASSERT_EQ(mainTable->getChild("TC_2")->getTableState()->getName(), "Bill");
+  // mainTable->removeComponent(childTable1);
+  // ASSERT_EQ(childTable1->getTableState()->getName(), "Free");
 
+  // mainTable
+  // mainTable->getPayment();
 
-
-
-
-
-
-TEST(MihailsTests, TableStateChildrenTest){
-    //this will test whether the children of the table will
-    // be set to the relevant state when combining tables
-    // as well as separating tables from each other
-
-    TableComposite* mainTable = new TableComposite(1);
-    TableComposite* childTable1 = new TableComposite(2);
-    mainTable->addComponent(childTable1);
-    // //create a state
-    TableState* ts = new Bill();
-    mainTable->setTableState(ts);
-    ASSERT_EQ(mainTable->getChild("TC_2")->getTableState()->getName(), "Bill");
-    // mainTable->removeComponent(childTable1);
-    // ASSERT_EQ(childTable1->getTableState()->getName(), "Free");
-
-    // mainTable
-    // mainTable->getPayment();
-
-    //Clear memory
-
+  // Clear memory
 }
-
-
-
-
