@@ -22,6 +22,7 @@ bool IOInterfaceGUI::OnUserCreate() {
   spriteSheet = new olc::Sprite("./Resources/colored_tilemap_packed.png");
   backGround = new olc::Sprite("./Resources/background.png");
   spriteSheetDecal = new olc::Decal(spriteSheet);
+  backgroundDecal = new olc::Decal(backGround);
   return true;
 }
 
@@ -75,9 +76,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     return false;
   }
 
-
-  Clear(olc::BLACK);
-  DrawSprite({0,0},backGround,4);
+  DrawDecal({0,0},backgroundDecal,{4,4});
 
   //Draw Kitchen
   int ordersInKitchen = Kitchen::getInstance()->headChef.currentOrders.size();
@@ -285,6 +284,7 @@ bool IOInterfaceGUI::OnUserDestroy() {
   delete spriteSheet;
   delete spriteSheetDecal;
   delete backGround;
+  delete backgroundDecal;
 
   return true;
 }
