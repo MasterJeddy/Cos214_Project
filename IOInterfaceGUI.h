@@ -13,8 +13,11 @@ class IOInterfaceGUI: public IOInterface,olc::PixelGameEngine{
 public:
   void poll() override;
 private:
+  olc::Sprite* spriteSheet;
+  olc::Decal* spriteSheetDecal;
   bool OnUserCreate() override;
   bool OnUserUpdate(float fElapsedTime) override;
+  bool OnUserDestroy() override;
   void drawTableDebug(TableComposite* table,int offset,int yoffset);
 };
 
