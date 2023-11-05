@@ -15,6 +15,7 @@ public:
 private:
   olc::Sprite* spriteSheet;
   olc::Decal* spriteSheetDecal;
+  olc::Sprite* backGround;
   bool OnUserCreate() override;
   bool OnUserUpdate(float fElapsedTime) override;
   bool OnUserDestroy() override;

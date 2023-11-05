@@ -20,6 +20,7 @@ bool IOInterfaceGUI::OnUserCreate() {
 //  Kitchen::getInstance()->addOrder(new Order("table-1"));
 //  Kitchen::getInstance()->addOrder(new Order("table-1"));
   spriteSheet = new olc::Sprite("./Resources/colored_tilemap_packed.png");
+  backGround = new olc::Sprite("./Resources/background.png");
   spriteSheetDecal = new olc::Decal(spriteSheet);
   return true;
 }
@@ -76,6 +77,8 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
 
 
   Clear(olc::BLACK);
+  DrawSprite({0,0},backGround,4);
+
   //Draw Kitchen
   int ordersInKitchen = Kitchen::getInstance()->headChef.currentOrders.size();
   for (int i =0;i<Kitchen::getInstance()->headChef.maxOrders;i+=3){
@@ -281,6 +284,7 @@ void IOInterfaceGUI::drawTableDebug(TableComposite *table,int offset,int xoffset
 bool IOInterfaceGUI::OnUserDestroy() {
   delete spriteSheet;
   delete spriteSheetDecal;
+  delete backGround;
 
   return true;
 }
