@@ -55,7 +55,7 @@ public:
   ///
   /// Make the clock tick by incrementing the value of each timer in the singleton but one.
   void tick();
-
+  /// \brief Resets the clock class by deleting all its numbers
   void reset();
 protected:
   /// Constructor blocked from being accessed by rest of system.

@@ -17,11 +17,17 @@
 class FloorController
 {
 public:
+    /// \brief hires a waiter
     void hireWaiter();
+    /// \brief updates Floor
     void update();
+    /// \brief hires a maitre D
     void hireMaitreD();
+    /// \brief buys a Table
     void buyTable();
+    /// \brief expands Floor
     void expandFloor();
+    /// \brief resets floor subsystem
     void reset();
 };
 
