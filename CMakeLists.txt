@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.27)
 project(Cos214_Project)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 add_executable(Cos214_Project main.cpp Clock.cpp Clock.h WaitingOnWaiter.h WaitingOnWaiter.cpp WaitingOnFood.h
 WaitingOnFood.cpp Busy.h Busy.cpp Bill.h Bill.cpp TableComponent.h TableComponent.cpp  TableComposite.h
@@ -56,7 +56,7 @@ CommandLogIterator.cpp CommandLogIterator.h FloorController.cpp Floor.h Floor.cp
         ChickenPatty.h
         VeganPatty.cpp
         VeganPatty.h
-        KitchenController.cpp KitchenController.h IOInterfaceTUI.cpp IOInterfaceTUI.h IOInterfaceGUI.cpp IOInterfaceGUI.h olcPixelGameEngine/olcPixelGameEngine.h KitchenSubject.cpp KitchenSubject.h olcPixelGameEngine/olcPGEX_Sound.h)
+        KitchenController.cpp KitchenController.h IOInterfaceTUI.cpp IOInterfaceTUI.h IOInterfaceGUI.cpp IOInterfaceGUI.h olcPixelGameEngine/olcPixelGameEngine.h KitchenSubject.cpp KitchenSubject.h olcPixelGameEngine/olcSoundWaveEngine.h)
 add_subdirectory(GTest)
 #[[target_link_libraries(Cos214_Project PRIVATE -lX11 -lGL -lpthread -lpng -lstdc++fs)]]
-target_link_libraries(Cos214_Project PRIVATE user32 gdi32 opengl32 gdiplus Shlwapi dwmapi stdc++fs)
+target_link_libraries(Cos214_Project PRIVATE user32 gdi32 opengl32 gdiplus Shlwapi dwmapi stdc++fs winmm)

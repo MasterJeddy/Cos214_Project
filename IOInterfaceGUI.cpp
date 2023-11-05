@@ -10,7 +10,7 @@
 #include "Clock.h"
 
 void IOInterfaceGUI::poll() {
-  if (this->Construct(1280,720,1,1))
+  if (this->Construct(1280,720,1,1,true))
       this->Start();
 }
 
@@ -23,6 +23,11 @@ bool IOInterfaceGUI::OnUserCreate() {
   backGround = new olc::Sprite("./Resources/background.png");
   spriteSheetDecal = new olc::Decal(spriteSheet);
   backgroundDecal = new olc::Decal(backGround);
+  soundEngine.InitialiseAudio();
+  maitreDSound.LoadAudioWaveform("./Resources/Matre d.wav");
+  clock.LoadAudioWaveform("./Resources/The damn clock.wav");
+  chef1.LoadAudioWaveform("./Resources/Garnish chef.wav");
+  waiter.LoadAudioWaveform("./Resources/waiter(1).wav");
   return true;
 }
 
@@ -31,24 +36,28 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
 
   //input
   if (GetKey(olc::U).bPressed){
+    soundEngine.PlayWaveform(&clock);
     command = new Update(floorController,kitchenController);
     commandLog->addEntry(command);
     command->execute();
     delete command;
   }
   if (GetKey(olc::H).bPressed){
+    soundEngine.PlayWaveform(&chef1);
     command = new HireChef(kitchenController);
     commandLog->addEntry(command);
     command->execute();
     delete command;
   }
   if (GetKey(olc::W).bPressed){
+    soundEngine.PlayWaveform(&waiter);
     command = new HireWaiter(floorController);
     commandLog->addEntry(command);
     command->execute();
     delete command;
   }
   if (GetKey(olc::M).bPressed){
+    soundEngine.PlayWaveform(&maitreDSound);
     command = new HireMaitreD(floorController);
     commandLog->addEntry(command);
     command->execute();

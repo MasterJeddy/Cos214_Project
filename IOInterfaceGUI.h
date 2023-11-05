@@ -8,6 +8,7 @@
 
 #include "IOInterface.h"
 #include "olcPixelGameEngine/olcPixelGameEngine.h"
+#include "olcPixelGameEngine/olcSoundWaveEngine.h"
 
 class IOInterfaceGUI: public IOInterface,olc::PixelGameEngine{
 public:
@@ -17,6 +18,11 @@ private:
   olc::Decal* spriteSheetDecal;
   olc::Sprite* backGround;
   olc::Decal* backgroundDecal;
+  olc::sound::WaveEngine soundEngine;
+  olc::sound::Wave maitreDSound;
+  olc::sound::Wave clock;
+  olc::sound::Wave chef1;
+  olc::sound::Wave waiter;
   bool toggleDebug = true;
   bool OnUserCreate() override;
   bool OnUserUpdate(float fElapsedTime) override;

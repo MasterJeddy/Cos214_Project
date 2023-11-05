@@ -78,7 +78,7 @@
 	g++ -o YourProgName YourSource.cpp -lX11 -lGL -lpthread -lpng -lstdc++fs -std=c++17
 
 	On some Linux configurations, the frame rate is locked to the refresh
-	rate of the monitor. This engine tries to unlock it but may not be
+	rate of the monitor. This soundEngine tries to unlock it but may not be
 	able to, in which case try launching your program like this:
 
 	vblank_mode=0 ./YourProgName
@@ -143,7 +143,7 @@
 	Multiple cpp file projects?
 	~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	As a single header solution, the OLC_PGE_APPLICATION definition is used to
-	insert the engine implementation at a project location of your choosing.
+	insert the soundEngine implementation at a project location of your choosing.
 	The simplest way to setup multifile projects is to create a file called
 	"olcPixelGameEngine.cpp" which includes the following:
 
@@ -308,7 +308,7 @@
 		  +Multiplicative Pixel overload
 		  +v2d_generic clamp()
 		  +v2d_generic lerp()
-		  +GetDroppedFiles() - returns files dropped onto engine window for that frame (MSW only)
+		  +GetDroppedFiles() - returns files dropped onto soundEngine window for that frame (MSW only)
 		  +GetDroppedFilesPoint() - returns location of dropped files (MSW only)
 		  +Exposed OpenGL33 Loader interface so the typedefs can be shared with PGEX & user
 		  +Fix OGL33 DecalStructure types - wow, how did that one get missed?? lol
@@ -881,7 +881,7 @@ private:
 
 
 // O------------------------------------------------------------------------------O
-// | Auxilliary components internal to engine                                     |
+// | Auxilliary components internal to soundEngine                                     |
 // O------------------------------------------------------------------------------O
 
 struct DecalInstance
@@ -1276,11 +1276,11 @@ private: // Inner mysterious workings
   bool		pMouseOldState[nMouseButtons] = { 0 };
   HWButton	pMouseState[nMouseButtons] = { 0 };
 
-  // The main engine thread
+  // The main soundEngine thread
   void		EngineThread();
 
 
-  // If anything sets this flag to false, the engine
+  // If anything sets this flag to false, the soundEngine
   // "should" shut down gracefully
   static std::atomic<bool> bAtomActive;
 
@@ -3774,7 +3774,7 @@ namespace olc
 		// context of this thread
 		if (platform->ThreadStartUp() == olc::FAIL)	return;
 
-		// Do engine context specific initialisation
+		// Do soundEngine context specific initialisation
 		olc_PrepareEngine();
 
 		// Create user resources as part of this thread
@@ -6551,7 +6551,7 @@ namespace olc
 		// Some implementations may form an event loop here
 		if (platform->ThreadStartUp() == olc::FAIL)	return olc::FAIL;
 
-		// Do engine context specific initialisation
+		// Do soundEngine context specific initialisation
 		olc_PrepareEngine();
 
 		// Consider the "thread" started

@@ -2,6 +2,7 @@
 // Created by maili on 2023/10/23.
 //
 #define OLC_PGE_APPLICATION
+#define OLC_SOUNDWAVE
 
 #include "IOInterfaceTUI.h"
 #include "IOInterfaceGUI.h"
