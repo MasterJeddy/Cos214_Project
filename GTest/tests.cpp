@@ -113,8 +113,13 @@ TEST(GeordanTest, test1)
 
 int orderStatus(Order *order)
 {
-  int sum = order->beefPatty + order->chickenPatty + order->veganPatty + order->wantsKetchup + order->wantsMustard + order->wantsMayo;
-  sum += order->wantsLettuce + order->wantsPickles + order->wantsTomato;
+  int sum = 0;
+
+  if (order != nullptr) {
+    sum = order->beefPatty + order->chickenPatty + order->veganPatty + order->wantsKetchup + order->wantsMustard + order->wantsMayo;
+    sum += order->wantsLettuce + order->wantsPickles + order->wantsTomato;
+  }
+
   return sum;
 }
 TEST(NielTests, ChefChainTest)
