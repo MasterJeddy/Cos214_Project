@@ -61,6 +61,8 @@ public:
   virtual void notifyWaiter();
   virtual void attach(Waiter *waiter);
   virtual void detach(Waiter *waiter);
+
+  void reset();
 };
 
 #endif // COS214_PROJECT__KITCHEN_H

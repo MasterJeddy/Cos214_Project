@@ -16,11 +16,15 @@
 #include "IOInterface.h"
 #include "Save.h"
 #include "Load.h"
+#include "Clock.h"
 
 
 
 void IOInterface::resetToLog(CommandLog *log)
 {
+  floorController->reset();
+  kitchenController->reset();
+  Clock::instance().reset();
   CommandLogIterator *it = log->createIterator();
   for (it->first(); !it->isDone(); it->next())
   {
@@ -67,6 +71,9 @@ IOInterface::IOInterface()
   floorController = new FloorController();
   logs = new Logs;
   kitchenController = new KitchenController();
+  UserCommand* command = new Save(commandLog,logs);
+  command->execute();
+  delete command;
 }
 
 

@@ -17,3 +17,6 @@ void KitchenController::expandKitchen() {
 void KitchenController::buyStock() {
 
 }
+void KitchenController::reset() {
+    Kitchen::getInstance()->reset();
+}

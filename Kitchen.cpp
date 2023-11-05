@@ -85,6 +85,12 @@ void Kitchen::detach(Waiter *waiter)
     }
   }
 }
+void Kitchen::reset() {
+    HeadChef h;
+    headChef = h;
+}
+
+
 Kitchen::~Kitchen() = default;
 Kitchen::Kitchen(Kitchen &) = default;
 Kitchen &Kitchen::operator=(Kitchen &) = default;

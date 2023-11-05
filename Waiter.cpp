@@ -32,6 +32,7 @@ Waiter::Waiter(int id)
 Waiter::~Waiter()
 {
     // clear vector of tables ids assigned to this waiter
+    Kitchen::getInstance()->detach(this);
     this->assignedTableIds.clear();
 }
 

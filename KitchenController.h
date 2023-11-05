@@ -11,6 +11,7 @@ public:
   void update();
   void expandKitchen();
   void buyStock();
+  void reset();
 };
 
 #endif //COS214_PROJECT__KITCHENCONTROLLER_H
