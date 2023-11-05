@@ -129,7 +129,17 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     }
   }
 
+  int maitreDCount = Floor::instance()->getMaitreDs().size();
+  for (int i=0;i<maitreDCount;i++){
+    DrawPartialDecal({300,static_cast<float>(440-i*32)},{32,32},spriteSheetDecal,{88,0},{8,8});
 
+  }
+
+  int waiterCount = Floor::instance()->getWaiterCount();
+  for (int i=0;i<waiterCount;i++){
+    DrawPartialDecal({260,static_cast<float>(440-i*32)},{32,32},spriteSheetDecal,{64,0},{8,8});
+
+  }
   //Render kitchen debug tab
   DrawStringDecal({50,5},"Kitchen info",olc::WHITE);
   DrawStringDecal({30,15},"Chefs: "+std::to_string(Kitchen::getInstance()->headChef.maxOrders));
