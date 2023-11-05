@@ -3,21 +3,32 @@
 //
 
 #include "SauceChef.h"
+#include "Ketchup.h"
+#include "Mustard.h"
+#include "Mayo.h"
 SauceChef::SauceChef() {}
 
 Order *SauceChef::handleOrder(Order *order) {
-  // TODO: logic to add to the burger decorator
 
   if (order->wantsKetchup > 0) {
-    // here
+    Burger* ingredient = new Ketchup();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->wantsKetchup--;
   }
   if (order->wantsMustard > 0) {
-    // here
+    Burger* ingredient = new Mustard();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->wantsMustard--;
   }
   if (order->wantsMayo > 0) {
-    // and here
+    Burger* ingredient = new Mayo();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->wantsMayo--;
   }
 

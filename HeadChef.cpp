@@ -35,7 +35,6 @@ bool HeadChef::finishOrder(Order* order) {
 }
 
 void HeadChef::startOrders() {
-  // placeholder temporary implementation
   // firstChef.handleOrder for current max orders
   // add the finished orders to finishedOrders
 
