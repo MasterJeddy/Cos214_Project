@@ -72,6 +72,22 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     command->execute();
     delete command;
   }
+  if (GetKey(olc::D).bPressed){
+    std::string* temp = new std::string("Dump");
+    command = new Save(commandLog,logs,temp);
+    commandLog->addEntry(command);
+    command->execute();
+    delete command;
+    delete temp;
+  }
+  if (GetKey(olc::L).bPressed){
+    std::string* temp = new std::string("Dump");
+    command = new Load(commandLog,logs,temp);
+    commandLog->addEntry(command);
+    command->execute();
+    delete command;
+    delete temp;
+  }
   if (GetKey(olc::Q).bPressed){
     return false;
   }
@@ -271,7 +287,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     }
 
     //Draw Controls
-    DrawStringDecal({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load Q-Quit");
+    DrawStringDecal({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load Q-Quit D-Dump Save to file F-Load Save from File");
 
   }
   return true;
