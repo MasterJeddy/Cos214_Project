@@ -3,21 +3,35 @@
 //
 
 #include "ButcherChef.h"
+#include "BeefPatty.h"
+#include "VeganPatty.h"
+#include "ChickenPatty.h"
 ButcherChef::ButcherChef(Chef *_successor) : Chef(_successor) {
 
 }
 Order *ButcherChef::handleOrder(Order *order) {
-  // TODO: logic to add to the burger decorator
   if (order->beefPatty > 0) {
-    // here
+    Burger* ingredient = new BeefPatty();
+    // ingredient.prepare();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->beefPatty--;
   }
   if (order->veganPatty > 0) {
-    // here
+    Burger* ingredient = new VeganPatty();
+    // ingredient.prepare();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->veganPatty--;
   }
   if (order->chickenPatty > 0) {
-    // and here
+    Burger* ingredient = new ChickenPatty();
+    // ingredient.prepare();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->chickenPatty--;
   }
 

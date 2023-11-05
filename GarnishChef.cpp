@@ -3,23 +3,35 @@
 //
 
 #include "GarnishChef.h"
+#include "Lettuce.h"
+#include "Tomato.h"
+#include "Pickles.h"
 
 GarnishChef::GarnishChef(Chef *_successor) : Chef(_successor) {
 
 }
 Order *GarnishChef::handleOrder(Order *order) {
-  // TODO: logic to add to the burger decorator
 
   if (order->wantsLettuce > 0) {
-    // here
+    Burger* ingredient = new Lettuce();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+    // remember to keep to the ordering of a linked list^^^^
+
     order->wantsLettuce--;
   }
   if (order->wantsTomato > 0) {
-    // here
+    Burger* ingredient = new Tomato();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->wantsTomato--;
   }
   if (order->wantsPickles > 0) {
-    // and here
+    Burger* ingredient = new Pickles();
+    order->burger->add(ingredient);
+    order->burger = ingredient;
+
     order->wantsPickles--;
   }
 

@@ -3,12 +3,13 @@
 //
 
 #include "BakerChef.h"
+#include "BurgerBuns.h"
 BakerChef::BakerChef(Chef *_successor) : Chef(_successor) {}
 Order* BakerChef::handleOrder(Order *order) {
 
-
-  // TODO: logic to add to the burger decorator
-
+  if (order->burger == nullptr) {
+    order->burger = new BurgerBuns();
+  }
   return successor->handleOrder(order);
 }
 
