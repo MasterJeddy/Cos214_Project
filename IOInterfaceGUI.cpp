@@ -75,6 +75,9 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   if (GetKey(olc::Q).bPressed){
     return false;
   }
+  if (GetKey(olc::T).bPressed){
+    toggleDebug = !toggleDebug;
+  }
 
   DrawDecal({0,0},backgroundDecal,{4,4});
 
@@ -142,135 +145,135 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     DrawPartialDecal({260,static_cast<float>(440-i*32)},{32,32},spriteSheetDecal,{64,0},{8,8});
 
   }
-  //Render kitchen debug tab
-  DrawStringDecal({50,5},"Kitchen info",olc::WHITE);
-  DrawStringDecal({30,15},"Chefs: "+std::to_string(Kitchen::getInstance()->headChef.maxOrders));
+  if (toggleDebug){
+    //Render kitchen debug tab
+    DrawStringDecal({50,5},"Kitchen info",olc::WHITE);
+    DrawStringDecal({30,15},"Chefs: "+std::to_string(Kitchen::getInstance()->headChef.maxOrders));
 
-  int orderQueueSize = 0;
-  Order* order;
-  int FinishedOrdersOffset = 0;
-  //Render current order queue
-  orderQueueSize = Kitchen::getInstance()->headChef.currentOrders.size();
-  DrawStringDecal({30,25},"Current Orders:");
-  ;
-  for (int i=0;i<orderQueueSize;i++){
-    order = Kitchen::getInstance()->headChef.currentOrders.front();
-    Kitchen::getInstance()->headChef.currentOrders.pop();
-    DrawStringDecal({30,static_cast<float>(25+10+10*i)},std::to_string(order->orderNumber)+" "+order->tableID);
-    Kitchen::getInstance()->headChef.currentOrders.push(order);
-  }
-  //Render finished orders
-  FinishedOrdersOffset = orderQueueSize+1;
-  orderQueueSize = Kitchen::getInstance()->headChef.finishedOrders.size();
-  DrawStringDecal({30,static_cast<float>(25+10*FinishedOrdersOffset)},"Finished Orders:");
-  for (int i=0;i<orderQueueSize;i++){
-    order = Kitchen::getInstance()->headChef.finishedOrders.front();
-    Kitchen::getInstance()->headChef.finishedOrders.pop();
-    DrawStringDecal({30,static_cast<float>(25+10+10*FinishedOrdersOffset+10*i)},std::to_string(order->orderNumber)+" "+order->tableID);
-    Kitchen::getInstance()->headChef.finishedOrders.push(order);
-  }
-   //Render Floor debug tab
-  DrawStringDecal({300,5},"Floor info",olc::WHITE);
-  //Render Waiters
-  DrawStringDecal({225,15},"Waiters:",olc::WHITE);
-  auto waiters = Floor::instance()->getWaiters();
-  int offset =0;
-  for (auto* waiter:waiters ){
-    offset++;
-    DrawStringDecal({225,static_cast<float>(15+10*offset)},waiter->id);
-    int xoffset = 0;
-    for (const auto& table:waiter->assignedTableIds){
-      xoffset++;
-      DrawStringDecal({static_cast<float>(225+35*xoffset),static_cast<float>(15+10*offset)},table);
+    int orderQueueSize = 0;
+    Order* order;
+    int FinishedOrdersOffset = 0;
+    //Render current order queue
+    orderQueueSize = Kitchen::getInstance()->headChef.currentOrders.size();
+    DrawStringDecal({30,25},"Current Orders:");
+    ;
+    for (int i=0;i<orderQueueSize;i++){
+      order = Kitchen::getInstance()->headChef.currentOrders.front();
+      Kitchen::getInstance()->headChef.currentOrders.pop();
+      DrawStringDecal({30,static_cast<float>(25+10+10*i)},std::to_string(order->orderNumber)+" "+order->tableID);
+      Kitchen::getInstance()->headChef.currentOrders.push(order);
     }
-  }
-  // Draw Customers
-  offset++;
-  DrawStringDecal({225,static_cast<float>(15+10*offset)},"Customers Queue:",olc::WHITE);
-  auto customers =Floor::instance()->getWaitingCustomers();
-  while (!customers.empty()){
+    //Render finished orders
+    FinishedOrdersOffset = orderQueueSize+1;
+    orderQueueSize = Kitchen::getInstance()->headChef.finishedOrders.size();
+    DrawStringDecal({30,static_cast<float>(25+10*FinishedOrdersOffset)},"Finished Orders:");
+    for (int i=0;i<orderQueueSize;i++){
+      order = Kitchen::getInstance()->headChef.finishedOrders.front();
+      Kitchen::getInstance()->headChef.finishedOrders.pop();
+      DrawStringDecal({30,static_cast<float>(25+10+10*FinishedOrdersOffset+10*i)},std::to_string(order->orderNumber)+" "+order->tableID);
+      Kitchen::getInstance()->headChef.finishedOrders.push(order);
+    }
+    //Render Floor debug tab
+    DrawStringDecal({300,5},"Floor info",olc::WHITE);
+    //Render Waiters
+    DrawStringDecal({225,15},"Waiters:",olc::WHITE);
+    auto waiters = Floor::instance()->getWaiters();
+    int offset =0;
+    for (auto* waiter:waiters ){
+      offset++;
+      DrawStringDecal({225,static_cast<float>(15+10*offset)},waiter->id);
+      int xoffset = 0;
+      for (const auto& table:waiter->assignedTableIds){
+        xoffset++;
+        DrawStringDecal({static_cast<float>(225+35*xoffset),static_cast<float>(15+10*offset)},table);
+      }
+    }
+    // Draw Customers
     offset++;
-    DrawStringDecal({225,static_cast<float>(15+10*offset)},customers.front()->getId());
-    customers.pop();
-  }
-  //Draw MaitreD
-  offset =0;
-  DrawStringDecal({400,15},"MaitreD:",olc::WHITE);
-  auto maitreDs = Floor::instance()->getMaitreDs();
-  for (auto* maitreD:maitreDs){
+    DrawStringDecal({225,static_cast<float>(15+10*offset)},"Customers Queue:",olc::WHITE);
+    auto customers =Floor::instance()->getWaitingCustomers();
+    while (!customers.empty()){
+      offset++;
+      DrawStringDecal({225,static_cast<float>(15+10*offset)},customers.front()->getId());
+      customers.pop();
+    }
+    //Draw MaitreD
+    offset =0;
+    DrawStringDecal({400,15},"MaitreD:",olc::WHITE);
+    auto maitreDs = Floor::instance()->getMaitreDs();
+    for (auto* maitreD:maitreDs){
+      offset++;
+      DrawStringDecal({400,static_cast<float>(15+10*offset)},maitreD->id);
+    }
+    //Draw Tables
     offset++;
-    DrawStringDecal({400,static_cast<float>(15+10*offset)},maitreD->id);
-  }
-  //Draw Tables
-  offset++;
-  DrawStringDecal({400,static_cast<float>(15+10*offset)},"Tables:",olc::WHITE);
-  tables = Floor::instance()->getTables();
-  for (auto* table:tables){
-    offset++;
-    drawTableDebug(table,offset,0);
-    //DrawStringDecal({400,15+10*offset},table->getId());
-  }
-  //Draw Log
-  DrawStringDecal({750,5},"Log info",olc::WHITE);
-  CommandLogIterator *it = commandLog->createIterator();
-  offset = 0;
-  for (it->first(); !it->isDone(); it->next())
-  {
-    offset++;
-    switch (it->currentItem()->getType())
+    DrawStringDecal({400,static_cast<float>(15+10*offset)},"Tables:",olc::WHITE);
+    tables = Floor::instance()->getTables();
+    for (auto* table:tables){
+      offset++;
+      drawTableDebug(table,offset,0);
+      //DrawStringDecal({400,15+10*offset},table->getId());
+    }
+    //Draw Log
+    DrawStringDecal({750,5},"Log info",olc::WHITE);
+    CommandLogIterator *it = commandLog->createIterator();
+    offset = 0;
+    for (it->first(); !it->isDone(); it->next())
     {
-    case COMMANDS::SAVE:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Save");
-      break;
-    case COMMANDS::LOAD:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Load");
-      break;
-    case COMMANDS::TOGGLE_HELP:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Toggle Help");
-      break;
-    case COMMANDS::TOGGLE_LOG:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Toggle Log");
-      break;
-    case COMMANDS::HIRE_MAITRE_D:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Hire Maitre D");
-      break;
-    case COMMANDS::BUY_TABLE:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Buy Table");
-      break;
-    case COMMANDS::EXPAND_FLOOR:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Expand Floor");
-      break;
-    case COMMANDS::HIRE_WAITER:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Hire Waiter");
-      break;
-    case COMMANDS::UPDATE:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Update");
-      break;
-    case COMMANDS::EXPAND_KITCHEN:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Expand Kitchen");
-      break;
-    case COMMANDS::HIRE_CHEF:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Hire Chef");
-      break;
-    case COMMANDS::BUY_STOCK:
-      DrawStringDecal({720,static_cast<float>(5+10*offset)},"Buy Stock");
-      break;
+      offset++;
+      switch (it->currentItem()->getType())
+      {
+      case COMMANDS::SAVE:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Save");
+        break;
+      case COMMANDS::LOAD:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Load");
+        break;
+      case COMMANDS::TOGGLE_HELP:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Toggle Help");
+        break;
+      case COMMANDS::TOGGLE_LOG:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Toggle Log");
+        break;
+      case COMMANDS::HIRE_MAITRE_D:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Hire Maitre D");
+        break;
+      case COMMANDS::BUY_TABLE:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Buy Table");
+        break;
+      case COMMANDS::EXPAND_FLOOR:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Expand Floor");
+        break;
+      case COMMANDS::HIRE_WAITER:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Hire Waiter");
+        break;
+      case COMMANDS::UPDATE:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Update");
+        break;
+      case COMMANDS::EXPAND_KITCHEN:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Expand Kitchen");
+        break;
+      case COMMANDS::HIRE_CHEF:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Hire Chef");
+        break;
+      case COMMANDS::BUY_STOCK:
+        DrawStringDecal({720,static_cast<float>(5+10*offset)},"Buy Stock");
+        break;
+      }
     }
+
+    //DrawClock
+    offset = 0;
+    DrawStringDecal({950,static_cast<float>(5+10*offset)},"Clock");
+    for (auto& time: Clock::instance().timers) {
+      offset++;
+      DrawStringDecal({930,static_cast<float>(5+10*offset)},time.first+" "+std::to_string(time.second));
+    }
+
+    //Draw Controls
+    DrawStringDecal({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load Q-Quit");
+
   }
-
-  //DrawClock
-  offset = 0;
-  DrawStringDecal({950,static_cast<float>(5+10*offset)},"Clock");
-  for (auto& time: Clock::instance().timers) {
-    offset++;
-    DrawStringDecal({930,static_cast<float>(5+10*offset)},time.first+" "+std::to_string(time.second));
-  }
-
-  //Draw Controls
-  DrawStringDecal({5,705},"U-Update H-Hire Chef W-Hire Waiter M-Hire Waiter B-Buy Table S-Save L-Load Q-Quit");
-
-
-
   return true;
 }
 void IOInterfaceGUI::drawTableDebug(TableComposite *table,int offset,int xoffset) {
