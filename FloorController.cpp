@@ -20,11 +20,7 @@ void FloorController::hireWaiter()
 
 void FloorController::update()
 {
-    if (Clock::instance().getTime("AddCustomer")>1){
-      Floor::instance()->addWaitingCustomer();
-      Floor::instance()->addWaitingCustomer();
-      Floor::instance()->addWaitingCustomer();
-      Floor::instance()->addWaitingCustomer();
+    if (Clock::instance().getTime("AddCustomer")>3){
       Floor::instance()->addWaitingCustomer();
       Floor::instance()->addWaitingCustomer();
       Clock::instance().removeTime("AddCustomer");

@@ -94,6 +94,41 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
       }
       ordersInKitchen--;
   }
+  //Draw Floor
+  int waitingCustomers = Floor::instance()->getWaitingCustomers().size();
+  for (int i=0;i<waitingCustomers;i++){
+    DrawPartialDecal({500,static_cast<float>(400-i*32)},{32,32},spriteSheetDecal,{120,0},{8,8});
+  }
+
+  auto tables = Floor::instance()->getTables();
+  olc::vi2d tablePos = {0,0};
+  for (auto* table:tables){
+    if (table->getTableState()->getName() == "Free"){
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{56,24},{8,8});
+    } else if (table->getTableState()->getName() == "Eating"){
+      DrawPartialDecal((olc::vf2d){600,32}+tablePos*64,{32,32},spriteSheetDecal,{120,0},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{56,24},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{88,48},{8,8});
+    } else if (table->getTableState()->getName() == "WaitingOnFood" ){
+      DrawPartialDecal((olc::vf2d){600,32}+tablePos*64,{32,32},spriteSheetDecal,{120,0},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{56,24},{8,8});
+    } else if (table->getTableState()->getName() == "Busy" ){
+      DrawPartialDecal((olc::vf2d){600,32}+tablePos*64,{32,32},spriteSheetDecal,{120,0},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{56,24},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{8,64},{8,8});
+    } else if (table->getTableState()->getName() == "Bill" ){
+      DrawPartialDecal((olc::vf2d){600,32}+tablePos*64,{32,32},spriteSheetDecal,{120,0},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{56,24},{8,8});
+      DrawPartialDecal((olc::vf2d){600,64}+tablePos*64,{32,32},spriteSheetDecal,{72,56},{8,8});
+    }
+
+    tablePos.x++;
+    if (tablePos.x%10 ==0){
+      tablePos.y++;
+      tablePos.x = 0;
+    }
+  }
+
 
   //Render kitchen debug tab
   DrawStringDecal({50,5},"Kitchen info",olc::WHITE);
@@ -157,7 +192,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   //Draw Tables
   offset++;
   DrawStringDecal({400,static_cast<float>(15+10*offset)},"Tables:",olc::WHITE);
-  auto tables = Floor::instance()->getTables();
+  tables = Floor::instance()->getTables();
   for (auto* table:tables){
     offset++;
     drawTableDebug(table,offset,0);
