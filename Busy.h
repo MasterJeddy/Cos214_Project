@@ -20,16 +20,16 @@ class Busy : public TableState
 {
 
 public:
-/// @brief This will return a clone of the state.
-    /// @return This will return a clone of the current state as a TableState pointer.
+/// \brief This will return a clone of the state.
+    /// \return This will return a clone of the current state as a TableState pointer.
     virtual TableState *clone();
-     /// @brief This will proceed to the next state.
-    /// @param tableComp This is the table composite that needs to transition state.
+     /// \brief This will proceed to the next state.
+    /// \param tableComp This is the table composite that needs to transition state.
     virtual void proceed(TableComposite *tableComp);
-     /// @brief This will hold to the relevant state.
-    /// @param tableComp This is the table composite that needs to transition. 
+     /// \brief This will hold to the relevant state.
+    /// \param tableComp This is the table composite that needs to transition.
     virtual void hold(TableComposite *tableComp);
-     /// @brief This is the constructor the Busy state class. 
+     /// \brief This is the constructor the Busy state class.
     Busy();
 };
 
