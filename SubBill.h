@@ -22,10 +22,20 @@ private:
     double total;
 
 public:
+    /// @brief This is the constructor for subBill.
+    /// @param itemName This is the name of the item.
+    /// @param itemCost This is cost of the item.
     SubBill(std::string itemName, double itemCost);
+    /// @brief This is the desturctor for the SubBill class.
     virtual ~SubBill();
+    /// @brief  This will return the total for the bill.
+    /// @return This will return a double for the bill.
     virtual double getTotal();
+    /// @brief This will return a name for the bill.
+    /// @return This will return the name for the bill as a string.
     virtual std::string getName();
+    
+    
     virtual void add(BillComponent *component);
     virtual void remove(BillComponent *component);
 };

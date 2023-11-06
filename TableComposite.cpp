@@ -36,7 +36,7 @@ TableComposite::TableComposite(int id)
     // set the default max capacity of the table to 4 - one table can host 4 people
     this->maxCapacity = 4;
 
-    this->numOfFinishedOrders =0;
+    this->numOfFinishedOrders = 0;
 }
 
 TableComposite::~TableComposite()
@@ -294,54 +294,52 @@ bool TableComposite::acceptOrReject()
     return randomBoolean;
 }
 
-std::vector<Order*> TableComposite::order()
+Order *TableComposite::order()
 {
-  std::mt19937 rng(std::random_device{}());
-    //find the number of customers at this table
-    int counter = 0;
-    for(TableComponent* child: this->getChildren()){
-        if(child->getType()== TYPE_CUSTOMER){
-            counter++;
-        }
-    }
-    std::vector<Order*> temp; 
-    for(int i = 0; i<counter; i++){
-        Order* ordery = new Order(this->getId());
-        ordery->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
-    ordery->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
-    temp.push_back(ordery);
+    std::mt19937 rng(std::random_device{}());
+    // find the number of customers at this table
+    //  int counter = 0;
+    //  for(TableComponent* child: this->getChildren()){
+    //      if(child->getType()== TYPE_CUSTOMER){
+    //          counter++;
+    //      }
+    //  }
+    //  std::vector<Order*> temp;
+    //  for(int i = 0; i<counter; i++){
+    //      Order* ordery = new Order(this->getId());
+    //      ordery->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
+    //  ordery->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
+    //  temp.push_back(ordery);
 
-    }
+    // }
 
     // change state by calling the proceed function
     // tableState->proceed(this);
     // create an order and return it
 
-    // Order *order = new Order(this->getId());
+    Order *order = new Order(this->getId());
 
-    //
-
-    // order->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
-    // order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
+    order->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    order->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    order->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
+    order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
 
     // change the state to WaitingOnFood
     this->tableState->proceed(this);
 
-    return temp;
+    return order;
 }
 
 Order *TableComposite::complexOrder()
@@ -400,17 +398,7 @@ void TableComposite::rejectedService()
 void TableComposite::eat(Order *order)
 {
     this->orders.push_back(order); // add this to the order
-    numOfFinishedOrders++;
-
-    int counter = 0;
-    for(TableComponent* child: this->getChildren()){
-        if(child->getType()== TYPE_CUSTOMER){
-            counter++;
-        }
-    }
-
-    if(numOfFinishedOrders==counter){
-        tableState->proceed(this);
+    tableState->proceed(this);
     for (Observer *observer : observerList)
     {
         if (observer->getId() == waiterId)
@@ -420,7 +408,28 @@ void TableComposite::eat(Order *order)
             break;
         }
     }
-    }
+
+    // numOfFinishedOrders++;
+
+    // int counter = 0;
+    // for(TableComponent* child: this->getChildren()){
+    //     if(child->getType()== TYPE_CUSTOMER){
+    //         counter++;
+    //     }
+    // }
+
+    // if(numOfFinishedOrders==counter){
+    //     tableState->proceed(this);
+    // for (Observer *observer : observerList)
+    // {
+    //     if (observer->getId() == waiterId)
+    //     {
+    //         // notfity this waiter
+    //         observer->notify(this);
+    //         break;
+    //     }
+    // }
+    // }
 }
 
 std::vector<TableComponent *> TableComposite::getChildren()

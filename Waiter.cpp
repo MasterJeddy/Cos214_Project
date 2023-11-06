@@ -32,7 +32,7 @@ Waiter::Waiter(int id)
 Waiter::~Waiter()
 {
     // clear vector of tables ids assigned to this waiter
-    //Kitchen::getInstance()->detach(this);
+    // Kitchen::getInstance()->detach(this);
     this->assignedTableIds.clear();
 }
 
@@ -62,13 +62,14 @@ void Waiter::notify(TableComposite *table)
 
         if (tableReady)
         {
-            std::vector<Order*> tableOrder = table->order();   
-            for (int i = 0; i< tableOrder.size(); i++)
-            {
-            bool result = Kitchen::getInstance()->addOrder(tableOrder[i]); // now pass order to kitchen
-            }
-                                  // get order of table
+            Order *tableOrder = table->order();
+            // for (int i = 0; i< tableOrder.size(); i++)
+            // {
+            // bool result = Kitchen::getInstance()->addOrder(tableOrder[i]); // now pass order to kitchen
+            // }
+            // get order of table
             // now attach this waiter as an observer to the kitchen
+            bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
             Kitchen::getInstance()->attach(this);
         }
         else
