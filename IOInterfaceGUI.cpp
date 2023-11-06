@@ -139,7 +139,8 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
       DrawPartialDecal((olc::vf2d) {600, 32} + tablePos * 64, {32, 32}, spriteSheetDecal, {120, 0}, {8, 8});
       DrawPartialDecal((olc::vf2d) {600, 64} + tablePos * 64, {32, 32}, spriteSheetDecal, {56, 24}, {8, 8});
       DrawPartialDecal((olc::vf2d) {600, 64} + tablePos * 64, {32, 32}, spriteSheetDecal, {88, 48}, {8, 8});
-    } else if (table->getTableState()->getName() == "WaitingOnFood") {
+    } else if (table->getTableState()->getName() == "WaitingOnFood" || table->getTableState()->getName() == "WaitingOnWaiter"
+    || table->getTableState()->getName() == "Occupied") {
       DrawPartialDecal((olc::vf2d) {600, 32} + tablePos * 64, {32, 32}, spriteSheetDecal, {120, 0}, {8, 8});
       DrawPartialDecal((olc::vf2d) {600, 64} + tablePos * 64, {32, 32}, spriteSheetDecal, {56, 24}, {8, 8});
     } else if (table->getTableState()->getName() == "Busy") {
