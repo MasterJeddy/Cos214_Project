@@ -28,14 +28,27 @@ protected:
     std::string state; // can either be FREE or BUSY
 
 public:
+    /// @brief This is the constructor for the observer class
     Observer();
+    /// @brief This is the destructor for the observer class
     virtual ~Observer();
+    /// @brief called when a customer requests a seat
+    /// @param customer the customer requesting a seat
     virtual void notify(Customer *customer) = 0;
+    /// @brief called when a table requests the waiter's assistance
+    /// @param table the table that is currently requesting assistance
     virtual void notify(TableComposite *table) = 0;
 
     // getters
+    
+    /// @brief Gets Id of the observer.
+    /// @return Returns id as a string.
     virtual std::string getId();
+    /// @brief Returns the type of the observer.
+    /// @return Returns type of observer as a string.
     virtual std::string getType();
+    /// @brief Returns the state 
+    /// @return Returns the state as a string.
     virtual std::string getState();
 };
 
