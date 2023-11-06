@@ -35,6 +35,8 @@ TableComposite::TableComposite(int id)
 
     // set the default max capacity of the table to 4 - one table can host 4 people
     this->maxCapacity = 4;
+
+    this->numOfFinishedOrders =0;
 }
 
 TableComposite::~TableComposite()
@@ -398,7 +400,17 @@ void TableComposite::rejectedService()
 void TableComposite::eat(Order *order)
 {
     this->orders.push_back(order); // add this to the order
-    tableState->proceed(this);
+    numOfFinishedOrders++;
+
+    int counter = 0;
+    for(TableComponent* child: this->getChildren()){
+        if(child->getType()== TYPE_CUSTOMER){
+            counter++;
+        }
+    }
+
+    if(numOfFinishedOrders==counter){
+        tableState->proceed(this);
     for (Observer *observer : observerList)
     {
         if (observer->getId() == waiterId)
@@ -407,6 +419,7 @@ void TableComposite::eat(Order *order)
             observer->notify(this);
             break;
         }
+    }
     }
 }
 

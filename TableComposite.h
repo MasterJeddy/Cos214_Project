@@ -37,6 +37,7 @@ private:
     TableState *tableState;
     BillComponent *bill;
     std::vector<Order *> orders;
+    int numOfFinishedOrders;
 
 public:
     /// @brief Creates a table composite with id passed in.
