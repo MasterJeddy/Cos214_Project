@@ -58,5 +58,5 @@ CommandLogIterator.cpp CommandLogIterator.h FloorController.cpp Floor.h Floor.cp
         VeganPatty.h
         KitchenController.cpp KitchenController.h IOInterfaceTUI.cpp IOInterfaceTUI.h IOInterfaceGUI.cpp IOInterfaceGUI.h olcPixelGameEngine/olcPixelGameEngine.h KitchenSubject.cpp KitchenSubject.h olcPixelGameEngine/olcSoundWaveEngine.h)
 add_subdirectory(GTest)
-#[[target_link_libraries(Cos214_Project PRIVATE -lX11 -lGL -lpthread -lpng -lstdc++fs)]]
-target_link_libraries(Cos214_Project PRIVATE user32 gdi32 opengl32 gdiplus Shlwapi dwmapi stdc++fs winmm)
+target_link_libraries(Cos214_Project PRIVATE -lX11 -lGL -lpthread -lpng -lstdc++fs)
+#target_link_libraries(Cos214_Project PRIVATE user32 gdi32 opengl32 gdiplus Shlwapi dwmapi stdc++fs winmm)
