@@ -30,14 +30,28 @@ protected:
     std::vector<Observer *> observerList;
 
 public:
+    /// @brief Constructor for the TableComponent.
     TableComponent();
+
+    /// @brief Destructor for the TableComponent.
     virtual ~TableComponent();
 
+    /// @brief Gets the id of the TableComponent.
+    /// @return Returns the id as a string.
     std::string getId();
+    
+    /// @brief Get the type of the TableComponent.
+    /// @return Returns the type of the table. 
     std::string getType();
 
+
+    /// @brief Attach observer to the observer list.
+    /// @param observer This is the observer that will be attached to the observer list.
     virtual void attachObserver(Observer *observer) = 0;
+    /// @brief This will detach an observer from the observer list.
+    /// @param observer This is the observer that will be detached.
     virtual void detachObserver(Observer *observer) = 0;
+    /// @brief Notifies an observer.
     virtual void request() = 0;
 
 };

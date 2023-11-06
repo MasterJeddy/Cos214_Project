@@ -126,17 +126,28 @@ public:
     // returns an order
     // calls the proceed() function
 
-    /// @brief 
-    /// @return 
-    std::vector<Order*> order(); // may also add a complexOrder function
+    /// @brief Creates a single order for all the customers that are sitting at the table.
+    /// @return Returns the order that was created for the table.
+    Order* order(); // may also add a complexOrder function
     // return a slightly more complex order
+
+    /// @brief Creates a vector of  slightly more complex orders for all the customers that are sitting at the table.
+    /// @return Returns a vector of slightly more complex orders from the table.
     Order *complexOrder();
     // returns a complex order with quantities up to 20
+
+    /// @brief Creates a vector of very complex orders for all the customers that are sitting at the table.
+    /// @return Returns a vector of very complex orders from the table.
     Order *ultraComplexOrder();
     // rejected service of the waiter
     // calls the hold() function
+    
+    /// @brief Handles a specific case for a table. Transitions the state accordingly.
     void rejectedService();
+    /// @brief Simluates the customers eating their food.
+    /// @param order This is the order that was delivered to the table.
     void eat(Order *order);
+    /// @brief This makes the IO interface a friend class of TableComposite.
     friend class IOInterfaceGUI;
 };
 #include "Waiter.h"

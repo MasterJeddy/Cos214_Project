@@ -18,10 +18,19 @@ class BillComponent
 {
 
 public:
+    /// @brief Destructor for the billcomponent class. 
     virtual ~BillComponent();
+    /// @brief Adds a component to the children vector.
+    /// @param component This is the subbill/billComposite that will be added.
     virtual void add(BillComponent *component) = 0;
+    /// @brief Removes a component from the children vector.
+    /// @param component This is the subbill/billComposite that will be removed.
     virtual void remove(BillComponent *component) = 0;
+    /// @brief Gets the total of the bill.
+    /// @return Returns a double of the total of the bill.
     virtual double getTotal() = 0;
+    /// @brief Returns the name of the bill.
+    /// @return Returns the name of the bill as a string.
     virtual std::string getName() = 0;
 };
 
