@@ -17,7 +17,9 @@
 
 class Mustard:public BurgerIngredient {
 public:
+  /// \brief The constructor for the Mustard class
     Mustard();
+    /// \brief The destructor for the Mustard class
     ~Mustard() override;
 };
 

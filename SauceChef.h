@@ -22,8 +22,13 @@
 #include "Chef.h"
 class SauceChef : public Chef {
 public:
+  /// \brief Constructor for the SauceChef Class, intended to be the last chef in the chain, so no successor
   SauceChef();
+  /// \brief Adds at most one of any of the sauces required by the passed in order
+  /// \param order current unfinished order
+  /// \return The order after sauces are added
   Order* handleOrder(Order* order) override;
+  /// \brief Destructor for the SauceChef class
   ~SauceChef();
 };
 

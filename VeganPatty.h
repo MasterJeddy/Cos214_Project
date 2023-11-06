@@ -17,7 +17,9 @@
 
 class VeganPatty: public Patty{
 public:
+  /// \brief the constructor for the VeganPatty class
     VeganPatty();
+  /// \brief the destructor for the VeganPatty class
     ~VeganPatty() override;
 };
 

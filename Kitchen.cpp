@@ -55,7 +55,6 @@ void Kitchen::notifyWaiter()
   // get the finished order and pass it to the waiter which then passes to table
   Order *finishedOrder = this->getFinishedOrder();
 
-
   // find the waiter taht is responsible for this order
   for (Waiter *waiter : this->waiterList)
   {
@@ -86,6 +85,7 @@ void Kitchen::detach(Waiter *waiter)
   }
 }
 void Kitchen::reset() {
+    waiterList.clear();
     HeadChef h;
     headChef = h;
 }

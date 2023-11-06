@@ -17,7 +17,9 @@
 
 class Pickles: public BurgerIngredient{
 public:
+  /// \brief Constructor for the pickles class
     Pickles();
+  /// \brief Destructor for the pickles class
     ~Pickles() override;
 };
 

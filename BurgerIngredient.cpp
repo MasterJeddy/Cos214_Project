@@ -18,7 +18,10 @@ double BurgerIngredient::totalPrice() {
 }
 
 void BurgerIngredient::add(Burger * newIng) {
+  if (ingrediant == nullptr)
     ingrediant = newIng;
+  else
+    ingrediant->add(newIng);
 }
 
 BurgerIngredient::~BurgerIngredient() = default;

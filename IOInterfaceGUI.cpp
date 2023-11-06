@@ -139,7 +139,8 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
       DrawPartialDecal((olc::vf2d) {600, 32} + tablePos * 64, {32, 32}, spriteSheetDecal, {120, 0}, {8, 8});
       DrawPartialDecal((olc::vf2d) {600, 64} + tablePos * 64, {32, 32}, spriteSheetDecal, {56, 24}, {8, 8});
       DrawPartialDecal((olc::vf2d) {600, 64} + tablePos * 64, {32, 32}, spriteSheetDecal, {88, 48}, {8, 8});
-    } else if (table->getTableState()->getName() == "WaitingOnFood") {
+    } else if (table->getTableState()->getName() == "WaitingOnFood" || table->getTableState()->getName() == "WaitingOnWaiter"
+    || table->getTableState()->getName() == "Occupied") {
       DrawPartialDecal((olc::vf2d) {600, 32} + tablePos * 64, {32, 32}, spriteSheetDecal, {120, 0}, {8, 8});
       DrawPartialDecal((olc::vf2d) {600, 64} + tablePos * 64, {32, 32}, spriteSheetDecal, {56, 24}, {8, 8});
     } else if (table->getTableState()->getName() == "Busy") {
@@ -236,8 +237,16 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     DrawStringDecal({400, static_cast<float>(15 + 10 * offset)}, "Tables:", olc::WHITE);
     tables = Floor::instance()->getTables();
     for (auto *table : tables) {
-      offset++;
-      DrawStringDecal({400, static_cast<float>(15 + 10 * offset)}, table->getLabel());
+      std::string toDraw = table->getLabel();
+      int l = toDraw.length();
+      int i = 0;
+      do{
+        offset++;
+        DrawStringDecal({400, static_cast<float>(15 + 10 * offset)}, table->getLabel().substr(i*40,std::min((int)(40),(int)(toDraw.length()-i*40))));
+        i = l/40;
+        l-=40;
+      } while (i>0);
+
     }
     //Draw Log
     DrawStringDecal({750, 5}, "Log info", olc::WHITE);
