@@ -294,6 +294,7 @@ bool TableComposite::acceptOrReject()
 
 std::vector<Order*> TableComposite::order()
 {
+  std::mt19937 rng(std::random_device{}());
     //find the number of customers at this table
     int counter = 0;
     for(TableComponent* child: this->getChildren()){
@@ -323,7 +324,7 @@ std::vector<Order*> TableComposite::order()
 
     // Order *order = new Order(this->getId());
 
-    // std::mt19937 rng(std::random_device{}());
+    //
 
     // order->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
     // order->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
