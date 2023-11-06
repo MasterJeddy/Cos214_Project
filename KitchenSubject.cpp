@@ -12,10 +12,10 @@
 
 KitchenSubject::~KitchenSubject()
 {
-    for (Waiter *waiter : this->waiterList)
-    {
-        delete waiter;
-        waiter = NULL;
-    }
-    this->waiterList.clear();
+//    for (Waiter *waiter : this->waiterList)
+//    {
+//        delete waiter;
+//        waiter = NULL;
+//    }
+//    this->waiterList.clear();
 }

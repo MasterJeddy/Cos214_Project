@@ -236,8 +236,16 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     DrawStringDecal({400, static_cast<float>(15 + 10 * offset)}, "Tables:", olc::WHITE);
     tables = Floor::instance()->getTables();
     for (auto *table : tables) {
-      offset++;
-      DrawStringDecal({400, static_cast<float>(15 + 10 * offset)}, table->getLabel());
+      std::string toDraw = table->getLabel();
+//      int l = toDraw.length();
+//      int i = 0;
+//      do{
+//        offset++;
+//        DrawStringDecal({400, static_cast<float>(15 + 10 * offset)}, table->getLabel().substr(i*40,std::min((int)(40),(int)(toDraw.length()-i*40))));
+//        i = l/40;
+//        l-=40;
+//      } while (i>0);
+
     }
     //Draw Log
     DrawStringDecal({750, 5}, "Log info", olc::WHITE);
