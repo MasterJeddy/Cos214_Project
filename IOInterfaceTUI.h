@@ -14,6 +14,7 @@ private:
   /// \return Command to be executed
   UserCommand* queryUser();
 public:
+  /// \brief Overides poll and uses cout and cin statements to interact with user
   void poll() override;
 };
 

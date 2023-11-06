@@ -7,10 +7,15 @@
 
 class KitchenController {
 public:
+  /// \brief hires a chef
   void hireChef();
+  /// \brief updates kitchen subsystem
   void update();
+  /// \brief expands kitchen
   void expandKitchen();
+  /// \brief buys stock
   void buyStock();
+  /// \brief rests floor subsystem
   void reset();
 };
 
