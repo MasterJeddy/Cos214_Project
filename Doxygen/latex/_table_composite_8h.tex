@@ -1,0 +1,19 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Table\+Composite.h File Reference}
+\hypertarget{_table_composite_8h}{}\label{_table_composite_8h}\index{C:/Dev/COS214/Project/TableComposite.h@{C:/Dev/COS214/Project/TableComposite.h}}
+{\ttfamily \#include "{}Table\+Component.\+h"{}}\newline
+{\ttfamily \#include "{}Bill\+Component.\+h"{}}\newline
+{\ttfamily \#include "{}Order.\+h"{}}\newline
+{\ttfamily \#include "{}Bill\+Composite.\+h"{}}\newline
+{\ttfamily \#include "{}Sub\+Bill.\+h"{}}\newline
+{\ttfamily \#include "{}Constants.\+h"{}}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+{\ttfamily \#include "{}Waiter.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_table_composite}{Table\+Composite}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the declaration of the \doxylink{class_table_composite}{Table\+Composite} class which acts here as the the Composite participant in the Composite design pattern. For example when taking an order, the waiter will interact with an object from this class. This class implements the interface provided by the \doxylink{class_table_component}{Table\+Component} interface. It contains either children that are either composites(\+Table objects) or leaves (\doxylink{class_customer}{Customer} objects). This allows for us to add tables to each other (to make space for larger groups), and \doxylink{class_customer}{Customer} objects may be added to tables. 

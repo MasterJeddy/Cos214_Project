@@ -1,0 +1,37 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Clock.h}
+\hypertarget{_clock_8h_source}{}\label{_clock_8h_source}\mbox{\hyperlink{_clock_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Clock.h\ -\/\ Clock\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_CLOCK\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_CLOCK\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_clock}{Clock}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ std::map<std::string,int>\ timers;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_clock}{Clock}}\&\ \mbox{\hyperlink{class_clock_af25b669776845aa7db14308c9a2e52b7}{instance}}();}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_clock_ad576cd41ff4ca9cd09f7710c2f985be1}{getTime}}(\textcolor{keyword}{const}\ std::string\&\ me);}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_clock_ac1d9e8c71e06f3af4f4fca8c79e2c3ce}{hasTime}}(\textcolor{keyword}{const}\ std::string\&\ me);}
+\DoxyCodeLine{00053\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_clock_aec7dd1a18ab8efd607999aee58778b55}{removeTime}}(\textcolor{keyword}{const}\ std::string\&\ me);}
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_clock_a116757f0e1575348549b1f2fc346d492}{tick}}();}
+\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_clock_a0ab5423b0a997aa13d7b6131c46d1358}{reset}}();}
+\DoxyCodeLine{00060\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00062\ \ \ \mbox{\hyperlink{class_clock_adbc370eb6b5f8d01645cf440188160a8}{Clock}}();}
+\DoxyCodeLine{00065\ \ \ \mbox{\hyperlink{class_clock_a3e27e52ca9dc4633dcef168bb90bf480}{Clock}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_clock}{Clock}}\&\ clock);}
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{class_clock}{Clock}}\&\ \mbox{\hyperlink{class_clock_a3b9220c37ed124e9ba611548420a53af}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_clock}{Clock}}\&);}
+\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{class_clock_afc976ce68fa85e15cc06f9ed47bddb7c}{\string~Clock}}();}
+\DoxyCodeLine{00071\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface_g_u_i}{IOInterfaceGUI}};}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_CLOCK\_H}}
+
+\end{DoxyCode}

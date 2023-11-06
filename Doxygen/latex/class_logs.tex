@@ -1,0 +1,89 @@
+\doxysection{Logs Class Reference}
+\hypertarget{class_logs}{}\label{class_logs}\index{Logs@{Logs}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_logs_a678fa1791c678be12a71466305b94bae}{dump\+To\+File}} (std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Serialize \doxylink{class_saved_log}{Saved\+Log} to disk. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_logs_ad3e0a5f62efebb38542bfbae2acc2a68}{load\+From\+File}} (std\+::string \&file)
+\begin{DoxyCompactList}\small\item\em Deserialize \doxylink{class_saved_log}{Saved\+Log} from disk. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_logs_acc1731ed56b0e8fd6124de10cfe73842}{temp\+Save}} (\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*}save)
+\begin{DoxyCompactList}\small\item\em \doxylink{class_save}{Save} \doxylink{class_saved_log}{Saved\+Log} to memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_logs_ae623f16a1c37e7091a062779996643fe}{load\+Temp}} ()
+\begin{DoxyCompactList}\small\item\em \doxylink{class_load}{Load} \doxylink{class_saved_log}{Saved\+Log} from memory. \end{DoxyCompactList}\item 
+\Hypertarget{class_logs_a3da76c4660ef9d321b11fce0100c002e}\label{class_logs_a3da76c4660ef9d321b11fce0100c002e} 
+{\bfseries Logs} ()
+\begin{DoxyCompactList}\small\item\em Constructor of the \doxylink{class_logs}{Logs} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_logs_a6227976848fb64144ff93587479df43d}\label{class_logs_a6227976848fb64144ff93587479df43d} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Logs} ()
+\begin{DoxyCompactList}\small\item\em Destructor of the \doxylink{class_logs}{Logs} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_logs_a678fa1791c678be12a71466305b94bae}\label{class_logs_a678fa1791c678be12a71466305b94bae} 
+\index{Logs@{Logs}!dumpToFile@{dumpToFile}}
+\index{dumpToFile@{dumpToFile}!Logs@{Logs}}
+\doxysubsubsection{\texorpdfstring{dumpToFile()}{dumpToFile()}}
+{\footnotesize\ttfamily void Logs\+::dump\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Serialize \doxylink{class_saved_log}{Saved\+Log} to disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Name of file to serialise to Note\+: .dat will be add from \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_logs_ad3e0a5f62efebb38542bfbae2acc2a68}\label{class_logs_ad3e0a5f62efebb38542bfbae2acc2a68} 
+\index{Logs@{Logs}!loadFromFile@{loadFromFile}}
+\index{loadFromFile@{loadFromFile}!Logs@{Logs}}
+\doxysubsubsection{\texorpdfstring{loadFromFile()}{loadFromFile()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*} Logs\+::load\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string \&}]{file }\end{DoxyParamCaption})}
+
+
+
+Deserialize \doxylink{class_saved_log}{Saved\+Log} from disk. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Name of file to deserialized to Note\+: .dat will be add from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This is the deserialized \doxylink{class_saved_log}{Saved\+Log} 
+\end{DoxyReturn}
+\Hypertarget{class_logs_ae623f16a1c37e7091a062779996643fe}\label{class_logs_ae623f16a1c37e7091a062779996643fe} 
+\index{Logs@{Logs}!loadTemp@{loadTemp}}
+\index{loadTemp@{loadTemp}!Logs@{Logs}}
+\doxysubsubsection{\texorpdfstring{loadTemp()}{loadTemp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*} Logs\+::load\+Temp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_load}{Load} \doxylink{class_saved_log}{Saved\+Log} from memory. 
+
+\begin{DoxyReturn}{Returns}
+Last log to be saved to memory 
+\end{DoxyReturn}
+\Hypertarget{class_logs_acc1731ed56b0e8fd6124de10cfe73842}\label{class_logs_acc1731ed56b0e8fd6124de10cfe73842} 
+\index{Logs@{Logs}!tempSave@{tempSave}}
+\index{tempSave@{tempSave}!Logs@{Logs}}
+\doxysubsubsection{\texorpdfstring{tempSave()}{tempSave()}}
+{\footnotesize\ttfamily void Logs\+::temp\+Save (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*}}]{save }\end{DoxyParamCaption})}
+
+
+
+\doxylink{class_save}{Save} \doxylink{class_saved_log}{Saved\+Log} to memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save} & \doxylink{class_saved_log}{Saved\+Log} to save \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_logs_8h}{Logs.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_logs_8cpp}{Logs.\+cpp}}\end{DoxyCompactItemize}

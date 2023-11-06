@@ -1,0 +1,29 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Busy.h}
+\hypertarget{_busy_8h_source}{}\label{_busy_8h_source}\mbox{\hyperlink{_busy_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Busy.h\ -\/\ Busy\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_BUSY\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_BUSY\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_table_state_8h}{TableState.h}}"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_waiting_on_waiter_8h}{WaitingOnWaiter.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_table_composite_8h}{TableComposite.h}}"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_busy}{Busy}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_table_state}{TableState}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_table_state}{TableState}}\ *\mbox{\hyperlink{class_busy_abb6c4ae816988b9e17a9d6c4c1175a31}{clone}}();}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_busy_a4d7e9727ebeb6b710e890fa68c46ed29}{proceed}}(\mbox{\hyperlink{class_table_composite}{TableComposite}}\ *tableComp);}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_busy_af49c034f53f8953424010b163ab9d772}{hold}}(\mbox{\hyperlink{class_table_composite}{TableComposite}}\ *tableComp);}
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_busy_a2e7088c89d54793d36fbc46740b90eb7}{Busy}}();}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

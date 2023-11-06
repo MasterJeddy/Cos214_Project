@@ -1,0 +1,85 @@
+\doxysection{Baker\+Chef Class Reference}
+\hypertarget{class_baker_chef}{}\label{class_baker_chef}\index{BakerChef@{BakerChef}}
+Inheritance diagram for Baker\+Chef\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_baker_chef}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_baker_chef_ab842a548f3064b4b993c1efc69467107}{Baker\+Chef}} (\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}\+\_\+successor)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_baker_chef}{Baker\+Chef}, initialises the successor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_baker_chef_a6cd921945b50048c95e5f729abd26f92}{handle\+Order}} (\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}order) override
+\begin{DoxyCompactList}\small\item\em Creates the burger buns for the burger decorator, if there is none. \end{DoxyCompactList}\item 
+\Hypertarget{class_baker_chef_a098a20140333526230e83a63259b9cae}\label{class_baker_chef_a098a20140333526230e83a63259b9cae} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Baker\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_baker_chef}{Baker\+Chef} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the chef class, calls delete on the successor object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chef_aa3248d2e00976ab62c94ed4aba6e8c3a}{Chef}} (\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}\+\_\+successor)
+\begin{DoxyCompactList}\small\item\em Constructor that initialises the successor property. \end{DoxyCompactList}\item 
+{\bfseries Chef} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, doesn\textquotesingle{}t initialise the successor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*} {\bfseries successor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_baker_chef_ab842a548f3064b4b993c1efc69467107}\label{class_baker_chef_ab842a548f3064b4b993c1efc69467107} 
+\index{BakerChef@{BakerChef}!BakerChef@{BakerChef}}
+\index{BakerChef@{BakerChef}!BakerChef@{BakerChef}}
+\doxysubsubsection{\texorpdfstring{BakerChef()}{BakerChef()}}
+{\footnotesize\ttfamily Baker\+Chef\+::\+Baker\+Chef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}}]{\+\_\+successor }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{class_baker_chef}{Baker\+Chef}, initialises the successor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+successor} & the next chef in the chain, will be passed any orders handled \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_baker_chef_a6cd921945b50048c95e5f729abd26f92}\label{class_baker_chef_a6cd921945b50048c95e5f729abd26f92} 
+\index{BakerChef@{BakerChef}!handleOrder@{handleOrder}}
+\index{handleOrder@{handleOrder}!BakerChef@{BakerChef}}
+\doxysubsubsection{\texorpdfstring{handleOrder()}{handleOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Baker\+Chef\+::handle\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Creates the burger buns for the burger decorator, if there is none. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & current unfinished order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The order after it is passed through the chef chain once 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_chef_a7e3fb2232a3b8ad0582a195f5eff81ec}{Chef}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_baker_chef_8h}{Baker\+Chef.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/Baker\+Chef.\+cpp\end{DoxyCompactItemize}

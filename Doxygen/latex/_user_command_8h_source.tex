@@ -1,0 +1,45 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+User\+Command.h}
+\hypertarget{_user_command_8h_source}{}\label{_user_command_8h_source}\mbox{\hyperlink{_user_command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/UserCommand.h\ -\/\ UserCommand\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_USERCOMMAND\_H}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_USERCOMMAND\_H}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_floor_controller_8h}{FloorController.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}KitchenController.h"{}}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_kitchen_controller}{KitchenController}};}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{enum\ class}\ COMMANDS\ \{}
+\DoxyCodeLine{00022\ \ \ SAVE,}
+\DoxyCodeLine{00023\ \ \ LOAD,}
+\DoxyCodeLine{00024\ \ \ TOGGLE\_HELP,}
+\DoxyCodeLine{00025\ \ \ TOGGLE\_LOG,}
+\DoxyCodeLine{00026\ \ \ HIRE\_MAITRE\_D,}
+\DoxyCodeLine{00027\ \ \ BUY\_TABLE,}
+\DoxyCodeLine{00028\ \ \ EXPAND\_FLOOR,}
+\DoxyCodeLine{00029\ \ \ HIRE\_WAITER,}
+\DoxyCodeLine{00030\ \ \ UPDATE,}
+\DoxyCodeLine{00031\ \ \ EXPAND\_KITCHEN,}
+\DoxyCodeLine{00032\ \ \ HIRE\_CHEF,}
+\DoxyCodeLine{00033\ \ \ BUY\_STOCK}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_user_command}{UserCommand}}\ \{}
+\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_user_command_acb6c6b4541fe7f1b297009e43403ae43}{execute}}()\ =0;}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_user_command}{UserCommand}}*\ \mbox{\hyperlink{class_user_command_abaaad126c0c4377e64c9853bee573e56}{clone}}()\ =\ 0;}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{virtual}\ COMMANDS\ \mbox{\hyperlink{class_user_command_a32a4542d436305d56f6d9ad67ab4f194}{getType}}()\ =0;}
+\DoxyCodeLine{00047\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_user_command_a4f2c785c0fe6bdeb3899f7c088b616e1}{\string~UserCommand}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_USERCOMMAND\_H}}
+
+\end{DoxyCode}

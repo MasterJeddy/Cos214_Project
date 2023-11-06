@@ -1,0 +1,73 @@
+\doxysection{Burger\+Ingredient Class Reference}
+\hypertarget{class_burger_ingredient}{}\label{class_burger_ingredient}\index{BurgerIngredient@{BurgerIngredient}}
+Inheritance diagram for Burger\+Ingredient\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.782609cm]{class_burger_ingredient}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_burger_ingredient_ab37fdab4a84619ebd507b489a99e8a41}\label{class_burger_ingredient_ab37fdab4a84619ebd507b489a99e8a41} 
+{\bfseries Burger\+Ingredient} ()
+\begin{DoxyCompactList}\small\item\em The constructor for the \doxylink{class_burger_ingredient}{Burger\+Ingredient} class. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_burger_ingredient_aa8c8e254016815945c780e58a878ee2a}{total\+Price}} () override
+\begin{DoxyCompactList}\small\item\em Calculates the total price of all connected burger ingredients in the decorator list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_burger_ingredient_a7cc8eb633371d9e0063838811a649801}{add}} (\mbox{\hyperlink{class_burger}{Burger}} \texorpdfstring{$\ast$}{*}) override
+\begin{DoxyCompactList}\small\item\em adds a burger to the end of the decorator chain \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_burger}{Burger}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{class_burger_a1f1efb1c361a4acc30731747598f1be5}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Refers instead to the price property of the ingredient. \end{DoxyCompactList}\item 
+void {\bfseries set\+Price} (double)
+\begin{DoxyCompactList}\small\item\em Changes the price of the ingredient. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Burger} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the burger class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_burger_ingredient_a3e35a45425ae3b8e233e808fa984db10}\label{class_burger_ingredient_a3e35a45425ae3b8e233e808fa984db10} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Burger\+Ingredient} () override
+\begin{DoxyCompactList}\small\item\em The destructor for the \doxylink{class_burger_ingredient}{Burger\+Ingredient} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_burger_ingredient_a7cc8eb633371d9e0063838811a649801}\label{class_burger_ingredient_a7cc8eb633371d9e0063838811a649801} 
+\index{BurgerIngredient@{BurgerIngredient}!add@{add}}
+\index{add@{add}!BurgerIngredient@{BurgerIngredient}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Burger\+Ingredient\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_burger}{Burger}} \texorpdfstring{$\ast$}{*}}]{new\+Ing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+adds a burger to the end of the decorator chain 
+
+
+
+Implements \mbox{\hyperlink{class_burger_a18a0f0bc88d3cb297dcfa258c360d8ed}{Burger}}.
+
+\Hypertarget{class_burger_ingredient_aa8c8e254016815945c780e58a878ee2a}\label{class_burger_ingredient_aa8c8e254016815945c780e58a878ee2a} 
+\index{BurgerIngredient@{BurgerIngredient}!totalPrice@{totalPrice}}
+\index{totalPrice@{totalPrice}!BurgerIngredient@{BurgerIngredient}}
+\doxysubsubsection{\texorpdfstring{totalPrice()}{totalPrice()}}
+{\footnotesize\ttfamily double Burger\+Ingredient\+::total\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the total price of all connected burger ingredients in the decorator list. 
+
+\begin{DoxyReturn}{Returns}
+the total price of the burger 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_burger_a70f9da0baa9e5856196974b982f8523c}{Burger}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_burger_ingredient_8h}{Burger\+Ingredient.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/Burger\+Ingredient.\+cpp\end{DoxyCompactItemize}

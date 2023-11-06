@@ -1,0 +1,33 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Bill\+Composite.h}
+\hypertarget{_bill_composite_8h_source}{}\label{_bill_composite_8h_source}\mbox{\hyperlink{_bill_composite_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/BillComposite.h\ -\/\ BillComposite\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_BILLCOMPOSITE\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_BILLCOMPOSITE\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bill_component_8h}{BillComponent.h}}"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_bill_composite}{BillComposite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_bill_component}{BillComponent}}}
+\DoxyCodeLine{00020\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ \ \ std::vector<BillComponent\ *>\ children;}
+\DoxyCodeLine{00023\ \ \ \ \ std::string\ name;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \mbox{\hyperlink{class_bill_composite}{BillComposite}}(std::string\ compositeName);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_bill_composite_a68b91af57c3b108d866dd9a3b143e298}{\string~BillComposite}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bill_composite_a1611d8398c6ca67e64d86ff8faf0cf9b}{add}}(\mbox{\hyperlink{class_bill_component}{BillComponent}}\ *component);}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_bill_composite_a6b4a9a188bc53bb79701954bdc7b0c42}{remove}}(\mbox{\hyperlink{class_bill_component}{BillComponent}}\ *component);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_bill_composite_a714e38ced7563b2985878465042e8dbf}{getTotal}}();}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_bill_composite_ada6f5b537a4a81c87b417cc140b92c5d}{getName}}();}
+\DoxyCodeLine{00043\ \};}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

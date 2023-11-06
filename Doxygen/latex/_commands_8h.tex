@@ -1,0 +1,29 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Commands.h File Reference}
+\hypertarget{_commands_8h}{}\label{_commands_8h}\index{C:/Dev/COS214/Project/Commands.h@{C:/Dev/COS214/Project/Commands.h}}
+{\ttfamily \#include "{}User\+Command.\+h"{}}\newline
+{\ttfamily \#include "{}IOInterface.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_hire_maitre_d}{Hire\+MaitreD}}
+\item 
+class \mbox{\hyperlink{class_buy_table}{Buy\+Table}}
+\item 
+class \mbox{\hyperlink{class_expand_floor}{Expand\+Floor}}
+\item 
+class \mbox{\hyperlink{class_hire_waiter}{Hire\+Waiter}}
+\item 
+class \mbox{\hyperlink{class_expand_kitchen}{Expand\+Kitchen}}
+\item 
+class \mbox{\hyperlink{class_hire_chef}{Hire\+Chef}}
+\item 
+class \mbox{\hyperlink{class_buy_stock}{Buy\+Stock}}
+\item 
+class \mbox{\hyperlink{class_toggle_help}{Toggle\+Help}}
+\item 
+class \mbox{\hyperlink{class_toggle_log}{Toggle\+Log}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the declaration of several concrete commands in the command pattern. Specifically \doxylink{class_hire_maitre_d}{Hire\+MaitreD}, \doxylink{class_buy_table}{Buy\+Table}, \doxylink{class_expand_floor}{Expand\+Floor}, \doxylink{class_hire_waiter}{Hire\+Waiter}, \doxylink{class_expand_kitchen}{Expand\+Kitchen}, \doxylink{class_hire_chef}{Hire\+Chef} and \doxylink{class_buy_stock}{Buy\+Stock}. What these commands all have in common is that they will simple call corresponding functions on the \doxylink{class_kitchen_controller}{Kitchen\+Controller} and \doxylink{class_floor_controller}{Floor\+Controller} facades. e.\+g. \doxylink{class_buy_stock}{Buy\+Stock} will call the buy\+Stock method on \doxylink{class_kitchen_controller}{Kitchen\+Controller}. 

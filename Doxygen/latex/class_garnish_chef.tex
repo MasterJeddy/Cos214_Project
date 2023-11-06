@@ -1,0 +1,85 @@
+\doxysection{Garnish\+Chef Class Reference}
+\hypertarget{class_garnish_chef}{}\label{class_garnish_chef}\index{GarnishChef@{GarnishChef}}
+Inheritance diagram for Garnish\+Chef\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_garnish_chef}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_garnish_chef_accab0d593d2f9e58cfe382e62adc87cb}{Garnish\+Chef}} (\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}\+\_\+successor)
+\begin{DoxyCompactList}\small\item\em Creates a chef responsible for adding garnish to burgers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_garnish_chef_aec95e56112b13f49ad02cf7b880785cd}{handle\+Order}} (\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}order) override
+\begin{DoxyCompactList}\small\item\em Next step in the chef chain, adds garnish. \end{DoxyCompactList}\item 
+\Hypertarget{class_garnish_chef_a8c935416009079990a6f93bf5d6fd82b}\label{class_garnish_chef_a8c935416009079990a6f93bf5d6fd82b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Garnish\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the Garnish chef object, deletes successor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the chef class, calls delete on the successor object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chef_aa3248d2e00976ab62c94ed4aba6e8c3a}{Chef}} (\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}\+\_\+successor)
+\begin{DoxyCompactList}\small\item\em Constructor that initialises the successor property. \end{DoxyCompactList}\item 
+{\bfseries Chef} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, doesn\textquotesingle{}t initialise the successor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*} {\bfseries successor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_garnish_chef_accab0d593d2f9e58cfe382e62adc87cb}\label{class_garnish_chef_accab0d593d2f9e58cfe382e62adc87cb} 
+\index{GarnishChef@{GarnishChef}!GarnishChef@{GarnishChef}}
+\index{GarnishChef@{GarnishChef}!GarnishChef@{GarnishChef}}
+\doxysubsubsection{\texorpdfstring{GarnishChef()}{GarnishChef()}}
+{\footnotesize\ttfamily Garnish\+Chef\+::\+Garnish\+Chef (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}}]{\+\_\+successor }\end{DoxyParamCaption})}
+
+
+
+Creates a chef responsible for adding garnish to burgers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+successor} & the next chef in the chain, will be passed the burger object when this one is done \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_garnish_chef_aec95e56112b13f49ad02cf7b880785cd}\label{class_garnish_chef_aec95e56112b13f49ad02cf7b880785cd} 
+\index{GarnishChef@{GarnishChef}!handleOrder@{handleOrder}}
+\index{handleOrder@{handleOrder}!GarnishChef@{GarnishChef}}
+\doxysubsubsection{\texorpdfstring{handleOrder()}{handleOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Garnish\+Chef\+::handle\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Next step in the chef chain, adds garnish. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & An unfinished order object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The passed in order object with at most one of each garnish object added to the burger 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_chef_a7e3fb2232a3b8ad0582a195f5eff81ec}{Chef}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_garnish_chef_8h}{Garnish\+Chef.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/Garnish\+Chef.\+cpp\end{DoxyCompactItemize}

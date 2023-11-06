@@ -1,0 +1,54 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Order.h}
+\hypertarget{_order_8h_source}{}\label{_order_8h_source}\mbox{\hyperlink{_order_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ nield\ on\ 2023/10/26.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ PROJECT\_ORDER\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ PROJECT\_ORDER\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Order.h\ -\/\ Order\ struct\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00021\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_burger_8h}{Burger.h}}"{}}}
+\DoxyCodeLine{00026\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_order}{Order}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ totalOrders\ =\ 0;}
+\DoxyCodeLine{00029\ \ \ std::string\ tableID;\ \textcolor{comment}{//\ Convenient\ for\ the\ guys\ doing\ the\ floor\ subsystem}}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{int}\ orderNumber\ =\ 0;}
+\DoxyCodeLine{00031\ \ \ \textcolor{keywordtype}{int}\ wantsKetchup\ =\ 0;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{int}\ wantsMustard\ =\ 0;}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{int}\ wantsMayo\ =\ 0;}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{int}\ beefPatty\ =\ 0;}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ chickenPatty\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{int}\ veganPatty\ =\ 0;}
+\DoxyCodeLine{00037\ \ \ \textcolor{keywordtype}{int}\ wantsLettuce\ =\ 0;}
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{int}\ wantsTomato\ =\ 0;}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{int}\ wantsPickles\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \textcolor{keywordtype}{bool}\ complete\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{class_burger}{Burger}}*\ burger;}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{struct_order_a5ea6cdedd0f6bbad552ab7d0b4798fb3}{Order}}(std::string\ \_tableID)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ tableID\ =\ \_tableID;}
+\DoxyCodeLine{00045\ \ \ \ \ orderNumber\ =\ ++totalOrders;}
+\DoxyCodeLine{00046\ \ \ \ \ burger\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00047\ \ \ \};}
+\DoxyCodeLine{00050\ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{struct_order_a0ad775fcd359b9dc031c4086e2d8df75}{getPrice}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \textcolor{keywordflow}{if}\ (burger\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ burger-\/>\mbox{\hyperlink{class_burger_a70f9da0baa9e5856196974b982f8523c}{totalPrice}}();}
+\DoxyCodeLine{00055\ \ \ \ \ \}}
+\DoxyCodeLine{00056\ \ \ \};}
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PROJECT\_ORDER\_H}}
+
+\end{DoxyCode}

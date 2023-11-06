@@ -1,0 +1,46 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Table\+Component.h}
+\hypertarget{_table_component_8h_source}{}\label{_table_component_8h_source}\mbox{\hyperlink{_table_component_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/TableComponent.h\ -\/\ TableComponent\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_TABLECOMPONENT\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_TABLECOMPONENT\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_observer_8h}{Observer.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_table_state_8h}{TableState.h}}"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table_state}{TableState}};}
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table_component}{TableComponent}}}
+\DoxyCodeLine{00026\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00028\ \ \ \ \ std::string\ id;}
+\DoxyCodeLine{00029\ \ \ \ \ std::string\ type;}
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<Observer\ *>\ observerList;}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{class_table_component_ab4af18a753ee4851edceca5433ceb3ee}{TableComponent}}();}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_table_component_a1db7d683d8a1276695423879c95b2442}{\string~TableComponent}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00041\ \ \ \ \ std::string\ \mbox{\hyperlink{class_table_component_a6ca27765a0e6922a1abac2f53a4f00aa}{getId}}();}
+\DoxyCodeLine{00042\ \ \ \ \ }
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ \mbox{\hyperlink{class_table_component_ab1e1b3e56ea8dc3dab74c444aae02d08}{getType}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_component_af398cf8e26863834021965703bd1aa8b}{attachObserver}}(\mbox{\hyperlink{class_observer}{Observer}}\ *observer)\ =\ 0;}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_component_a683e5c93ac7954408554d56041311fd2}{detachObserver}}(\mbox{\hyperlink{class_observer}{Observer}}\ *observer)\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_component_a44a5bd4b529f7b602103f532634351d5}{request}}()\ =\ 0;}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

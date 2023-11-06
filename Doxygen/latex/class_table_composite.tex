@@ -1,0 +1,406 @@
+\doxysection{Table\+Composite Class Reference}
+\hypertarget{class_table_composite}{}\label{class_table_composite}\index{TableComposite@{TableComposite}}
+Inheritance diagram for Table\+Composite\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_table_composite}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_table_composite_aa633dd865e6ec1d4580be50f05dfb4e6}{Table\+Composite}} (int id)
+\begin{DoxyCompactList}\small\item\em Creates a table composite with id passed in. Initialises the state to the free state and sets the type of the component. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_composite_a86de56cab0cf2d8da841a12939a17e01}\label{class_table_composite_a86de56cab0cf2d8da841a12939a17e01} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+Composite} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the table composite. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_composite_ad997603e71197e3e39ec0f3d6d522f32}{add\+Component}} (\mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the vector of children. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_composite_aebdffe66e5776f2d07fcce4e5c65d31f}{remove\+Component}} (\mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the vector of children. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_composite_a5eaf132661ff02cc65a1bbb14e29dfaa}\label{class_table_composite_a5eaf132661ff02cc65a1bbb14e29dfaa} 
+void {\bfseries request\+Bill} ()
+\begin{DoxyCompactList}\small\item\em Notifies the waiter that a bill has been requested. Transitions the state to \textquotesingle{}\doxylink{class_bill}{Bill}\textquotesingle{}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_table_composite_a7444c15a53c63476d4e2007e528555fd}{get\+Capacity}} ()
+\begin{DoxyCompactList}\small\item\em Gets the max capacity of the table We assumed that each table will have a max capacity of four (they are square) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_table_composite_af28915cf3686af6e3fafedd035b79769}{get\+Child}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em gets the child with the passed in id \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_table_composite_a83ec52ec32d33c76018bd0af70d2649b}{get\+Table\+State}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current state of the table. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_composite_ac41a41c72591fe9df76dedaae38d0c61}{get\+Label}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string of the Ids of combined tables (if any), as well as the customers that have seated at this table. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_table_composite_a083b9db111576946d9428566bca4d889}{get\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Gets all the children. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_table_composite_af5a8be5eac066651311347641889c733}{get\+Payment}} ()
+\begin{DoxyCompactList}\small\item\em Creates a bill, then returns the total of the respective bill. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_table_composite_a5b5f63b8346f1b6dcc1fc235db97c432}{is\+Contained\+In\+Another\+Table}} ()
+\begin{DoxyCompactList}\small\item\em Checks if a table is contained within another table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_composite_a0607a42c521a396ed1a08bd9400b0882}{set\+Max\+Capacity}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Sets the max capacity of a table. This function will be called every time we combine tables as this number will change every time we combine tables with each other. This indicates the maximum number of customers that may be seated at a specific table. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_composite_a570abec79f1f12175cbee5f5a863e7ec}{set\+Table\+State}} (\mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*}table\+State)
+\begin{DoxyCompactList}\small\item\em Changes the state of the table to the passed in parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_composite_af7a2b03e05e71c063f09355562e21fca}{assign\+Waiter}} (\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)
+\begin{DoxyCompactList}\small\item\em This function will assign the passed in waiter to this table. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_composite_a70e94830d077f8874546a68dfceef2cf}{attach\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em This function will attach an observer to the Observer\+List. This observer will watch this table. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_composite_a48b4e3ef419d658a1fb903a6cba8ff97}{detach\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em This will detach an observer from the Observer\+List. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_composite_a0ecc55c75eef774ff378e1c7e230771d}{request}} ()
+\begin{DoxyCompactList}\small\item\em Notifies a waiter observer that a table requires the waiters service. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_table_composite_ad5fe673e371b94d98065b22c91b27cb2}{accept\+Or\+Reject}} ()
+\begin{DoxyCompactList}\small\item\em Simulate accepting the service of a waiter once they arrive at your table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_table_composite_a00ecbdedf91a862156ed3347e1d77238}{order}} ()
+\begin{DoxyCompactList}\small\item\em Creates a single order for all the customers that are sitting at the table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_table_composite_a9de25fbce030b3538eeec15248c211d6}{complex\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Creates a vector of slightly more complex orders for all the customers that are sitting at the table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_table_composite_a693a1d320fc85dee46aba858bf6bfeb8}{ultra\+Complex\+Order}} ()
+\begin{DoxyCompactList}\small\item\em Creates a vector of very complex orders for all the customers that are sitting at the table. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_composite_a72196b754711b3c97466d39123c0306c}\label{class_table_composite_a72196b754711b3c97466d39123c0306c} 
+void {\bfseries rejected\+Service} ()
+\begin{DoxyCompactList}\small\item\em Handles a specific case for a table. Transitions the state accordingly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_composite_a1cef7ed75ec4160647189977732a2ede}{eat}} (\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}\mbox{\hyperlink{class_table_composite_a00ecbdedf91a862156ed3347e1d77238}{order}})
+\begin{DoxyCompactList}\small\item\em Simluates the customers eating their food. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_table_component}{Table\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Table\+Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_component_a6ca27765a0e6922a1abac2f53a4f00aa}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the id of the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_component_ab1e1b3e56ea8dc3dab74c444aae02d08}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_table_composite_af189b6c220b1b14f6cb4ed5cb0bf4f5d}\label{class_table_composite_af189b6c220b1b14f6cb4ed5cb0bf4f5d} 
+class \mbox{\hyperlink{class_table_composite_af189b6c220b1b14f6cb4ed5cb0bf4f5d}{IOInterface\+GUI}}
+\begin{DoxyCompactList}\small\item\em This makes the IO interface a friend class of \doxylink{class_table_composite}{Table\+Composite}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_table_component}{Table\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries id}
+\item 
+std\+::string {\bfseries type}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observer\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_table_composite_aa633dd865e6ec1d4580be50f05dfb4e6}\label{class_table_composite_aa633dd865e6ec1d4580be50f05dfb4e6} 
+\index{TableComposite@{TableComposite}!TableComposite@{TableComposite}}
+\index{TableComposite@{TableComposite}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{TableComposite()}{TableComposite()}}
+{\footnotesize\ttfamily Table\+Composite\+::\+Table\+Composite (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Creates a table composite with id passed in. Initialises the state to the free state and sets the type of the component. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the table that will be created. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_table_composite_ad5fe673e371b94d98065b22c91b27cb2}\label{class_table_composite_ad5fe673e371b94d98065b22c91b27cb2} 
+\index{TableComposite@{TableComposite}!acceptOrReject@{acceptOrReject}}
+\index{acceptOrReject@{acceptOrReject}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{acceptOrReject()}{acceptOrReject()}}
+{\footnotesize\ttfamily bool Table\+Composite\+::accept\+Or\+Reject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Simulate accepting the service of a waiter once they arrive at your table. 
+
+\begin{DoxyReturn}{Returns}
+Returns the random boolean indicating whether the service was accepted or rejected. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_ad997603e71197e3e39ec0f3d6d522f32}\label{class_table_composite_ad997603e71197e3e39ec0f3d6d522f32} 
+\index{TableComposite@{TableComposite}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
+{\footnotesize\ttfamily void Table\+Composite\+::add\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})}
+
+
+
+Adds a component to the vector of children. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Either a customer of another table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_composite_af7a2b03e05e71c063f09355562e21fca}\label{class_table_composite_af7a2b03e05e71c063f09355562e21fca} 
+\index{TableComposite@{TableComposite}!assignWaiter@{assignWaiter}}
+\index{assignWaiter@{assignWaiter}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{assignWaiter()}{assignWaiter()}}
+{\footnotesize\ttfamily void Table\+Composite\+::assign\+Waiter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})}
+
+
+
+This function will assign the passed in waiter to this table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & This is the waiter that will be responsible for this table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_composite_a70e94830d077f8874546a68dfceef2cf}\label{class_table_composite_a70e94830d077f8874546a68dfceef2cf} 
+\index{TableComposite@{TableComposite}!attachObserver@{attachObserver}}
+\index{attachObserver@{attachObserver}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{attachObserver()}{attachObserver()}}
+{\footnotesize\ttfamily void Table\+Composite\+::attach\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function will attach an observer to the Observer\+List. This observer will watch this table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & This is the observer that will watch this table. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_component_af398cf8e26863834021965703bd1aa8b}{Table\+Component}}.
+
+\Hypertarget{class_table_composite_a9de25fbce030b3538eeec15248c211d6}\label{class_table_composite_a9de25fbce030b3538eeec15248c211d6} 
+\index{TableComposite@{TableComposite}!complexOrder@{complexOrder}}
+\index{complexOrder@{complexOrder}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{complexOrder()}{complexOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Table\+Composite\+::complex\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a vector of slightly more complex orders for all the customers that are sitting at the table. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of slightly more complex orders from the table. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_a48b4e3ef419d658a1fb903a6cba8ff97}\label{class_table_composite_a48b4e3ef419d658a1fb903a6cba8ff97} 
+\index{TableComposite@{TableComposite}!detachObserver@{detachObserver}}
+\index{detachObserver@{detachObserver}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{detachObserver()}{detachObserver()}}
+{\footnotesize\ttfamily void Table\+Composite\+::detach\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will detach an observer from the Observer\+List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & This is the observer that will be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_component_a683e5c93ac7954408554d56041311fd2}{Table\+Component}}.
+
+\Hypertarget{class_table_composite_a1cef7ed75ec4160647189977732a2ede}\label{class_table_composite_a1cef7ed75ec4160647189977732a2ede} 
+\index{TableComposite@{TableComposite}!eat@{eat}}
+\index{eat@{eat}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{eat()}{eat()}}
+{\footnotesize\ttfamily void Table\+Composite\+::eat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})}
+
+
+
+Simluates the customers eating their food. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & This is the order that was delivered to the table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_composite_a7444c15a53c63476d4e2007e528555fd}\label{class_table_composite_a7444c15a53c63476d4e2007e528555fd} 
+\index{TableComposite@{TableComposite}!getCapacity@{getCapacity}}
+\index{getCapacity@{getCapacity}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{getCapacity()}{getCapacity()}}
+{\footnotesize\ttfamily int Table\+Composite\+::get\+Capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the max capacity of the table We assumed that each table will have a max capacity of four (they are square) 
+
+\begin{DoxyReturn}{Returns}
+Returns the max capacity. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_af28915cf3686af6e3fafedd035b79769}\label{class_table_composite_af28915cf3686af6e3fafedd035b79769} 
+\index{TableComposite@{TableComposite}!getChild@{getChild}}
+\index{getChild@{getChild}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{getChild()}{getChild()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*} Table\+Composite\+::get\+Child (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+gets the child with the passed in id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the child that is being searched for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to the child that was searched for. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_a083b9db111576946d9428566bca4d889}\label{class_table_composite_a083b9db111576946d9428566bca4d889} 
+\index{TableComposite@{TableComposite}!getChildren@{getChildren}}
+\index{getChildren@{getChildren}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{getChildren()}{getChildren()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*} $>$ Table\+Composite\+::get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets all the children. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of all the children of the \doxylink{class_table_composite}{Table\+Composite}. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_ac41a41c72591fe9df76dedaae38d0c61}\label{class_table_composite_ac41a41c72591fe9df76dedaae38d0c61} 
+\index{TableComposite@{TableComposite}!getLabel@{getLabel}}
+\index{getLabel@{getLabel}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{getLabel()}{getLabel()}}
+{\footnotesize\ttfamily std\+::string Table\+Composite\+::get\+Label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a string of the Ids of combined tables (if any), as well as the customers that have seated at this table. 
+
+\begin{DoxyReturn}{Returns}
+Returns a formatted string used in our UI. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_af5a8be5eac066651311347641889c733}\label{class_table_composite_af5a8be5eac066651311347641889c733} 
+\index{TableComposite@{TableComposite}!getPayment@{getPayment}}
+\index{getPayment@{getPayment}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{getPayment()}{getPayment()}}
+{\footnotesize\ttfamily double Table\+Composite\+::get\+Payment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a bill, then returns the total of the respective bill. 
+
+\begin{DoxyReturn}{Returns}
+Returns the total price of the respective bill that was created. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_a83ec52ec32d33c76018bd0af70d2649b}\label{class_table_composite_a83ec52ec32d33c76018bd0af70d2649b} 
+\index{TableComposite@{TableComposite}!getTableState@{getTableState}}
+\index{getTableState@{getTableState}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{getTableState()}{getTableState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*} Table\+Composite\+::get\+Table\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the current state of the table. 
+
+\begin{DoxyReturn}{Returns}
+Returns a \doxylink{class_table_state}{Table\+State} pointer of the state. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_a5b5f63b8346f1b6dcc1fc235db97c432}\label{class_table_composite_a5b5f63b8346f1b6dcc1fc235db97c432} 
+\index{TableComposite@{TableComposite}!isContainedInAnotherTable@{isContainedInAnotherTable}}
+\index{isContainedInAnotherTable@{isContainedInAnotherTable}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{isContainedInAnotherTable()}{isContainedInAnotherTable()}}
+{\footnotesize\ttfamily bool Table\+Composite\+::is\+Contained\+In\+Another\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if a table is contained within another table. 
+
+\begin{DoxyReturn}{Returns}
+Returns a boolean indicating if a table is combined with another table. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_a00ecbdedf91a862156ed3347e1d77238}\label{class_table_composite_a00ecbdedf91a862156ed3347e1d77238} 
+\index{TableComposite@{TableComposite}!order@{order}}
+\index{order@{order}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{order()}{order()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Table\+Composite\+::order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a single order for all the customers that are sitting at the table. 
+
+\begin{DoxyReturn}{Returns}
+Returns the order that was created for the table. 
+\end{DoxyReturn}
+\Hypertarget{class_table_composite_aebdffe66e5776f2d07fcce4e5c65d31f}\label{class_table_composite_aebdffe66e5776f2d07fcce4e5c65d31f} 
+\index{TableComposite@{TableComposite}!removeComponent@{removeComponent}}
+\index{removeComponent@{removeComponent}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{removeComponent()}{removeComponent()}}
+{\footnotesize\ttfamily void Table\+Composite\+::remove\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_component}{Table\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})}
+
+
+
+Removes a component from the vector of children. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & Either a customer of another table. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_composite_a0ecc55c75eef774ff378e1c7e230771d}\label{class_table_composite_a0ecc55c75eef774ff378e1c7e230771d} 
+\index{TableComposite@{TableComposite}!request@{request}}
+\index{request@{request}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily void Table\+Composite\+::request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies a waiter observer that a table requires the waiters service. 
+
+
+
+Implements \mbox{\hyperlink{class_table_component_a44a5bd4b529f7b602103f532634351d5}{Table\+Component}}.
+
+\Hypertarget{class_table_composite_a0607a42c521a396ed1a08bd9400b0882}\label{class_table_composite_a0607a42c521a396ed1a08bd9400b0882} 
+\index{TableComposite@{TableComposite}!setMaxCapacity@{setMaxCapacity}}
+\index{setMaxCapacity@{setMaxCapacity}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{setMaxCapacity()}{setMaxCapacity()}}
+{\footnotesize\ttfamily void Table\+Composite\+::set\+Max\+Capacity (\begin{DoxyParamCaption}\item[{int}]{capacity }\end{DoxyParamCaption})}
+
+
+
+Sets the max capacity of a table. This function will be called every time we combine tables as this number will change every time we combine tables with each other. This indicates the maximum number of customers that may be seated at a specific table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & This is the passed in capacity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_composite_a570abec79f1f12175cbee5f5a863e7ec}\label{class_table_composite_a570abec79f1f12175cbee5f5a863e7ec} 
+\index{TableComposite@{TableComposite}!setTableState@{setTableState}}
+\index{setTableState@{setTableState}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{setTableState()}{setTableState()}}
+{\footnotesize\ttfamily void Table\+Composite\+::set\+Table\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*}}]{table\+State }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Changes the state of the table to the passed in parameter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+State} & Next state to change the table to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_table_composite_a693a1d320fc85dee46aba858bf6bfeb8}\label{class_table_composite_a693a1d320fc85dee46aba858bf6bfeb8} 
+\index{TableComposite@{TableComposite}!ultraComplexOrder@{ultraComplexOrder}}
+\index{ultraComplexOrder@{ultraComplexOrder}!TableComposite@{TableComposite}}
+\doxysubsubsection{\texorpdfstring{ultraComplexOrder()}{ultraComplexOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Table\+Composite\+::ultra\+Complex\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates a vector of very complex orders for all the customers that are sitting at the table. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of very complex orders from the table. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_table_composite_8h}{Table\+Composite.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_table_composite_8cpp}{Table\+Composite.\+cpp}}\end{DoxyCompactItemize}

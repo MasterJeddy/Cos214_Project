@@ -1,0 +1,164 @@
+\doxysection{Customer Class Reference}
+\hypertarget{class_customer}{}\label{class_customer}\index{Customer@{Customer}}
+Inheritance diagram for Customer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_customer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_customer_aaea8b3d534c411de73c4fadc26ae114c}\label{class_customer_aaea8b3d534c411de73c4fadc26ae114c} 
+{\bfseries Customer} (int id)
+\item 
+virtual void \mbox{\hyperlink{class_customer_a6d6873025f5ab3520e5887236160f8dc}{attach\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em This function will attach an observer to the observer\+List. This observer(specifically a maitre\+D) will watch this customer. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_customer_a48ae81925c15ee0300d253a0f53492b2}{detach\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)
+\begin{DoxyCompactList}\small\item\em This function will detach an observer from the observer\+List. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_customer_a46f9e8ac6e95c48d9f6a107f04096d2c}{request}} ()
+\begin{DoxyCompactList}\small\item\em Notifies a maitreD observer when a customer requests for a seat. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_customer_ac08b9635de48c6b396a01db525ef561b}{get\+Group\+Size}} ()
+\begin{DoxyCompactList}\small\item\em gets the group size that this customer is a part of(if any) \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_customer_ad3e40bf2a25f165ef57b13ac1e4bd305}{get\+Group}} ()
+\begin{DoxyCompactList}\small\item\em gets the vector of customers that this \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_customer_a0c5161c1039c1b1cba3936a0370136d3}{is\+Alone}} ()
+\begin{DoxyCompactList}\small\item\em This will return whether a customer is alone or not. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_a36ba8ba6538c518a0b8f1f42407b561a}{add\+To\+Group}} (\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*}frend)
+\begin{DoxyCompactList}\small\item\em This function will add a friend to the customers group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_table_component}{Table\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Table\+Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_component_a6ca27765a0e6922a1abac2f53a4f00aa}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the id of the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_component_ab1e1b3e56ea8dc3dab74c444aae02d08}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_table_component}{Table\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries id}
+\item 
+std\+::string {\bfseries type}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observer\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_customer_a36ba8ba6538c518a0b8f1f42407b561a}\label{class_customer_a36ba8ba6538c518a0b8f1f42407b561a} 
+\index{Customer@{Customer}!addToGroup@{addToGroup}}
+\index{addToGroup@{addToGroup}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{addToGroup()}{addToGroup()}}
+{\footnotesize\ttfamily void Customer\+::add\+To\+Group (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*}}]{frend }\end{DoxyParamCaption})}
+
+
+
+This function will add a friend to the customers group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frend} & this customer will be added to another customers group \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_customer_a6d6873025f5ab3520e5887236160f8dc}\label{class_customer_a6d6873025f5ab3520e5887236160f8dc} 
+\index{Customer@{Customer}!attachObserver@{attachObserver}}
+\index{attachObserver@{attachObserver}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{attachObserver()}{attachObserver()}}
+{\footnotesize\ttfamily void Customer\+::attach\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function will attach an observer to the observer\+List. This observer(specifically a maitre\+D) will watch this customer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & This is the observer that will watch this table. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_component_af398cf8e26863834021965703bd1aa8b}{Table\+Component}}.
+
+\Hypertarget{class_customer_a48ae81925c15ee0300d253a0f53492b2}\label{class_customer_a48ae81925c15ee0300d253a0f53492b2} 
+\index{Customer@{Customer}!detachObserver@{detachObserver}}
+\index{detachObserver@{detachObserver}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{detachObserver()}{detachObserver()}}
+{\footnotesize\ttfamily void Customer\+::detach\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This function will detach an observer from the observer\+List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & This is the observer that will be removed from the observer\+List. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_component_a683e5c93ac7954408554d56041311fd2}{Table\+Component}}.
+
+\Hypertarget{class_customer_ad3e40bf2a25f165ef57b13ac1e4bd305}\label{class_customer_ad3e40bf2a25f165ef57b13ac1e4bd305} 
+\index{Customer@{Customer}!getGroup@{getGroup}}
+\index{getGroup@{getGroup}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getGroup()}{getGroup()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*} $>$ Customer\+::get\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the vector of customers that this 
+
+\begin{DoxyReturn}{Returns}
+return the group of customers that this customer is part of 
+\end{DoxyReturn}
+\Hypertarget{class_customer_ac08b9635de48c6b396a01db525ef561b}\label{class_customer_ac08b9635de48c6b396a01db525ef561b} 
+\index{Customer@{Customer}!getGroupSize@{getGroupSize}}
+\index{getGroupSize@{getGroupSize}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{getGroupSize()}{getGroupSize()}}
+{\footnotesize\ttfamily int Customer\+::get\+Group\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+gets the group size that this customer is a part of(if any) 
+
+\begin{DoxyReturn}{Returns}
+integer representing the size of the group 
+\end{DoxyReturn}
+\Hypertarget{class_customer_a0c5161c1039c1b1cba3936a0370136d3}\label{class_customer_a0c5161c1039c1b1cba3936a0370136d3} 
+\index{Customer@{Customer}!isAlone@{isAlone}}
+\index{isAlone@{isAlone}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{isAlone()}{isAlone()}}
+{\footnotesize\ttfamily bool Customer\+::is\+Alone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This will return whether a customer is alone or not. 
+
+\begin{DoxyReturn}{Returns}
+This will return a boolean indicating if the customer is alone. 
+\end{DoxyReturn}
+\Hypertarget{class_customer_a46f9e8ac6e95c48d9f6a107f04096d2c}\label{class_customer_a46f9e8ac6e95c48d9f6a107f04096d2c} 
+\index{Customer@{Customer}!request@{request}}
+\index{request@{request}!Customer@{Customer}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily void Customer\+::request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies a maitreD observer when a customer requests for a seat. 
+
+
+
+Implements \mbox{\hyperlink{class_table_component_a44a5bd4b529f7b602103f532634351d5}{Table\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_customer_8h}{Customer.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_customer_8cpp}{Customer.\+cpp}}\end{DoxyCompactItemize}

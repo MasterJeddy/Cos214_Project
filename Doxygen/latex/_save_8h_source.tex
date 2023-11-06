@@ -1,0 +1,36 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Save.h}
+\hypertarget{_save_8h_source}{}\label{_save_8h_source}\mbox{\hyperlink{_save_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Save.h\ -\/\ Save\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_SAVE\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_SAVE\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_user_command_8h}{UserCommand.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_log_8h}{CommandLog.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logs_8h}{Logs.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_save}{Save}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ std::string*\ file;}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{class_command_log}{CommandLog}}*\ commandLog;}
+\DoxyCodeLine{00026\ \ \ \mbox{\hyperlink{class_logs}{Logs}}*\ logs;}
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_a455ddaa34119f423dbfeeb29fa7a2613}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_save_a455ddaa34119f423dbfeeb29fa7a2613}{execute}}(std::string*\ file);}
+\DoxyCodeLine{00037\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_save}{Save}}(\mbox{\hyperlink{class_command_log}{CommandLog}}*\ commandLog,\mbox{\hyperlink{class_logs}{Logs}}*\ logs,std::string*\ file\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{class_save_a9088efa91d67ebeea9f1f2ebe96ac2fc}{\string~Save}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_save_a22012c49fd23dbf0f00aa28798c8a9c2}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ COMMANDS\ \mbox{\hyperlink{class_save_abd0d7259ac508af035090c05c2376a3a}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_SAVE\_H}}
+
+\end{DoxyCode}

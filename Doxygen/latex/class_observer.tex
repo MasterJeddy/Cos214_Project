@@ -1,0 +1,125 @@
+\doxysection{Observer Class Reference}
+\hypertarget{class_observer}{}\label{class_observer}\index{Observer@{Observer}}
+Inheritance diagram for Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_observer_a19c43f80a38a332a6f694783df3c9835}\label{class_observer_a19c43f80a38a332a6f694783df3c9835} 
+{\bfseries Observer} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor for the observer class. \end{DoxyCompactList}\item 
+\Hypertarget{class_observer_a450645e61c136826f09940a1334c7f34}\label{class_observer_a450645e61c136826f09940a1334c7f34} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Observer} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor for the observer class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observer_ab2f0a2f0308e25b0b07a6fce55d5fdc3}{notify}} (\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*}customer)=0
+\begin{DoxyCompactList}\small\item\em called when a customer requests a seat \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_observer_a794533a85ab0b975cf7649fc73f2f23c}{notify}} (\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}table)=0
+\begin{DoxyCompactList}\small\item\em called when a table requests the waiter\textquotesingle{}s assistance \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_observer_aafb0cd1df693d1935a6b629a75b0c125}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets Id of the observer. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_observer_a0dd4dcbd7cd1f0601835ac05821ee648}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Returns the type of the observer. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_observer_a761820a72fc70a6aaa6074ede578dac7}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em Returns the state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_observer_a3b764c08bac90be39abc1297f1c4e815}\label{class_observer_a3b764c08bac90be39abc1297f1c4e815} 
+std\+::string {\bfseries id}
+\item 
+\Hypertarget{class_observer_ab2b754982ef3a55bcdac60da79d9b0a1}\label{class_observer_ab2b754982ef3a55bcdac60da79d9b0a1} 
+std\+::string {\bfseries type}
+\item 
+\Hypertarget{class_observer_a185aebae14bcbed47d50c1497d5afd56}\label{class_observer_a185aebae14bcbed47d50c1497d5afd56} 
+std\+::string {\bfseries state}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_observer_aafb0cd1df693d1935a6b629a75b0c125}\label{class_observer_aafb0cd1df693d1935a6b629a75b0c125} 
+\index{Observer@{Observer}!getId@{getId}}
+\index{getId@{getId}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::string Observer\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets Id of the observer. 
+
+\begin{DoxyReturn}{Returns}
+Returns id as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_observer_a761820a72fc70a6aaa6074ede578dac7}\label{class_observer_a761820a72fc70a6aaa6074ede578dac7} 
+\index{Observer@{Observer}!getState@{getState}}
+\index{getState@{getState}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string Observer\+::get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the state. 
+
+\begin{DoxyReturn}{Returns}
+Returns the state as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_observer_a0dd4dcbd7cd1f0601835ac05821ee648}\label{class_observer_a0dd4dcbd7cd1f0601835ac05821ee648} 
+\index{Observer@{Observer}!getType@{getType}}
+\index{getType@{getType}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Observer\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns the type of the observer. 
+
+\begin{DoxyReturn}{Returns}
+Returns type of observer as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_observer_ab2f0a2f0308e25b0b07a6fce55d5fdc3}\label{class_observer_ab2f0a2f0308e25b0b07a6fce55d5fdc3} 
+\index{Observer@{Observer}!notify@{notify}}
+\index{notify@{notify}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Observer\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*}}]{customer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+called when a customer requests a seat 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer} & the customer requesting a seat \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_maitre_d_a48620c6fbf7e639c41b17f8071c41083}{MaitreD}}, and \mbox{\hyperlink{class_waiter_a079be973e8512c7077525cb5d0884c40}{Waiter}}.
+
+\Hypertarget{class_observer_a794533a85ab0b975cf7649fc73f2f23c}\label{class_observer_a794533a85ab0b975cf7649fc73f2f23c} 
+\index{Observer@{Observer}!notify@{notify}}
+\index{notify@{notify}!Observer@{Observer}}
+\doxysubsubsection{\texorpdfstring{notify()}{notify()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void Observer\+::notify (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}}]{table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+called when a table requests the waiter\textquotesingle{}s assistance 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & the table that is currently requesting assistance \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_maitre_d_ab9c026fc7ff415db0512a922c13338d6}{MaitreD}}, and \mbox{\hyperlink{class_waiter_afe850746ad3c4a214c1c2476813abde6}{Waiter}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_observer_8h}{Observer.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_observer_8cpp}{Observer.\+cpp}}\end{DoxyCompactItemize}

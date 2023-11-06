@@ -1,0 +1,33 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Logs.h}
+\hypertarget{_logs_8h_source}{}\label{_logs_8h_source}\mbox{\hyperlink{_logs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Logs.h\ -\/\ Logs\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_LOGS\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_LOGS\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_saved_log_8h}{SavedLog.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_logs}{Logs}}\ \{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ std::map<std::string,SavedLog>*\ saves;}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{class_saved_log}{SavedLog}}*\ temp;}
+\DoxyCodeLine{00024\ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logs_a678fa1791c678be12a71466305b94bae}{dumpToFile}}(std::string\&\ file);}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{class_saved_log}{SavedLog}}\ *\ \mbox{\hyperlink{class_logs_ad3e0a5f62efebb38542bfbae2acc2a68}{loadFromFile}}(std::string\&\ file);}
+\DoxyCodeLine{00034\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_logs_acc1731ed56b0e8fd6124de10cfe73842}{tempSave}}(\mbox{\hyperlink{class_saved_log}{SavedLog}}*\ save);}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{class_saved_log}{SavedLog}}\ *\ \mbox{\hyperlink{class_logs_ae623f16a1c37e7091a062779996643fe}{loadTemp}}();}
+\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{class_logs_a3da76c4660ef9d321b11fce0100c002e}{Logs}}();}
+\DoxyCodeLine{00041\ \ \ \mbox{\hyperlink{class_logs_a6227976848fb64144ff93587479df43d}{\string~Logs}}();}
+\DoxyCodeLine{00042\ \};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_LOGS\_H}}
+
+\end{DoxyCode}

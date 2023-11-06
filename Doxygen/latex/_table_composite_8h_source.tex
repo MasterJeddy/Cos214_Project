@@ -1,0 +1,94 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Table\+Composite.h}
+\hypertarget{_table_composite_8h_source}{}\label{_table_composite_8h_source}\mbox{\hyperlink{_table_composite_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/TableComposite.h\ -\/\ TableComposite\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_TABLECOMPOSITE\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_TABLECOMPOSITE\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_table_component_8h}{TableComponent.h}}"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bill_component_8h}{BillComponent.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_order_8h}{Order.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_bill_composite_8h}{BillComposite.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_sub_bill_8h}{SubBill.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_constants_8h}{Constants.h}}"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_waiter}{Waiter}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table_state}{TableState}};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_table_composite}{TableComposite}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_table_component}{TableComponent}}}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00034\ \ \ \ \ std::vector<TableComponent\ *>\ children;}
+\DoxyCodeLine{00035\ \ \ \ \ std::string\ waiterId;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ maxCapacity;}
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{class_table_state}{TableState}}\ *tableState;}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_bill_component}{BillComponent}}\ *bill;}
+\DoxyCodeLine{00039\ \ \ \ \ std::vector<Order\ *>\ orders;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{int}\ numOfFinishedOrders;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \mbox{\hyperlink{class_table_composite}{TableComposite}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_table_composite_a86de56cab0cf2d8da841a12939a17e01}{\string~TableComposite}}();}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_ad997603e71197e3e39ec0f3d6d522f32}{addComponent}}(\mbox{\hyperlink{class_table_component}{TableComponent}}\ *component);}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_aebdffe66e5776f2d07fcce4e5c65d31f}{removeComponent}}(\mbox{\hyperlink{class_table_component}{TableComponent}}\ *component);}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a5eaf132661ff02cc65a1bbb14e29dfaa}{requestBill}}();}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_table_composite_a7444c15a53c63476d4e2007e528555fd}{getCapacity}}();}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{class_table_component}{TableComponent}}\ *\mbox{\hyperlink{class_table_composite_af28915cf3686af6e3fafedd035b79769}{getChild}}(std::string\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_table_state}{TableState}}\ *\mbox{\hyperlink{class_table_composite_a83ec52ec32d33c76018bd0af70d2649b}{getTableState}}();}
+\DoxyCodeLine{00078\ \ \ \ \ std::string\ \mbox{\hyperlink{class_table_composite_ac41a41c72591fe9df76dedaae38d0c61}{getLabel}}();}
+\DoxyCodeLine{00081\ \ \ \ \ std::vector<TableComponent\ *>\ \mbox{\hyperlink{class_table_composite_a083b9db111576946d9428566bca4d889}{getChildren}}();}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_table_composite_af5a8be5eac066651311347641889c733}{getPayment}}();}
+\DoxyCodeLine{00088\ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_table_composite_a5b5f63b8346f1b6dcc1fc235db97c432}{isContainedInAnotherTable}}();}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{comment}{//\ setters}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a0607a42c521a396ed1a08bd9400b0882}{setMaxCapacity}}(\textcolor{keywordtype}{int}\ capacity);}
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a570abec79f1f12175cbee5f5a863e7ec}{setTableState}}(\mbox{\hyperlink{class_table_state}{TableState}}\ *tableState);}
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_af7a2b03e05e71c063f09355562e21fca}{assignWaiter}}(\mbox{\hyperlink{class_waiter}{Waiter}}\ *waiter);}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{comment}{//\ observer\ dp\ related\ functions}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a70e94830d077f8874546a68dfceef2cf}{attachObserver}}(\mbox{\hyperlink{class_observer}{Observer}}\ *observer);}
+\DoxyCodeLine{00116\ \ \ \ \ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a48b4e3ef419d658a1fb903a6cba8ff97}{detachObserver}}(\mbox{\hyperlink{class_observer}{Observer}}\ *observer);}
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a0ecc55c75eef774ff378e1c7e230771d}{request}}();}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \ \ \ \ \textcolor{comment}{//\ accept\ or\ reject\ the\ service\ of\ a\ waiter}}
+\DoxyCodeLine{00123\ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_table_composite_ad5fe673e371b94d98065b22c91b27cb2}{acceptOrReject}}();}
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{comment}{//\ returns\ an\ order}}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{comment}{//\ calls\ the\ proceed()\ function}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00132\ \ \ \ \ \mbox{\hyperlink{struct_order}{Order}}*\ \mbox{\hyperlink{class_table_composite_a00ecbdedf91a862156ed3347e1d77238}{order}}();\ \textcolor{comment}{//\ may\ also\ add\ a\ complexOrder\ function}}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{comment}{//\ return\ a\ slightly\ more\ complex\ order}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00137\ \ \ \ \ \mbox{\hyperlink{struct_order}{Order}}\ *\mbox{\hyperlink{class_table_composite_a9de25fbce030b3538eeec15248c211d6}{complexOrder}}();}
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{comment}{//\ returns\ a\ complex\ order\ with\ quantities\ up\ to\ 20}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{struct_order}{Order}}\ *\mbox{\hyperlink{class_table_composite_a693a1d320fc85dee46aba858bf6bfeb8}{ultraComplexOrder}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \textcolor{comment}{//\ rejected\ service\ of\ the\ waiter}}
+\DoxyCodeLine{00144\ \ \ \ \ \textcolor{comment}{//\ calls\ the\ hold()\ function}}
+\DoxyCodeLine{00145\ \ \ \ \ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a72196b754711b3c97466d39123c0306c}{rejectedService}}();}
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_table_composite_a1cef7ed75ec4160647189977732a2ede}{eat}}(\mbox{\hyperlink{struct_order}{Order}}\ *\mbox{\hyperlink{class_table_composite_a00ecbdedf91a862156ed3347e1d77238}{order}});}
+\DoxyCodeLine{00152\ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface_g_u_i}{IOInterfaceGUI}};}
+\DoxyCodeLine{00153\ \};}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_waiter_8h}{Waiter.h}}"{}}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

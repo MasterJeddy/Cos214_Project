@@ -10,7 +10,7 @@
 #include "Clock.h"
 
 void IOInterfaceGUI::poll() {
-  if (this->Construct(1280,720,1,1,true))
+  if (this->Construct(1280,720,1,1,false))
       this->Start();
 }
 

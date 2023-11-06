@@ -1,0 +1,99 @@
+\doxysection{Waiting\+On\+Waiter Class Reference}
+\hypertarget{class_waiting_on_waiter}{}\label{class_waiting_on_waiter}\index{WaitingOnWaiter@{WaitingOnWaiter}}
+Inheritance diagram for Waiting\+On\+Waiter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_waiting_on_waiter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_waiting_on_waiter_ad7d837d9ff1b73734df9528ef5f958e0}{clone}} ()
+\begin{DoxyCompactList}\small\item\em This will return a clone of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_waiting_on_waiter_aa58a50b5484ae7c9bf13a21c026cfbfa}{proceed}} (\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}table\+Comp)
+\begin{DoxyCompactList}\small\item\em This will proceed to the next state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_waiting_on_waiter_ae830cacd102600f8fd1a6f09509e47a8}{hold}} (\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}table\+Comp)
+\begin{DoxyCompactList}\small\item\em This will hold to the relevant state. \end{DoxyCompactList}\item 
+\Hypertarget{class_waiting_on_waiter_a4994bc3781c434dddee21a560a7eb848}\label{class_waiting_on_waiter_a4994bc3781c434dddee21a560a7eb848} 
+{\bfseries Waiting\+On\+Waiter} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor the \doxylink{class_waiting_on_waiter}{Waiting\+On\+Waiter} state class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_table_state}{Table\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Table\+State} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor for table state. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+State} ()=0
+\begin{DoxyCompactList}\small\item\em This is a destructor of the table state. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_table_state_ad50ca4d56c78dc348bbeb7af6f9097ed}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_table_state}{Table\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_waiting_on_waiter_ad7d837d9ff1b73734df9528ef5f958e0}\label{class_waiting_on_waiter_ad7d837d9ff1b73734df9528ef5f958e0} 
+\index{WaitingOnWaiter@{WaitingOnWaiter}!clone@{clone}}
+\index{clone@{clone}!WaitingOnWaiter@{WaitingOnWaiter}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*} Waiting\+On\+Waiter\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will return a clone of the state. 
+
+\begin{DoxyReturn}{Returns}
+This will return a clone of the current state as a \doxylink{class_table_state}{Table\+State} pointer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_table_state_a03ac9e0dc7cc390e76def630bf049945}{Table\+State}}.
+
+\Hypertarget{class_waiting_on_waiter_ae830cacd102600f8fd1a6f09509e47a8}\label{class_waiting_on_waiter_ae830cacd102600f8fd1a6f09509e47a8} 
+\index{WaitingOnWaiter@{WaitingOnWaiter}!hold@{hold}}
+\index{hold@{hold}!WaitingOnWaiter@{WaitingOnWaiter}}
+\doxysubsubsection{\texorpdfstring{hold()}{hold()}}
+{\footnotesize\ttfamily void Waiting\+On\+Waiter\+::hold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}}]{table\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will hold to the relevant state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Comp} & This is the table composite that needs to transition. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_state_a1f6ada499c00ef81f53ecd68558d68c5}{Table\+State}}.
+
+\Hypertarget{class_waiting_on_waiter_aa58a50b5484ae7c9bf13a21c026cfbfa}\label{class_waiting_on_waiter_aa58a50b5484ae7c9bf13a21c026cfbfa} 
+\index{WaitingOnWaiter@{WaitingOnWaiter}!proceed@{proceed}}
+\index{proceed@{proceed}!WaitingOnWaiter@{WaitingOnWaiter}}
+\doxysubsubsection{\texorpdfstring{proceed()}{proceed()}}
+{\footnotesize\ttfamily void Waiting\+On\+Waiter\+::proceed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}}]{table\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will proceed to the next state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Comp} & This is the table composite that needs to transition state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_state_a4f4a676a996f485a7bd7eb7eaf14fded}{Table\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_waiting_on_waiter_8h}{Waiting\+On\+Waiter.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_waiting_on_waiter_8cpp}{Waiting\+On\+Waiter.\+cpp}}\end{DoxyCompactItemize}

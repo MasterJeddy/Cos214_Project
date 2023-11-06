@@ -1,0 +1,7 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Commands.cpp File Reference}
+\hypertarget{_commands_8cpp}{}\label{_commands_8cpp}\index{C:/Dev/COS214/Project/Commands.cpp@{C:/Dev/COS214/Project/Commands.cpp}}
+{\ttfamily \#include "{}Commands.\+h"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation of several concrete commands in the command pattern. Specifically \doxylink{class_hire_maitre_d}{Hire\+MaitreD}, \doxylink{class_buy_table}{Buy\+Table}, \doxylink{class_expand_floor}{Expand\+Floor}, \doxylink{class_hire_waiter}{Hire\+Waiter}, \doxylink{class_expand_kitchen}{Expand\+Kitchen}, \doxylink{class_hire_chef}{Hire\+Chef} and \doxylink{class_buy_stock}{Buy\+Stock}. What these commands all have in common is that they will simple call corresponding functions on the \doxylink{class_kitchen_controller}{Kitchen\+Controller} and \doxylink{class_floor_controller}{Floor\+Controller} facades. e.\+g. \doxylink{class_buy_stock}{Buy\+Stock} will call the buy\+Stock method on \doxylink{class_kitchen_controller}{Kitchen\+Controller}. 

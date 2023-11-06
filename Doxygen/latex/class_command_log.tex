@@ -1,0 +1,107 @@
+\doxysection{Command\+Log Class Reference}
+\hypertarget{class_command_log}{}\label{class_command_log}\index{CommandLog@{CommandLog}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_command_log_ac61e932bfabac37afac3c55689f6a7ed}{load}} (\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*}log)
+\begin{DoxyCompactList}\small\item\em Loads \doxylink{class_saved_log}{Saved\+Log} and rolls \doxylink{class_i_o_interface}{IOInterface} to it. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_command_log_a9757ac039d30af3d9bff87c9a5197a4f}{save}} ()
+\begin{DoxyCompactList}\small\item\em Create a \doxylink{class_saved_log}{Saved\+Log} from the current\+Log. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_command_log_a6eb928a95dcb7f002bb34de5225b143f}{add\+Entry}} (\mbox{\hyperlink{class_user_command}{User\+Command}} \texorpdfstring{$\ast$}{*}com)
+\begin{DoxyCompactList}\small\item\em Appends a new command to the log. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_command_log_ac963856f76ddaf4db50b3f259df2f2b4}{Command\+Log}} (\mbox{\hyperlink{class_i_o_interface}{IOInterface}} \texorpdfstring{$\ast$}{*}input\+Poll)
+\begin{DoxyCompactList}\small\item\em The constructor of the \doxylink{class_command_log}{Command\+Log} class. \end{DoxyCompactList}\item 
+\Hypertarget{class_command_log_a293c84bde955f5e58a91481454a7adba}\label{class_command_log_a293c84bde955f5e58a91481454a7adba} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Command\+Log} ()
+\begin{DoxyCompactList}\small\item\em The destructor of the \doxylink{class_command_log}{Command\+Log}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_command_log_iterator}{Command\+Log\+Iterator}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_command_log_a71aed4f4962b5e7334140642cfc34c60}{create\+Iterator}} ()
+\begin{DoxyCompactList}\small\item\em Creates and iterator so other classes can traverse the commands in command\+Log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_command_log_ad1019c221fa4adc28a006a55da778c4e}\label{class_command_log_ad1019c221fa4adc28a006a55da778c4e} 
+class {\bfseries Command\+Log\+Iterator}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_log_ac963856f76ddaf4db50b3f259df2f2b4}\label{class_command_log_ac963856f76ddaf4db50b3f259df2f2b4} 
+\index{CommandLog@{CommandLog}!CommandLog@{CommandLog}}
+\index{CommandLog@{CommandLog}!CommandLog@{CommandLog}}
+\doxysubsubsection{\texorpdfstring{CommandLog()}{CommandLog()}}
+{\footnotesize\ttfamily Command\+Log\+::\+Command\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_i_o_interface}{IOInterface}} \texorpdfstring{$\ast$}{*}}]{input\+Poll }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+The constructor of the \doxylink{class_command_log}{Command\+Log} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Poll} & The Input\+Poll to which the \doxylink{class_command_log}{Command\+Log} is bound \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_log_a6eb928a95dcb7f002bb34de5225b143f}\label{class_command_log_a6eb928a95dcb7f002bb34de5225b143f} 
+\index{CommandLog@{CommandLog}!addEntry@{addEntry}}
+\index{addEntry@{addEntry}!CommandLog@{CommandLog}}
+\doxysubsubsection{\texorpdfstring{addEntry()}{addEntry()}}
+{\footnotesize\ttfamily void Command\+Log\+::add\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_user_command}{User\+Command}} \texorpdfstring{$\ast$}{*}}]{com }\end{DoxyParamCaption})}
+
+
+
+Appends a new command to the log. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em com} & The command to be appended \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_command_log_a71aed4f4962b5e7334140642cfc34c60}\label{class_command_log_a71aed4f4962b5e7334140642cfc34c60} 
+\index{CommandLog@{CommandLog}!createIterator@{createIterator}}
+\index{createIterator@{createIterator}!CommandLog@{CommandLog}}
+\doxysubsubsection{\texorpdfstring{createIterator()}{createIterator()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_command_log_iterator}{Command\+Log\+Iterator}} \texorpdfstring{$\ast$}{*} Command\+Log\+::create\+Iterator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Creates and iterator so other classes can traverse the commands in command\+Log. 
+
+\begin{DoxyReturn}{Returns}
+The iterator created Note\+: must be deleted by caller 
+\end{DoxyReturn}
+\Hypertarget{class_command_log_ac61e932bfabac37afac3c55689f6a7ed}\label{class_command_log_ac61e932bfabac37afac3c55689f6a7ed} 
+\index{CommandLog@{CommandLog}!load@{load}}
+\index{load@{load}!CommandLog@{CommandLog}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void Command\+Log\+::load (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*}}]{log }\end{DoxyParamCaption})}
+
+
+
+Loads \doxylink{class_saved_log}{Saved\+Log} and rolls \doxylink{class_i_o_interface}{IOInterface} to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & The \doxylink{class_saved_log}{Saved\+Log} to be loaded to. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_command_log_a9757ac039d30af3d9bff87c9a5197a4f}\label{class_command_log_a9757ac039d30af3d9bff87c9a5197a4f} 
+\index{CommandLog@{CommandLog}!save@{save}}
+\index{save@{save}!CommandLog@{CommandLog}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_saved_log}{Saved\+Log}} \texorpdfstring{$\ast$}{*} Command\+Log\+::save (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Create a \doxylink{class_saved_log}{Saved\+Log} from the current\+Log. 
+
+\begin{DoxyReturn}{Returns}
+The \doxylink{class_saved_log}{Saved\+Log} created Note\+: must deleted by caller 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_command_log_8h}{Command\+Log.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_command_log_8cpp}{Command\+Log.\+cpp}}\end{DoxyCompactItemize}

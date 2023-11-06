@@ -1,0 +1,103 @@
+\doxysection{Bill\+Component Class Reference}
+\hypertarget{class_bill_component}{}\label{class_bill_component}\index{BillComponent@{BillComponent}}
+Inheritance diagram for Bill\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_bill_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_bill_component_a4a75aaf95cafaa5be0cdc880193c131c}\label{class_bill_component_a4a75aaf95cafaa5be0cdc880193c131c} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Bill\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the billcomponent class. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_bill_component_a61a9199fdf4e42bd46704c2a55578cc7}{add}} (\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}component)=0
+\begin{DoxyCompactList}\small\item\em Adds a component to the children vector. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_bill_component_aeed5cba288fa3b3e6d8f06ca4c317030}{remove}} (\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}component)=0
+\begin{DoxyCompactList}\small\item\em Removes a component from the children vector. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_bill_component_a78fba13f6ec50a1f4c4f28a4fe380e20}{get\+Total}} ()=0
+\begin{DoxyCompactList}\small\item\em Gets the total of the bill. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_bill_component_adab7f8c737efea23650b60ac55664af1}{get\+Name}} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the name of the bill. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_bill_component_a61a9199fdf4e42bd46704c2a55578cc7}\label{class_bill_component_a61a9199fdf4e42bd46704c2a55578cc7} 
+\index{BillComponent@{BillComponent}!add@{add}}
+\index{add@{add}!BillComponent@{BillComponent}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily virtual void Bill\+Component\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds a component to the children vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & This is the subbill/bill\+Composite that will be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_bill_composite_a1611d8398c6ca67e64d86ff8faf0cf9b}{Bill\+Composite}}, and \mbox{\hyperlink{class_sub_bill_a587bf5f8d27ed2373997a395aaebf02c}{Sub\+Bill}}.
+
+\Hypertarget{class_bill_component_adab7f8c737efea23650b60ac55664af1}\label{class_bill_component_adab7f8c737efea23650b60ac55664af1} 
+\index{BillComponent@{BillComponent}!getName@{getName}}
+\index{getName@{getName}!BillComponent@{BillComponent}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily virtual std\+::string Bill\+Component\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the name of the bill. 
+
+\begin{DoxyReturn}{Returns}
+Returns the name of the bill as a string. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_bill_composite_ada6f5b537a4a81c87b417cc140b92c5d}{Bill\+Composite}}, and \mbox{\hyperlink{class_sub_bill_a40b459805ab6bdebbfd2c9e34117fd44}{Sub\+Bill}}.
+
+\Hypertarget{class_bill_component_a78fba13f6ec50a1f4c4f28a4fe380e20}\label{class_bill_component_a78fba13f6ec50a1f4c4f28a4fe380e20} 
+\index{BillComponent@{BillComponent}!getTotal@{getTotal}}
+\index{getTotal@{getTotal}!BillComponent@{BillComponent}}
+\doxysubsubsection{\texorpdfstring{getTotal()}{getTotal()}}
+{\footnotesize\ttfamily virtual double Bill\+Component\+::get\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets the total of the bill. 
+
+\begin{DoxyReturn}{Returns}
+Returns a double of the total of the bill. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_bill_composite_a714e38ced7563b2985878465042e8dbf}{Bill\+Composite}}, and \mbox{\hyperlink{class_sub_bill_abb20aa13030854fdb5093ba95da40b93}{Sub\+Bill}}.
+
+\Hypertarget{class_bill_component_aeed5cba288fa3b3e6d8f06ca4c317030}\label{class_bill_component_aeed5cba288fa3b3e6d8f06ca4c317030} 
+\index{BillComponent@{BillComponent}!remove@{remove}}
+\index{remove@{remove}!BillComponent@{BillComponent}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily virtual void Bill\+Component\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Removes a component from the children vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & This is the subbill/bill\+Composite that will be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_bill_composite_a6b4a9a188bc53bb79701954bdc7b0c42}{Bill\+Composite}}, and \mbox{\hyperlink{class_sub_bill_aef78ff035f69e58f39f76229e762e943}{Sub\+Bill}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_bill_component_8h}{Bill\+Component.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_bill_component_8cpp}{Bill\+Component.\+cpp}}\end{DoxyCompactItemize}

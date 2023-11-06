@@ -1,0 +1,7 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Command\+Log.cpp File Reference}
+\hypertarget{_command_log_8cpp}{}\label{_command_log_8cpp}\index{C:/Dev/COS214/Project/CommandLog.cpp@{C:/Dev/COS214/Project/CommandLog.cpp}}
+{\ttfamily \#include "{}Command\+Log.\+h"{}}\newline
+
+
+\doxysubsection{Detailed Description}
+This file contains the implementation of the \doxylink{class_command_log}{Command\+Log} class. \doxylink{class_command_log}{Command\+Log} will serve as an originator in the memento pattern. As the Event\+Poll emits commands this class will log them. This log can be used by the Event\+Poll to be rolled back to. In practise this will mean all commands in the log will have to be rerun by the system at a much faster rate than usual play. 
