@@ -14,7 +14,6 @@ Order *ButcherChef::handleOrder(Order *order) {
     Burger* ingredient = new BeefPatty();
     // ingredient.prepare();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->beefPatty--;
   }
@@ -22,7 +21,6 @@ Order *ButcherChef::handleOrder(Order *order) {
     Burger* ingredient = new VeganPatty();
     // ingredient.prepare();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->veganPatty--;
   }
@@ -30,7 +28,6 @@ Order *ButcherChef::handleOrder(Order *order) {
     Burger* ingredient = new ChickenPatty();
     // ingredient.prepare();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->chickenPatty--;
   }
