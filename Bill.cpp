@@ -16,7 +16,13 @@ Bill::Bill(){
     this->name = "Bill";
 }
 
-void Bill::proceed(TableComposite* tableComp){
+TableState *Bill::clone()
+{
+    return new Bill();
+}
+
+void Bill::proceed(TableComposite *tableComp)
+{
     TableState* tempy = new Free();
     tableComp->setTableState(tempy);
 }

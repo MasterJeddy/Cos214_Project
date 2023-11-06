@@ -50,13 +50,17 @@ public:
     int getCapacity();
     TableComponent *getChild(std::string id);
     virtual TableState *getTableState();
+    std::string getLabel();
+    std::vector<TableComponent *> getChildren();
 
     virtual double getPayment();
+
+    bool isContainedInAnotherTable();
 
     // setters
     void setMaxCapacity(int capacity);
     virtual void setTableState(TableState *tableState);
-    void assignWaiter(Waiter* waiter);
+    void assignWaiter(Waiter *waiter);
 
     // observer dp related functions
     virtual void attachObserver(Observer *observer);
@@ -75,7 +79,7 @@ public:
     // rejected service of the waiter
     // calls the hold() function
     void rejectedService();
-    void eat(Order* order);
+    void eat(Order *order);
     friend class IOInterfaceGUI;
 };
 #include "Waiter.h"

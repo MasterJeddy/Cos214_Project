@@ -16,7 +16,13 @@ Eating::Eating(){
     this->name = "Eating";
 }
 
-void Eating::proceed(TableComposite* tableComp){
+TableState *Eating::clone()
+{
+    return new Eating();
+}
+
+void Eating::proceed(TableComposite *tableComp)
+{
     TableState* tempy = new Bill();
     tableComp->setTableState(tempy);
 }

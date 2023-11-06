@@ -107,19 +107,25 @@ void Floor::requestSeat()
 
     nextCustomer->request();
 
-    for (auto table:tables){
-        if (table->getTableState()->getName() == "Eating") {
-            if (Clock::instance().getTime(table->getId()) >3){
+    for (auto table : tables)
+    {
+        if (table->getTableState()->getName() == "Eating")
+        {
+            if (Clock::instance().getTime(table->getId()) > 3)
+            {
                 Clock::instance().removeTime(table->getId());
                 table->requestBill();
             }
         }
-        if (table->getTableState()->getName() == "Bill" || table->getTableState()->getName() == "Busy"){
-            if (Clock::instance().getTime(table->getId())>2){
+        if (table->getTableState()->getName() == "Bill" || table->getTableState()->getName() == "Busy")
+        {
+            if (Clock::instance().getTime(table->getId()) > 2)
+            {
                 table->request();
             }
         }
     }
+ 
 }
 
 bool Floor::seatCustomer(Customer *customer)
@@ -127,19 +133,19 @@ bool Floor::seatCustomer(Customer *customer)
 
     // if you manage to seat a customer group at a table then you return true
     int size = customer->getGroupSize();
-    if (size != 0)
+    if (size > 4)
     {
         // loop through the group and seat each person down - once done you may return true
         // check the number of tables needed for this group
 
-        int idealSize;
+        int idealSize = 0;
         if (size % 2 == 0)
         {
             idealSize = size;
         }
         else
         {
-            idealSize++;
+            idealSize = ++size;
         }
         // idealSize is just an integer that is used to calculate the number of tables that we would need to combine for this group
         // easier to calculate when the number is even as the function goes up in two's i.e 4, 6, 8, 10, 12.
@@ -174,15 +180,16 @@ bool Floor::seatCustomer(Customer *customer)
             // we are able to seat this group of customers
             TableComposite *mainTable;
 
-            for (TableComposite *table : tables)
+            for (TableComposite *table : this->tables)
             {
+
                 if (table->getTableState()->getName() == "Free")
                 {
                     mainTable = table;
                     break;
                 }
             }
-
+            numTables--;
             for (TableComposite *table : tables)
             {
                 if (table->getTableState()->getName() == "Free" && table != mainTable && numTables != 0)
@@ -193,11 +200,12 @@ bool Floor::seatCustomer(Customer *customer)
             }
 
             // once all the tables have been combined - we add the customers
-            for (Customer *customer : customer->getGroup())
+            for (Customer *custom : customer->getGroup())
             {
-                mainTable->addComponent(customer);
+                mainTable->addComponent(custom);
             }
             mainTable->request();
+            return true;
 
             // once the bill is settles the TableComposite will call a function to clear the children and 'revert' back to the
             // original position of having separate tables that are not combined together
@@ -216,6 +224,23 @@ bool Floor::seatCustomer(Customer *customer)
             }
         }
     }
+    else
+    {
+        for (TableComposite *table : tables)
+        {
+            if (table->getTableState()->getName() == "Free") // loop through all the tables and stop when you find a free one
+            {
+                for (Customer *child : customer->getGroup())
+                {
+                    table->addComponent(child);
+                }
+
+                table->request();
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
 void Floor::dequeueCustomer()
@@ -242,8 +267,32 @@ void Floor::addWaitingCustomer()
 {
     int thisCustomerId = getAndIncrementWaitingCustomerId();
     Customer *waitingCustomer = new Customer(thisCustomerId);
+
+    int numOfFriends = (rand() % CUSTOMER_MAX_NO_FRIENDS); // generate a random number of friends from 0 to max_no_friends
+
+    // if this customer has friends, then add them to this customer's group list
+    if (numOfFriends >= 0)
+    {
+        waitingCustomer->addToGroup(waitingCustomer);
+        for (int i = 0; i < 5; i++)
+        {
+            waitingCustomer->addToGroup(new Customer(getAndIncrementWaitingCustomerId()));
+        }
+    }
+
     this->waitingCustomers.push(waitingCustomer);
-    waitingCustomer->attachObserver(this->getRandomMaitreD());
+
+    MaitreD *freeMaitreD = this->getRandomMaitreD();
+
+    if (freeMaitreD == nullptr)
+    {
+        std::cout << "Please wait, all maitreDs are currenly busy." << std::endl;
+        return;
+    }
+
+    // std::cout << "***************** SEGFAULT HERE in addWaitingCustomer Floor *******************" << std::endl;
+
+    waitingCustomer->attachObserver(freeMaitreD);
 }
 
 MaitreD *Floor::getRandomMaitreD()
@@ -498,70 +547,71 @@ void Floor::removeTable(std::string id)
     }
 }
 
-void Floor::reset() {
-  //clear data
-  for (Waiter *waiter : this->waiters)
-  {
-    delete waiter;
-    waiter = NULL;
-  }
-  this->waiters.clear(); // now clear the waiters vector
+void Floor::reset()
+{
+    // clear data
+    for (Waiter *waiter : this->waiters)
+    {
+        delete waiter;
+        waiter = NULL;
+    }
+    this->waiters.clear(); // now clear the waiters vector
 
-  // delete the waitingCustomers pointers
-  while (!this->waitingCustomers.empty())
-  {
-    Customer *customer = this->waitingCustomers.front(); // get customer at front of queue
-    this->waitingCustomers.pop();                        // remove from queue
-    delete customer;                                     // delete this customer pointer
-    customer = NULL;
-  }
+    // delete the waitingCustomers pointers
+    while (!this->waitingCustomers.empty())
+    {
+        Customer *customer = this->waitingCustomers.front(); // get customer at front of queue
+        this->waitingCustomers.pop();                        // remove from queue
+        delete customer;                                     // delete this customer pointer
+        customer = NULL;
+    }
 
-  // delete the maitreD pointers
-  for (MaitreD *maitreD : this->maitreDs)
-  {
-    delete maitreD;
-    maitreD = NULL;
-  }
-  this->maitreDs.clear(); // now clear the maitreDs vector
+    // delete the maitreD pointers
+    for (MaitreD *maitreD : this->maitreDs)
+    {
+        delete maitreD;
+        maitreD = NULL;
+    }
+    this->maitreDs.clear(); // now clear the maitreDs vector
 
-  // delete the table pointers
-  for (TableComposite *table : this->tables)
-  {
-    delete table;
-    table = NULL;
-  }
-  this->tables.clear(); // now clear the tables vector
+    // delete the table pointers
+    for (TableComposite *table : this->tables)
+    {
+        delete table;
+        table = NULL;
+    }
+    this->tables.clear(); // now clear the tables vector
 
-  //Create new data
-  this->salesRevenue = 0.0;
+    // Create new data
+    this->salesRevenue = 0.0;
 
-  this->waiterId = 0;
-  this->waitingCustomerId = 0;
-  this->maitreDId = 0;
-  this->tableId = 0;
+    this->waiterId = 0;
+    this->waitingCustomerId = 0;
+    this->maitreDId = 0;
+    this->tableId = 0;
 
-  // create the initial default number of waiters in the game
-  for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
-  {
-    addWaiter();
-  }
+    // create the initial default number of waiters in the game
+    for (int i = 0; i < DEFAULT_NO_WAITERS; i++)
+    {
+        addWaiter();
+    }
 
-  // create initial default number of maitreDs in the game
-  for (int i = 0; i < DEFAULT_NO_MAITREDS; i++)
-  {
-    addMaitreD();
-  }
+    // create initial default number of maitreDs in the game
+    for (int i = 0; i < DEFAULT_NO_MAITREDS; i++)
+    {
+        addMaitreD();
+    }
 
-  // create initial default number of tables in the game
-  for (int i = 0; i < DEFAULT_NO_TABLES; i++)
-  {
-    addTable();
-  }
+    // create initial default number of tables in the game
+    for (int i = 0; i < DEFAULT_NO_TABLES; i++)
+    {
+        addTable();
+    }
 
-  // needs to be done last so that maitreD observers can be attached to customer objects
-  //  create initial default number of customers in the game
-  for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
-  {
-    addWaitingCustomer();
-  }
+    // needs to be done last so that maitreD observers can be attached to customer objects
+    //  create initial default number of customers in the game
+    for (int i = 0; i < DEFAULT_NO_WAITING_CUSTOMERS; i++)
+    {
+        addWaitingCustomer();
+    }
 }

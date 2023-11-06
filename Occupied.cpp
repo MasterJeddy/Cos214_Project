@@ -16,7 +16,13 @@ Occupied::Occupied(){
     this->name = "Occupied";
 }
 
-void Occupied::proceed(TableComposite* tableComp){
+TableState *Occupied::clone()
+{
+    return new Occupied();
+}
+
+void Occupied::proceed(TableComposite *tableComp)
+{
     TableState* tempy = new WaitingOnWaiter();
     tableComp->setTableState(tempy);
 }

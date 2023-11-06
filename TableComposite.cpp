@@ -47,12 +47,7 @@ TableComposite::~TableComposite()
     delete this->bill;
     this->bill = nullptr;
 
-    // delete all the TableComponent children pointers
-    for (TableComponent *component : this->children)
-    {
-        delete component;
-        component = nullptr;
-    }
+    // clear all the TableComponent children pointers, memory clenup will be done by floor class
     this->children.clear(); // finally clear the vector of tableComponent pointers
 }
 
@@ -133,6 +128,30 @@ TableState *TableComposite::getTableState()
     return this->tableState;
 }
 
+std::string TableComposite::getLabel()
+{
+    std::string resultLabel = "";
+    std::string tableLabels = this->id;
+    std::string customerLabels = "";
+    for (TableComponent *component : this->children)
+    {
+        if (component->getType() == TYPE_TABLECOMPOSITE)
+        {
+            tableLabels += "+" + component->getId();
+        }
+        else
+        {
+            customerLabels += " " + component->getId();
+        }
+    }
+
+    tableLabels += " " + this->tableState->getName();
+
+    resultLabel = tableLabels + customerLabels;
+
+    return resultLabel;
+}
+
 double TableComposite::getPayment()
 {
     BillComponent *mainBill = new BillComposite("Main-Bill");
@@ -148,40 +167,59 @@ double TableComposite::getPayment()
     // this will transition the state from the bill state to the free state
     this->getTableState()->proceed(this);
     // this will set the state to the free state
-    //this->setTableState(this->getTableState());
+    // this->setTableState(this->getTableState());
     // loop through all of the children and set
     // their state to the free state
 
-    std::queue<TableComponent*> toRemove;
+    std::queue<TableComponent *> toRemove;
 
     for (TableComponent *child : children)
     {
         if (child->getType() == TYPE_TABLECOMPOSITE)
         {
-            child->getTableState()->proceed(this);
-        } else {
-          toRemove.push(child);
+            TableComposite *childTable = static_cast<TableComposite *>(child);
+            childTable->getTableState()->proceed(this);
+        }
+        else
+        {
+            toRemove.push(child);
         }
     }
 
-      while (!toRemove.empty()){
+    while (!toRemove.empty())
+    {
         removeComponent(toRemove.front());
         toRemove.pop();
-      }
+    }
 
     // return the total amount of the entire bill
     return mainBill->getTotal();
+}
+
+bool TableComposite::isContainedInAnotherTable()
+{
+    if (this->tableState->getName() != "Free" && this->getChildren().size() == 0)
+    {
+        // means this table is a child of another table
+        return true;
+    }
+    return false;
 }
 
 void TableComposite::setTableState(TableState *tableState)
 {
     delete this->tableState;
     this->tableState = tableState;
-    // loop through all of the children
-    //  and then set all of their states
+
+    // // loop through all of the children
+    // //  and then set all of their states
     for (TableComponent *child : children)
     {
-        child->setTableState(tableState);
+        if (child->getType() == TYPE_TABLECOMPOSITE)
+        {
+            TableComposite *childTable = static_cast<TableComposite *>(child);
+            childTable->setTableState(this->tableState->clone());
+        }
     }
 }
 
@@ -200,8 +238,9 @@ void TableComposite::request()
         {
             // notify this waiter
             // proceed the state of the table
-            if (this->getTableState()->getName()!="Bill"){
-              this->getTableState()->proceed(this);
+            if (this->getTableState()->getName() != "Bill")
+            {
+                this->getTableState()->proceed(this);
             }
             observer->notify(this);
             break;
@@ -257,7 +296,7 @@ Order *TableComposite::order()
 {
 
     // change state by calling the proceed function
-    //tableState->proceed(this);
+    // tableState->proceed(this);
     // create an order and return it
     Order *order = new Order(this->getId());
 
@@ -345,4 +384,9 @@ void TableComposite::eat(Order *order)
             break;
         }
     }
+}
+
+std::vector<TableComponent *> TableComposite::getChildren()
+{
+    return this->children;
 }

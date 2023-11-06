@@ -19,6 +19,7 @@ class Occupied : public TableState
 {
 
 public:
+    virtual TableState *clone();
     virtual void proceed(TableComposite *tableComp);
     virtual void hold(TableComposite *tableComp);
     Occupied();

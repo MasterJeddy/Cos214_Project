@@ -18,8 +18,11 @@ const std::string TYPE_WAITER = "W_";
 const std::string TYPE_CUSTOMER = "CU_";
 const std::string TYPE_TABLECOMPOSITE = "TC_";
 
-const int DEFAULT_NO_TABLES = 10;
-const int DEFAULT_NO_WAITERS = 10;
+const int DEFAULT_NO_TABLES = 12;
+const int DEFAULT_NO_WAITERS = 3;
 const int DEFAULT_NO_WAITING_CUSTOMERS = 10;
 const int DEFAULT_NO_MAITREDS = 3;
+
+const int CUSTOMER_MAX_NO_FRIENDS = 8;
+
 #endif

@@ -23,15 +23,12 @@
 class Customer : public TableComponent
 {
 private:
-    // std::string name;
-    std::vector<Customer *> group; // also includes this customer
+    std::vector<Customer *> group; // if not empty then also includes this customer
+    bool alone;
 
 public:
     Customer(int id);
     virtual ~Customer();
-    // Customer(int id, std::string name);
-    Customer(int id, std::vector<Customer *> friends);
-    // Customer(int id, std::string name, std::vector<Customer *> friends);
 
     virtual void attachObserver(Observer *observer);
     virtual void detachObserver(Observer *observer);
@@ -40,6 +37,9 @@ public:
     // getters
     int getGroupSize();
     std::vector<Customer *> getGroup();
+    bool isAlone();
+
+    void addToGroup(Customer *frend);
 };
 
 #endif

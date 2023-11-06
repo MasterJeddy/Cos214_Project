@@ -16,7 +16,13 @@ WaitingOnWaiter::WaitingOnWaiter(){
     this->name = "WaitingOnWaiter";
 }
 
-void WaitingOnWaiter::proceed(TableComposite* tableComp){
+TableState *WaitingOnWaiter::clone()
+{
+    return new WaitingOnWaiter();
+}
+
+void WaitingOnWaiter::proceed(TableComposite *tableComp)
+{
     TableState* tempy = new WaitingOnFood();
     tableComp->setTableState(tempy);
 }

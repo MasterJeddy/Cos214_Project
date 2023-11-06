@@ -115,7 +115,8 @@ int orderStatus(Order *order)
 {
   int sum = 0;
 
-  if (order != nullptr) {
+  if (order != nullptr)
+  {
     sum = order->beefPatty + order->chickenPatty + order->veganPatty + order->wantsKetchup + order->wantsMustard + order->wantsMayo;
     sum += order->wantsLettuce + order->wantsPickles + order->wantsTomato;
   }
@@ -318,19 +319,21 @@ TEST(TinoTests, FloorIsASingleton)
   ASSERT_EQ(floor1, floor2) << "Floor class is not a singleton";
 }
 
-TEST(TinoTests, FloorInitialObjectsCount)
+TEST(TinoTests2, FloorInitialObjectsCount)
 {
   Floor *floor = Floor::instance();
+  floor->reset();
 
   ASSERT_EQ(floor->getTableCount(), DEFAULT_NO_TABLES) << "Initial number of tables is incorrect";
   ASSERT_EQ(floor->getWaiterCount(), DEFAULT_NO_WAITERS) << "Initial number of waiters is incorrect";
   ASSERT_EQ(floor->getMaitreDCount(), DEFAULT_NO_MAITREDS) << "Initial number of maitreDs is incorrect";
-  ASSERT_EQ(floor->getWaitingCustomerCount(), DEFAULT_NO_WAITING_CUSTOMERS) << "Initial number of customers is incorrect";
+  ASSERT_EQ(floor->getWaitingCustomerCount(), DEFAULT_NO_WAITING_CUSTOMERS) << "Initial number of customers is incorrect " << floor->getWaitingCustomerCount();
 }
 
-TEST(TinoTests, AddObjectsToFloor)
+TEST(TinoTests3, AddObjectsToFloor)
 {
   Floor *floor = Floor::instance();
+  floor->reset();
 
   floor->addTable(); // add a table to the floor
   ASSERT_EQ(DEFAULT_NO_TABLES + 1, floor->getTableCount()) << "addTable() function not working correctly";
@@ -343,6 +346,39 @@ TEST(TinoTests, AddObjectsToFloor)
 
   floor->addWaiter(); // add a waiter to the floor
   ASSERT_EQ(DEFAULT_NO_WAITERS + 1, floor->getWaiterCount()) << "addWaiter() function not working correctly";
+}
+
+TEST(TinoTests4, CustomerGroupsTest)
+{
+  Floor *floor = Floor::instance();
+  floor->reset();
+  floor->requestSeat(); // customer requests a seat
+
+  // now need to loop through tables and print out table states and customers at those tables
+  for (TableComposite *table : floor->getTables())
+  {
+    if (table->isContainedInAnotherTable())
+    {
+      continue;
+    }
+    std::cout << table->getLabel() << std::endl;
+  }
+
+  for (Waiter *waiter : floor->getWaiters())
+  {
+    std::cout << waiter->getLabel() << std::endl;
+  }
+}
+
+TEST(TinoTests5, AssigningWaitersToTablesTest)
+{
+  Floor *floor = Floor::instance();
+  floor->reset();
+
+  for (Waiter *waiter : floor->getWaiters())
+  {
+    std::cout << waiter->getLabel() << std::endl;
+  }
 }
 
 TEST(SimonTests, CreateAndDeleteInputPoll)
@@ -480,7 +516,8 @@ TEST(MihailsTests, TableStateChildrenTest)
   // //create a state
   TableState *ts = new Bill();
   mainTable->setTableState(ts);
-  ASSERT_EQ(mainTable->getChild("TC_2")->getTableState()->getName(), "Bill");
+  TableComposite *childTable = static_cast<TableComposite *>(mainTable->getChild("TC_2"));
+  ASSERT_EQ(childTable->getTableState()->getName(), "Bill");
   // mainTable->removeComponent(childTable1);
   // ASSERT_EQ(childTable1->getTableState()->getName(), "Free");
 

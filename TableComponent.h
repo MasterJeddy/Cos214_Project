@@ -28,7 +28,6 @@ protected:
     std::string id;
     std::string type;
     std::vector<Observer *> observerList;
-    TableState *tableState;
 
 public:
     TableComponent();
@@ -40,10 +39,6 @@ public:
     virtual void attachObserver(Observer *observer) = 0;
     virtual void detachObserver(Observer *observer) = 0;
     virtual void request() = 0;
-
-    virtual void setTableState(TableState *tableState);
-    virtual TableState* getTableState();
-    
 
 };
 

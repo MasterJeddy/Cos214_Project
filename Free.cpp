@@ -22,6 +22,11 @@ std::string Free::getName()
     return this->name;
 }
 
+TableState *Free::clone()
+{
+    return new Free();
+}
+
 void Free::proceed(TableComposite *tableComp)
 {
     TableState *tempy = new Occupied();

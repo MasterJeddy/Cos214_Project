@@ -18,11 +18,7 @@ TableComponent::TableComponent()
 
 TableComponent::~TableComponent()
 {
-    for (Observer *observer : this->observerList)
-    {
-        //delete observer;
-        observer = nullptr;
-    }
+    // clear observerList, memory cleanup will be done by floor class
     this->observerList.clear();
 }
 
@@ -34,13 +30,4 @@ std::string TableComponent::getId()
 std::string TableComponent::getType()
 {
     return this->type;
-}
-
-void TableComponent::setTableState(TableState *tableState)
-{
-    this->tableState = tableState;
-}
-
-TableState* TableComponent::getTableState(){
-    return this->tableState;
 }

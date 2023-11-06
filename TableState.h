@@ -22,6 +22,7 @@ protected:
     std::string name;
 
 public:
+    virtual TableState *clone() = 0;
     virtual void proceed(TableComposite *tableComp) = 0;
     virtual void hold(TableComposite *tableComp) = 0;
     TableState();

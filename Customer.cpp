@@ -15,42 +15,14 @@
 
 Customer::Customer(int id)
 {
+    this->alone = true;
+
     this->type = TYPE_CUSTOMER;
 
     std::stringstream idStream;
     idStream << this->type << id;
     this->id = idStream.str();
 }
-
-// Customer::Customer(int id, std::string name)
-// {
-//     this->type = TYPE_CUSTOMER;
-
-//     std::stringstream idStream;
-//     idStream << this->type << id;
-//     this->id = idStream.str();
-
-//     this->name = name;
-// }
-
-Customer::Customer(int id, std::vector<Customer *> friends)
-{
-    this->id = id;
-
-    std::vector<Customer *> wholeGroup = friends;
-    wholeGroup.push_back(this); // add this customer to their group of friends
-
-    this->group = wholeGroup;
-}
-
-// Customer::Customer(int id, std::string name, std::vector<Customer *> friends)
-// {
-//     this->id = id;
-//     this->name = name;
-
-//     std::vector<Customer *> group = friends;
-//     group.push_back(this); // add this customer to the group
-// }
 
 Customer::~Customer()
 {
@@ -89,7 +61,6 @@ void Customer::request()
     for (std::vector<Observer *>::iterator iter = this->observerList.begin(); iter < this->observerList.end(); iter++)
     {
 
-
         // find a ConcreteObserver that is a maitreD and that is currently free and notify them of request
         if ((*iter)->getType() == TYPE_MAITRED && (*iter)->getState() == "FREE")
         {
@@ -109,4 +80,15 @@ int Customer::getGroupSize()
 std::vector<Customer *> Customer::getGroup()
 {
     return this->group;
+}
+
+bool Customer::isAlone()
+{
+    return this->alone;
+}
+
+void Customer::addToGroup(Customer *frend)
+{
+    this->group.push_back(frend);
+    alone = false;
 }

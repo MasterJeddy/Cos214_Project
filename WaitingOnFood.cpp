@@ -16,7 +16,13 @@ WaitingOnFood::WaitingOnFood(){
     this->name = "WaitingOnFood";
 }
 
-void WaitingOnFood::proceed(TableComposite* tableComp){
+TableState *WaitingOnFood::clone()
+{
+    return new WaitingOnFood();
+}
+
+void WaitingOnFood::proceed(TableComposite *tableComp)
+{
     TableState* tempy = new Eating();
     tableComp->setTableState(tempy);
 }

@@ -6,7 +6,7 @@
 ///
 /// \file
 /// This file contains the declaration of the WaitingOnFood class which acts here as the
-/// ConcreteState class of the state design pattern. 
+/// ConcreteState class of the state design pattern.
 ///
 //===----------------------------------------------------------------------===//
 
@@ -15,12 +15,13 @@
 #include "TableState.h"
 #include "Eating.h"
 
-class WaitingOnFood: public TableState
+class WaitingOnFood : public TableState
 {
-   
-    public:
-    virtual void proceed(TableComposite* tableComp);
-    virtual void hold(TableComposite* tableComp);
+
+public:
+    virtual TableState *clone();
+    virtual void proceed(TableComposite *tableComp);
+    virtual void hold(TableComposite *tableComp);
     WaitingOnFood();
 };
 

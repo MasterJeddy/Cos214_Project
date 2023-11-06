@@ -16,7 +16,13 @@ Busy::Busy(){
     this->name = "Busy";
 }
 
-void Busy::proceed(TableComposite* tableComp){
+TableState *Busy::clone()
+{
+    return new Busy();
+}
+
+void Busy::proceed(TableComposite *tableComp)
+{
     TableState* tempy = new WaitingOnWaiter();
     tableComp->setTableState(tempy);
 }
