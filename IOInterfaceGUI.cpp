@@ -89,7 +89,7 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
     delete command;
     delete temp;
   }
-  if (GetKey(olc::L).bPressed){
+  if (GetKey(olc::F).bPressed){
     std::string* temp = new std::string("Dump");
     command = new Load(commandLog,logs,temp);
     commandLog->addEntry(command);
