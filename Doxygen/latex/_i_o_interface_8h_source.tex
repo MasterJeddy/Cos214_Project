@@ -1,0 +1,48 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+IOInterface.h}
+\hypertarget{_i_o_interface_8h_source}{}\label{_i_o_interface_8h_source}\mbox{\hyperlink{_i_o_interface_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/IOInterface.h\ -\/\ IOInterface\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_INPUTPOLL\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_INPUTPOLL\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_log_8h}{CommandLog.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_commands_8h}{Commands.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_update_8h}{Update.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_floor_controller_8h}{FloorController.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_logs}{Logs}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{enum}\ DRAW\_FLAGS\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ DRAW\_LOG\ \ =\ 1\ <<\ 0,}
+\DoxyCodeLine{00027\ \ \ \ \ DONT\_DRAW\_HELP=\ 1\ <<\ 1,}
+\DoxyCodeLine{00028\ \ \ \ \ DRAW\_SAVES\ =\ 1\ <<\ 2}
+\DoxyCodeLine{00029\ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface}{IOInterface}}\ \{}
+\DoxyCodeLine{00032\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{class_command_log}{CommandLog}}*\ commandLog;}
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{class_logs}{Logs}}*\ logs;}
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{int}\ drawState\ =\ 0;}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController;}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController;}
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_o_interface_ac27553888098ab809ab5b03e3438842a}{addFlag}}(DRAW\_FLAGS\ flag);}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_o_interface_a8a841e7022037a1ce2dd436e9752152d}{removeFlag}}(DRAW\_FLAGS\ flag);}
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_o_interface_af46c3893470e3007b5a406dc7e1baf46}{checkFlag}}(DRAW\_FLAGS\ flag)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_o_interface_a1a58ed38d95db1d15b7dbae1a355f6a9}{poll}}()\ =\ 0;}
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_o_interface_a8924c1e1328769ba302b951f1f87268f}{resetToLog}}(\mbox{\hyperlink{class_command_log}{CommandLog}}*\ log);}
+\DoxyCodeLine{00057\ \ \ \mbox{\hyperlink{class_i_o_interface_ab343d85a172ab569754760f9f3a9af3c}{IOInterface}}();}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{class_i_o_interface_aee452690d815ce40f17dbe1217ad890a}{\string~IOInterface}}();}
+\DoxyCodeLine{00060\ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logs_8h}{Logs.h}}"{}}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_INPUTPOLL\_H}}
+
+\end{DoxyCode}

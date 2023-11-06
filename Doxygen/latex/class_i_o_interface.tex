@@ -1,0 +1,131 @@
+\doxysection{IOInterface Class Reference}
+\hypertarget{class_i_o_interface}{}\label{class_i_o_interface}\index{IOInterface@{IOInterface}}
+Inheritance diagram for IOInterface\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_o_interface}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_o_interface_ac27553888098ab809ab5b03e3438842a}{add\+Flag}} (DRAW\+\_\+\+FLAGS flag)
+\begin{DoxyCompactList}\small\item\em Sets flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_o_interface_a8a841e7022037a1ce2dd436e9752152d}{remove\+Flag}} (DRAW\+\_\+\+FLAGS flag)
+\begin{DoxyCompactList}\small\item\em Unsets flag. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i_o_interface_af46c3893470e3007b5a406dc7e1baf46}{check\+Flag}} (DRAW\+\_\+\+FLAGS flag) const
+\begin{DoxyCompactList}\small\item\em Checks if flag is set. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_o_interface_a1a58ed38d95db1d15b7dbae1a355f6a9}{poll}} ()=0
+\begin{DoxyCompactList}\small\item\em Works as an on\+Update. Checks input from user execute commands and renders the renders system state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_o_interface_a8924c1e1328769ba302b951f1f87268f}{reset\+To\+Log}} (\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*}log)
+\begin{DoxyCompactList}\small\item\em Resets system and execute all commands in log. Excluding \doxylink{class_save}{Save} and \doxylink{class_load}{Load} Commands. thus not render anything. \end{DoxyCompactList}\item 
+\Hypertarget{class_i_o_interface_ab343d85a172ab569754760f9f3a9af3c}\label{class_i_o_interface_ab343d85a172ab569754760f9f3a9af3c} 
+{\bfseries IOInterface} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_i_o_interface}{IOInterface}. \end{DoxyCompactList}\item 
+\Hypertarget{class_i_o_interface_aee452690d815ce40f17dbe1217ad890a}\label{class_i_o_interface_aee452690d815ce40f17dbe1217ad890a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+IOInterface} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_i_o_interface}{IOInterface}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_o_interface_afbbe3b14a2ccd805e099b5ec29723207}\label{class_i_o_interface_afbbe3b14a2ccd805e099b5ec29723207} 
+\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*} {\bfseries command\+Log}
+\item 
+\Hypertarget{class_i_o_interface_a46cef0c3e1aa6244b5597011bf451d6f}\label{class_i_o_interface_a46cef0c3e1aa6244b5597011bf451d6f} 
+\mbox{\hyperlink{class_logs}{Logs}} \texorpdfstring{$\ast$}{*} {\bfseries logs}
+\item 
+\Hypertarget{class_i_o_interface_a05d8a5c7ac58cd9fe922a5a18fc78f8c}\label{class_i_o_interface_a05d8a5c7ac58cd9fe922a5a18fc78f8c} 
+int {\bfseries draw\+State} = 0
+\item 
+\Hypertarget{class_i_o_interface_a1bc75b3931d096862fd3c553e0901eff}\label{class_i_o_interface_a1bc75b3931d096862fd3c553e0901eff} 
+\mbox{\hyperlink{class_floor_controller}{Floor\+Controller}} \texorpdfstring{$\ast$}{*} {\bfseries floor\+Controller}
+\item 
+\Hypertarget{class_i_o_interface_a2f95e5f11f06c670625bde87e84f84b1}\label{class_i_o_interface_a2f95e5f11f06c670625bde87e84f84b1} 
+\mbox{\hyperlink{class_kitchen_controller}{Kitchen\+Controller}} \texorpdfstring{$\ast$}{*} {\bfseries kitchen\+Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_o_interface_ac27553888098ab809ab5b03e3438842a}\label{class_i_o_interface_ac27553888098ab809ab5b03e3438842a} 
+\index{IOInterface@{IOInterface}!addFlag@{addFlag}}
+\index{addFlag@{addFlag}!IOInterface@{IOInterface}}
+\doxysubsubsection{\texorpdfstring{addFlag()}{addFlag()}}
+{\footnotesize\ttfamily void IOInterface\+::add\+Flag (\begin{DoxyParamCaption}\item[{DRAW\+\_\+\+FLAGS}]{flag }\end{DoxyParamCaption})}
+
+
+
+Sets flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Flag to be set \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_i_o_interface_af46c3893470e3007b5a406dc7e1baf46}\label{class_i_o_interface_af46c3893470e3007b5a406dc7e1baf46} 
+\index{IOInterface@{IOInterface}!checkFlag@{checkFlag}}
+\index{checkFlag@{checkFlag}!IOInterface@{IOInterface}}
+\doxysubsubsection{\texorpdfstring{checkFlag()}{checkFlag()}}
+{\footnotesize\ttfamily bool IOInterface\+::check\+Flag (\begin{DoxyParamCaption}\item[{DRAW\+\_\+\+FLAGS}]{flag }\end{DoxyParamCaption}) const}
+
+
+
+Checks if flag is set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Flag to check \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if flag to check is set false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_i_o_interface_a1a58ed38d95db1d15b7dbae1a355f6a9}\label{class_i_o_interface_a1a58ed38d95db1d15b7dbae1a355f6a9} 
+\index{IOInterface@{IOInterface}!poll@{poll}}
+\index{poll@{poll}!IOInterface@{IOInterface}}
+\doxysubsubsection{\texorpdfstring{poll()}{poll()}}
+{\footnotesize\ttfamily virtual void IOInterface\+::poll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Works as an on\+Update. Checks input from user execute commands and renders the renders system state. 
+
+
+
+Implemented in \mbox{\hyperlink{class_i_o_interface_g_u_i_a4865df19ccedd1f77468b410b53f4da2}{IOInterface\+GUI}}, and \mbox{\hyperlink{class_i_o_interface_t_u_i_a1f508a57bc9c05048aae6f7a74b11d40}{IOInterface\+TUI}}.
+
+\Hypertarget{class_i_o_interface_a8a841e7022037a1ce2dd436e9752152d}\label{class_i_o_interface_a8a841e7022037a1ce2dd436e9752152d} 
+\index{IOInterface@{IOInterface}!removeFlag@{removeFlag}}
+\index{removeFlag@{removeFlag}!IOInterface@{IOInterface}}
+\doxysubsubsection{\texorpdfstring{removeFlag()}{removeFlag()}}
+{\footnotesize\ttfamily void IOInterface\+::remove\+Flag (\begin{DoxyParamCaption}\item[{DRAW\+\_\+\+FLAGS}]{flag }\end{DoxyParamCaption})}
+
+
+
+Unsets flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Flag to be unset \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_i_o_interface_a8924c1e1328769ba302b951f1f87268f}\label{class_i_o_interface_a8924c1e1328769ba302b951f1f87268f} 
+\index{IOInterface@{IOInterface}!resetToLog@{resetToLog}}
+\index{resetToLog@{resetToLog}!IOInterface@{IOInterface}}
+\doxysubsubsection{\texorpdfstring{resetToLog()}{resetToLog()}}
+{\footnotesize\ttfamily void IOInterface\+::reset\+To\+Log (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*}}]{log }\end{DoxyParamCaption})}
+
+
+
+Resets system and execute all commands in log. Excluding \doxylink{class_save}{Save} and \doxylink{class_load}{Load} Commands. thus not render anything. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log} & Log\textquotesingle{}s commands to be rerun. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_i_o_interface_8h}{IOInterface.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_i_o_interface_8cpp}{IOInterface.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\doxysection{Order Struct Reference}
+\hypertarget{struct_order}{}\label{struct_order}\index{Order@{Order}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_order_a5ea6cdedd0f6bbad552ab7d0b4798fb3}\label{struct_order_a5ea6cdedd0f6bbad552ab7d0b4798fb3} 
+{\bfseries Order} (std\+::string \+\_\+table\+ID)
+\begin{DoxyCompactList}\small\item\em Default constructor, all values default to 0 and assigns a unique order\+Number (starts counting orders at 1) \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{struct_order_a0ad775fcd359b9dc031c4086e2d8df75}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Calculates the total price for the order\textquotesingle{}s burger object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_order_aeb37016a06c110cb8ac8be70807aea51}\label{struct_order_aeb37016a06c110cb8ac8be70807aea51} 
+std\+::string {\bfseries table\+ID}
+\item 
+\Hypertarget{struct_order_ae5f81b0a03bf3d2c82909156af8e8121}\label{struct_order_ae5f81b0a03bf3d2c82909156af8e8121} 
+int {\bfseries order\+Number} = 0
+\item 
+\Hypertarget{struct_order_a3a4014e11dbea83fac281169a0c5e68f}\label{struct_order_a3a4014e11dbea83fac281169a0c5e68f} 
+int {\bfseries wants\+Ketchup} = 0
+\item 
+\Hypertarget{struct_order_a70b8f96b4f8301d145884ae154b1ced6}\label{struct_order_a70b8f96b4f8301d145884ae154b1ced6} 
+int {\bfseries wants\+Mustard} = 0
+\item 
+\Hypertarget{struct_order_a4fb49fa13df5a780885637438e27893b}\label{struct_order_a4fb49fa13df5a780885637438e27893b} 
+int {\bfseries wants\+Mayo} = 0
+\item 
+\Hypertarget{struct_order_a0ddac1b52a1cf5a0266914fb0335a15f}\label{struct_order_a0ddac1b52a1cf5a0266914fb0335a15f} 
+int {\bfseries beef\+Patty} = 0
+\item 
+\Hypertarget{struct_order_a87f0310886b42c38b4836e53d20df186}\label{struct_order_a87f0310886b42c38b4836e53d20df186} 
+int {\bfseries chicken\+Patty} = 0
+\item 
+\Hypertarget{struct_order_a754be24e39216c613579304833a5a455}\label{struct_order_a754be24e39216c613579304833a5a455} 
+int {\bfseries vegan\+Patty} = 0
+\item 
+\Hypertarget{struct_order_ad42bc4b5b0ac8695862136eb543887da}\label{struct_order_ad42bc4b5b0ac8695862136eb543887da} 
+int {\bfseries wants\+Lettuce} = 0
+\item 
+\Hypertarget{struct_order_a95c5098a5881af5c4a2a503833b2d2a0}\label{struct_order_a95c5098a5881af5c4a2a503833b2d2a0} 
+int {\bfseries wants\+Tomato} = 0
+\item 
+\Hypertarget{struct_order_a8b37e369c2559f76e8f97f8d5d06966d}\label{struct_order_a8b37e369c2559f76e8f97f8d5d06966d} 
+int {\bfseries wants\+Pickles} = 0
+\item 
+\Hypertarget{struct_order_ac229a02f54ce1799d45b451153e811dd}\label{struct_order_ac229a02f54ce1799d45b451153e811dd} 
+bool {\bfseries complete} = false
+\item 
+\Hypertarget{struct_order_a4d80f1f141d7b1ad33ff092f32cb3905}\label{struct_order_a4d80f1f141d7b1ad33ff092f32cb3905} 
+\mbox{\hyperlink{class_burger}{Burger}} \texorpdfstring{$\ast$}{*} {\bfseries burger}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{struct_order_a1159964fe3555f89568dd9ca49f916e3}\label{struct_order_a1159964fe3555f89568dd9ca49f916e3} 
+static int {\bfseries total\+Orders} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{struct_order_a0ad775fcd359b9dc031c4086e2d8df75}\label{struct_order_a0ad775fcd359b9dc031c4086e2d8df75} 
+\index{Order@{Order}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Order\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the total price for the order\textquotesingle{}s burger object. 
+
+\begin{DoxyReturn}{Returns}
+0 if no burger has been created yet, otherwise finds and gives the total price of the burger and its ingredients. 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_order_8h}{Order.\+h}}\end{DoxyCompactItemize}

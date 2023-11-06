@@ -1,0 +1,156 @@
+\doxysection{Kitchen Class Reference}
+\hypertarget{class_kitchen}{}\label{class_kitchen}\index{Kitchen@{Kitchen}}
+Inheritance diagram for Kitchen\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kitchen}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_kitchen_a005d0763a56ce89264033d8c7271958f}{add\+Order}} (\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}order)
+\begin{DoxyCompactList}\small\item\em Adds a new order to the queue of orders which will be handled by the chefs. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_kitchen_a68c0d6b24f5d4c8bd9d19889acab4bd4}{get\+Finished\+Order}} ()
+\begin{DoxyCompactList}\small\item\em All orders returned have their counters for ingredients set to 0 (hopefully) \end{DoxyCompactList}\item 
+\Hypertarget{class_kitchen_ae6d5daa01a61a7ac29691ef304099a17}\label{class_kitchen_ae6d5daa01a61a7ac29691ef304099a17} 
+void {\bfseries produce\+Burgers} ()
+\begin{DoxyCompactList}\small\item\em Starts burger production for one cycle through all the chefs. \end{DoxyCompactList}\item 
+\Hypertarget{class_kitchen_ac9b595064583dac09c53b80c5b10b255}\label{class_kitchen_ac9b595064583dac09c53b80c5b10b255} 
+void {\bfseries purchase\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Increases the maximum amount of orders the team of chefs can work on at once. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_kitchen_a2beb67f19655ae58100c6b7deae1c973}{notify\+Waiter}} ()
+\begin{DoxyCompactList}\small\item\em Notifies all waiters attached to the observer list that orders are finished. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_kitchen_aa136dd6e32181821192bac9bfbfad236}{attach}} (\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)
+\begin{DoxyCompactList}\small\item\em Adds a waiter to the observer list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_kitchen_a2b2cb5130b8f780b9770f6e565030918}{detach}} (\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)
+\begin{DoxyCompactList}\small\item\em Removes a waiter from the observer list. \end{DoxyCompactList}\item 
+\Hypertarget{class_kitchen_a2dece1028632049669b7870a55730b0e}\label{class_kitchen_a2dece1028632049669b7870a55730b0e} 
+void {\bfseries reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the kitchen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_kitchen}{Kitchen}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_kitchen_ad5d98f39c2ac17f9e4e20ec589dfd909}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Gives you the \doxylink{class_kitchen}{Kitchen} singleton object instance. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_kitchen_af189b6c220b1b14f6cb4ed5cb0bf4f5d}\label{class_kitchen_af189b6c220b1b14f6cb4ed5cb0bf4f5d} 
+class {\bfseries IOInterface\+GUI}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_kitchen_subject}{Kitchen\+Subject}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries waiter\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_kitchen_a005d0763a56ce89264033d8c7271958f}\label{class_kitchen_a005d0763a56ce89264033d8c7271958f} 
+\index{Kitchen@{Kitchen}!addOrder@{addOrder}}
+\index{addOrder@{addOrder}!Kitchen@{Kitchen}}
+\doxysubsubsection{\texorpdfstring{addOrder()}{addOrder()}}
+{\footnotesize\ttfamily bool Kitchen\+::add\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})}
+
+
+
+Adds a new order to the queue of orders which will be handled by the chefs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & A pointer to a new order struct, \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if added successfully, can be run like a void method 
+\end{DoxyReturn}
+\Hypertarget{class_kitchen_aa136dd6e32181821192bac9bfbfad236}\label{class_kitchen_aa136dd6e32181821192bac9bfbfad236} 
+\index{Kitchen@{Kitchen}!attach@{attach}}
+\index{attach@{attach}!Kitchen@{Kitchen}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily void Kitchen\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a waiter to the observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & \doxylink{class_waiter}{Waiter} object to be attached \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_kitchen_subject_a0e89fdda5066df39b0fd8a5637ece116}{Kitchen\+Subject}}.
+
+\Hypertarget{class_kitchen_a2b2cb5130b8f780b9770f6e565030918}\label{class_kitchen_a2b2cb5130b8f780b9770f6e565030918} 
+\index{Kitchen@{Kitchen}!detach@{detach}}
+\index{detach@{detach}!Kitchen@{Kitchen}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily void Kitchen\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a waiter from the observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & \doxylink{class_waiter}{Waiter} object to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_kitchen_subject_ae164812ff3e7a190fcd23ae5ddd3a86c}{Kitchen\+Subject}}.
+
+\Hypertarget{class_kitchen_a68c0d6b24f5d4c8bd9d19889acab4bd4}\label{class_kitchen_a68c0d6b24f5d4c8bd9d19889acab4bd4} 
+\index{Kitchen@{Kitchen}!getFinishedOrder@{getFinishedOrder}}
+\index{getFinishedOrder@{getFinishedOrder}!Kitchen@{Kitchen}}
+\doxysubsubsection{\texorpdfstring{getFinishedOrder()}{getFinishedOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Kitchen\+::get\+Finished\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+All orders returned have their counters for ingredients set to 0 (hopefully) 
+
+Get the next finished order in the finished order queue.
+
+\begin{DoxyReturn}{Returns}
+the oldest finished order produced by the chefs
+
+nullptr if no orders are ready to be collected, otherwise returns order\texorpdfstring{$\ast$}{*} 
+\end{DoxyReturn}
+\Hypertarget{class_kitchen_ad5d98f39c2ac17f9e4e20ec589dfd909}\label{class_kitchen_ad5d98f39c2ac17f9e4e20ec589dfd909} 
+\index{Kitchen@{Kitchen}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Kitchen@{Kitchen}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_kitchen}{Kitchen}} \texorpdfstring{$\ast$}{*} Kitchen\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gives you the \doxylink{class_kitchen}{Kitchen} singleton object instance. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_kitchen}{Kitchen} instance, creates one if there isn\textquotesingle{}t one already 
+\end{DoxyReturn}
+\Hypertarget{class_kitchen_a2beb67f19655ae58100c6b7deae1c973}\label{class_kitchen_a2beb67f19655ae58100c6b7deae1c973} 
+\index{Kitchen@{Kitchen}!notifyWaiter@{notifyWaiter}}
+\index{notifyWaiter@{notifyWaiter}!Kitchen@{Kitchen}}
+\doxysubsubsection{\texorpdfstring{notifyWaiter()}{notifyWaiter()}}
+{\footnotesize\ttfamily void Kitchen\+::notify\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Notifies all waiters attached to the observer list that orders are finished. 
+
+
+
+Implements \mbox{\hyperlink{class_kitchen_subject_ac4830028445342e8fa7a8dc504666bea}{Kitchen\+Subject}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_kitchen_8h}{Kitchen.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/Kitchen.\+cpp\end{DoxyCompactItemize}

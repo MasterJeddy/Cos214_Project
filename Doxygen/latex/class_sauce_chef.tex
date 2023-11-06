@@ -1,0 +1,68 @@
+\doxysection{Sauce\+Chef Class Reference}
+\hypertarget{class_sauce_chef}{}\label{class_sauce_chef}\index{SauceChef@{SauceChef}}
+Inheritance diagram for Sauce\+Chef\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sauce_chef}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_sauce_chef_a230edf9c2764230e39f94bd24700ee3b}\label{class_sauce_chef_a230edf9c2764230e39f94bd24700ee3b} 
+{\bfseries Sauce\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_sauce_chef}{Sauce\+Chef} Class, intended to be the last chef in the chain, so no successor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_sauce_chef_a9f22803717e78c900c8e1e02c00cdadf}{handle\+Order}} (\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}order) override
+\begin{DoxyCompactList}\small\item\em Adds at most one of any of the sauces required by the passed in order. \end{DoxyCompactList}\item 
+\Hypertarget{class_sauce_chef_a30f719e4d1ca4487902035dc2ff295f9}\label{class_sauce_chef_a30f719e4d1ca4487902035dc2ff295f9} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Sauce\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_sauce_chef}{Sauce\+Chef} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Chef} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the chef class, calls delete on the successor object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chef_aa3248d2e00976ab62c94ed4aba6e8c3a}{Chef}} (\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*}\+\_\+successor)
+\begin{DoxyCompactList}\small\item\em Constructor that initialises the successor property. \end{DoxyCompactList}\item 
+{\bfseries Chef} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, doesn\textquotesingle{}t initialise the successor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_chef}{Chef}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_chef}{Chef}} \texorpdfstring{$\ast$}{*} {\bfseries successor}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sauce_chef_a9f22803717e78c900c8e1e02c00cdadf}\label{class_sauce_chef_a9f22803717e78c900c8e1e02c00cdadf} 
+\index{SauceChef@{SauceChef}!handleOrder@{handleOrder}}
+\index{handleOrder@{handleOrder}!SauceChef@{SauceChef}}
+\doxysubsubsection{\texorpdfstring{handleOrder()}{handleOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*} Sauce\+Chef\+::handle\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Adds at most one of any of the sauces required by the passed in order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & current unfinished order \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The order after sauces are added 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_chef_a7e3fb2232a3b8ad0582a195f5eff81ec}{Chef}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_sauce_chef_8h}{Sauce\+Chef.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/Sauce\+Chef.\+cpp\end{DoxyCompactItemize}

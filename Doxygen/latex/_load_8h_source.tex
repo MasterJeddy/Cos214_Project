@@ -1,0 +1,33 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Load.h}
+\hypertarget{_load_8h_source}{}\label{_load_8h_source}\mbox{\hyperlink{_load_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Load.h\ -\/\ Load\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_LOAD\_H}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_LOAD\_H}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_user_command_8h}{UserCommand.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_logs_8h}{Logs.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_load}{Load}}\ :\ \textcolor{keyword}{public}\ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00022\ \ \ std::string*\ file;}
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{class_command_log}{CommandLog}}*\ commandLog;}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{class_logs}{Logs}}*\ logs;}
+\DoxyCodeLine{00025\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_a8d5502d9057cc2480c305de373a5bc46}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_load_a8d5502d9057cc2480c305de373a5bc46}{execute}}(std::string*\ file);}
+\DoxyCodeLine{00035\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_load}{Load}}(\mbox{\hyperlink{class_command_log}{CommandLog}}*\ commandLog,\mbox{\hyperlink{class_logs}{Logs}}*\ logs,std::string*\ file\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00038\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_load_af482cb5a6e95dec226d8aa95d8ba7a66}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00041\ \ \ COMMANDS\ \mbox{\hyperlink{class_load_aa1d366dfc1e2a15647d42d7f17badb0a}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{class_load_a04dccec540baef5ceb62c81929c8e4a9}{\string~Load}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_LOAD\_H}}
+
+\end{DoxyCode}

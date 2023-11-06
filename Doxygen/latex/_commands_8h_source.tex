@@ -1,0 +1,122 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Commands.h}
+\hypertarget{_commands_8h_source}{}\label{_commands_8h_source}\mbox{\hyperlink{_commands_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Commands.h\ -\/\ Commands\ class\ definitions\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_COMMANDS\_H}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_COMMANDS\_H}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_user_command_8h}{UserCommand.h}}"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_o_interface_8h}{IOInterface.h}}"{}}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hire_maitre_d}{HireMaitreD}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00024\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00025\ \ \ \mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController;}
+\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hire_maitre_d_a1a3b28071c5037d0e66e8d3b040105f1}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_hire_maitre_d_a1585db7fe9ee54d7742e265cc2537040}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00034\ \ \ COMMANDS\ \mbox{\hyperlink{class_hire_maitre_d_a954c9668de99e5027e668c6d35e2b227}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{class_hire_maitre_d_aeb41548546a1daa9689b3b93e66c5735}{\string~HireMaitreD}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_hire_maitre_d}{HireMaitreD}}(\mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController);}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_buy_table}{BuyTable}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00043\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController;}
+\DoxyCodeLine{00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_buy_table_a1248d201d96be7560e153c0b070eb324}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_buy_table_ab5967fb4807f7e7bbe5487c81002264a}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ \ \ COMMANDS\ \mbox{\hyperlink{class_buy_table_ac7d335530c34ba90998347712f1947e3}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ \ \ \mbox{\hyperlink{class_buy_table_adcddf9d3ee3e2681fc1a666225049230}{\string~BuyTable}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_buy_table}{BuyTable}}(\mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController);}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expand_floor}{ExpandFloor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00062\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00063\ \ \ \mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController;}
+\DoxyCodeLine{00064\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expand_floor_aa1c05072642970502c8672520a4edb1d}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_expand_floor_a40b0982c5fe1b8fbaa0f6df1defafae2}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00072\ \ \ COMMANDS\ \mbox{\hyperlink{class_expand_floor_a34709a8ae38581899d80552c2fdc8ad9}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00074\ \ \ \mbox{\hyperlink{class_expand_floor_a502f8f43e35a846748672c75da93f1f6}{\string~ExpandFloor}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00077\ \ \ \textcolor{keyword}{explicit}\ \ \mbox{\hyperlink{class_expand_floor}{ExpandFloor}}(\mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController);}
+\DoxyCodeLine{00078\ \};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hire_waiter}{HireWaiter}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00081\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00082\ \ \ \mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController;}
+\DoxyCodeLine{00083\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00085\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hire_waiter_acfa167e0837ac00be7c4f63d108bb3bd}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_hire_waiter_ac6e7bbaf73f403ece5ee3cf4918f6d03}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00091\ \ \ COMMANDS\ \mbox{\hyperlink{class_hire_waiter_aaa05412517f3fe64e3bd570762232031}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00093\ \ \ \mbox{\hyperlink{class_hire_waiter_aa676989a4b0a90d8e6be9bbdfbd057a3}{\string~HireWaiter}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00096\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_hire_waiter}{HireWaiter}}(\mbox{\hyperlink{class_floor_controller}{FloorController}}*\ floorController);}
+\DoxyCodeLine{00097\ \};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_expand_kitchen}{ExpandKitchen}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00100\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00101\ \ \ \mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController;}
+\DoxyCodeLine{00102\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00104\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_expand_kitchen_a526d1d92ba014633db3d8b52f8db0026}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00107\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_expand_kitchen_aaf0beeedc32b2856e2787384b3639ede}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00110\ \ \ COMMANDS\ \mbox{\hyperlink{class_expand_kitchen_a3551f4293ed8b3842e646c558e5d8497}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00112\ \ \ \mbox{\hyperlink{class_expand_kitchen_a5c5593d4297f98e744c3d51010c52d05}{\string~ExpandKitchen}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00115\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_expand_kitchen}{ExpandKitchen}}(\mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController);}
+\DoxyCodeLine{00116\ \};}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_hire_chef}{HireChef}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00119\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController;}
+\DoxyCodeLine{00121\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00123\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_hire_chef_a2e377be27d4cf659306e8b0a8402fb3a}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_hire_chef_a06aa1663189f461c219bd0ddeedf7344}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00129\ \ \ COMMANDS\ \mbox{\hyperlink{class_hire_chef_a3f227aaf465fe20a95aba3a91e97fe03}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00131\ \ \ \mbox{\hyperlink{class_hire_chef_a1b30bc03eb4f0764faae7342568a2433}{\string~HireChef}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00134\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_hire_chef}{HireChef}}(\mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController);}
+\DoxyCodeLine{00135\ \};}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00137\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_buy_stock}{BuyStock}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00138\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00139\ \ \ \mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController;}
+\DoxyCodeLine{00140\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00142\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_buy_stock_ad1e38e540b08a0c4a5f41109553de90e}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00145\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_buy_stock_a904645874104bb2f9344b4f93cecfc4c}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00148\ \ \ COMMANDS\ \mbox{\hyperlink{class_buy_stock_ad1514f88453f15314880229d43583ab3}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00150\ \ \ \mbox{\hyperlink{class_buy_stock_a4c0ef2c48875f2dd79a668275b0b41f8}{\string~BuyStock}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00153\ \ \ \textcolor{keyword}{explicit}\ \ \mbox{\hyperlink{class_buy_stock}{BuyStock}}(\mbox{\hyperlink{class_kitchen_controller}{KitchenController}}*\ kitchenController);}
+\DoxyCodeLine{00154\ \};}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00156\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toggle_help}{ToggleHelp}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00157\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00158\ \ \ \mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ ioInterface;}
+\DoxyCodeLine{00159\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00161\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toggle_help_ab7be370a0755bf24bc8d06fa3b01e62c}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00164\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_toggle_help_a827089f402e06332d53e4e988b80b633}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00167\ \ \ COMMANDS\ \mbox{\hyperlink{class_toggle_help_a47974f8008474d9276c0d193bc17e181}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00169\ \ \ \mbox{\hyperlink{class_toggle_help_a203b73427a986d5d52f982b55d8ffce2}{\string~ToggleHelp}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00172\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_toggle_help}{ToggleHelp}}(\mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ IoInterface);}
+\DoxyCodeLine{00175\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toggle_help_a483eb7845193972c7a728220700790cc}{setIOInterface}}(\mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ ip);}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_toggle_log}{ToggleLog}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_user_command}{UserCommand}}\{}
+\DoxyCodeLine{00179\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00180\ \ \ \mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ ioInterface;}
+\DoxyCodeLine{00181\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00183\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toggle_log_a7e83e8512450e6d9d2e6180678d99f08}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00186\ \ \ \mbox{\hyperlink{class_user_command}{UserCommand}}\ *\mbox{\hyperlink{class_toggle_log_af84c8d38baef4bba25ac7f817628125f}{clone}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00189\ \ \ COMMANDS\ \mbox{\hyperlink{class_toggle_log_aa4f2e188a151c196aa1e8da89b425b5d}{getType}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00191\ \ \ \mbox{\hyperlink{class_toggle_log_ae581c75d250a7253ce757f094683cfcc}{\string~ToggleLog}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00194\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_toggle_log}{ToggleLog}}(\mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ IoInterface);}
+\DoxyCodeLine{00197\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_toggle_log_a32aaecb99a61de0d2db45d51d54e311d}{setIOInterface}}(\mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ ip);}
+\DoxyCodeLine{00198\ \};}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_COMMANDS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,65 @@
+\doxysection{IOInterface\+TUI Class Reference}
+\hypertarget{class_i_o_interface_t_u_i}{}\label{class_i_o_interface_t_u_i}\index{IOInterfaceTUI@{IOInterfaceTUI}}
+Inheritance diagram for IOInterface\+TUI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_o_interface_t_u_i}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_o_interface_t_u_i_a1f508a57bc9c05048aae6f7a74b11d40}{poll}} () override
+\begin{DoxyCompactList}\small\item\em Overides poll and uses cout and cin statements to interact with user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_o_interface}{IOInterface}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_i_o_interface_ac27553888098ab809ab5b03e3438842a}{add\+Flag}} (DRAW\+\_\+\+FLAGS flag)
+\begin{DoxyCompactList}\small\item\em Sets flag. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_o_interface_a8a841e7022037a1ce2dd436e9752152d}{remove\+Flag}} (DRAW\+\_\+\+FLAGS flag)
+\begin{DoxyCompactList}\small\item\em Unsets flag. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i_o_interface_af46c3893470e3007b5a406dc7e1baf46}{check\+Flag}} (DRAW\+\_\+\+FLAGS flag) const
+\begin{DoxyCompactList}\small\item\em Checks if flag is set. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i_o_interface_a8924c1e1328769ba302b951f1f87268f}{reset\+To\+Log}} (\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*}log)
+\begin{DoxyCompactList}\small\item\em Resets system and execute all commands in log. Excluding \doxylink{class_save}{Save} and \doxylink{class_load}{Load} Commands. thus not render anything. \end{DoxyCompactList}\item 
+{\bfseries IOInterface} ()
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{class_i_o_interface}{IOInterface}. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+IOInterface} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{class_i_o_interface}{IOInterface}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_i_o_interface}{IOInterface}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*} {\bfseries command\+Log}
+\item 
+\mbox{\hyperlink{class_logs}{Logs}} \texorpdfstring{$\ast$}{*} {\bfseries logs}
+\item 
+int {\bfseries draw\+State} = 0
+\item 
+\mbox{\hyperlink{class_floor_controller}{Floor\+Controller}} \texorpdfstring{$\ast$}{*} {\bfseries floor\+Controller}
+\item 
+\mbox{\hyperlink{class_kitchen_controller}{Kitchen\+Controller}} \texorpdfstring{$\ast$}{*} {\bfseries kitchen\+Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_o_interface_t_u_i_a1f508a57bc9c05048aae6f7a74b11d40}\label{class_i_o_interface_t_u_i_a1f508a57bc9c05048aae6f7a74b11d40} 
+\index{IOInterfaceTUI@{IOInterfaceTUI}!poll@{poll}}
+\index{poll@{poll}!IOInterfaceTUI@{IOInterfaceTUI}}
+\doxysubsubsection{\texorpdfstring{poll()}{poll()}}
+{\footnotesize\ttfamily void IOInterface\+TUI\+::poll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Overides poll and uses cout and cin statements to interact with user. 
+
+
+
+Implements \mbox{\hyperlink{class_i_o_interface_a1a58ed38d95db1d15b7dbae1a355f6a9}{IOInterface}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/IOInterface\+TUI.\+h\item 
+C\+:/\+Dev/\+COS214/\+Project/IOInterface\+TUI.\+cpp\end{DoxyCompactItemize}

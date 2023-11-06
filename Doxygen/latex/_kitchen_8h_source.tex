@@ -1,0 +1,57 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Kitchen.h}
+\hypertarget{_kitchen_8h_source}{}\label{_kitchen_8h_source}\mbox{\hyperlink{_kitchen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ nield\ on\ 2023/10/26.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_KITCHEN\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_KITCHEN\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/Kitchen.h\ -\/\ Kitchen\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_head_chef_8h}{HeadChef.h}}"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_kitchen_subject_8h}{KitchenSubject.h}}"{}}}
+\DoxyCodeLine{00024\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_order}{Order}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_kitchen}{Kitchen}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_kitchen_subject}{KitchenSubject}}}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_kitchen}{Kitchen}}\ *instance;}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{class_head_chef}{HeadChef}}\ headChef;}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{bool}\ isBusy\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \mbox{\hyperlink{class_kitchen}{Kitchen}}();}
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{class_kitchen}{\string~Kitchen}}();}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{class_kitchen}{Kitchen}}(\mbox{\hyperlink{class_kitchen}{Kitchen}}\ \&);}
+\DoxyCodeLine{00037\ \ \ \mbox{\hyperlink{class_kitchen}{Kitchen}}\ \&operator=(\mbox{\hyperlink{class_kitchen}{Kitchen}}\ \&);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_kitchen}{Kitchen}}\ *\mbox{\hyperlink{class_kitchen_ad5d98f39c2ac17f9e4e20ec589dfd909}{getInstance}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_kitchen_a005d0763a56ce89264033d8c7271958f}{addOrder}}(\mbox{\hyperlink{struct_order}{Order}}\ *order);}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{struct_order}{Order}}\ *\mbox{\hyperlink{class_kitchen_a68c0d6b24f5d4c8bd9d19889acab4bd4}{getFinishedOrder}}();}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kitchen_ae6d5daa01a61a7ac29691ef304099a17}{produceBurgers}}();}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00057\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kitchen_ac9b595064583dac09c53b80c5b10b255}{purchaseChef}}();}
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface_g_u_i}{IOInterfaceGUI}};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \textcolor{comment}{//\ functions\ for\ the\ applied\ observer\ pattern}}
+\DoxyCodeLine{00062\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kitchen_a2beb67f19655ae58100c6b7deae1c973}{notifyWaiter}}();}
+\DoxyCodeLine{00065\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kitchen_aa136dd6e32181821192bac9bfbfad236}{attach}}(\mbox{\hyperlink{class_waiter}{Waiter}}\ *waiter);}
+\DoxyCodeLine{00068\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kitchen_a2b2cb5130b8f780b9770f6e565030918}{detach}}(\mbox{\hyperlink{class_waiter}{Waiter}}\ *waiter);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00071\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_kitchen_a2dece1028632049669b7870a55730b0e}{reset}}();}
+\DoxyCodeLine{00072\ \};}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ COS214\_PROJECT\_\_KITCHEN\_H}}
+
+\end{DoxyCode}

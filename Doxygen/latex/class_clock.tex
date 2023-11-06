@@ -1,0 +1,154 @@
+\doxysection{Clock Class Reference}
+\hypertarget{class_clock}{}\label{class_clock}\index{Clock@{Clock}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_clock_ad576cd41ff4ca9cd09f7710c2f985be1}{get\+Time}} (const std\+::string \&me)
+\begin{DoxyCompactList}\small\item\em Get the time associated with identification string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_clock_ac1d9e8c71e06f3af4f4fca8c79e2c3ce}{has\+Time}} (const std\+::string \&me)
+\begin{DoxyCompactList}\small\item\em Check weather an identification string has timer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_clock_aec7dd1a18ab8efd607999aee58778b55}{remove\+Time}} (const std\+::string \&me)
+\begin{DoxyCompactList}\small\item\em Removes timer associated with identification string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_clock_a116757f0e1575348549b1f2fc346d492}{tick}} ()
+\begin{DoxyCompactList}\small\item\em Lets the clock tick. \end{DoxyCompactList}\item 
+\Hypertarget{class_clock_a0ab5423b0a997aa13d7b6131c46d1358}\label{class_clock_a0ab5423b0a997aa13d7b6131c46d1358} 
+void {\bfseries reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the clock class by deleting all its numbers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_clock}{Clock}} \& \mbox{\hyperlink{class_clock_af25b669776845aa7db14308c9a2e52b7}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Instance function of the clock singleton. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_clock_adbc370eb6b5f8d01645cf440188160a8}\label{class_clock_adbc370eb6b5f8d01645cf440188160a8} 
+{\bfseries Clock} ()
+\begin{DoxyCompactList}\small\item\em Constructor blocked from being accessed by rest of system. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_clock_a3e27e52ca9dc4633dcef168bb90bf480}{Clock}} (const \mbox{\hyperlink{class_clock}{Clock}} \&clock)
+\item 
+\mbox{\hyperlink{class_clock}{Clock}} \& \mbox{\hyperlink{class_clock_a3b9220c37ed124e9ba611548420a53af}{operator=}} (const \mbox{\hyperlink{class_clock}{Clock}} \&)
+\item 
+\Hypertarget{class_clock_afc976ce68fa85e15cc06f9ed47bddb7c}\label{class_clock_afc976ce68fa85e15cc06f9ed47bddb7c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Clock} ()
+\begin{DoxyCompactList}\small\item\em Destructor operator blocked from being accessed by rest of system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_clock_af189b6c220b1b14f6cb4ed5cb0bf4f5d}\label{class_clock_af189b6c220b1b14f6cb4ed5cb0bf4f5d} 
+class {\bfseries IOInterface\+GUI}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_clock_a3e27e52ca9dc4633dcef168bb90bf480}\label{class_clock_a3e27e52ca9dc4633dcef168bb90bf480} 
+\index{Clock@{Clock}!Clock@{Clock}}
+\index{Clock@{Clock}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{Clock()}{Clock()}}
+{\footnotesize\ttfamily Clock\+::\+Clock (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_clock}{Clock}} \&}]{clock }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+Copy constructor blocked from being accessed by rest of system. 
+\begin{DoxyParams}{Parameters}
+{\em clock} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_clock_ad576cd41ff4ca9cd09f7710c2f985be1}\label{class_clock_ad576cd41ff4ca9cd09f7710c2f985be1} 
+\index{Clock@{Clock}!getTime@{getTime}}
+\index{getTime@{getTime}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily int Clock\+::get\+Time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{me }\end{DoxyParamCaption})}
+
+
+
+Get the time associated with identification string. 
+
+This returns the amount of tics that have passed on a timer linked to an identification string since the first time this function was called (this function creates and associates a timer with the id string if such a timer thus not already exit).
+
+
+\begin{DoxyParams}{Parameters}
+{\em me} & This is the identification string of the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The amount of ticks since timer created 
+\end{DoxyReturn}
+\Hypertarget{class_clock_ac1d9e8c71e06f3af4f4fca8c79e2c3ce}\label{class_clock_ac1d9e8c71e06f3af4f4fca8c79e2c3ce} 
+\index{Clock@{Clock}!hasTime@{hasTime}}
+\index{hasTime@{hasTime}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{hasTime()}{hasTime()}}
+{\footnotesize\ttfamily bool Clock\+::has\+Time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{me }\end{DoxyParamCaption})}
+
+
+
+Check weather an identification string has timer. 
+
+This function checks weather the passed in identification string has a timer associated with it or not. Returns true if it does.
+
+
+\begin{DoxyParams}{Parameters}
+{\em me} & This is the identification string of the timer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if there is a timer associated with the identification string. 
+\end{DoxyReturn}
+\Hypertarget{class_clock_af25b669776845aa7db14308c9a2e52b7}\label{class_clock_af25b669776845aa7db14308c9a2e52b7} 
+\index{Clock@{Clock}!instance@{instance}}
+\index{instance@{instance}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_clock}{Clock}} \& Clock\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Instance function of the clock singleton. 
+
+A static function which returns the a reference to the singular clock object. Also creates the clock if necessary.
+
+\begin{DoxyReturn}{Returns}
+A reference to the singular clock instance 
+\end{DoxyReturn}
+\Hypertarget{class_clock_a3b9220c37ed124e9ba611548420a53af}\label{class_clock_a3b9220c37ed124e9ba611548420a53af} 
+\index{Clock@{Clock}!operator=@{operator=}}
+\index{operator=@{operator=}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_clock}{Clock}} \& Clock\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_clock}{Clock}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+Assigment operator blocked from being accessed by rest of system. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_clock_aec7dd1a18ab8efd607999aee58778b55}\label{class_clock_aec7dd1a18ab8efd607999aee58778b55} 
+\index{Clock@{Clock}!removeTime@{removeTime}}
+\index{removeTime@{removeTime}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{removeTime()}{removeTime()}}
+{\footnotesize\ttfamily void Clock\+::remove\+Time (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{me }\end{DoxyParamCaption})}
+
+
+
+Removes timer associated with identification string. 
+
+This function removes the timer associated with the identification string from the singleton.
+
+
+\begin{DoxyParams}{Parameters}
+{\em me} & This is the identification string of the timer \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_clock_a116757f0e1575348549b1f2fc346d492}\label{class_clock_a116757f0e1575348549b1f2fc346d492} 
+\index{Clock@{Clock}!tick@{tick}}
+\index{tick@{tick}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{tick()}{tick()}}
+{\footnotesize\ttfamily void Clock\+::tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lets the clock tick. 
+
+Make the clock tick by incrementing the value of each timer in the singleton but one. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_clock_8h}{Clock.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_clock_8cpp}{Clock.\+cpp}}\end{DoxyCompactItemize}

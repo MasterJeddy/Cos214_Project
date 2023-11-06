@@ -1,0 +1,40 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+IOInterface\+GUI.h}
+\hypertarget{_i_o_interface_g_u_i_8h_source}{}\label{_i_o_interface_g_u_i_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ maili\ on\ 2023/11/03.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_IOINTERFACEGUI\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_IOINTERFACEGUI\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_o_interface_8h}{IOInterface.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}olcPixelGameEngine/olcPixelGameEngine.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}olcPixelGameEngine/olcSoundWaveEngine.h"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface_g_u_i}{IOInterfaceGUI}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_o_interface}{IOInterface}},olc::PixelGameEngine\{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00017\ \ \ \textcolor{comment}{//\ adn\ draw\ system\ state}}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_o_interface_g_u_i_a4865df19ccedd1f77468b410b53f4da2}{poll}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00020\ \ \ olc::Sprite*\ spriteSheet;}
+\DoxyCodeLine{00021\ \ \ olc::Decal*\ spriteSheetDecal;}
+\DoxyCodeLine{00022\ \ \ olc::Sprite*\ backGround;}
+\DoxyCodeLine{00023\ \ \ olc::Decal*\ backgroundDecal;}
+\DoxyCodeLine{00024\ \ \ olc::sound::WaveEngine\ soundEngine;}
+\DoxyCodeLine{00025\ \ \ olc::sound::Wave\ maitreDSound;}
+\DoxyCodeLine{00026\ \ \ olc::sound::Wave\ clock;}
+\DoxyCodeLine{00027\ \ \ olc::sound::Wave\ chef1;}
+\DoxyCodeLine{00028\ \ \ olc::sound::Wave\ waiter;}
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{bool}\ toggleDebug\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{bool}\ OnUserCreate()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00036\ \ \ \textcolor{keywordtype}{bool}\ OnUserUpdate(\textcolor{keywordtype}{float}\ fElapsedTime)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ OnUserDestroy()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{void}\ drawTableDebug(\mbox{\hyperlink{class_table_composite}{TableComposite}}*\ table,\textcolor{keywordtype}{int}\ offset,\textcolor{keywordtype}{int}\ yoffset);}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_IOINTERFACEGUI\_H}}
+
+\end{DoxyCode}

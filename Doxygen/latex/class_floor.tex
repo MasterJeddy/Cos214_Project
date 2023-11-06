@@ -1,0 +1,313 @@
+\doxysection{Floor Class Reference}
+\hypertarget{class_floor}{}\label{class_floor}\index{Floor@{Floor}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_floor_a4521fc4a9981eeb3455c68a9903d2efe}\label{class_floor_a4521fc4a9981eeb3455c68a9903d2efe} 
+void {\bfseries request\+Seat} ()
+\begin{DoxyCompactList}\small\item\em Takes the customer at the front of the queue and calls the request function. Notifies \doxylink{class_maitre_d}{MaitreD} that the customer has requested for a seat. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_floor_abccf9697933ea24fa7471861ae818ae9}{seat\+Customer}} (\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*}customer)
+\begin{DoxyCompactList}\small\item\em Adds a customer to a free table. \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_ad33ad21a633fcb4c94394e0f2d426deb}\label{class_floor_ad33ad21a633fcb4c94394e0f2d426deb} 
+void {\bfseries dequeue\+Customer} ()
+\begin{DoxyCompactList}\small\item\em Removes the customer at the front of the queue. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_floor_ab0b3d8cc61314a08de236e7d5be2b891}{add\+Sales\+Revenue}} (double total\+Bill)
+\begin{DoxyCompactList}\small\item\em Adds revenue to our total sales revenue. This gets done every time a bill is settled. \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_a723a74c8f710bc0edf3caf5beb0ef790}\label{class_floor_a723a74c8f710bc0edf3caf5beb0ef790} 
+void {\bfseries add\+Waiter} ()
+\begin{DoxyCompactList}\small\item\em creates a new waiter and adds this to the list of waiters on the floor \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_ac4b242991d13b1f008e937bc2aee919a}\label{class_floor_ac4b242991d13b1f008e937bc2aee919a} 
+void {\bfseries add\+Waiting\+Customer} ()
+\begin{DoxyCompactList}\small\item\em Creates a customer with a randomly sized group. Adds to the waiting customer queue. \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_a1ea44ec0fe608f68ad7ddc62446e75e7}\label{class_floor_a1ea44ec0fe608f68ad7ddc62446e75e7} 
+void {\bfseries add\+MaitreD} ()
+\begin{DoxyCompactList}\small\item\em Adds a \doxylink{class_maitre_d}{MaitreD} to the list of \doxylink{class_maitre_d}{MaitreD}\textquotesingle{}s on the floor. \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_aa1b4baff0d8c31ad058c88e4d0a12086}\label{class_floor_aa1b4baff0d8c31ad058c88e4d0a12086} 
+void {\bfseries add\+Table} ()
+\begin{DoxyCompactList}\small\item\em creates a table. \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_a2792ad860510823cd607cf29f66191e7}\label{class_floor_a2792ad860510823cd607cf29f66191e7} 
+void {\bfseries assign\+Tables\+To\+Waiters} ()
+\begin{DoxyCompactList}\small\item\em This function assigns tables to waiters as evenly as possible. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_floor_aa2b2ac501ce4f2b3550784ff0270b82d}{remove\+Waiter}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em removes the waiter with the passed in id \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_floor_a7983db70e4b934fcbcddc5bde27bf7ac}{remove\+Waiting\+Customer}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em removes a waiting customer from the queue with the passed in id \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_floor_a3ad6941ff701cc99d7e4c204e5248128}{remove\+MaitreD}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em removes the \doxylink{class_maitre_d}{MaitreD} with the passed in id from the list of \doxylink{class_maitre_d}{MaitreD}\textquotesingle{}s. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_floor_a9d53ae7aa35171afa9ad36bd9484fc5e}{remove\+Table}} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em Removes a table with the passed in id. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_floor_af00c4546e1adb66940f273f3e543c284}{get\+Table\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets a count of the tables. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_floor_ae4bb6ff48a4b34d44bae1a883630fe64}{get\+Maitre\+DCount}} ()
+\begin{DoxyCompactList}\small\item\em Gets a count of the Maitre\+Ds. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_floor_ad2673eb529e0f1e10777ab2092a8a028}{get\+Waiter\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets a count of the waiters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_floor_ae30d85d1448996078db52dd119b35526}{get\+Waiting\+Customer\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets a count of the customers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_maitre_d}{MaitreD}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_floor_a9534644a931390d7138d0bf873d94c37}{get\+Random\+MaitreD}} ()
+\begin{DoxyCompactList}\small\item\em Returns the first free \doxylink{class_maitre_d}{MaitreD}. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_floor_a942b4feb9864664fedc50d0da33ac18b}{get\+Waiters}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of waiters on the floor. \end{DoxyCompactList}\item 
+std\+::queue$<$ \mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_floor_a5415a056a3aa8f8ce4a5bfaf7257e1cd}{get\+Waiting\+Customers}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of waiting customers in the queue. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_maitre_d}{MaitreD}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_floor_adf51132054207265230423121d9ce426}{get\+Maitre\+Ds}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of Maitre\+Ds on the floor. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{class_floor_ab3a2863752e2e99b61ee1d9191406539}{get\+Tables}} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of tables on the floor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_floor_a68c2700c84c012f7637f196b463f5dec}{take\+Order\+To\+Table}} (\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}order)
+\begin{DoxyCompactList}\small\item\em Used by the waiter to take an order from the kitchen to the table. \end{DoxyCompactList}\item 
+\Hypertarget{class_floor_a7074519bc24c0aaf95e2c6756da72161}\label{class_floor_a7074519bc24c0aaf95e2c6756da72161} 
+void {\bfseries reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the number of objects in the floor to the default values. Resets to the initial state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_floor}{Floor}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_floor_a02cf0fb5be2c9d1926c0119bcf617db1}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Gets the only instance of floor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_floor_ab0b3d8cc61314a08de236e7d5be2b891}\label{class_floor_ab0b3d8cc61314a08de236e7d5be2b891} 
+\index{Floor@{Floor}!addSalesRevenue@{addSalesRevenue}}
+\index{addSalesRevenue@{addSalesRevenue}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{addSalesRevenue()}{addSalesRevenue()}}
+{\footnotesize\ttfamily void Floor\+::add\+Sales\+Revenue (\begin{DoxyParamCaption}\item[{double}]{total\+Bill }\end{DoxyParamCaption})}
+
+
+
+Adds revenue to our total sales revenue. This gets done every time a bill is settled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em total\+Bill} & This is the price of the total bill that was paid. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_floor_ae4bb6ff48a4b34d44bae1a883630fe64}\label{class_floor_ae4bb6ff48a4b34d44bae1a883630fe64} 
+\index{Floor@{Floor}!getMaitreDCount@{getMaitreDCount}}
+\index{getMaitreDCount@{getMaitreDCount}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getMaitreDCount()}{getMaitreDCount()}}
+{\footnotesize\ttfamily int Floor\+::get\+Maitre\+DCount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a count of the Maitre\+Ds. 
+
+\begin{DoxyReturn}{Returns}
+Number of Maitre\+Ds on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_adf51132054207265230423121d9ce426}\label{class_floor_adf51132054207265230423121d9ce426} 
+\index{Floor@{Floor}!getMaitreDs@{getMaitreDs}}
+\index{getMaitreDs@{getMaitreDs}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getMaitreDs()}{getMaitreDs()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_maitre_d}{MaitreD}} \texorpdfstring{$\ast$}{*} $>$ Floor\+::get\+Maitre\+Ds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of Maitre\+Ds on the floor. 
+
+\begin{DoxyReturn}{Returns}
+A vector of \doxylink{class_maitre_d}{MaitreD}\textquotesingle{}s on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_a9534644a931390d7138d0bf873d94c37}\label{class_floor_a9534644a931390d7138d0bf873d94c37} 
+\index{Floor@{Floor}!getRandomMaitreD@{getRandomMaitreD}}
+\index{getRandomMaitreD@{getRandomMaitreD}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getRandomMaitreD()}{getRandomMaitreD()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_maitre_d}{MaitreD}} \texorpdfstring{$\ast$}{*} Floor\+::get\+Random\+MaitreD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the first free \doxylink{class_maitre_d}{MaitreD}. 
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the free \doxylink{class_maitre_d}{MaitreD}. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_af00c4546e1adb66940f273f3e543c284}\label{class_floor_af00c4546e1adb66940f273f3e543c284} 
+\index{Floor@{Floor}!getTableCount@{getTableCount}}
+\index{getTableCount@{getTableCount}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getTableCount()}{getTableCount()}}
+{\footnotesize\ttfamily int Floor\+::get\+Table\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a count of the tables. 
+
+\begin{DoxyReturn}{Returns}
+Number of tables on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_ab3a2863752e2e99b61ee1d9191406539}\label{class_floor_ab3a2863752e2e99b61ee1d9191406539} 
+\index{Floor@{Floor}!getTables@{getTables}}
+\index{getTables@{getTables}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getTables()}{getTables()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*} $>$ Floor\+::get\+Tables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of tables on the floor. 
+
+\begin{DoxyReturn}{Returns}
+A vector of tables on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_ad2673eb529e0f1e10777ab2092a8a028}\label{class_floor_ad2673eb529e0f1e10777ab2092a8a028} 
+\index{Floor@{Floor}!getWaiterCount@{getWaiterCount}}
+\index{getWaiterCount@{getWaiterCount}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getWaiterCount()}{getWaiterCount()}}
+{\footnotesize\ttfamily int Floor\+::get\+Waiter\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a count of the waiters. 
+
+\begin{DoxyReturn}{Returns}
+Number of waiters on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_a942b4feb9864664fedc50d0da33ac18b}\label{class_floor_a942b4feb9864664fedc50d0da33ac18b} 
+\index{Floor@{Floor}!getWaiters@{getWaiters}}
+\index{getWaiters@{getWaiters}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getWaiters()}{getWaiters()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*} $>$ Floor\+::get\+Waiters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of waiters on the floor. 
+
+\begin{DoxyReturn}{Returns}
+A vector of waiters on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_ae30d85d1448996078db52dd119b35526}\label{class_floor_ae30d85d1448996078db52dd119b35526} 
+\index{Floor@{Floor}!getWaitingCustomerCount@{getWaitingCustomerCount}}
+\index{getWaitingCustomerCount@{getWaitingCustomerCount}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getWaitingCustomerCount()}{getWaitingCustomerCount()}}
+{\footnotesize\ttfamily int Floor\+::get\+Waiting\+Customer\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets a count of the customers. 
+
+\begin{DoxyReturn}{Returns}
+Number of customers on the floor. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_a5415a056a3aa8f8ce4a5bfaf7257e1cd}\label{class_floor_a5415a056a3aa8f8ce4a5bfaf7257e1cd} 
+\index{Floor@{Floor}!getWaitingCustomers@{getWaitingCustomers}}
+\index{getWaitingCustomers@{getWaitingCustomers}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{getWaitingCustomers()}{getWaitingCustomers()}}
+{\footnotesize\ttfamily std\+::queue$<$ \mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*} $>$ Floor\+::get\+Waiting\+Customers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns a vector of waiting customers in the queue. 
+
+\begin{DoxyReturn}{Returns}
+A vector of waiting customers in the queue. 
+\end{DoxyReturn}
+\Hypertarget{class_floor_a02cf0fb5be2c9d1926c0119bcf617db1}\label{class_floor_a02cf0fb5be2c9d1926c0119bcf617db1} 
+\index{Floor@{Floor}!instance@{instance}}
+\index{instance@{instance}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_floor}{Floor}} \texorpdfstring{$\ast$}{*} Floor\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Gets the only instance of floor. 
+
+\begin{DoxyReturn}{Returns}
+Returns only instance of floor 
+\end{DoxyReturn}
+\Hypertarget{class_floor_a3ad6941ff701cc99d7e4c204e5248128}\label{class_floor_a3ad6941ff701cc99d7e4c204e5248128} 
+\index{Floor@{Floor}!removeMaitreD@{removeMaitreD}}
+\index{removeMaitreD@{removeMaitreD}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{removeMaitreD()}{removeMaitreD()}}
+{\footnotesize\ttfamily void Floor\+::remove\+MaitreD (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+removes the \doxylink{class_maitre_d}{MaitreD} with the passed in id from the list of \doxylink{class_maitre_d}{MaitreD}\textquotesingle{}s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the \doxylink{class_maitre_d}{MaitreD} that is to be removed from the list. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_floor_a9d53ae7aa35171afa9ad36bd9484fc5e}\label{class_floor_a9d53ae7aa35171afa9ad36bd9484fc5e} 
+\index{Floor@{Floor}!removeTable@{removeTable}}
+\index{removeTable@{removeTable}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{removeTable()}{removeTable()}}
+{\footnotesize\ttfamily void Floor\+::remove\+Table (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+Removes a table with the passed in id. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Id of the table that will be removed from the floor. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_floor_aa2b2ac501ce4f2b3550784ff0270b82d}\label{class_floor_aa2b2ac501ce4f2b3550784ff0270b82d} 
+\index{Floor@{Floor}!removeWaiter@{removeWaiter}}
+\index{removeWaiter@{removeWaiter}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{removeWaiter()}{removeWaiter()}}
+{\footnotesize\ttfamily void Floor\+::remove\+Waiter (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+removes the waiter with the passed in id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & is the id of the waiter that will be removed \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_floor_a7983db70e4b934fcbcddc5bde27bf7ac}\label{class_floor_a7983db70e4b934fcbcddc5bde27bf7ac} 
+\index{Floor@{Floor}!removeWaitingCustomer@{removeWaitingCustomer}}
+\index{removeWaitingCustomer@{removeWaitingCustomer}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{removeWaitingCustomer()}{removeWaitingCustomer()}}
+{\footnotesize\ttfamily void Floor\+::remove\+Waiting\+Customer (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})}
+
+
+
+removes a waiting customer from the queue with the passed in id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & of the customer that will be removed from the queue \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_floor_abccf9697933ea24fa7471861ae818ae9}\label{class_floor_abccf9697933ea24fa7471861ae818ae9} 
+\index{Floor@{Floor}!seatCustomer@{seatCustomer}}
+\index{seatCustomer@{seatCustomer}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{seatCustomer()}{seatCustomer()}}
+{\footnotesize\ttfamily bool Floor\+::seat\+Customer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer}{Customer}} \texorpdfstring{$\ast$}{*}}]{customer }\end{DoxyParamCaption})}
+
+
+
+Adds a customer to a free table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em customer} & the customer that will be seated at the table \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean representing whether customer was successfully seated 
+\end{DoxyReturn}
+\Hypertarget{class_floor_a68c2700c84c012f7637f196b463f5dec}\label{class_floor_a68c2700c84c012f7637f196b463f5dec} 
+\index{Floor@{Floor}!takeOrderToTable@{takeOrderToTable}}
+\index{takeOrderToTable@{takeOrderToTable}!Floor@{Floor}}
+\doxysubsubsection{\texorpdfstring{takeOrderToTable()}{takeOrderToTable()}}
+{\footnotesize\ttfamily void Floor\+::take\+Order\+To\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_order}{Order}} \texorpdfstring{$\ast$}{*}}]{order }\end{DoxyParamCaption})}
+
+
+
+Used by the waiter to take an order from the kitchen to the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & This is the finished order from kitchen. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_floor_8h}{Floor.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_floor_8cpp}{Floor.\+cpp}}\end{DoxyCompactItemize}

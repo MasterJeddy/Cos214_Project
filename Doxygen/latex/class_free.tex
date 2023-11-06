@@ -1,0 +1,116 @@
+\doxysection{Free Class Reference}
+\hypertarget{class_free}{}\label{class_free}\index{Free@{Free}}
+Inheritance diagram for Free\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_free}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_free_ac5e6700c908d92ffce9bc349dd3c9747}{clone}} ()
+\begin{DoxyCompactList}\small\item\em This will return a clone of the state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_free_a964a582307dfa32231a5b4bb836cf53d}{proceed}} (\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}table\+Comp)
+\begin{DoxyCompactList}\small\item\em This will proceed to the next state. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_free_ac5cfec88151592c4c85466c07497dc1f}{hold}} (\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}table\+Comp)
+\begin{DoxyCompactList}\small\item\em This will hold to the relevant state. \end{DoxyCompactList}\item 
+\Hypertarget{class_free_a4a847fee0a934284fc4581282706e885}\label{class_free_a4a847fee0a934284fc4581282706e885} 
+{\bfseries Free} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor the \doxylink{class_free}{Free} state class. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_free_adbb9ce5de33257e486013218a4a45bf8}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_table_state}{Table\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Table\+State} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor for table state. \end{DoxyCompactList}\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+State} ()=0
+\begin{DoxyCompactList}\small\item\em This is a destructor of the table state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_table_state}{Table\+State}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_free_ac5e6700c908d92ffce9bc349dd3c9747}\label{class_free_ac5e6700c908d92ffce9bc349dd3c9747} 
+\index{Free@{Free}!clone@{clone}}
+\index{clone@{clone}!Free@{Free}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table_state}{Table\+State}} \texorpdfstring{$\ast$}{*} Free\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will return a clone of the state. 
+
+\begin{DoxyReturn}{Returns}
+This will return a clone of the current state as a \doxylink{class_table_state}{Table\+State} pointer. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_table_state_a03ac9e0dc7cc390e76def630bf049945}{Table\+State}}.
+
+\Hypertarget{class_free_adbb9ce5de33257e486013218a4a45bf8}\label{class_free_adbb9ce5de33257e486013218a4a45bf8} 
+\index{Free@{Free}!getName@{getName}}
+\index{getName@{getName}!Free@{Free}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Free\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Gets the name of the table. 
+
+\begin{DoxyReturn}{Returns}
+This will return the name of the table. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_table_state_ad50ca4d56c78dc348bbeb7af6f9097ed}{Table\+State}}.
+
+\Hypertarget{class_free_ac5cfec88151592c4c85466c07497dc1f}\label{class_free_ac5cfec88151592c4c85466c07497dc1f} 
+\index{Free@{Free}!hold@{hold}}
+\index{hold@{hold}!Free@{Free}}
+\doxysubsubsection{\texorpdfstring{hold()}{hold()}}
+{\footnotesize\ttfamily void Free\+::hold (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}}]{table\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will hold to the relevant state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Comp} & This is the table composite that needs to transition. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_state_a1f6ada499c00ef81f53ecd68558d68c5}{Table\+State}}.
+
+\Hypertarget{class_free_a964a582307dfa32231a5b4bb836cf53d}\label{class_free_a964a582307dfa32231a5b4bb836cf53d} 
+\index{Free@{Free}!proceed@{proceed}}
+\index{proceed@{proceed}!Free@{Free}}
+\doxysubsubsection{\texorpdfstring{proceed()}{proceed()}}
+{\footnotesize\ttfamily void Free\+::proceed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table_composite}{Table\+Composite}} \texorpdfstring{$\ast$}{*}}]{table\+Comp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will proceed to the next state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Comp} & This is the table composite that needs to transition state. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_table_state_a4f4a676a996f485a7bd7eb7eaf14fded}{Table\+State}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_free_8h}{Free.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_free_8cpp}{Free.\+cpp}}\end{DoxyCompactItemize}

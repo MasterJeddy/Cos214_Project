@@ -1,0 +1,126 @@
+\doxysection{Table\+Component Class Reference}
+\hypertarget{class_table_component}{}\label{class_table_component}\index{TableComponent@{TableComponent}}
+Inheritance diagram for Table\+Component\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_table_component}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_table_component_ab4af18a753ee4851edceca5433ceb3ee}\label{class_table_component_ab4af18a753ee4851edceca5433ceb3ee} 
+{\bfseries Table\+Component} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+\Hypertarget{class_table_component_a1db7d683d8a1276695423879c95b2442}\label{class_table_component_a1db7d683d8a1276695423879c95b2442} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Table\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_component_a6ca27765a0e6922a1abac2f53a4f00aa}{get\+Id}} ()
+\begin{DoxyCompactList}\small\item\em Gets the id of the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_table_component_ab1e1b3e56ea8dc3dab74c444aae02d08}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of the \doxylink{class_table_component}{Table\+Component}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_component_af398cf8e26863834021965703bd1aa8b}{attach\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)=0
+\begin{DoxyCompactList}\small\item\em Attach observer to the observer list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_component_a683e5c93ac7954408554d56041311fd2}{detach\+Observer}} (\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}observer)=0
+\begin{DoxyCompactList}\small\item\em This will detach an observer from the observer list. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_table_component_a44a5bd4b529f7b602103f532634351d5}{request}} ()=0
+\begin{DoxyCompactList}\small\item\em Notifies an observer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_table_component_af0a1dcb1f33efcf3f98f604012d26fb8}\label{class_table_component_af0a1dcb1f33efcf3f98f604012d26fb8} 
+std\+::string {\bfseries id}
+\item 
+\Hypertarget{class_table_component_a3e33a14b6d3a3db048e484aa60667cb2}\label{class_table_component_a3e33a14b6d3a3db048e484aa60667cb2} 
+std\+::string {\bfseries type}
+\item 
+\Hypertarget{class_table_component_a70a79df3dcef63130911c5125f2b3f80}\label{class_table_component_a70a79df3dcef63130911c5125f2b3f80} 
+std\+::vector$<$ \mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries observer\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_table_component_af398cf8e26863834021965703bd1aa8b}\label{class_table_component_af398cf8e26863834021965703bd1aa8b} 
+\index{TableComponent@{TableComponent}!attachObserver@{attachObserver}}
+\index{attachObserver@{attachObserver}!TableComponent@{TableComponent}}
+\doxysubsubsection{\texorpdfstring{attachObserver()}{attachObserver()}}
+{\footnotesize\ttfamily virtual void Table\+Component\+::attach\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Attach observer to the observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & This is the observer that will be attached to the observer list. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_customer_a6d6873025f5ab3520e5887236160f8dc}{Customer}}, and \mbox{\hyperlink{class_table_composite_a70e94830d077f8874546a68dfceef2cf}{Table\+Composite}}.
+
+\Hypertarget{class_table_component_a683e5c93ac7954408554d56041311fd2}\label{class_table_component_a683e5c93ac7954408554d56041311fd2} 
+\index{TableComponent@{TableComponent}!detachObserver@{detachObserver}}
+\index{detachObserver@{detachObserver}!TableComponent@{TableComponent}}
+\doxysubsubsection{\texorpdfstring{detachObserver()}{detachObserver()}}
+{\footnotesize\ttfamily virtual void Table\+Component\+::detach\+Observer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_observer}{Observer}} \texorpdfstring{$\ast$}{*}}]{observer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+This will detach an observer from the observer list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em observer} & This is the observer that will be detached. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_customer_a48ae81925c15ee0300d253a0f53492b2}{Customer}}, and \mbox{\hyperlink{class_table_composite_a48b4e3ef419d658a1fb903a6cba8ff97}{Table\+Composite}}.
+
+\Hypertarget{class_table_component_a6ca27765a0e6922a1abac2f53a4f00aa}\label{class_table_component_a6ca27765a0e6922a1abac2f53a4f00aa} 
+\index{TableComponent@{TableComponent}!getId@{getId}}
+\index{getId@{getId}!TableComponent@{TableComponent}}
+\doxysubsubsection{\texorpdfstring{getId()}{getId()}}
+{\footnotesize\ttfamily std\+::string Table\+Component\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets the id of the \doxylink{class_table_component}{Table\+Component}. 
+
+\begin{DoxyReturn}{Returns}
+Returns the id as a string. 
+\end{DoxyReturn}
+\Hypertarget{class_table_component_ab1e1b3e56ea8dc3dab74c444aae02d08}\label{class_table_component_ab1e1b3e56ea8dc3dab74c444aae02d08} 
+\index{TableComponent@{TableComponent}!getType@{getType}}
+\index{getType@{getType}!TableComponent@{TableComponent}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Table\+Component\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the type of the \doxylink{class_table_component}{Table\+Component}. 
+
+\begin{DoxyReturn}{Returns}
+Returns the type of the table. 
+\end{DoxyReturn}
+\Hypertarget{class_table_component_a44a5bd4b529f7b602103f532634351d5}\label{class_table_component_a44a5bd4b529f7b602103f532634351d5} 
+\index{TableComponent@{TableComponent}!request@{request}}
+\index{request@{request}!TableComponent@{TableComponent}}
+\doxysubsubsection{\texorpdfstring{request()}{request()}}
+{\footnotesize\ttfamily virtual void Table\+Component\+::request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies an observer. 
+
+
+
+Implemented in \mbox{\hyperlink{class_customer_a46f9e8ac6e95c48d9f6a107f04096d2c}{Customer}}, and \mbox{\hyperlink{class_table_composite_a0ecc55c75eef774ff378e1c7e230771d}{Table\+Composite}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_table_component_8h}{Table\+Component.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_table_component_8cpp}{Table\+Component.\+cpp}}\end{DoxyCompactItemize}

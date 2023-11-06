@@ -1,0 +1,84 @@
+\doxysection{Kitchen\+Subject Class Reference}
+\hypertarget{class_kitchen_subject}{}\label{class_kitchen_subject}\index{KitchenSubject@{KitchenSubject}}
+Inheritance diagram for Kitchen\+Subject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kitchen_subject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_kitchen_subject_ac4830028445342e8fa7a8dc504666bea}{notify\+Waiter}} ()=0
+\begin{DoxyCompactList}\small\item\em Notifies all waiters in the observer list that orders are finished. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_kitchen_subject_a0e89fdda5066df39b0fd8a5637ece116}{attach}} (\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)=0
+\begin{DoxyCompactList}\small\item\em adds a waiter to the observer list \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_kitchen_subject_ae164812ff3e7a190fcd23ae5ddd3a86c}{detach}} (\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}waiter)=0
+\begin{DoxyCompactList}\small\item\em removes a waiter from the observer list \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_kitchen_subject_a59f49df88afaa0b038f23f64f59300e9}\label{class_kitchen_subject_a59f49df88afaa0b038f23f64f59300e9} 
+std\+::vector$<$ \mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries waiter\+List}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_kitchen_subject_a0e89fdda5066df39b0fd8a5637ece116}\label{class_kitchen_subject_a0e89fdda5066df39b0fd8a5637ece116} 
+\index{KitchenSubject@{KitchenSubject}!attach@{attach}}
+\index{attach@{attach}!KitchenSubject@{KitchenSubject}}
+\doxysubsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily virtual void Kitchen\+Subject\+::attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+adds a waiter to the observer list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & \doxylink{class_waiter}{Waiter} object to be added \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_kitchen_aa136dd6e32181821192bac9bfbfad236}{Kitchen}}.
+
+\Hypertarget{class_kitchen_subject_ae164812ff3e7a190fcd23ae5ddd3a86c}\label{class_kitchen_subject_ae164812ff3e7a190fcd23ae5ddd3a86c} 
+\index{KitchenSubject@{KitchenSubject}!detach@{detach}}
+\index{detach@{detach}!KitchenSubject@{KitchenSubject}}
+\doxysubsubsection{\texorpdfstring{detach()}{detach()}}
+{\footnotesize\ttfamily virtual void Kitchen\+Subject\+::detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_waiter}{Waiter}} \texorpdfstring{$\ast$}{*}}]{waiter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+removes a waiter from the observer list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em waiter} & \doxylink{class_waiter}{Waiter} object to be removed \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_kitchen_a2b2cb5130b8f780b9770f6e565030918}{Kitchen}}.
+
+\Hypertarget{class_kitchen_subject_ac4830028445342e8fa7a8dc504666bea}\label{class_kitchen_subject_ac4830028445342e8fa7a8dc504666bea} 
+\index{KitchenSubject@{KitchenSubject}!notifyWaiter@{notifyWaiter}}
+\index{notifyWaiter@{notifyWaiter}!KitchenSubject@{KitchenSubject}}
+\doxysubsubsection{\texorpdfstring{notifyWaiter()}{notifyWaiter()}}
+{\footnotesize\ttfamily virtual void Kitchen\+Subject\+::notify\+Waiter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Notifies all waiters in the observer list that orders are finished. 
+
+
+
+Implemented in \mbox{\hyperlink{class_kitchen_a2beb67f19655ae58100c6b7deae1c973}{Kitchen}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_kitchen_subject_8h}{Kitchen\+Subject.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_kitchen_subject_8cpp}{Kitchen\+Subject.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,48 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Head\+Chef.h}
+\hypertarget{_head_chef_8h_source}{}\label{_head_chef_8h_source}\mbox{\hyperlink{_head_chef_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ by\ nield\ on\ 2023/10/30.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_HEADCHEF\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_HEADCHEF\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/HeadChef.h\ -\/\ HeadChef\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00011\ \textcolor{comment}{//}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <queue>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_baker_chef_8h}{BakerChef.h}}"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_head_chef}{HeadChef}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \textcolor{keywordtype}{int}\ maxOrders\ =\ 3;}
+\DoxyCodeLine{00029\ \ \ std::queue<Order*>\ orderQueue;}
+\DoxyCodeLine{00030\ \ \ \textcolor{comment}{//\ currently\ circulating\ orders:}}
+\DoxyCodeLine{00031\ \ \ std::queue<Order*>\ currentOrders;}
+\DoxyCodeLine{00032\ \ \ std::queue<Order*>\ finishedOrders;}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{class_chef}{Chef}}*\ firstChef;}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{bool}\ finishOrder(\mbox{\hyperlink{struct_order}{Order}}*\ order);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ \ \ \mbox{\hyperlink{class_head_chef_ac95033bbe3361915ef93af66d162579b}{HeadChef}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_head_chef_ac92c6930821506b2ce51746c166b46fb}{startOrders}}();}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_head_chef_a50401e33cdd0cfab7a83a899b7a5c992}{addOrder}}(\mbox{\hyperlink{struct_order}{Order}}*\ order);}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00055\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_head_chef_aeb3b817b849300e5a046f23ea51e0aed}{increaseMaxOrders}}();}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{struct_order}{Order}}*\ \mbox{\hyperlink{class_head_chef_aeda6cf2c747a611dcb78be2359a08f03}{getFinishedOrder}}();}
+\DoxyCodeLine{00060\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface_g_u_i}{IOInterfaceGUI}};}
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_HEADCHEF\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,41 @@
+\doxysection{C\+:/\+Dev/\+COS214/\+Project/\+Command\+Log.h}
+\hypertarget{_command_log_8h_source}{}\label{_command_log_8h_source}\mbox{\hyperlink{_command_log_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//===-\/-\/\ COS214\_Project/CommandLog.h\ -\/\ CommandLog\ class\ definition\ -\/-\/-\/-\/-\/-\/*-\/\ C++\ -\/*-\/===//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ COS\ 214\ Project.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===/////}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//===-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/===//}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ COS214\_PROJECT\_\_COMMANDLOG\_H}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ COS214\_PROJECT\_\_COMMANDLOG\_H}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_user_command_8h}{UserCommand.h}}"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_command_log_iterator_8h}{CommandLogIterator.h}}"{}}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_o_interface}{IOInterface}};}
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_saved_log}{SavedLog}};}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_log}{CommandLog}}\ \{}
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ \ \ \mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ inputPoll;}
+\DoxyCodeLine{00029\ \ \ std::vector<UserCommand*>*\ commands;}
+\DoxyCodeLine{00030\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_command_log_ac61e932bfabac37afac3c55689f6a7ed}{load}}(\mbox{\hyperlink{class_saved_log}{SavedLog}}*\ log);}
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{class_saved_log}{SavedLog}}*\ \mbox{\hyperlink{class_command_log_a9757ac039d30af3d9bff87c9a5197a4f}{save}}();}
+\DoxyCodeLine{00039\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_command_log_a6eb928a95dcb7f002bb34de5225b143f}{addEntry}}(\mbox{\hyperlink{class_user_command}{UserCommand}}*\ com);}
+\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{class_command_log}{CommandLog}}(\mbox{\hyperlink{class_i_o_interface}{IOInterface}}*\ inputPoll);}
+\DoxyCodeLine{00044\ \ \ \mbox{\hyperlink{class_command_log_a293c84bde955f5e58a91481454a7adba}{\string~CommandLog}}();}
+\DoxyCodeLine{00047\ \ \ \mbox{\hyperlink{class_command_log_iterator}{CommandLogIterator}}*\ \mbox{\hyperlink{class_command_log_a71aed4f4962b5e7334140642cfc34c60}{createIterator}}();}
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_command_log_iterator}{CommandLogIterator}};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_i_o_interface_8h}{IOInterface.h}}"{}}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_saved_log_8h}{SavedLog.h}}"{}}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COS214\_PROJECT\_\_COMMANDLOG\_H}}
+
+\end{DoxyCode}

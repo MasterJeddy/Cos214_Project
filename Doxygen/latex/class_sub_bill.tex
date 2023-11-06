@@ -1,0 +1,130 @@
+\doxysection{Sub\+Bill Class Reference}
+\hypertarget{class_sub_bill}{}\label{class_sub_bill}\index{SubBill@{SubBill}}
+Inheritance diagram for Sub\+Bill\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sub_bill}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_sub_bill_a023d8d6338e6120471d734f524bf986d}{Sub\+Bill}} (std\+::string item\+Name, double item\+Cost)
+\begin{DoxyCompactList}\small\item\em This is the constructor for sub\+Bill. \end{DoxyCompactList}\item 
+\Hypertarget{class_sub_bill_a43028155ff6c9883128dfd93fd196839}\label{class_sub_bill_a43028155ff6c9883128dfd93fd196839} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Sub\+Bill} ()
+\begin{DoxyCompactList}\small\item\em This is the desturctor for the \doxylink{class_sub_bill}{Sub\+Bill} class. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_sub_bill_abb20aa13030854fdb5093ba95da40b93}{get\+Total}} ()
+\begin{DoxyCompactList}\small\item\em This will return the total for the bill. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{class_sub_bill_a40b459805ab6bdebbfd2c9e34117fd44}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em This will return a name for the bill. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_sub_bill_a587bf5f8d27ed2373997a395aaebf02c}{add}} (\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Adds a component to the children vector. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_sub_bill_aef78ff035f69e58f39f76229e762e943}{remove}} (\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}component)
+\begin{DoxyCompactList}\small\item\em Removes a component from the children vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_bill_component}{Bill\+Component}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Bill\+Component} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the billcomponent class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_sub_bill_a023d8d6338e6120471d734f524bf986d}\label{class_sub_bill_a023d8d6338e6120471d734f524bf986d} 
+\index{SubBill@{SubBill}!SubBill@{SubBill}}
+\index{SubBill@{SubBill}!SubBill@{SubBill}}
+\doxysubsubsection{\texorpdfstring{SubBill()}{SubBill()}}
+{\footnotesize\ttfamily Sub\+Bill\+::\+Sub\+Bill (\begin{DoxyParamCaption}\item[{std\+::string}]{item\+Name,  }\item[{double}]{item\+Cost }\end{DoxyParamCaption})}
+
+
+
+This is the constructor for sub\+Bill. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item\+Name} & This is the name of the item. \\
+\hline
+{\em item\+Cost} & This is cost of the item. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_sub_bill_a587bf5f8d27ed2373997a395aaebf02c}\label{class_sub_bill_a587bf5f8d27ed2373997a395aaebf02c} 
+\index{SubBill@{SubBill}!add@{add}}
+\index{add@{add}!SubBill@{SubBill}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Sub\+Bill\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adds a component to the children vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & This is the subbill/bill\+Composite that will be added. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_bill_component_a61a9199fdf4e42bd46704c2a55578cc7}{Bill\+Component}}.
+
+\Hypertarget{class_sub_bill_a40b459805ab6bdebbfd2c9e34117fd44}\label{class_sub_bill_a40b459805ab6bdebbfd2c9e34117fd44} 
+\index{SubBill@{SubBill}!getName@{getName}}
+\index{getName@{getName}!SubBill@{SubBill}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Sub\+Bill\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will return a name for the bill. 
+
+\begin{DoxyReturn}{Returns}
+This will return the name for the bill as a string. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_bill_component_adab7f8c737efea23650b60ac55664af1}{Bill\+Component}}.
+
+\Hypertarget{class_sub_bill_abb20aa13030854fdb5093ba95da40b93}\label{class_sub_bill_abb20aa13030854fdb5093ba95da40b93} 
+\index{SubBill@{SubBill}!getTotal@{getTotal}}
+\index{getTotal@{getTotal}!SubBill@{SubBill}}
+\doxysubsubsection{\texorpdfstring{getTotal()}{getTotal()}}
+{\footnotesize\ttfamily double Sub\+Bill\+::get\+Total (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This will return the total for the bill. 
+
+\begin{DoxyReturn}{Returns}
+This will return a double for the bill. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_bill_component_a78fba13f6ec50a1f4c4f28a4fe380e20}{Bill\+Component}}.
+
+\Hypertarget{class_sub_bill_aef78ff035f69e58f39f76229e762e943}\label{class_sub_bill_aef78ff035f69e58f39f76229e762e943} 
+\index{SubBill@{SubBill}!remove@{remove}}
+\index{remove@{remove}!SubBill@{SubBill}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void Sub\+Bill\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_bill_component}{Bill\+Component}} \texorpdfstring{$\ast$}{*}}]{component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Removes a component from the children vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em component} & This is the subbill/bill\+Composite that will be removed. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_bill_component_aeed5cba288fa3b3e6d8f06ca4c317030}{Bill\+Component}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_sub_bill_8h}{Sub\+Bill.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_sub_bill_8cpp}{Sub\+Bill.\+cpp}}\end{DoxyCompactItemize}

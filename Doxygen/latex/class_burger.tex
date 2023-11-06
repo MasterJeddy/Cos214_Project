@@ -1,0 +1,76 @@
+\doxysection{Burger Class Reference}
+\hypertarget{class_burger}{}\label{class_burger}\index{Burger@{Burger}}
+Inheritance diagram for Burger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.782609cm]{class_burger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_burger_a18a0f0bc88d3cb297dcfa258c360d8ed}{add}} (\mbox{\hyperlink{class_burger}{Burger}} \texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Adds an ingredient to the burger decorator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_burger_a70f9da0baa9e5856196974b982f8523c}{total\+Price}} ()=0
+\begin{DoxyCompactList}\small\item\em Calculates the total price of the entire decorated burger. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_burger_a1f1efb1c361a4acc30731747598f1be5}{get\+Price}} () const
+\begin{DoxyCompactList}\small\item\em Refers instead to the price property of the ingredient. \end{DoxyCompactList}\item 
+\Hypertarget{class_burger_a003df8800f892556f4c95537475e94c5}\label{class_burger_a003df8800f892556f4c95537475e94c5} 
+void {\bfseries set\+Price} (double)
+\begin{DoxyCompactList}\small\item\em Changes the price of the ingredient. \end{DoxyCompactList}\item 
+\Hypertarget{class_burger_a02a4e935a611d971a7d1bafde53db13d}\label{class_burger_a02a4e935a611d971a7d1bafde53db13d} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Burger} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the burger class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_burger_a18a0f0bc88d3cb297dcfa258c360d8ed}\label{class_burger_a18a0f0bc88d3cb297dcfa258c360d8ed} 
+\index{Burger@{Burger}!add@{add}}
+\index{add@{add}!Burger@{Burger}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily virtual void Burger\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_burger}{Burger}} \texorpdfstring{$\ast$}{*}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adds an ingredient to the burger decorator. 
+
+
+
+Implemented in \mbox{\hyperlink{class_burger_buns_a25a4577f2d5eef74d58a3c60cee3ee75}{Burger\+Buns}}, and \mbox{\hyperlink{class_burger_ingredient_a7cc8eb633371d9e0063838811a649801}{Burger\+Ingredient}}.
+
+\Hypertarget{class_burger_a1f1efb1c361a4acc30731747598f1be5}\label{class_burger_a1f1efb1c361a4acc30731747598f1be5} 
+\index{Burger@{Burger}!getPrice@{getPrice}}
+\index{getPrice@{getPrice}!Burger@{Burger}}
+\doxysubsubsection{\texorpdfstring{getPrice()}{getPrice()}}
+{\footnotesize\ttfamily double Burger\+::get\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Refers instead to the price property of the ingredient. 
+
+\begin{DoxyReturn}{Returns}
+the price for this particular ingredient 
+\end{DoxyReturn}
+\Hypertarget{class_burger_a70f9da0baa9e5856196974b982f8523c}\label{class_burger_a70f9da0baa9e5856196974b982f8523c} 
+\index{Burger@{Burger}!totalPrice@{totalPrice}}
+\index{totalPrice@{totalPrice}!Burger@{Burger}}
+\doxysubsubsection{\texorpdfstring{totalPrice()}{totalPrice()}}
+{\footnotesize\ttfamily virtual double Burger\+::total\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the total price of the entire decorated burger. 
+
+\begin{DoxyReturn}{Returns}
+the total price of the burger 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_burger_buns_ae0fe09c3b4e72e574f7e4ea3951e5e56}{Burger\+Buns}}, and \mbox{\hyperlink{class_burger_ingredient_aa8c8e254016815945c780e58a878ee2a}{Burger\+Ingredient}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_burger_8h}{Burger.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/Burger.\+cpp\end{DoxyCompactItemize}

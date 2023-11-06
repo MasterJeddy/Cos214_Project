@@ -1,0 +1,70 @@
+\doxysection{Command\+Log\+Iterator Class Reference}
+\hypertarget{class_command_log_iterator}{}\label{class_command_log_iterator}\index{CommandLogIterator@{CommandLogIterator}}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_command_log_iterator_a0ef12934c3abf28c9239d67d12a1a42e}\label{class_command_log_iterator_a0ef12934c3abf28c9239d67d12a1a42e} 
+void {\bfseries first} ()
+\begin{DoxyCompactList}\small\item\em Sets the iterator to the beginning of the log. \end{DoxyCompactList}\item 
+\Hypertarget{class_command_log_iterator_af24df0f2eeac10c1066d94b82798ca13}\label{class_command_log_iterator_af24df0f2eeac10c1066d94b82798ca13} 
+void {\bfseries next} ()
+\begin{DoxyCompactList}\small\item\em Moves iterator to the next item in the log. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_command_log_iterator_ab570ec5b07c66a38636a69529f0b7e30}{is\+Done}} ()
+\begin{DoxyCompactList}\small\item\em Checks if iterator has hit the end of the log. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_user_command}{User\+Command}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_command_log_iterator_a02ef1dedd0307b95f3e0a9f6782c74ff}{current\+Item}} ()
+\begin{DoxyCompactList}\small\item\em Returns the command the iterator is currently on. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_command_log_iterator_ab7f414dd21e20cfa5c9eb1d6cdcf434e}{Command\+Log\+Iterator}} (\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*}command\+Log)
+\begin{DoxyCompactList}\small\item\em The constructor for the \doxylink{class_command_log_iterator}{Command\+Log\+Iterator}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_command_log_iterator_ab7f414dd21e20cfa5c9eb1d6cdcf434e}\label{class_command_log_iterator_ab7f414dd21e20cfa5c9eb1d6cdcf434e} 
+\index{CommandLogIterator@{CommandLogIterator}!CommandLogIterator@{CommandLogIterator}}
+\index{CommandLogIterator@{CommandLogIterator}!CommandLogIterator@{CommandLogIterator}}
+\doxysubsubsection{\texorpdfstring{CommandLogIterator()}{CommandLogIterator()}}
+{\footnotesize\ttfamily Command\+Log\+Iterator\+::\+Command\+Log\+Iterator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_command_log}{Command\+Log}} \texorpdfstring{$\ast$}{*}}]{command\+Log }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+The constructor for the \doxylink{class_command_log_iterator}{Command\+Log\+Iterator}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em command\+Log} & The \doxylink{class_command_log}{Command\+Log} for which the iterator was constructed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_command_log_iterator_a02ef1dedd0307b95f3e0a9f6782c74ff}\label{class_command_log_iterator_a02ef1dedd0307b95f3e0a9f6782c74ff} 
+\index{CommandLogIterator@{CommandLogIterator}!currentItem@{currentItem}}
+\index{currentItem@{currentItem}!CommandLogIterator@{CommandLogIterator}}
+\doxysubsubsection{\texorpdfstring{currentItem()}{currentItem()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_user_command}{User\+Command}} \texorpdfstring{$\ast$}{*} Command\+Log\+Iterator\+::current\+Item (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the command the iterator is currently on. 
+
+\begin{DoxyReturn}{Returns}
+Command iterator is currently on 
+\end{DoxyReturn}
+\Hypertarget{class_command_log_iterator_ab570ec5b07c66a38636a69529f0b7e30}\label{class_command_log_iterator_ab570ec5b07c66a38636a69529f0b7e30} 
+\index{CommandLogIterator@{CommandLogIterator}!isDone@{isDone}}
+\index{isDone@{isDone}!CommandLogIterator@{CommandLogIterator}}
+\doxysubsubsection{\texorpdfstring{isDone()}{isDone()}}
+{\footnotesize\ttfamily bool Command\+Log\+Iterator\+::is\+Done (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Checks if iterator has hit the end of the log. 
+
+\begin{DoxyReturn}{Returns}
+true if iterator is at end of the log. False otherwise 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_command_log_iterator_8h}{Command\+Log\+Iterator.\+h}}\item 
+C\+:/\+Dev/\+COS214/\+Project/\mbox{\hyperlink{_command_log_iterator_8cpp}{Command\+Log\+Iterator.\+cpp}}\end{DoxyCompactItemize}
