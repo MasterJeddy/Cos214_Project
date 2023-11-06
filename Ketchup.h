@@ -17,7 +17,9 @@
 
 class Ketchup:public BurgerIngredient {
 public:
+  /// \brief The Constructor for the Ketchup class
     Ketchup();
+  /// \brief The Destructor for the Ketchup class
     ~Ketchup() override;
 };
 

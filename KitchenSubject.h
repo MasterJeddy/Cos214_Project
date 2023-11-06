@@ -23,8 +23,13 @@ protected:
 
 public:
     virtual ~KitchenSubject();
+    /// \brief Notifies all waiters in the observer list that orders are finished
     virtual void notifyWaiter() = 0;
+    /// \brief adds a waiter to the observer list
+    /// \param waiter Waiter object to be added
     virtual void attach(Waiter *waiter) = 0;
+    /// \brief removes a waiter from the observer list
+    /// \param waiter Waiter object to be removed
     virtual void detach(Waiter *waiter) = 0;
 };
 

@@ -23,8 +23,14 @@
 #include "Chef.h"
 class ButcherChef : public Chef {
 public:
+  /// \brief Constructor for the ButcherChef Class, initialises successor
+  /// \param _successor the next chef in the chain, will be passed the order after this one
   ButcherChef(Chef* _successor);
+  /// \brief Adds at most one of each patty type to the burger decorator and passes it to the next chef
+  /// \param order current unfinished order
+  /// \return The passed in order object after one cycle through the chain
   Order* handleOrder(Order* order) override;
+  /// \brief Destructor for the ButcherChef class, deletes successor
   ~ButcherChef();
 };
 

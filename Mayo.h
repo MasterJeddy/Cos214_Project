@@ -17,7 +17,9 @@
 
 class Mayo :public BurgerIngredient{
 public:
+  /// \brief The constructor for the Mayo class
     Mayo();
+  /// \brief The destructor for the Mayo class
     ~Mayo() override;
 };
 

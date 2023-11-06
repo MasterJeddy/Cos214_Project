@@ -24,10 +24,17 @@ private:
   double price;
 public:
   Burger();
+  /// \brief Adds an ingredient to the burger decorator
   virtual void add(Burger*) = 0;
+  /// \brief Calculates the total price of the entire decorated burger
+  /// \return the total price of the burger
   virtual double totalPrice() = 0;
+  /// \brief Refers instead to the price property of the ingredient
+  /// \return the price for this particular ingredient
   double getPrice() const;
+  /// \brief Changes the price of the ingredient
   void setPrice(double);
+  /// \brief Destructor for the burger class
   virtual ~Burger();
 };
 

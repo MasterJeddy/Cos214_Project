@@ -58,10 +58,16 @@ public:
   friend class IOInterfaceGUI;
 
   // functions for the applied observer pattern
+  /// \brief Notifies all waiters attached to the observer list that orders are finished
   virtual void notifyWaiter();
+  /// \brief Adds a waiter to the observer list
+  /// \param waiter Waiter object to be attached
   virtual void attach(Waiter *waiter);
+  /// \brief Removes a waiter from the observer list
+  /// \param waiter Waiter object to be removed
   virtual void detach(Waiter *waiter);
 
+  /// \brief Resets the kitchen
   void reset();
 };
 

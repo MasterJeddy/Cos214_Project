@@ -22,8 +22,14 @@
 #include "Chef.h"
 class BakerChef : public Chef{
 public:
+  /// \brief Constructor for the BakerChef, initialises the successor
+  /// \param _successor the next chef in the chain, will be passed any orders handled
   BakerChef(Chef* _successor);
+  /// \brief Creates the burger buns for the burger decorator, if there is none
+  /// \param order current unfinished order
+  /// \return The order after it is passed through the chef chain once
   Order* handleOrder(Order* order) override;
+  /// \brief Destructor for the BakerChef class
   ~BakerChef();
 };
 

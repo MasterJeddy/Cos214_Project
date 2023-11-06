@@ -17,7 +17,9 @@
 
 class Tomato: public BurgerIngredient {
 public:
+  /// \brief The constructor for the Tomato Class
     Tomato();
+  /// \brief the destructor for the Tomato class
     ~Tomato();
 };
 

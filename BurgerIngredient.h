@@ -20,10 +20,15 @@ class BurgerIngredient: public Burger{
     private:
         Burger* ingrediant;
     public:
+  /// \brief The constructor for the BurgerIngredient class
         BurgerIngredient();
+  /// \brief Calculates the total price of all connected burger ingredients in the decorator list
+  /// \return the total price of the burger
         double totalPrice() override;
+        /// \brief adds a burger to the end of the decorator chain
         void add(Burger*) override;
     protected:
+  /// \brief The destructor for the BurgerIngredient class
         ~BurgerIngredient() override;
 };
 

@@ -17,9 +17,14 @@
 #include "Burger.h"
 class BurgerBuns: public Burger {
     public:
+  /// \brief Constructor for the BurgerBuns Class
         BurgerBuns();
+  /// \brief Adds an ingredient to the tail of the decorator list
         void add(Burger *) override;
+        /// \brief calculates the total price of all connected ingredients
+        /// \return the total price of the burger
         double totalPrice() override;
+        /// \brief the Destructor for the BurgerBuns class
         ~BurgerBuns();
 };
 

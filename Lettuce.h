@@ -17,7 +17,9 @@
 
 class Lettuce:public BurgerIngredient {
 public:
+  /// \brief The constructor for the Lettuce class
     Lettuce();
+  /// \brief The destructor for the Lettuce class
     ~Lettuce() override;
 };
 

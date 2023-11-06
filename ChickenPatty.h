@@ -17,7 +17,9 @@
 
 class ChickenPatty: public Patty{
 public:
+  /// \brief The constructor for the ChickenPatty class
     ChickenPatty();
+  /// \brief The destructor for the ChickenPatty class
     ~ChickenPatty() override;
 };
 

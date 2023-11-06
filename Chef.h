@@ -23,10 +23,17 @@ class Chef {
 private:
 protected:
   Chef* successor;
+/// \brief Constructor that initialises the successor property
+/// \param _successor The next chef in the chain to handle the orders after the current chef
   Chef(Chef* _successor);
+  /// \brief Default constructor, doesn't initialise the successor
   Chef();
 public:
+  /// \brief Handles the order in the chef's unique way and passes it to the successor
+  /// \param order An unfinished order object
+  /// \return the passed in order object after being handled by the chain of chefs once
   virtual Order* handleOrder(Order* order) = 0;
+  /// \brief Destructor for the chef class, calls delete on the successor object
   virtual ~Chef();
 };
 

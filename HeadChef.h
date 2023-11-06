@@ -39,6 +39,7 @@ private:
   bool finishOrder(Order* order);
 
 public:
+  /// \brief Constructor for the HeadChef
   HeadChef();
 
   /// \brief Starts the chain of responsibility of chefs

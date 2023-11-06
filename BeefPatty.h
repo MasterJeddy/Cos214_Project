@@ -17,7 +17,9 @@
 
 class BeefPatty: public Patty {
 public:
+  /// \brief Constructor for the BeefPatty class
     BeefPatty();
+  /// \brief destructor for the BeefPatty class
     ~BeefPatty() override;
 };
 
