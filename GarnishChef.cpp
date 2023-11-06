@@ -15,7 +15,6 @@ Order *GarnishChef::handleOrder(Order *order) {
   if (order->wantsLettuce > 0) {
     Burger* ingredient = new Lettuce();
     order->burger->add(ingredient);
-    order->burger = ingredient;
     // remember to keep to the ordering of a linked list^^^^
 
     order->wantsLettuce--;
@@ -23,14 +22,12 @@ Order *GarnishChef::handleOrder(Order *order) {
   if (order->wantsTomato > 0) {
     Burger* ingredient = new Tomato();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->wantsTomato--;
   }
   if (order->wantsPickles > 0) {
     Burger* ingredient = new Pickles();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->wantsPickles--;
   }

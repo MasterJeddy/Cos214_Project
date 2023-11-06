@@ -13,21 +13,18 @@ Order *SauceChef::handleOrder(Order *order) {
   if (order->wantsKetchup > 0) {
     Burger* ingredient = new Ketchup();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->wantsKetchup--;
   }
   if (order->wantsMustard > 0) {
     Burger* ingredient = new Mustard();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->wantsMustard--;
   }
   if (order->wantsMayo > 0) {
     Burger* ingredient = new Mayo();
     order->burger->add(ingredient);
-    order->burger = ingredient;
 
     order->wantsMayo--;
   }
