@@ -39,39 +39,96 @@ private:
     std::vector<Order *> orders;
 
 public:
+    /// @brief Creates a table composite with id passed in.
+    /// Initialises the state to the free state and sets 
+    /// the type of the component.
+    /// @param id Id of the table that will be created.
     TableComposite(int id);
+    /// @brief Destructor for the table composite.
     virtual ~TableComposite();
-
+    /// @brief Adds a component to the vector of children.
+    /// @param component Either a customer of another table.
     void addComponent(TableComponent *component);
+    /// @brief Removes a component from the vector of children.
+    /// @param component Either a customer of another table.
     void removeComponent(TableComponent *component);
+    /// @brief Notifies the waiter that a bill has been requested.
+    /// Transitions the state to 'Bill'.
     void requestBill();
 
     // getters
+    
+    /// @brief Gets the max capacity of the table
+    /// We assumed that each table will have a max 
+    /// capacity of four (they are square)
+    /// @return Returns the max capacity.
     int getCapacity();
+    /// @brief gets the child with the passed in id
+    /// @param id Id of the child that is being searched for.
+    /// @return Pointer to the child that was searched for.
     TableComponent *getChild(std::string id);
+    /// @brief Returns the current state of the table.
+    /// @return Returns a TableState pointer of the state. 
     virtual TableState *getTableState();
+    /// @brief Returns a string of the Ids of combined tables 
+    /// (if any), as well as the customers that have seated 
+    /// at this table.
+    /// @return Returns a formatted string used in our UI.
     std::string getLabel();
+    /// @brief Gets all the children.
+    /// @return Returns a vector of all the children of the TableComposite.
     std::vector<TableComponent *> getChildren();
 
-    virtual double getPayment();
 
+    /// @brief Creates a bill, then returns the total of the respective bill
+    /// @return Returns the total price of the respective bill that was created.
+    virtual double getPayment();
+    /// @brief Checks if a table is contained within another table.
+    
+    /// @return Returns a boolean indicating if a table is combined with another table.
     bool isContainedInAnotherTable();
 
     // setters
+
+    /// @brief Sets the max capacity of a table. 
+    /// This function will be called every time we 
+    /// combine tables as this number will change every 
+    /// time we combine tables with each other. 
+    /// This indicates the maximum number of customers that
+    /// may be seated at a specific table.
+    /// @param capacity This is the passed in capacity. 
     void setMaxCapacity(int capacity);
+    /// @brief Changes the state of the table to the passed in parameter.
+    /// @param tableState Next state to change the table to. 
     virtual void setTableState(TableState *tableState);
+    /// @brief This function will assign the passed in waiter to this table.
+    /// @param waiter This is the waiter that will be responsible for this table.
     void assignWaiter(Waiter *waiter);
 
     // observer dp related functions
+
+    /// @brief This function will attach an observer to the ObserverList.
+    /// This observer will watch this table. 
+    /// @param observer This is the observer that will watch this table.
     virtual void attachObserver(Observer *observer);
+    /// @brief This will detach an observer from the ObserverList.
+    
+    /// @param observer This is the observer that will be removed.
     virtual void detachObserver(Observer *observer);
+    /// @brief Notifies a waiter observer that a table requires the waiters service.
     virtual void request();
 
     // accept or reject the service of a waiter
+    
+    /// @brief Simulate accepting the service of a waiter once they arrive at your table.
+    /// @return Returns the random boolean indicating whether the service was accepted or rejected.
     bool acceptOrReject();
     // returns an order
     // calls the proceed() function
-    Order *order(); // may also add a complexOrder function
+
+    /// @brief 
+    /// @return 
+    std::vector<Order*> order(); // may also add a complexOrder function
     // return a slightly more complex order
     Order *complexOrder();
     // returns a complex order with quantities up to 20

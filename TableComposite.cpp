@@ -292,30 +292,53 @@ bool TableComposite::acceptOrReject()
     return randomBoolean;
 }
 
-Order *TableComposite::order()
+std::vector<Order*> TableComposite::order()
 {
+    //find the number of customers at this table
+    int counter = 0;
+    for(TableComponent* child: this->getChildren()){
+        if(child->getType()== TYPE_CUSTOMER){
+            counter++;
+        }
+    }
+    std::vector<Order*> temp; 
+    for(int i = 0; i<counter; i++){
+        Order* ordery = new Order(this->getId());
+        ordery->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
+    ordery->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
+    temp.push_back(ordery);
+
+    }
 
     // change state by calling the proceed function
     // tableState->proceed(this);
     // create an order and return it
-    Order *order = new Order(this->getId());
 
-    std::mt19937 rng(std::random_device{}());
+    // Order *order = new Order(this->getId());
 
-    order->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
-    order->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
-    order->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
-    order->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    order->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    order->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
-    order->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
-    order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
-    order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
+    // std::mt19937 rng(std::random_device{}());
+
+    // order->wantsKetchup = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->wantsMustard = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->wantsMayo = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->beefPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->chickenPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->veganPatty = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->wantsLettuce = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->wantsTomato = std::uniform_int_distribution<>{0, 1}(rng);
+    // order->wantsPickles = std::uniform_int_distribution<>{0, 1}(rng);
 
     // change the state to WaitingOnFood
     this->tableState->proceed(this);
 
-    return order;
+    return temp;
 }
 
 Order *TableComposite::complexOrder()

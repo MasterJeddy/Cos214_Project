@@ -62,8 +62,12 @@ void Waiter::notify(TableComposite *table)
 
         if (tableReady)
         {
-            Order *tableOrder = table->order();                         // get order of table
-            bool result = Kitchen::getInstance()->addOrder(tableOrder); // now pass order to kitchen
+            std::vector<Order*> tableOrder = table->order();   
+            for (int i = 0; i< tableOrder.size(); i++)
+            {
+            bool result = Kitchen::getInstance()->addOrder(tableOrder[i]); // now pass order to kitchen
+            }
+                                  // get order of table
             // now attach this waiter as an observer to the kitchen
             Kitchen::getInstance()->attach(this);
         }
