@@ -140,8 +140,8 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   auto tables = Floor::instance()->getTables();
   for (auto* table:tables){
     offset++;
-    drawTableDebug(table,offset,0);
-    //DrawString({400,15+10*offset},table->getId());
+    //drawTableDebug(table,offset,0);
+    DrawString({400,15+10*offset},table->getLabel());
   }
   //Draw Log
   DrawString({750,5},"Log info",olc::WHITE,1);
@@ -207,9 +207,12 @@ bool IOInterfaceGUI::OnUserUpdate(float fElapsedTime) {
   return true;
 }
 void IOInterfaceGUI::drawTableDebug(TableComposite *table,int offset,int xoffset) {
-    DrawString({400+155*xoffset,15+10*offset},table->getId()+" "+table->getTableState()->getName());
+
+    DrawString({400+45*xoffset,15+10*offset},table->getId()+" ");
     for (auto t:table->children){
       xoffset++;
-      drawTableDebug((TableComposite*)t,offset,xoffset);
+      if (table->getType() == TYPE_TABLECOMPOSITE) {
+        drawTableDebug((TableComposite*)t,offset,xoffset);
+      }
     }
 }

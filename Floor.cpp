@@ -274,7 +274,7 @@ void Floor::addWaitingCustomer()
     if (numOfFriends >= 0)
     {
         waitingCustomer->addToGroup(waitingCustomer);
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < numOfFriends; i++)
         {
             waitingCustomer->addToGroup(new Customer(getAndIncrementWaitingCustomerId()));
         }
